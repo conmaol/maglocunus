@@ -6,7 +6,7 @@
 
 §2. Here are some examples of LLMs –
 - BERT
-- GPT-3 (Da Vinvi) – developed by OpenAI
+- GPT-3 (Da Vinci) – developed by OpenAI
 - GPT-4
 - LLaMa (2) – a group of LLMs developed by Meta (2023)
 - ChatGPT
