@@ -1,6 +1,6 @@
 # Big Data
 
-[Notes from James Serra’s (2024) *Deciphering Data Architectures*]
+[Notes from the book *Deciphering Data Architectures* by James Serra (2024)]
 
 §1. The aim of data architecture is “getting the right information to the right people at the right time in the right format”.
 
