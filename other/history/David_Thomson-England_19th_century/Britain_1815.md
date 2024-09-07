@@ -5,13 +5,11 @@
 ## The social scene
 
 §1. The climax of the Napoleonic Wars at Waterloo in 1815 came during a time of unprecedented social change in Britain –
-- rapid population growth (including Irish immigration)
-- rapid industrialisation
-  - coal mines, cotton mills, woollen mills, blast furnaces
-  - machine-tools – “machines which made machines”; [Joseph Bramah](https://en.wikipedia.org/wiki/Joseph_Bramah); [Henry Maudslay](https://en.wikipedia.org/wiki/Henry_Maudslay))
-  - canals, main roads ([Thomas Telford](https://en.wikipedia.org/wiki/Thomas_Telford), [John McAdam](https://en.wikipedia.org/wiki/John_Loudon_McAdam)), railways
-- rapid urbanisation – slums, gin-drinking, poverty
-- agricultural improvement – draining, ditching, hedging, enclosure, tilling, crop rotation stock-breeding
+- population growth: immigration from Ireland; emigration to North America
+- urbanisation: slum-dwelling; gin-drinking; starvation
+- industrialisation: coal mines, cotton mills, woollen mills, blast furnaces; machine-tools (“machines which made machines”) – [Joseph Bramah](https://en.wikipedia.org/wiki/Joseph_Bramah), [Henry Maudslay](https://en.wikipedia.org/wiki/Henry_Maudslay)
+- transportation: canals, roads – [Thomas Telford](https://en.wikipedia.org/wiki/Thomas_Telford), [John McAdam](https://en.wikipedia.org/wiki/John_Loudon_McAdam)
+- agricultural improvement: draining, ditching, hedging, enclosure, tilling, crop rotation, stock-breeding
 - concentration of land ownership
   -  “a new, more irresponsible and purely profit-making class of landed gentry which had drawn its wealth from trade and finance”
   -  “the ‘Nabobs’ of the East India Company and the stock-holders of the national debt”
