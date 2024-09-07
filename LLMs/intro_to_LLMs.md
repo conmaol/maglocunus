@@ -35,6 +35,43 @@
 - This reward model is then used to optimise the pre-trained fine-tune LLM, using the **Proximal Policy Optimisation** (PPO) algorithm.
 - You end up with a LLM like GPT-4, which is much better at following the user’s instructions.
 
+LLM components
+
+1. Transformer arcihtecture (simplified)
+
+Two main components: encoder; decoder
+
+tasks of each
+
+the encoder takes NL input text and encodes it into some kind of internal representation
+
+the decoder take the internal representation and decodes it into NL output text
+
+actually six encoders (encoding layers) and six decoders, focussing on different parts of the input text.
+
+Each encoding layer feeds into the next, allowing a full understanding of the input text to be built up one ;evel at a time.
+
+The output of the last encoding layer feeds into each of the different decoder layers.
+
+Each of the two main components can be used independently:
+
+encoder + decoder tasks = translation, summarisation etc.
+
+encoder only tasks - sentence classification (eg. Is a moviw review positive or negative?)
+
+Bidirectional Encoder Representations from Transformers
+
+
+
+
+
+2. parameters
+
+3. tokens
+
+4. context window/length
+
+
 ----
 encoders and decoders
 
