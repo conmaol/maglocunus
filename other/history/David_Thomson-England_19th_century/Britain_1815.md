@@ -4,7 +4,7 @@
 
 ## The social scene
 
-§1. The Battle of Waterloo in 1815 (the end of the Napoleonic Wars) came at a time of rapid and unprecedented social change in England –
+§1. The climax of the Napoleonic Wars at Waterloo in 1815 came during a time of unprecedented social change in Britain –
 - rapid population growth (including Irish immigration)
 - rapid industrialisation
   - coal mines, cotton mills, woollen mills, blast furnaces
