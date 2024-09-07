@@ -5,7 +5,7 @@
 §1. Large Language Models (LLMs) are ”a kind of AI that can understand and produce human-like text”.
 
 §2. Here are some examples of LLMs –
-- BERT
+- BERT (Bidirectional Encoder Representations from Transformers)
 - GPT-3 (Da Vinci) – developed by OpenAI
 - GPT-4
 - LLaMa (2) – a group of LLMs developed by Meta (2023)
@@ -35,31 +35,16 @@
 - This reward model is then used to optimise the pre-trained fine-tune LLM, using the **Proximal Policy Optimisation** (PPO) algorithm.
 - You end up with a LLM like GPT-4, which is much better at following the user’s instructions.
 
-LLM components
+§9. The transformer architecture underlying all LLMs has two main kinds of component – 
+- **Encoders** accept natural language input and gradually build up a full internal understanding of the different aspects of this input text.
+- **Decoders** generate natural language output text from some kind of internal representation
 
-1. Transformer arcihtecture (simplified)
+§10. Examples of LLM tasks –
+- **encoder-only** – sentence classification (eg. deciding if a film review is positive or negative)
+- **decoder-only** – text generation
+- **encoder + decoder** – translation, summarisation
 
-Two main components: encoder; decoder
 
-tasks of each
-
-the encoder takes NL input text and encodes it into some kind of internal representation
-
-the decoder take the internal representation and decodes it into NL output text
-
-actually six encoders (encoding layers) and six decoders, focussing on different parts of the input text.
-
-Each encoding layer feeds into the next, allowing a full understanding of the input text to be built up one ;evel at a time.
-
-The output of the last encoding layer feeds into each of the different decoder layers.
-
-Each of the two main components can be used independently:
-
-encoder + decoder tasks = translation, summarisation etc.
-
-encoder only tasks - sentence classification (eg. Is a moviw review positive or negative?)
-
-Bidirectional Encoder Representations from Transformers
 
 
 
