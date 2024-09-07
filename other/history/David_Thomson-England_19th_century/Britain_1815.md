@@ -2,15 +2,17 @@
 
 ## The social scene
 
-m
+- the ‘Speenhamland system’
+- dandies and dandizettes
 
 ## The political scene
 
-m
+- liberal nationalism
 
 ## The international scene
 
-m
+- permanent civil service
+- ‘Benthamism’
 
 ## The Victorial adventure
 
