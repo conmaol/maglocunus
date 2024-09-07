@@ -4,7 +4,7 @@
 
 ## The social scene
 
-§1. A time of rapid and unprecedented social change –
+§1. The Battle of Waterloo in 1815 (the end of the Napoleonic Wars) came at a time of rapid and unprecedented social change in England –
 - rapid population growth (including Irish immigration)
 - rapid industrialisation
   - coal mines, cotton mills, woollen mills, blast furnaces
