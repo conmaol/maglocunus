@@ -4,7 +4,7 @@
 
 ## The social scene
 
-§1. A time of revolutionary social change –
+§1. A time of rapid and unprecedented social change –
 - rapid population growth (including Irish immigration)
 - rapid industrialisation
   - coal mines, cotton mills, woollen mills, blast furnaces
