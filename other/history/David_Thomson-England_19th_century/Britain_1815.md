@@ -3,7 +3,7 @@
 ## The social scene
 
 - the ‘Speenhamland system’ [https://en.wikipedia.org/wiki/Speenhamland_system]
-- dandies and dandizettes
+- dandies and dandizettes [https://en.wikipedia.org/wiki/Dandy]
 
 ## The political scene
 
