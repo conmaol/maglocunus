@@ -18,7 +18,13 @@
 
 ### 2.1. Data
 
+§3. Data consists of representations of facts about the world, stored and processed (aggregated and analysed) on a computer, so as to make a profit, improve health of influence public policy.
+
+§4. Data should be consistent and well-understood, hence the need for explanatory **metadata**.
+
 ### 2.2. Data and information
+
+§5. 
 
 ### 2.3. Data as an organisational asset
 
