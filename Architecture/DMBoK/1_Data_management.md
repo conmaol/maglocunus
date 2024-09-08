@@ -24,7 +24,7 @@
 
 ### 2.2. Data and information
 
-§5. 
+§5. Contrary to popular belief (eg. the data-information,-knowledge-wisdom ‘pyramid’), there is no clear hierarchical relationship between data and information – “data is a form of information and information is a form of data”.
 
 ### 2.3. Data as an organisational asset
 
