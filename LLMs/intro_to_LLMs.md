@@ -60,7 +60,7 @@
 
 §14. In 2020, OpenAI published research (the ‘Scaling laws’) demonstrating that the most effective way of increasing the performance of an LLM is to increase the size of the model (the number of parameters), compared to increasing the size of the training dataset (number of tokens) or training the model for longer.
 
-§15. GPT-3 was designed to excel at ‘few-shot learning’ – rather than having to retrain an LLM for every different kind of task (sentiment analysis, question answering etc.), a large enough LLM should be able to learn new tasks when prompted with a couple of examples.
+§15. GPT-3 was designed to enable ‘few-shot learning’ – rather than having to retrain an LLM for every different kind of task (sentiment analysis, question answering etc.), a large enough LLM should be able to learn new tasks when prompted with a couple of examples.
 
 
 ----
