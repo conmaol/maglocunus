@@ -5,11 +5,16 @@
 §1. Large Language Models (LLMs) are ”a kind of AI that can understand and produce human-like text”.
 
 §2. Here are some examples of LLMs –
-- BERT (Bidirectional Encoder Representations from Transformers)
-- GPT-3 (Da Vinci) – developed by OpenAI
-- GPT-4
-- LLaMa (2) – a group of LLMs developed by Meta (2023)
-- ChatGPT
+- OpenAI
+  - **GPT-3** (Da Vinci) – 175 billion parameters; context length: 2048 tokens
+  - **ChatGPT** – context length: 4096 tokens
+  - **GPT-4** – context length: 8192 tokens
+  - **GPT-4-32k** – context length: 32k tokens
+- **BERT** (Bidirectional Encoder Representations from Transformers)
+- Meta
+  - **LLaMa 2** – (2023); 70 billion parameters
+- Anthropic
+  - **Claude 2** – context-length: 100k tokens
 
 §3. An LLM is a software system which accepts an input text from the user (the *prompt*) and responds with an output text (the *completion*).
 - For example, the user inputs a text along with a request for a 250-word summary, and the LLM responds with the requested summary.
@@ -44,24 +49,15 @@
 - **decoder-only** – text generation
 - **encoder + decoder** – translation, summarisation
 
+§11. The ‘size’ of an LLM is measured by its **parameter count** – the number of weighted edges between layered nodes in the trained neural network.  
+
+§12. The ‘scope’ of an LLM is measured by its **context window/length** – the number of tokens it can remember and work with during a single prompt-completion interaction. For example – What size of text can be given to an LLM for summarisation? What length of story can an LLM generate?
 
 
-
-
-
-
-2. parameters
-
-3. tokens
-
-4. context window/length
 
 
 ----
-encoders and decoders
 
-parameters
-----
 
 Next: [https://web.stanford.edu/~jurafsky/slp3/]
 
