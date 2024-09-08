@@ -20,7 +20,7 @@
 
 §3. Data consists of representations of facts about the world, stored and processed (aggregated and analysed) on a computer, so as to make a profit, improve health of influence public policy.
 
-§4. Data should be consistent and well-understood, hence the need for explanatory **metadata**.
+§4. Data should be consistent and well-understood, hence the need for explanatory **metadata** (including Data Architecture and Data Governance).
 
 ### 2.2. Data and information
 
