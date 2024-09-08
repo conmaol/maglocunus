@@ -10,7 +10,8 @@
   - **ChatGPT** – context length: 4096 tokens
   - **GPT-4** – context length: 8192 tokens
   - **GPT-4-32k** – context length: 32k tokens
-- **BERT** (Bidirectional Encoder Representations from Transformers)
+- Google
+  - **BERT** (Bidirectional Encoder Representations from Transformers) – 110 million parameters; 250 billion training tokens
 - Meta
   - **LLaMa 2** – (2023); 70 billion parameters
 - Anthropic
@@ -52,6 +53,14 @@
 §11. The ‘size’ of an LLM is measured by its **parameter count** – the number of weighted edges between layered nodes in the trained neural network.  
 
 §12. The ‘scope’ of an LLM is measured by its **context window/length** – the number of tokens it can remember and work with during a single prompt-completion interaction. For example – What size of text can be given to an LLM for summarisation? What length of story can an LLM generate?
+
+§13. BERT is used by Google search, and was trained for two specific language understanding (ie. encoding) tasks – 
+- **Masked Language Modelling** (MLM) - predicting a masked-out word
+- **Next Sentence Prediction** (NSP) - deciding whether one sentence logically follows from another
+
+
+Unlike GPT-3 and 4: trained on for next token generation
+
 
 
 
