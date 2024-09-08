@@ -6,14 +6,14 @@
 
 §2. Here are some examples of LLMs –
 - OpenAI
-  - **GPT-3** (Da Vinci) – 175 billion parameters; context length: 2048 tokens
+  - **GPT-3** (Generative Pre-trained Transformer – 2020) – 175 billion parameters; 300 billion training tokens; context length: 2048 tokens
   - **ChatGPT** – context length: 4096 tokens
   - **GPT-4** – context length: 8192 tokens
   - **GPT-4-32k** – context length: 32k tokens
 - Google
-  - **BERT** (Bidirectional Encoder Representations from Transformers) – 110 million parameters; 250 billion training tokens
+  - **BERT** (Bidirectional Encoder Representations from Transformers – 2018) – 110 million parameters; 250 billion training tokens
 - Meta
-  - **LLaMa 2** – (2023); 70 billion parameters
+  - **LLaMa 2** (2023) – 70 billion parameters
 - Anthropic
   - **Claude 2** – context-length: 100k tokens
 
@@ -58,11 +58,9 @@
 - **Masked Language Modelling** (MLM) - predicting a masked-out word
 - **Next Sentence Prediction** (NSP) - deciding whether one sentence logically follows from another
 
+§14. In 2020, OpenAI published research (the ‘Scaling laws’) demonstrating that the most effective way of increasing the performance of an LLM is to increase the size of the model (the number of parameters), compared to increasing the size of the training dataset (number of tokens) or training the model for longer.
 
-Unlike GPT-3 and 4: trained on for next token generation
-
-
-
+§15. GPT-3 was designed to excel at ‘few-shot learning’ – rather than having to retrain an LLM for every different kind of task (sentiment analysis, question answering etc.), a large enough LLM should be able to learn new tasks when prompted with a couple of examples.
 
 
 ----
