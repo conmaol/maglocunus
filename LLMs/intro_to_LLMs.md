@@ -13,8 +13,8 @@
 - Google
   - **BERT** (Bidirectional Encoder Representations from Transformers – 2018) – 110 million parameters; 250 billion training tokens
   - **Bard**
-  - **PaLM** (Pathways Language Model – 2022) – 540 billion parameters; 780 billion training tokens
-  - **PaLM 2** (2023)
+  - **PaLM** (Pathways Language Model – 2022) – 540 billion parameters; 780 billion training tokens (multilingual)
+  - **PaLM 2** (2023) – unknown size
   - DeepMind
     - **Gopher** (2022) – 280 billion parameters; 300 billion training tokens
     - **Chinchilla** – 70 billion parameters; 1.4 **trillion** training tokens
@@ -74,21 +74,19 @@
 
 §16. Against the trend to increase model size to get better performance, Google DeepMind’s Chinchilla LLM demonstrated that a smaller model can signidicantly outperform a larger model when it is trained on significantly more tokens. The concluded that model size and corpus size should be scaled in equal proportion, and that current LLMs may well be ‘over-sized’.
 
-§17.
+§17. Google’s experience with PaLM suggests that certain tasks require larger LLMs than others – 
+- 8 billion parameters – arithmetic, question answering, language understanding
+- 62 billion parameters – summarisation, common-sense reasoning, translation
+- 540 billion parameters – general knowledge, reading comprehension, joke explanation
 
-PaLM Pathways Language Model (Google 2022)
-540 billion paraneters
-780 billion training tokens (multilingual > 100 languages; 78% en)
+§18. PaLM 2 is even bigger and better than PaLM. It has passed advanced language proficiency and medical licensing exams (Med-PaLM 2), and is much better at mathematical reasoning and computer programming. It has multimodal capabilities (eg. image understanding) and is destined to power the next generation of Google products (Google Docs, Gmail, etc).
 
-more tasks needs an order of magnitude increase in model size ??
+§19. 
 
+ChatGPT
 
-PaLM 2
-2023
-has passed advanced language proficiency exams, and medical licensing exam questions
-much better at mathematical reasoning and computer programming
-multimodal capabilities (eg. image understanding)
-will power Google products
+GPT-4
+
 
 
 ----
