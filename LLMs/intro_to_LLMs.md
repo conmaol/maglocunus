@@ -7,14 +7,15 @@
 §2. Here are some examples of LLMs –
 - OpenAI
   - **GPT-3** (Generative Pre-trained Transformer – 2020) – 175 billion parameters; 300 billion training tokens; context length: 2048 tokens
-  - **ChatGPT** – context length: 4096 tokens
-  - **GPT-4** – context length: 8192 tokens
+  - **GPT-3.5**
+  - **ChatGPT** (2022) – context length: 4096 tokens
+  - **GPT-4** (2023) – context length: 8192 tokens; other specifications are secret
   - **GPT-4-32k** – context length: 32k tokens
 - Google
   - **BERT** (Bidirectional Encoder Representations from Transformers – 2018) – 110 million parameters; 250 billion training tokens
   - **Bard**
   - **PaLM** (Pathways Language Model – 2022) – 540 billion parameters; 780 billion training tokens (multilingual)
-  - **PaLM 2** (2023) – unknown size
+  - **PaLM 2** (2023) – specifications are secret
   - DeepMind
     - **Gopher** (2022) – 280 billion parameters; 300 billion training tokens
     - **Chinchilla** – 70 billion parameters; 1.4 **trillion** training tokens
@@ -49,7 +50,7 @@
 - The human labeller then ranks these outputs from best to worst, and tags them for inappropriate language, irrelevance, factual inaccuracy etc.
 - This ‘human feedback’ is then used to train a **reward model**, assigning a score to each generated output text.
 - This reward model is then used to optimise the pre-trained fine-tune LLM, using the **Proximal Policy Optimisation** (PPO) algorithm.
-- You end up with a LLM like GPT-4, which is much better at following the user’s instructions.
+- You end up with a LLM like GPT-3.5, which is much better at following the user’s instructions.
 
 §9. The transformer architecture underlying all LLMs has two main kinds of component – 
 - **Encoders** accept natural language input and gradually build up a full internal understanding of the different aspects of this input text.
@@ -81,11 +82,12 @@
 
 §18. PaLM 2 is even bigger and better than PaLM. It has passed advanced language proficiency and medical licensing exams (Med-PaLM 2), and is much better at mathematical reasoning and computer programming. It has multimodal capabilities (eg. image understanding) and is destined to power the next generation of Google products (Google Docs, Gmail, etc).
 
-§19. 
+§19. ChatGPT (2022) is a variant on GPT-3.5, optimised for dialogue. GPT-4 (2023) is bigger and better, especially at complex reasoning and has human-like performance in high school exams. GPT-4 is also multimodal, allowing for images as input. Weaknesses of GPT-4 are:
+- The LLM cannot be fine-tuned for specialist subjects (unlike GPT-3).
+- Knowledge is not updated in real-time (stuck in September 2021).
+- It sometimes makes up facts.
 
-ChatGPT
-
-GPT-4
+§20.
 
 
 
