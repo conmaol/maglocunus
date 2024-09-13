@@ -20,11 +20,15 @@
     - **Gopher** (2022) – 280 billion parameters; 300 billion training tokens
     - **Chinchilla** – 70 billion parameters; 1.4 **trillion** training tokens
 - Meta
-  - **LLaMa 2** (2023) – 70 billion parameters
+  - **OPT** (Open Pre-trained Transformers) – similar to GPT-3 
+  - **LLaMa** – 7-65 billion parameters; open model
+  - **LLaMa 2** (2023) – 70 billion parameters; 2 trillion training tokens; context length: 4000 tokens; open model
 - Anthropic
   - **Claude 2** – context-length: 100k tokens
 - MicroSoft/Nvidia
   - **MT-NLG** (Megatron-Turing) (2022) – 530 billion parameters; 270 billion training tokens
+- HuggingFace –
+  - **BLOOM** – 176 billion parameters; open model
 - **LaMDA** (2022) – 137 billion parameters; 168 billion training tokens
 - **Jurassic** (2021) – 178 billion parameters; 300 billion training tokens
 
@@ -87,13 +91,16 @@
 - Knowledge is not updated in real-time (stuck in September 2021).
 - It sometimes makes up facts.
 
-§20.
+§20. Open LLMs allow people not just to use them, but also to tweak, experiment with, and improve them. Some example of well-known open LLMs are OPT, BLOOM and the LLaMa models (the most popular, because the models are smaller, and can run on a single GPU).
 
+§21. The Holistic Evaluation of Language Models (HELM) provides a set of standardised benchmarks for comparing LLMs, eg. multitask language understanding, fairness, efficiency, bias etc. HuggingFace does the same for open LLMs.
 
 
 ----
 
 
 Next: [https://web.stanford.edu/~jurafsky/slp3/]
+LLMs: Text classification for NLP using BERT
+
 
 
