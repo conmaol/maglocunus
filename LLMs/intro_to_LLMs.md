@@ -53,7 +53,7 @@
 - A pre-trained, fine-tuned LLM is asked to generate a number of different output texts for the same prompt.
 - The human labeller then ranks these outputs from best to worst, and tags them for inappropriate language, irrelevance, factual inaccuracy etc.
 - This ‘human feedback’ is then used to train a **reward model**, assigning a score to each generated output text.
-- This reward model is then used to optimise the pre-trained fine-tune LLM, using the **Proximal Policy Optimisation** (PPO) algorithm.
+- This reward model is then used to optimise the pre-trained, fine-tuned LLM, using the **Proximal Policy Optimisation** (PPO) algorithm.
 - You end up with a LLM like GPT-3.5, which is much better at following the user’s instructions.
 
 §9. The transformer architecture underlying all LLMs has two main kinds of component – 
@@ -75,9 +75,9 @@
 
 §14. In 2020, OpenAI published research (the ‘Scaling laws’) demonstrating that the most effective way of increasing the performance of an LLM is to increase the size of the model (the number of parameters), compared to increasing the size of the training dataset (number of tokens) or training the model for longer.
 
-§15. GPT-3 was designed to enable ‘few-shot learning’ – rather than having to retrain an LLM for every different kind of task (sentiment analysis, question answering etc.), a large enough LLM should be able to learn new tasks when prompted with a couple of examples.
+§15. GPT-3 was designed to enable **few-shot learning** – rather than having to retrain an LLM for every different kind of task (sentiment analysis, question answering etc.), a large enough LLM should be able to learn new tasks when prompted with a couple of examples.
 
-§16. Against the trend to increase model size to get better performance, Google DeepMind’s Chinchilla LLM demonstrated that a smaller model can signidicantly outperform a larger model when it is trained on significantly more tokens. The concluded that model size and corpus size should be scaled in equal proportion, and that current LLMs may well be ‘over-sized’.
+§16. Against the trend to increase model size to get better performance, Google DeepMind’s Chinchilla LLM demonstrated that a smaller model can significantly outperform a larger model when it is trained on significantly more tokens. The concluded that model size and corpus size should be scaled in equal proportion, and that current LLMs may well be ‘over-sized’.
 
 §17. Google’s experience with PaLM suggests that certain tasks require larger LLMs than others – 
 - 8 billion parameters – arithmetic, question answering, language understanding
