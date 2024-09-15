@@ -2,6 +2,8 @@
 
 [Notes from Alex Kerr’s (1993) *Lost Japan* ch. 12]
 
+Osaka is different to the rest of Japan, but becoming less so.
+
 ugly but fun
 
 Tower of the Sun (Taro Okamoto) https://en.wikipedia.org/wiki/Tower_of_the_Sun  太陽の塔 
