@@ -2,11 +2,15 @@
 
 [Notes from Alex Kerr’s (1993) *Lost Japan* ch. 12]
 
-§1. Like Taro Okamoto’s [太陽の塔](https://en.wikipedia.org/wiki/Tower_of_the_Sun) (*Taiyō no Tō* – ‘Tower of the Sun’), the centrepiece of [Expo 70](https://en.wikipedia.org/wiki/Expo_%2770), 大阪 is ugly but fun.
+§1. Like Taro Okamoto’s [太陽の塔](https://en.wikipedia.org/wiki/Tower_of_the_Sun) (*Taiyō no Tō* – ‘Tower of the Sun’, the centrepiece of [Expo 70](https://en.wikipedia.org/wiki/Expo_%2770)), 大阪 is ugly but fun.
 
-> Few major cities of the developed world cold match Osaka for the overall unattractiveness of its cityscape, which consists mostly of a jumble of cube-like buildings and a web of expressways and cement-walled canals.
+> Few major cities of the developed world could match Osaka for the overall unattractiveness of its cityscape, which consists mostly of a jumble of cube-like buildings and a web of expressways and cement-walled canals.
 >
-> It has the best entertainment districts in Japan, the most lively youth neighbourhood, the most charismatic geisha madams and the most colorful gangsters.
+> It has the best entertainment districts in Japan, the most lively youth neighborhood, the most charismatic geisha madams and the most colorful gangsters.
+
+Osakans are not like the other Japanese.
+
+> Osaka people are impatient and love to disobey rules.
 
 §2. The most characteristic district of 大阪 is [新世界](https://en.wikipedia.org/wiki/Shinsekai) (*Shinsekai* – ‘New World’), built around its own tower – [通天閣](https://en.wikipedia.org/wiki/Tsūtenkaku) (*Tsūtenkaku* – ‘Tower Reaching Heaven’)
 
