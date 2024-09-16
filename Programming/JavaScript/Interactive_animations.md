@@ -1,6 +1,6 @@
 # Interactive animations
 
-[Notes from LinkedIn Learning course Interactive Animations with CSS and JavaScript]
+[Notes from LinkedIn Learning course *Interactive Animations with CSS and JavaScript*]
 
 # HTML 5
 
