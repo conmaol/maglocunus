@@ -1,0 +1,14 @@
+
+
+html, body { /* always use these for consistency */
+  margin: 0;
+  padding: 0;
+}
+
+hp-content {
+  display: block;
+  background-color: #f00;
+  width: 100vw; /* 100% of the viewable width */
+  height: 100vh;
+
+}
