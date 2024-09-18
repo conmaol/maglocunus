@@ -1,8 +1,8 @@
 # A simple slide show
 
-Here is code for a simple slide presentation that allows the user to click between (attractively presented!) slides.
+Here is code for a simple slide presentation that allows the user to click between (attractively presented!) slides. There is also an option given for automatically switching between slides after a given period of time.
 
-This is adapted from the Linked In Learning course.
+This is adapted from the Linked In Learning course *Interactive Animations with CSS and JavaScript*.
 
 ## index.html
 
@@ -75,22 +75,37 @@ hp-slide.active {
 ```
 window.addEventListener('DOMContentLoaded', function (e) { // wait until document is fully parsed
   var presentation = document.querySelector('hp-presentation');
-  presentation.onclick = handlePresentationClick;
+  presentation.onclick = changeSlide;
 });
 
-function handlePresentationClick(e) {
+function changeSlide(e) {
   var current = document.querySelector('hp-slide.active');
   var next = current.nextElementSibling;
   if (next) {
     current.classList.remove('active');
     next.classList.add('active');
   }
-  else {
-    alert('Back to start!');
+  else { // go back to start
     current.classList.remove('active');
     current.parentNode.firstElementChild.classList.add('active');
   }
 }
 ```
+Alternatively, the slides can be set up to switch automatically with the following JavaScript:
 
+```
+window.addEventListener('DOMContentLoaded', function (e) {
+  setTimeout(function (e) { changeSlide(e); }, 1000); // wait 1 second
+});
+
+function changeSlide(e) {
+  var current = document.querySelector('hp-slide.active');
+  var next = current.nextElementSibling;
+  if (next) {
+    current.classList.remove('active');
+    next.classList.add('active');
+    setTimeout(function (e) { changeSlide(e); }, 1000);
+  }  
+}
+```
 
