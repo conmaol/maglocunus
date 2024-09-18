@@ -1,0 +1,162 @@
+
+
+html, body { /* always use these for consistency */
+  margin: 0;
+  padding: 0;
+}
+
+hp-content {
+  display: flex;
+  background-color: #f00;
+  width: 100vw; /* 100% of the viewable width */
+  height: 100vh;
+  justify-content: center; /* center child (presentation) within content */
+  align-items: center;
+}
+
+hp-presentation>hp-slide {
+  display: none;
+}
+
+hp-presentation>hp-slide.active {
+  display: inline-block;
+}
+
+hp-presentation {
+  display: block;
+  background-color: #fff;
+  width: 80vmin; /* 80% of the minimum of viewable width and viewable height */
+  height: 80vmin; /* a square */
+  border: .2em solid #000;
+  border-radius: 1em;
+}
+
+hp-slide {
+  display: inline-block; /* need to understand this better */
+  /* background-color: #0f0; */
+  width: 80%;
+  height: 80%;
+  margin: 10%; /* centre slide within presentation square */
+  font-size: 8vmin;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-align: center;
+  /*border: 1px solid #000;*/
+}
+
+hp-chooser {
+  display: flex;
+  /* background-color: #0ff; */
+  /* border: 1px solid #000; */
+  width: 100%;
+  height: 20vmin;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+hp-chooser.fixed {
+  height: auto;
+}
+
+hp-chooser * {
+  max-width: 20%;
+  margin: 5% 2.5%;
+  /* border: 1px solid #000; */
+}
+
+hp-chooser.chosen > *.chosen {
+  max-width: 50%;
+}
+
+hp-chooser.fixed > *.chosen {
+  max-width: 60%;
+  animation-name: chosen_fixed;
+  animation-duration: .5s;
+}
+
+@keyframes chosen_fixed {
+  from {
+    max-width: 50%;
+  }
+  to {
+    max-width: 60%;
+  }
+}
+
+hp-chooser.chosen.animate > *.chosen {
+  animation-name: chosen;
+  animation-duration: .5s;
+  animation-timing-function: ease;
+}
+
+@keyframes chosen {
+  from {
+    max-width: 20%;
+  }
+  to {
+    max-width: 50%;
+  }
+}
+
+hp-chooser.chosen > *:not(.chosen) {
+  max-width: 10%;
+  opacity: .25;
+}
+
+hp-chooser.fixed > *:not(.chosen) {
+  max-width: 0%;
+  opacity: .25;
+  animation-name: unchosen_fixed;
+  animation-duration: .5s;
+}
+
+@keyframes unchosen_fixed {
+  from {
+    max-width: 10%;
+  }
+  to {
+    max-width: 0%;
+  }
+}
+
+
+hp-chooser.chosen.animate > *:not(.chosen) {
+  animation-name: unchosen;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+}
+
+@keyframes unchosen {
+  from {
+    max-width: 20%;
+  }
+  to {
+    max-width: 10%;
+    opacity: .25;
+  }
+}
+
+hp-learn {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+hp-learn hp-learn-no, hp-learn hp-learn-yes {
+  max-width: 20%;
+}
+
+hp-learn img {
+  max-width: 50%;
+  transition-property: margin;
+  transition-duration: .5s;
+}
+
+hp-learn-no, hp-learn-yes {
+  display: none;
+}
