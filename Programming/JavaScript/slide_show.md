@@ -2,6 +2,8 @@
 
 Here is code for a simple slide presentation that allows the user to click between (attractively presented!) slides.
 
+This is adapted from the Linked In Learning course.
+
 ## index.html
 
 ```
@@ -13,9 +15,9 @@ Here is code for a simple slide presentation that allows the user to click betwe
     <link rel="stylesheet" href="style.css?v=1.0"
   </head>
   <body>
-    <hp-content>
+    <hp-content> <!-- custom HTML elements -->
       <hp-presentation>
-        <hp-slide class="active">slide 1</hp-slide>
+        <hp-slide class="active">slide 1</hp-slide> <!-- note the important class value here -->
         <hp-slide>slide 2</hp-slide>
         <hp-slide>slide 3</hp-slide>
         <hp-slide>slide 4</hp-slide>
@@ -26,6 +28,7 @@ Here is code for a simple slide presentation that allows the user to click betwe
   </body>
 </html>
 ```
+
 ## style.css
 
 ```
