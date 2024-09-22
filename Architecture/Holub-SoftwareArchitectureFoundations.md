@@ -12,7 +12,11 @@
 
 ## The software architect
 
-mm
+Traditional architects - waterfall, big requirements up front
+
+Modern architects - agile, lean
+
+
 
 ## Thinking architecturally
 
