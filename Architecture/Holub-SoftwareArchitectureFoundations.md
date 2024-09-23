@@ -2,19 +2,22 @@
 
 [Notes from Allen Holun’s LinkedIn learning course *Software Architecture Foundations* (2019)]
 
-§1. Software architects design high-level software systems which:
+§1. Software architects are **high-level** designers of software systems which:
 - solve the customer’s real-world problem
 - reflect the business domain
 - are reliable, scalable and maintainable
 - embody aesthetic principles and judgments (cleanliness, elegance) derived from years of programming experience.
 
-§2. Software architects don’t just plug together pre-built components (‘lego blocks’). They start with the customer’s problem and work down towards the implementation.
+§2. Software architects don’t just plug together pre-built components (‘lego blocks’). They start with the customer’s **problem** and work downwards towards the implementation.
 
 ## The software architect
 
-Traditional architects - waterfall, big requirements up front
+§3. Traditional software architects work in **waterfall** organisations. They see themselves as isolated, powerful, brilliant visionary thinkers, decision-makers and permission-granters, whose job it is to spend months creating **big upfront designs** (perhaps in the form of UML diagrams). They then pass on these designs to ‘code monkey’ minions for implementation. 
 
-Modern architects - agile, lean
+§4. Modern software architects work in **agile**, **lean** organisations. They welcome change, working in the Inspect and Adapt Loop – talk to users, build/refine, deploy, review, talk to users, ... All design is **incremental** and **experimental**. In an agile team, everybody is an architect, and nobody asks permission to experiment. Agile architects are **servant-leaders** – teaching, coaching, coordinating. They ensure and assure design coherence across the system (‘big picture’), reviewing the work of all sub-teams and guiding/nudging them to improve.
+
+
+
 
 
 
