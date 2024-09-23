@@ -18,7 +18,7 @@
 
 §5. Agile software architects work day-to-day in non-silo’d, cross-functional teams, helping to collaboratively design an architecture which solves a customer’s problem. They use whiteboards, sticky notes and **dot-voting**; they focus on **bounded contexts** and **user stories**; they run **event storming** sessions and conduct **sprint reviews** (live feedback sessions with customers); they do 1-to-1 **mentoring** sessions with team members who want to learn about about software architecture; they run regular **architecture guild** meetings, where one member from each team discuss and improve the architecture.
 
-§6. To be a good software architect, you need to: become a good programmer; know about design patterns and how they interact; network constantly.
+§6. To be a good software architect, you need to: become an expert programmer and do it every day on your own pet system (don’t pretend to be ‘post-technical’); know about design patterns and how they interact; network constantly.
 
 ## Thinking architecturally
 
