@@ -8,7 +8,7 @@ His wife – a Malay.
 
 Nina, their daughter.
 
-Dain ....
+Dain Maroola – a Malay.
 
 The Rajah.
 
@@ -16,12 +16,21 @@ Abdulla, his rival.
 
 ## Main narrative
 
-> Almayer is standing on the veranda of his decaying, neglected house.   
+> Almayer is standing on the veranda of his decaying, neglected house.  
 > The sun is setting over the muddy, swollen, angry, river.  
-> Almayer is thinking about his splendid future.  
-> His wife calls him in to dinner.  
+> Almayer is thinking about gold and his ‘splendid future’:
+>
+> > Dain returns.  
+> > Almayer moves back to Europe with his daughter.  
+> > They are ‘rich and respected’.  
+>
+> His (‘shrill’, ‘unpleasant’) wife calls him in to dinner.  
 > Almayer watches dead logs and uprooted trees float downstream.  
-> He thinks back to his younger days in Macassar.  
+> He thinks back to his earlier life in Macassar, twenty-odd years previously:
+> 
+> > mm  
+> > mm
+> 
 > It is now dark.  
 > Almayer climbs down from the veranda to the riverbank.  
 > Dain appears at the bank in a canoe with two other men.  
