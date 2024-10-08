@@ -12,9 +12,26 @@ Dain ....
 
 The Rajah.
 
+Abdulla, his rival.
+
 ## Main narrative
 
-KA is standing on the veranda of his decaying house, watching the sun set over the swollen, angry, muddy river as he daydreams about his splendid future. His wife calls him in to dinner, but he ignores her, watching the dead logs and uprooted trees floating downstream and thinking back to his younger days in Macassar. Suddenly, it is dark and DM appears at the bank in a canoe with two other men. Dain promises to come back the next day and heads off across the river to the Rajah’s stockaded compound. KA goes inside.
+> Almayer is standing on the veranda of his decaying, neglected house.   
+> The sun is setting over the muddy, swollen, angry, river.  
+> Almayer is thinking about his splendid future.  
+> His wife calls him in to dinner.  
+> Almayer watches dead logs and uprooted trees float downstream.  
+> He thinks back to his younger days in Macassar.  
+> It is now dark.  
+> Almayer climbs down from the veranda to the riverbank.  
+> Dain appears at the bank in a canoe with two other men.  
+> Dain promises to come back the next day and heads off across the river to the Rajah’s stockaded compound.  
+> Almayer goes inside the house.  
+> A servant brings out his dinner and he eats, while conversing with Nina. He tells her about meeting Dain, and she reacts uncomfortably. He talked about their up coming glorious life in Europe, away from this swamp. Thunderstorm.
+
+Almayers goes to bed and falls asleep. Nina looked out from the veranda, anxiously.
+
+
 
 
 
