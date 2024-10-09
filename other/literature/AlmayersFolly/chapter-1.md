@@ -16,19 +16,29 @@ Abdulla, his rival.
 
 ## Main narrative
 
-> Almayer is standing on the veranda of his decaying, neglected house.  
+> Almayer is standing on the veranda of his ‘new but already decaying’, neglected house, leaning on the balustrade.  
 > The sun is setting over the muddy, swollen, angry, river.  
-> Almayer is thinking about gold and his ‘splendid future’:
+> Almayer is thinking (‘dreaming’) about his ‘splendid future’:
 >
 > > Dain returns.  
 > > Almayer moves back to Europe with his daughter.  
 > > They are ‘rich and respected’.  
 >
-> His (‘shrill’, ‘unpleasant’) wife calls him in to dinner.  
-> Almayer watches dead logs and uprooted trees float downstream.  
-> He thinks back to his earlier life in Macassar, twenty-odd years previously:
+> This is a habit of Almayer’s:
+>
+> > He looks out over the river at sunset, thinking about gold.
 > 
-> > mm  
+> His (‘shrill’, ‘unpleasant’) wife calls him in to dinner: ‘Kaspar! Makan!’.  
+> Almayer watches dead logs and uprooted trees float downstream.  
+> He thinks back to his earlier life in Macassar, twenty years previously:
+> 
+> > Almayer arrives in Macassar.  
+> > He is poor but optimistic.  
+> > He speaks English well, and is good at arithmetic.  
+> > He has an intention:  
+> >
+> > > He becomes wealthy working for old Hudig.
+> > 
 > > mm
 > 
 > It is now dark.  
