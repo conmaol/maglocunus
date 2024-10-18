@@ -2,7 +2,7 @@
 
 Some introductory notes from LinkedIn Learning course *Learning Excel: Data Analysis* (Curt Frye, September 2022).
 
-## Foundational concepts of data analysis
+## Foundational concepts
 
 In its simplest form a dataset can be presented as a list of numbers (integers), eg. a column of cells in a spreadsheet, like:
 
@@ -10,18 +10,22 @@ In its simplest form a dataset can be presented as a list of numbers (integers),
 Days in transit = [23, 38, 29, 28, 30, 28, 29, 27, 27, 28, 37]
 ```
 
-One basic operation on this kind of dataset is to **sort** it:
+One basic operation on this kind of (numeric) dataset is to **sort** it:
 
 ```
 Days in transit (sorted) = [23, 27, 27, 28, 28, 28, 29, 29, 30, 37, 38]
 ```
 
-The most basic descriptive facts about this kind of dataset are:
-- the **mean** – the average value ie. (23 + 38 + 29 + 28 + 30 + 28 + 29 + 27 + 27 + 28 + 37) / 11 = 29.45 days
-- the **median** – the middle value in the sorted dataset ie. 28 days
-- the **mode** – the mode common value ie. 28 days
+### Mean, median, mode
+
+The most basic descriptive facts about (the distribution of values in) this kind of dataset are:
+- the **mean** – the average value ie. `(23 + 38 + 29 + 28 + 30 + 28 + 29 + 27 + 27 + 28 + 37) / 11 = 29.45 days`
+- the **median** – the middle value in the sorted dataset ie. `28 days`
+- the **mode** – the mode common value ie. `28 days`
 
 If the mean and the median are close together, then the data is generally very evenly distributed (with few outliers).
+
+### Datasets as graphs
 
 Importantly, at its most fundamental level, even this very simple kind of dataset is a graph:
 - there are 11 (labelled) nodes, each of which represents a shipment
@@ -41,7 +45,7 @@ days_in_transit(x2,38)
 days_in_transit(x11,37)
 ```
 
-And the dataset schema (model?):
+And the dataset schema is:
 
 ```
 ∀x. shipment(x) ∨ x ∈ {1, 2, 3, ...}
