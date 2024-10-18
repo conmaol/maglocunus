@@ -49,3 +49,6 @@ And the dataset schema (model?):
 ∀x. shipment(x) ↔ ∃y. ~shipment(y) & days_in_transit(x,y)
 ∀x∀y∀P. P(x,y) → days_in_transit(x,y)
 ```
+Here is an example of a fragment of this dataset represented as a graph. The red lines encode the `days_in_transit` relation, the black lines encode the linear ordering relationship on integers.
+
+![A simple model](simple-model.jpg)
