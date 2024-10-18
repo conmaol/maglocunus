@@ -41,9 +41,11 @@ days_in_transit(x2,38)
 days_in_transit(x11,37)
 ```
 
-And the dataset schema:
+And the dataset schema (model?):
 
-for all x, x is a (non-negative) integer or x is a shipment
-if x is a shipment then there is exactly one y such that y is an integer and y is connected to X by the days in transit relation
-there are no other relations
-
+```
+∀x. shipment(x) ∨ x ∈ {1, 2, 3, ...}
+∀x. shipment(x) ↔ x ∉ {1, 2, 3, ...}
+∀x. shipment(x) ↔ ∃y. ~shipment(y) & days_in_transit(x,y)
+∀x∀y∀P. P(x,y) → days_in_transit(x,y)
+```
