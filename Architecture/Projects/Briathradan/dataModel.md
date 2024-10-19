@@ -1,104 +1,57 @@
 # The Briathradan data model
 
-At the most fundamental level, Briathradan contains: **Gaelic terms** (eg. *balach*, *gille*); **English terms** (eg. *boy*, *lad*); and a **many-to-many equivalence relation** between them (eg. *balach* = *boy*, *balach* = *lad*, *gille* = *boy*, *gille* = *lad*).
+At the most fundamental level, Briathradan contains: **Gaelic terms** (eg. *balach*, *gille*); **English terms** (eg. *boy*, *lad*); and a **many-to-many equivalence relation** between them and the relevant authorities.
 
 Such a simple data model allows for the two basic tasks/queries:
-- What does Gaelic term X mean (in English)?
-- What is the Gaelic for (English term) X?
+- What does authority X say Gaelic term Y means (in English)?
+- What does authority X say is the Gaelic for (English term) Y?
 
-This simple data model takes the following tabular form:
-
-```
-| equivalence      |
-| Gaelic | English |
---------------------
-| balach | boy     |
-| balach | lad     |
-| gille  | boy     |
-| gille  | lad     |
-| ...    | ...     | 
-```
-Normalising this data model to reduce redundancy we get:
+This simple data model takes the following, slightly normalised tabular form:
 
 ```
-| Gaelic terms |
-| id  | term   |
+| Gaelic                    |
+| id  | form    | authority |
+-----------------------------
+| 1   | balach  | Dwelly    |
+| 2   | gille   | Dwelly    |
+| 3   | balach  | MacBain   |
+| 4   | gille   | MacBain   |
+| 5   | ballach | MacLaren  |
+| ... | ...     | ...       |
+
+
+| English      |
+| ref | form   |
 ----------------
-| 1   | balach |
-| 2   | gille  |
+| 1   | boy    |
+| 1   | lad    |
+| 2   | boy    |
+| 2   | lad    |
+| 3   | boy    |
+| 4   | lad    |
+| 5   | laddie |
 | ... | ...    |
-
-
-| English terms |
-| id  | term    |
------------------
-| 1   | boy     |
-| 2   | lad     |
-| ... | ...     |
-
-
-| equivalence            |
-| Gaelic ID | English ID |
---------------------------
-| 1         | 1          |
-| 1         | 2          |
-| 2         | 1          |
-| 2         | 2          |
-| ...       | ...        |
 ```
 
-## Authority
-
-However, for language political reasons, Gaelic learners are also very interested in the **authority** (ie. the particular lexicographer or terminologist) behind a particular equivalence. In other words, the queries they often want to make are things like:
-- What does authority X say that Gaelic term Y means?
-- What does authority X say is the Gaelic for Y?
-
-We can add authority into the normalised table-based model as follows:
+Some SQL queries:
 
 ```
-| authority      |
-| id  | name     |
-------------------
-| 1   | Dwelly   |
-| 2   | MacBain  |
-| 3   | MacLaren |
-| ... | ...      |  
-
-| Gaelic terms             |
-| id  | term   | authority |
-----------------------------
-| 1   | balach  | 1        |
-| 2   | gille   | 1        |
-| 3   | balach  | 2        |
-| 4   | gille   | 2        |
-| 5   | ballach | 3        |
-| 6   | gille   | 3        |
-| ... | ...     | ...      |
-
-
-| equivalent          |
-| Gaelic id | English |
------------------------
-| 1   | boy           |
-| 1   | lad           |
-| 2   | boy           |
-| 2   | lad           |
-| 3   | boy           |
-| 4   | lad           |
-| ... | ...           |
-
-
-| equivalence                           |
-| Gaelic ID | English ID | authority ID |
------------------------------------------
-| 1         | 1          | 1            |
-| 1         | 2          | 2            |
-| 2         | 1          | 2            |
-| 2         | 2          | 1            |
-| 2         | 1          | 1            |
-| 2         | 2          | 3            |
-| ...       | ...        | ...          |
+SELECT English.form, Gaelic.authority
+FROM Gaelic
+JOIN English
+ON Gaelic.id = English.ref
+WHERE Gaelic.form = 'gille';
 ```
+
+```
+SELECT Gaelic.form, Gaelic.authority
+FROM Gaelic
+JOIN English
+ON Gaelic.id = English.ref
+WHERE English.form = 'boy';
+```
+
+-----
 
 Here is an ERD for this data model so far:
 
