@@ -47,6 +47,8 @@ Normalising this data model to reduce redundancy we get:
 | ...       | ...        |
 ```
 
+## Authority
+
 However, for language political reasons, Gaelic learners are also very interested in the **authority** (ie. the particular lexicographer or terminologist) behind a particular equivalence. In other words, the queries they often want to make are things like:
 - What does authority X say that Gaelic term Y means?
 - What does authority X say is the Gaelic for Y?
@@ -90,10 +92,10 @@ And again we can normalise this to eliminate redundancy:
 | ...       | ...        | ...          |
 ```
 
-[Add diagram]
+Here is an ERD for this data model so far:
 
-![diagram](diagrams/briathradan-conceptual-model-1.jpg)
+![Briathradan conceptual model 1](diagrams/briathradan-conceptual-model-1.jpg)
 
-Inflectional forms?
+## Inflectional forms
 
 Hidden English terms?
