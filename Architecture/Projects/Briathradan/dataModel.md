@@ -53,22 +53,7 @@ However, for language political reasons, Gaelic learners are also very intereste
 - What does authority X say that Gaelic term Y means?
 - What does authority X say is the Gaelic for Y?
 
-We can add authority into the simple table-based model as follows:
-
-```
-| equivalence                        |
-| Gaelic ID | English ID | authority |
---------------------------------------
-| 1         | 1          | Dwelly    |
-| 1         | 2          | MacBain   |
-| 2         | 1          | MacBain   |
-| 2         | 2          | Dwelly    |
-| 2         | 1          | Dwelly    |
-| 2         | 2          | MacLaren  |
-| ...       | ...        | ...       |
-```
-
-And again we can normalise this to eliminate redundancy:
+We can add authority into the normalised table-based model as follows:
 
 ```
 | authority      |
@@ -78,6 +63,29 @@ And again we can normalise this to eliminate redundancy:
 | 2   | MacBain  |
 | 3   | MacLaren |
 | ... | ...      |  
+
+| Gaelic terms             |
+| id  | term   | authority |
+----------------------------
+| 1   | balach  | 1        |
+| 2   | gille   | 1        |
+| 3   | balach  | 2        |
+| 4   | gille   | 2        |
+| 5   | ballach | 3        |
+| 6   | gille   | 3        |
+| ... | ...     | ...      |
+
+
+| equivalent          |
+| Gaelic id | English |
+-----------------------
+| 1   | boy           |
+| 1   | lad           |
+| 2   | boy           |
+| 2   | lad           |
+| 3   | boy           |
+| 4   | lad           |
+| ... | ...           |
 
 
 | equivalence                           |
@@ -98,4 +106,28 @@ Here is an ERD for this data model so far:
 
 ## Inflectional forms
 
-Hidden English terms?
+A Gaelic term will often have a range of inflectional variants:
+- *balach* has the plural form *balaich* and the genitive singular *balaich*
+- *gille* has the plural form *gillean*
+
+- What does authority X say that Gaelic term/form Y means?
+- What does authority X say are the variant forms of Gaelic term Y?
+
+Rather than include these as independent Gaelic terms, it makes more sense, and is more efficient and elegant, to include them in a separate table, linked to entities in the `Gaelic terms` table:
+
+```
+| variants |
+| Gaelic ID | variant | class    | authority |
+----------------------------------
+| 1         | balaich | plural   | 1 |
+| 1         | balaich | genitive | 1 |
+| 2         | gillean | plural   | 1 |
+| 2         | gillean | plural   | 2 |
+| 2         | gillean | plural   | 2 |
+| ...       | ...     | ...      |
+```
+
+
+
+
+## Hidden English terms?
