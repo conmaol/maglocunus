@@ -18,7 +18,7 @@ This simple data model takes the following tabular form:
 | gille  | lad     |
 | ...    | ...     | 
 ```
-Normalising this data model we get:
+Normalising this data model to reduce redundancy we get:
 
 ```
 | Gaelic terms |
@@ -28,12 +28,14 @@ Normalising this data model we get:
 | 2   | gille  |
 | ... | ...    |
 
+
 | English terms |
 | id  | term    |
 -----------------
 | 1   | boy     |
 | 2   | lad     |
 | ... | ...     |
+
 
 | equivalence            |
 | Gaelic ID | English ID |
@@ -47,9 +49,10 @@ Normalising this data model we get:
 
 However, for language political reasons, Gaelic learners are also very interested in the **authority** (ie. the particular lexicographer or terminologist) behind a particular equivalence. In other words, the queries they often want to make are things like:
 - What does authority X say that Gaelic term Y means?
-- What does authority X says is the Gaelic for Y?
+- What does authority X say is the Gaelic for Y?
 
-Simple table-based model:
+We can add authority into the simple table-based model as follows:
+
 ```
 | equivalence                        |
 | Gaelic ID | English ID | authority |
@@ -63,7 +66,8 @@ Simple table-based model:
 | ...       | ...        | ...       |
 ```
 
-Normalised to:
+And again we can normalise this to eliminate redundancy:
+
 ```
 | authority      |
 | id  | name     |
@@ -72,6 +76,7 @@ Normalised to:
 | 2   | MacBain  |
 | 3   | MacLaren |
 | ... | ...      |  
+
 
 | equivalence                           |
 | Gaelic ID | English ID | authority ID |
@@ -85,7 +90,9 @@ Normalised to:
 | ...       | ...        | ...          |
 ```
 
-Diagram
+[Add diagram]
+
+![diagram](diagrams/briathradan-conceptual-model-1.jpg)
 
 Inflectional forms?
 
