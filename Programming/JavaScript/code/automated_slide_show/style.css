@@ -1,0 +1,42 @@
+
+
+html, body { /* always use these for consistency */
+  margin: 0;
+  padding: 0;
+}
+
+hp-content {
+  display: flex;
+  background-color: #f00;
+  width: 100vw; /* 100% of the viewable width */
+  height: 100vh;
+  justify-content: center; /* horizontal centering of hp-presentation within hp-content */
+  align-items: center; /* vertical centering of hp-presentation within hp-content */
+}
+
+hp-presentation {
+  display: block;
+  background-color: #fff;
+  width: 80vmin; /* 80% of the minimum of viewable width and viewable height */
+  height: 80vmin; /* ie. a square */
+  border: .2em solid #000;
+  border-radius: 1em; /* curvy corners */
+}
+
+hp-slide {
+  display: none;
+  width: 80%;
+  height: 80%;
+  margin: 10%; /* centre slide within parent hp-presentation */
+  font-size: 8vmin;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+hp-slide.active {
+  display: inline-block;
+}
+
+
+
