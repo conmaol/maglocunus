@@ -9,15 +9,15 @@ Such a simple data model allows for the two basic tasks/queries:
 This simple data model takes the following, slightly normalised tabular form:
 
 ```
-| Gaelic                    |
-| id  | form    | authority |
------------------------------
-| 1   | balach  | Dwelly    |
-| 2   | gille   | Dwelly    |
-| 3   | balach  | MacBain   |
-| 4   | gille   | MacBain   |
-| 5   | ballach | MacLaren  |
-| ... | ...     | ...       |
+| Gaelic                                     |
+| id  | form    | authority | pos            |
+----------------------------------------------
+| 1   | balach  | Dwelly    | masculine noun |
+| 2   | gille   | Dwelly    | masculine noun |
+| 3   | balach  | MacBain   | masculine noun |
+| 4   | gille   | MacBain   | masculine noun |
+| 5   | ballach | MacLaren  | masculine noun |
+| ... | ...     | ...       | ...            |
 
 
 | English      |
@@ -43,40 +43,73 @@ ON Gaelic.id = English.ref
 WHERE Gaelic.form LIKE 'gille';
 ```
 
-And one for the English to Gaelic task:
+And one for the English-to-Gaelic task:
 
 ```
-SELECT Gaelic.form, Gaelic.authority
+SELECT Gaelic.form, Gaelic.pos, Gaelic.authority
 FROM Gaelic
 JOIN English
 ON Gaelic.id = English.ref
 WHERE English.form LIKE 'boy';
 ```
 
-## Inflectional forms
+## Inflected variants
 
-A Gaelic term will often have a range of inflectional variants:
-- *balach* has the plural form *balaich* and the genitive singular *balaich*
-- *gille* has the plural form *gillean*
+A Gaelic term will often have a range of inflected variants, eg. *balach* has the genitive singular form *balaich*, and *gille* has the plural form *gillean*.
 
-- What does authority X say that Gaelic term/form Y means?
-- What does authority X say are the variant forms of Gaelic term Y?
+In other words, we want to supplement our tasks as follows:
+- What does authority X say is the likely meaning of Gaelic form Y?
+- What does authority X say is the right way of saying Y in Gaelic, along with inflected variants?
 
-Rather than include these as independent Gaelic terms, it makes more sense, and is more efficient and elegant, to include them in a separate table, linked to entities in the `Gaelic terms` table:
+Rather than include these as independent Gaelic terms, in the `Gaelic` table, it makes more sense, and is more efficient and elegant, to include them in a separate table, linked to entities in the `Gaelic terms` table:
 
 ```
-| variants |
-| Gaelic ID | variant | class    | authority |
-----------------------------------
-| 1         | balaich | plural   | 1 |
-| 1         | balaich | genitive | 1 |
-| 2         | gillean | plural   | 1 |
-| 2         | gillean | plural   | 2 |
-| 2         | gillean | plural   | 2 |
-| ...       | ...     | ...      |
+| variants                 |
+| ref | form    | type     |
+----------------------------
+| 1   | balaich | plural   |
+| 1   | balaich | genitive |
+| 2   | gillean | plural   |
+| 3   | balaich | plural   | 
+| ... | ...     | ...      |
 ```
 
+The revised Gaelic-to-English task now looks something like:
 
+```
+SELECT English.form, Gaelic.authority
+FROM Gaelic
+JOIN variants
+ON variants.ref = Gaelic.id
+JOIN English
+ON English.ref = Gaelic.id
+WHERE Gaelic.form LIKE 'gillean'
+OR variants.form LIKE 'gillean';
+```
 
+And the English-to-Gaelic task is:
 
-## Hidden English terms?
+```
+SELECT Gaelic.form, Gaelic.pos, Gaelic.authority, variant.form, variant.type
+FROM Gaelic
+JOIN English
+ON Gaelic.id = English.ref
+JOIN variants
+ON variants.ref = Gaelic.id
+WHERE English.form LIKE 'boy';
+```
+
+## equivalence of Gaelics
+
+```
+| Gaelic                                              |
+| id  | form    | authority | pos            | master |
+-------------------------------------------------------
+| 1   | balach  | Dwelly    | masculine noun |        |
+| 2   | gille   | Dwelly    | masculine noun |        |
+| 3   | balach  | MacBain   | masculine noun | 1      |
+| 4   | gille   | MacBain   | masculine noun | 2      |
+| 5   | ballach | MacLaren  | masculine noun | 1      |
+| ... | ...     | ...       | ...            | ...    |
+```
+
