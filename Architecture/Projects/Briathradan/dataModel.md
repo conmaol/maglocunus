@@ -3,8 +3,8 @@
 At the most fundamental level, Briathradan contains: **Gaelic terms** (eg. *balach*, *gille*); **English terms** (eg. *boy*, *lad*); and a **many-to-many equivalence relation** between them and the relevant authorities.
 
 Such a simple data model allows for the two basic tasks/queries:
-- What does authority X say Gaelic term Y means (in English)?
-- What does authority X say is the Gaelic for (English term) Y?
+- What does authority X say is the meaning of Gaelic term Y?
+- What does authority X say is the right way of saying Y in Gaelic?
 
 This simple data model takes the following, slightly normalised tabular form:
 
@@ -33,29 +33,25 @@ This simple data model takes the following, slightly normalised tabular form:
 | ... | ...    |
 ```
 
-Some SQL queries:
+Here is an SQL query for the Gaelic-to-English task::
 
 ```
 SELECT English.form, Gaelic.authority
 FROM Gaelic
 JOIN English
 ON Gaelic.id = English.ref
-WHERE Gaelic.form = 'gille';
+WHERE Gaelic.form LIKE 'gille';
 ```
+
+And one for the English to Gaelic task:
 
 ```
 SELECT Gaelic.form, Gaelic.authority
 FROM Gaelic
 JOIN English
 ON Gaelic.id = English.ref
-WHERE English.form = 'boy';
+WHERE English.form LIKE 'boy';
 ```
-
------
-
-Here is an ERD for this data model so far:
-
-![Briathradan conceptual model 1](diagrams/briathradan-conceptual-model-1.jpg)
 
 ## Inflectional forms
 
