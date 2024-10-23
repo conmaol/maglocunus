@@ -1,6 +1,14 @@
 # Data model components
 
+This document contains my notes from Chapter 5 §1.3.3 of the *Data Management Body of Knowledge* 2nd edition (DAMA-DMBoK 2017).
+
 [DMBoK ch 5 § 1.3.3]
+
+Most data models contain the same basic building blocks:
+- entities
+- relationships
+- attributes
+- domains
 
 ## Entity
 
