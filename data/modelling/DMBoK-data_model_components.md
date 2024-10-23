@@ -45,24 +45,24 @@ Relations are generally depicted as (directed?) **lines** between entities, with
 
 For example, assuming the three entities `Student`, `Instructor` and `Course`, we can conceptualise of the following two relationships:
 - `Attend` – associates `Student` and `Course`
-- `Teach` – associates `Instructor` and `Course`.
+- `Teach` – associates `Instructor` and `Course`
 
 Relationships can have a **cardinality**:
-- one-to-one – each A is associated with one B, and each B is associated with one A
-  - exactly one to exactly one – each A is associated with exactly one B, and each B is associated with exactly one A
-  - exactly one to no more than one – each A is associated with zero or one B, and each B is associated with exactly one A
-  - no more than one to exactly one – each A is associated with exactly one B, and each B is associated with zero or one A
-  - no more than one to no more than one – each A is associated with zero or one B, and each B is associated with zero or one A
-- one-to-many – each A is associated with more than one B, but each B is associated with just one A
-  -  exactly one to zero or more –
-  -  exactly one to one or more –
-  -  exactly one to more than one –
-  -  no more than one to zero or more –
-  -  no more than one to one or more –
-  -  no more than one to more than one –
-- many-to-one – each A is associated with one B, but each B is associated with more than one A
+- **one-to-one** – each A is associated with one B, and each B is associated with one A
+  - *exactly one to exactly one* – each A is associated with exactly one B, and each B is associated with exactly one A
+  - *exactly one to no more than one* – each A is associated with zero or one B, and each B is associated with exactly one A
+  - *no more than one to exactly one* – each A is associated with exactly one B, and each B is associated with zero or one A
+  - *no more than one to no more than one* – each A is associated with zero or one B, and each B is associated with zero or one A
+- **one-to-many** – each A is associated with more than one B, but each B is associated with just one A
+  -  *exactly one to zero or more* – each A is associated with any number of B, and each B is associated with exactly one A
+  -  *exactly one to one or more* – each A is associated with at least one B, and each B is associated with exactly one A
+  -  *exactly one to more than one* – each A is associated with a plurality of B, and each B is associated with exactly one A
+  -  *no more than one to zero or more* – each A is associated with any number of B, and each B is associated with at most one A
+  -  *no more than one to one or more* – each A is associated with at least one B, and each B is associated with at most one A
+  -  *no more than one to more than one* – each A is associated with a plurality of B, and each B is associated with at most one A
+- **many-to-one** – each A is associated with one B, but each B is associated with more than one A
   - mmm
-- many-to-many – each A is associated with more than one B, and each B is associated with more than one B
+- **many-to-many** – each A is associated with more than one B, and each B is associated with more than one B
   - mm
 
 
@@ -74,11 +74,19 @@ eg. each student attends zero or more courses, and each course is attended by ze
 
 ### Arity of relationships
 
-Unary (recursive) relationship
+#### Unary (recursive) relationship
 
-Binary relationship
+Domain and renge are same entity
 
-Ternary relationaship
+#### Binary relationship
+
+Domain and range are different
+
+#### Ternary relationaship
+
+Not just domain and range
+
+
 
 ### Foreign key
 
