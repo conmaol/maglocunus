@@ -12,11 +12,34 @@ Most data models contain the same basic building blocks:
 
 ## Entity
 
+Definition:
+
+> Entities are things about which an organisation collects information.
+
+eg. people, organisations, products, services, times, dates, locations, events, transactions, documents, quantities.
+
 ### Entity aliases
+
+Recommended usage:
+
+> **Entity instance** A (eg. Jane) is an instance of **entity** B (eg. Employee).
+
+Alternative usages:
+
+> Entity A is an instance of entity-type B.
+>
+> Object A is an instance of class B.
 
 ### Graphic representation of entities
 
+Entities are generally depicted as rectangles (perhaps with rounded corners) with their names inside.
+
 ### Definition of entities
+
+Entity definitions are core Metadata for any data model, and should exhibit:
+- clarity
+- accuracy
+- completeness
 
 ## Relationship
 
