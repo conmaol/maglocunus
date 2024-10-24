@@ -56,14 +56,27 @@ Relationships can have a **cardinality**:
 - **one-to-many** – each A is associated with more than one B, but each B is associated with just one A
   -  *exactly one to zero or more* – each A is associated with any number of B, and each B is associated with exactly one A
   -  *exactly one to one or more* – each A is associated with at least one B, and each B is associated with exactly one A
-  -  *exactly one to more than one* – each A is associated with a plurality of B, and each B is associated with exactly one A
+  -  *exactly one to more than one* – each A is associated with at least two B, and each B is associated with exactly one A
   -  *no more than one to zero or more* – each A is associated with any number of B, and each B is associated with at most one A
   -  *no more than one to one or more* – each A is associated with at least one B, and each B is associated with at most one A
-  -  *no more than one to more than one* – each A is associated with a plurality of B, and each B is associated with at most one A
+  -  *no more than one to more than one* – each A is associated with at least two B, and each B is associated with at most one A
 - **many-to-one** – each A is associated with one B, but each B is associated with more than one A
-  - mmm
+  - *zero or more to exactly one* – each A is associated with exactly one B, and each B is associated with any number of B
+  - *zero or more to no more than one* – each A is associated with at most one B, and each B is associated with any number of B
+  - *one or more to exactly one* – each A is associated with exactly one B, and each B is associated with at least one B
+  - *one or more to no more than one* – each A is associated with at most one B, and each B is associated with at least one B
+  - *more than one to exactly one* – each A is associated with exactly one B, and each B is associated with at least two B
+  - *more than one to no more than one* – each A is associated with at most one B, and each B is associated with at least two B
 - **many-to-many** – each A is associated with more than one B, and each B is associated with more than one B
-  - mm
+  - *zero or more to zero or more* – each A is associated with any number of B, and each B is associated with any number of A
+  - *zero or more to one or more* – each A is associated with at least one B, and each B is associated with any number of A
+  - *zero or more to more than one* – each A is associated with at least two B, and each B is associated with any number of A
+  - *one or more to zero or more* – each A is associated with any number of B, and each B is associated with at least one A
+  - *one or more to one or more* – each A is associated with at least one B, and each B is associated with at least one A
+  - *one or more to more than one* – each A is associated with at least two B, and each B is associated with at least one A
+  - *more than one to zero or more* – each A is associated with any number of B, and each B is associated with at least two A
+  - *more than one to one or more* – each A is associated with at least one B, and each B is associated with at least two A
+  - *more than one to more than one* – each A is associated with atleast two B, and each B is associated with at least two A
 
 
 
