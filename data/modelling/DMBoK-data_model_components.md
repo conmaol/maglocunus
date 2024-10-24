@@ -76,7 +76,7 @@ Relationships can have a **cardinality**:
   - *one or more to more than one* – each A is associated with at least two B, and each B is associated with at least one A
   - *more than one to zero or more* – each A is associated with any number of B, and each B is associated with at least two A
   - *more than one to one or more* – each A is associated with at least one B, and each B is associated with at least two A
-  - *more than one to more than one* – each A is associated with atleast two B, and each B is associated with at least two A
+  - *more than one to more than one* – each A is associated with at least two B, and each B is associated with at least two A
 
 
 
