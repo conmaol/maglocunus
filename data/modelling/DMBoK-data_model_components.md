@@ -8,6 +8,8 @@ Most data models contain the same basic building blocks:
 - attributes
 - domains
 
+Back up to: [Data modelling](index.md)
+
 ## Entities
 
 Definition:
@@ -110,4 +112,18 @@ Dependent entities are often represented as rectangles with rounded corners.
 The relationship between a dependent entity and any entity which supplies part of its primary key is an **identifying relationship**.
 
 ## Domains
+
+Definition:
+
+> A domain is complete set of possible values that an attribute can be assigned.
+>
+> A domain can be further restricted with **constraints**.
+
+Ways of defining domains:
+- data types (eg. integer, string)
+- data formats (eg. templates, masks)
+- lists (ie. enumerations)
+- ranges
+- rules
+
 
