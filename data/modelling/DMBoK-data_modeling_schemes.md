@@ -23,6 +23,24 @@ The six most common schemes to represent data (models) are:
 
 ## Relational
 
+Here is an Information Engineering (IE) notation representation of a simple relational data model:
+
+![a simple relational data model](images/dm-1.png)
+
+This can be summarised as follows:
+
+This can be expressed in first order logic as follows:
+- Only students attend.
+- Only courses are attended.
+- Every student attends zero or more courses.
+- Every course is attended by zero or more students.
+
+In first order logic:
+> `∀x. ∀y. attend(x,y) → student(x) & course(y)`
+
+
+
+
 ## Dimensional
 
 ###### 1.3.4.2.1. Fact tables
