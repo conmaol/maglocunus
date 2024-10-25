@@ -4,6 +4,13 @@
 
 ## 1. Introduction
 
+Definition:
+
+> Data modeling is the process of discovering, analyzing, and scoping data requirements,  
+> and then representing and communicating these data requirements in a precise form called the *data model*.
+
+
+
 ### 1.1. Business drivers
 
 ### 1.2. Goals and principles
