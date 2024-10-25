@@ -89,13 +89,25 @@ Definition:
 
 Attributes are generally depicted as list within the entity rectangle.
 
-### Identifiers
+A **key** (or **identifier**) is a set of one or more attributes that uniquely defines an instance of an entity.
 
-Construction-type keys
+Keys can be classified based on *construction*:
+- A **simple key** consists of exactly one attribute.
+  - A **surrogate key** is a system-generated simple key, usually an automatically incremented integer.
+- A **composite key** consists of two or more attributes.
+  - A **compound key** is a composite key each of whose attributes is a ‘foreign key’ – a reference to a simple key of another entity.
 
-Function-type keys
+A **candidate key** is a minimal key – no subset of a candidate key is a key. 
+- The **primary key** is the candidate key that is chosen to be *the* unique identifier.
+- The **alternate key** is any candidate key that is not the primary key.
 
-Identifying vs. non-identifying relationships
+A **business key** (or **natural key**) is a candidate key that a business professional would use.
+
+A **dependent entity** is one whose primary key includes a foreign key (to an instance of another entity).
+
+Dependent entities are often represented as rectangles with rounded corners.
+
+The relationship between a dependent entity and any entity which supplies part of its primary key is an **identifying relationship**.
 
 ## Domains
 
