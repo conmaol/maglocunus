@@ -23,6 +23,8 @@ The six most common schemes to represent data (models) are:
 
 ## Relational
 
+Relational data models are optimised for operational/transactional systems, which require entering information quickly and having it stored accurately.
+
 Here is an Information Engineering (IE) notation representation of a simple relational data model:
 
 ![a simple relational data model](images/dm-1.png)
@@ -38,10 +40,9 @@ This can be expressed in first order logic as follows:
 In first order logic:
 > `∀x. ∀y. attend(x,y) → student(x) & course(y)`
 
-
-
-
 ## Dimensional
+
+Dimensional data models are optimised for querying and analysing large amounts of data.
 
 ###### 1.3.4.2.1. Fact tables
 
