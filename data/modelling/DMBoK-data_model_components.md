@@ -1,6 +1,6 @@
 # Data model components
 
-This document contains my notes from Chapter 5 §1.3.3 of the *Data Management Body of Knowledge* 2nd edition (DAMA-DMBoK 2017).
+> This document contains my notes from Chapter 5 §1.3.3 of the *Data Management Body of Knowledge* 2nd edition (DAMA-DMBoK 2017).
 
 Most data models contain the same basic building blocks:
 - entities
@@ -43,6 +43,8 @@ Definition:
 
 Relationships are generally depicted as (directed?) **lines** between entities, with their names as labels.
 
+### Cardinality
+
 Relationships can have a **cardinality**:
 - **one-to-one** – each A is associated with one B, and each B is associated with one A
   - [total functional, total injective] *exactly one to exactly one* – each A is associated with exactly one B, and each B is associated with exactly one A
@@ -74,10 +76,25 @@ Relationships can have a **cardinality**:
   - *more than one to one or more* – each A is associated with at least one B, and each B is associated with at least two A
   - *more than one to more than one* – each A is associated with at least two B, and each B is associated with at least two A
 
-Example:
+Here is an example in IE notation:
 
-![a unary relationship](images/dm-1.png)
+![a simple data model](images/dm-1.png)
 
+This can be expressed in first order logic as follows:
+
+> `∀x. ∀y. attend(x,y) → student(x) & course(y)`
+
+Here is another example:
+
+![a more complex data model](images/dm-8.png)
+
+Again in first order logic:
+
+> `∀x. ∀y. attend(x,y) → student(x) & course(y)`
+>
+> `∀x. ∀y. teach(x,y) → instructor(x) & course(y)`
+
+### Arity
 
 Relationships have an **arity**:
 - **unary** – both linked instances are of the same entity ie. the entity is associated with itself
@@ -88,13 +105,22 @@ Unary relationships are also known as ‘recursive’ or ‘self-referencing’:
 - a one-to-many unary relationship is known as a ‘hierarchy’
 - a many-to-many unary relationship is known as a ‘network’ or ‘graph’
 
-Here is an example:
+Here is an example of a hierarchical unary relationship in IE notation:
 
-![a unary relationship](images/dm-6.png)
+![a hierarchical unary relationship](images/dm-6.png)
 
-Here is another example:
+This can be expressed in first order logic as follows:
 
-![a unary relationship](images/dm-7.png)
+> `∀x. ∀y. attend(x,y) → student(x) & course(y)`
+>
+
+
+Here is an example of a network-style unary relationship:
+
+![a network-style unary relationship](images/dm-7.png)
+
+Again in first order logic:
+
 
 Binary:
 
