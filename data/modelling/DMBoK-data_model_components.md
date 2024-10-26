@@ -161,6 +161,8 @@ Definition:
 
 Attributes are generally depicted as list within the entity rectangle.
 
+### Keys
+
 A **key** (or **identifier**) is a set of one or more attributes that uniquely defines an instance of an entity.
 
 Keys can be classified based on *construction*:
