@@ -187,14 +187,8 @@ Here is an example in IE notation of a reified logical/physical data model (wher
 
 ![a relationship with foreign keys](images/dm-3.png)
 
-This is summarised in first order logic as follows:
+The logical layer of this model is summarised in first order logic as follows:
 
-> `∀x. student(x) → ∃y. student-number(x,y)`
->
-> `∀x. ∀y. ∀x. student-number(x,y) & student-number(x,z) → y=z`
->
-> `∀x. ∀y. ∀x. student-number(x,z) & student-number(y,z) → x=y`
-> 
 > `∀x. student(x) → ∃y. student-first-name(x,y)`
 >
 > `∀x. ∀y. ∀x. student-first-name(x,y) & student-first-name(x,z) → y=z`
@@ -206,18 +200,42 @@ This is summarised in first order logic as follows:
 > `∀x. student(x) → ∃y. student-birth-date(x,y)`
 >
 > `∀x. ∀y. ∀x. student-birth-date(x,y) & student-birth-date(x,z) → y=z`  
- 
+  
+> `∀x. course(x) → ∃y. course-name(x,y)`
+>
+> `∀x. ∀y. ∀x. course-name(x,y) & course-name(x,z) → y=z`
+
+> `∀e. registration(e) → ∃x. registration-date(e,x)`
+>
+> `∀e. ∀x. ∀y. registration-date(e,x) & registration-date(e,y) → x=y`
+>
+> `∀e. registration(e) → ∃x. student(x) & register(e,x)`
+>
+> `∀e. ∀x. ∀y. register(e,x) & register(e,y) → x=y`
+>
+> `∀e. registration(e) → ∃x. course(x) & have-registered(e,x)`
+>
+> `∀e. ∀x. ∀y. have-registered(e,x) & have-registered(e,y) → x=y`
+
+The physical layer adds the primary and foreign keys:
+
+> `∀x. student(x) → ∃y. student-number(x,y)`
+>
+> `∀x. ∀y. ∀x. student-number(x,y) & student-number(x,z) → y=z`
+>
+> `∀x. ∀y. ∀x. student-number(x,z) & student-number(y,z) → x=y`
+
 > `∀x. course(x) → ∃y. course-code(x,y)`
 >
 > `∀x. ∀y. ∀x. course-code(x,y) & course-code(x,z) → y=z`
 >
 > `∀x. ∀y. ∀x. course-code(x,z) & course-code(y,z) → x=y`
-> 
-> `∀x. course(x) → ∃y. course-name(x,y)`
+
+> `∀e. registration(e) → ∃y. foreign-student-number(e,x)`
 >
-> `∀x. ∀y. ∀x. course-name(x,y) & course-name(x,z) → y=z`
+> `∀e. registration(e) → ∃y. foreign-course-code(e,x)`
 
-
+[more needed]
 
 ## Domains
 
