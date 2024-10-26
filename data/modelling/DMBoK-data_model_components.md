@@ -183,9 +183,41 @@ Dependent entities are often represented as rectangles with rounded corners.
 
 The relationship between a dependent entity and any entity which supplies part of its primary key is an **identifying relationship**.
 
-Example:
+Here is an example in IE notation of a reified logical/physical data model (where a X conceptual relationship has been reified as an entity with foreign keys):
 
-![a binary relationship](images/dm-3.png)
+![a relationship with foreign keys](images/dm-3.png)
+
+This is summarised in first order logic as follows:
+
+> `∀x. student(x) → ∃y. student-number(x,y)`
+>
+> `∀x. ∀y. ∀x. student-number(x,y) & student-number(x,z) → y=z`
+>
+> `∀x. ∀y. ∀x. student-number(x,z) & student-number(y,z) → x=y`
+> 
+> `∀x. student(x) → ∃y. student-first-name(x,y)`
+>
+> `∀x. ∀y. ∀x. student-first-name(x,y) & student-first-name(x,z) → y=z`
+>
+> `∀x. student(x) → ∃y. student-last-name(x,y)`
+>
+> `∀x. ∀y. ∀x. student-last-name(x,y) & student-last-name(x,z) → y=z`
+>
+> `∀x. student(x) → ∃y. student-birth-date(x,y)`
+>
+> `∀x. ∀y. ∀x. student-birth-date(x,y) & student-birth-date(x,z) → y=z`  
+ 
+> `∀x. course(x) → ∃y. course-code(x,y)`
+>
+> `∀x. ∀y. ∀x. course-code(x,y) & course-code(x,z) → y=z`
+>
+> `∀x. ∀y. ∀x. course-code(x,z) & course-code(y,z) → x=y`
+> 
+> `∀x. course(x) → ∃y. course-name(x,y)`
+>
+> `∀x. ∀y. ∀x. course-name(x,y) & course-name(x,z) → y=z`
+
+
 
 ## Domains
 
