@@ -111,9 +111,9 @@ Here is an example of a hierarchical unary relationship in IE notation:
 
 This can be expressed in first order logic as follows:
 
-> `∀x. ∀y. attend(x,y) → student(x) & course(y)`
+> `∀x. ∀y. require(x,y) → course(x) & course(y)`
 >
-
+> `∀x. ∀y. ∀z. require(x,z) & require(y,z) → x=y` 
 
 Here is an example of a network-style unary relationship:
 
@@ -121,14 +121,28 @@ Here is an example of a network-style unary relationship:
 
 Again in first order logic:
 
+> `∀x. ∀y. require(x,y) → course(x) & course(y)`
 
-Binary:
+Here is an example of a binary relationship as a UML class diagram:
 
-![a binary relationship](images/dm-5.png)
+![a binary relationship as UML](images/dm-5.png)
 
-Ternary:
+This can be summarised in first order logic as follows:
 
-![a binary relationship](images/dm-4.png)
+> `∀x. ∀y. attend(x,y) → student(x) & course(y)`
+
+Here is an example of a ternary relationship in object-role notation:
+
+![a ternary relationship](images/dm-4.png)
+
+This can be summarised in first order logic as follows:
+
+> `∀x. ∀y. ∀z. register(x,y,z) → student(x) & course(y) & semester(z)`
+
+Or at a lower level of abstraction as:
+
+> `∀e. registration(e) → ∃x. ∃y. ∃z. student(x) & course(y) & semester(z)`
+
 
 
 ## Attributes
