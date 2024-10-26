@@ -141,9 +141,17 @@ This can be summarised in first order logic as follows:
 
 Or at a lower level of abstraction as:
 
-> `∀e. registration(e) → ∃x. ∃y. ∃z. student(x) & course(y) & semester(z)`
-
-
+> `∀e. registration(e) → ∃x. student(x) & arg1(e,x)`
+>
+> `∀e. ∀x. ∀y. registration(e) & arg1(e,x) & arg1(e,y) → x=y`
+>
+> `∀e. registration(e) → ∃x. course(x) & arg2(e,x)`
+>
+> `∀e. ∀x. ∀y. registration(e) & arg2(e,x) & arg2(e,y) → x=y`
+> 
+> `∀e. registration(e) → ∃x. semester(x) & arg3(e,x)`
+>
+> `∀e. ∀x. ∀y. registration(e) & arg3(e,x) & arg3(e,y) → x=y`
 
 ## Attributes
 
