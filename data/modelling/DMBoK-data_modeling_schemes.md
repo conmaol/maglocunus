@@ -44,7 +44,7 @@ In first order logic:
 
 Dimensional data models are optimised for querying and analysing large amounts of data.
 
-![a dimensional data model](images/dm-8.png)
+![a dimensional data model](images/dm-2.png)
 
 ###### 1.3.4.2.1. Fact tables
 
