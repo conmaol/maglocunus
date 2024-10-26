@@ -74,6 +74,11 @@ Relationships can have a **cardinality**:
   - *more than one to one or more* – each A is associated with at least one B, and each B is associated with at least two A
   - *more than one to more than one* – each A is associated with at least two B, and each B is associated with at least two A
 
+Example:
+
+![a unary relationship](images/dm-1.png)
+
+
 Relationships have an **arity**:
 - **unary** – both linked instances are of the same entity ie. the entity is associated with itself
 - **binary** – the two linked instances are of distinct entities
@@ -82,6 +87,23 @@ Relationships have an **arity**:
 Unary relationships are also known as ‘recursive’ or ‘self-referencing’:
 - a one-to-many unary relationship is known as a ‘hierarchy’
 - a many-to-many unary relationship is known as a ‘network’ or ‘graph’
+
+Here is an example:
+
+![a unary relationship](images/dm-6.png)
+
+Here is another example:
+
+![a unary relationship](images/dm-7.png)
+
+Binary:
+
+![a binary relationship](images/dm-5.png)
+
+Ternary:
+
+![a binary relationship](images/dm-4.png)
+
 
 ## Attributes
 
@@ -110,6 +132,10 @@ A **dependent entity** is one whose primary key includes a foreign key (to an in
 Dependent entities are often represented as rectangles with rounded corners.
 
 The relationship between a dependent entity and any entity which supplies part of its primary key is an **identifying relationship**.
+
+Example:
+
+![a binary relationship](images/dm-3.png)
 
 ## Domains
 
