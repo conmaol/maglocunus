@@ -191,19 +191,19 @@ The logical layer of this model is summarised in first order logic as follows:
 
 > `∀x. student(x) → ∃y. student-first-name(x,y)`
 >
-> `∀x. ∀y. ∀x. student-first-name(x,y) & student-first-name(x,z) → y=z`
+> `∀x. ∀y. ∀z. student-first-name(x,y) & student-first-name(x,z) → y=z`
 >
 > `∀x. student(x) → ∃y. student-last-name(x,y)`
 >
-> `∀x. ∀y. ∀x. student-last-name(x,y) & student-last-name(x,z) → y=z`
+> `∀x. ∀y. ∀z. student-last-name(x,y) & student-last-name(x,z) → y=z`
 >
 > `∀x. student(x) → ∃y. student-birth-date(x,y)`
 >
-> `∀x. ∀y. ∀x. student-birth-date(x,y) & student-birth-date(x,z) → y=z`  
+> `∀x. ∀y. ∀z. student-birth-date(x,y) & student-birth-date(x,z) → y=z`  
   
 > `∀x. course(x) → ∃y. course-name(x,y)`
 >
-> `∀x. ∀y. ∀x. course-name(x,y) & course-name(x,z) → y=z`
+> `∀x. ∀y. ∀z. course-name(x,y) & course-name(x,z) → y=z`
 
 > `∀e. registration(e) → ∃x. registration-date(e,x)`
 >
@@ -221,21 +221,23 @@ The physical layer adds the primary and foreign keys:
 
 > `∀x. student(x) → ∃y. student-number(x,y)`
 >
-> `∀x. ∀y. ∀x. student-number(x,y) & student-number(x,z) → y=z`
+> `∀x. ∀y. ∀z. student-number(x,y) & student-number(x,z) → y=z`
 >
-> `∀x. ∀y. ∀x. student-number(x,z) & student-number(y,z) → x=y`
+> `∀x. ∀y. ∀z. student(x) & student(y) & student-number(x,z) & student-number(y,z) → x=y`
 
 > `∀x. course(x) → ∃y. course-code(x,y)`
 >
-> `∀x. ∀y. ∀x. course-code(x,y) & course-code(x,z) → y=z`
+> `∀x. ∀y. ∀z. course-code(x,y) & course-code(x,z) → y=z`
 >
-> `∀x. ∀y. ∀x. course-code(x,z) & course-code(y,z) → x=y`
+> `∀x. ∀y. ∀z. course(x) & course(y) & course-code(x,z) & course-code(y,z) → x=y`
 
-> `∀e. registration(e) → ∃y. foreign-student-number(e,x)`
+> `∀e. registration(e) → ∃x. student-number(e,x)`
 >
-> `∀e. registration(e) → ∃y. foreign-course-code(e,x)`
-
-[more needed]
+> `∀e. ∀x. registration(e) & student-number(e,x) → ∃y. student(y) & student-number(y,x)`
+>
+> `∀e. registration(e) → ∃x. course-code(e,x)`
+>
+> `∀e. ∀x. registration(e) & course-code(e,x) → ∃y. course(y) & course-code(y,x)`
 
 ## Domains
 
