@@ -35,6 +35,7 @@ This can be summarised as follows:
 - Every course is attended by zero or more students.
 
 In first order logic:
+
 > `∀x. ∀y. attend(x,y) → student(x) & course(y)`
 
 ## Dimensional
@@ -84,11 +85,48 @@ Three types of change to a dimension table:
 
 ## Object-oriented (UML)
 
+The UML **class model** (ie. ‘class diagrams’) is a notation for databases.
+
+Here is an example:
+
+![a dimensional data model](images/dm-9.png)
+
+Note that a UML class diagram includes information about operations (ie. methods).
+
+A first order logic interpretation of this class diagram (ignoring the methods) is as follows:
+
+> `∀x. student(x) → ∃y. stdntno(x,y)`
+>
+> `∀x. ∀y. ∀z. stdntno(x,y) & stdntno(x,z) → y=z`
+>
+> `∀x. ∀y. stdntno(x,y) → integer(y)`
+
+> `∀x. student(x) → ∃y. strtdt(x,y)`
+>
+> `∀x. ∀y. ∀z. strtdt(x,y) & strtdt(x,z) → y=z`
+>
+> `∀x. ∀y. strtdt(x,y) → date(y)`
+
+> `∀x. student(x) → ∃y. prgm(x,y)`
+>
+> `∀x. ∀y. ∀z. prgm(x,y) & prgm(x,z) → y=z`
+>
+> `∀x. ∀y. prgm(x,y) → text(y)` 
+
 ## Fact-based modeling (FBM) 
 
 ###### 1.3.4.4.1. Object-role modeling (ORM or ORM2)
 
+Here is an example:
+
+![a dimensional data model](images/dm-10.png)
+
 ###### 1.3.4.4.2. Fully communication oriented modeling (FCO-IM) 
+
+Here is an example:
+
+![a dimensional data model](images/dm-11.png)
+
 
 ## Time-based
 
