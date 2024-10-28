@@ -115,18 +115,25 @@ A first order logic interpretation of this class diagram (ignoring the methods) 
 
 ## Fact-based modeling (FBM) 
 
-###### 1.3.4.4.1. Object-role modeling (ORM or ORM2)
+Fact-based languages view the world in terms of objects, the facts that relate or characterise those objects, and each role that each object plays in each fact.
 
-Here is an example:
+**Object-role modeling (ORM2)**:
+
+Here is an example of an ORM2 data model:
 
 ![a dimensional data model](images/dm-10.png)
 
-###### 1.3.4.4.2. Fully communication oriented modeling (FCO-IM) 
+This model can be (at least partially) represented in first order logic as:
 
-Here is an example:
+> `∀x. ∀y. ∀z. in_enrolled_in(x,y,z) → student(x) & course(y) & semester(z)`
+
+\[MM: note clear what the dotted and non-dotted lines above the boxes mean here.\]
+
+**Fully communication oriented modeling (FCO-IM)**:
+
+Here is an example of an FCO-IM data model:
 
 ![a dimensional data model](images/dm-11.png)
-
 
 ## Time-based
 
