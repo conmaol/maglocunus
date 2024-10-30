@@ -4,17 +4,27 @@ My notes from chapter 2 of Ray S. Jackendoff (1972) *Semantic Interpretation in 
 
 ## The semantic insufficiency of grammatical relations
 
+Grammatical relations: “the structural relations obtaining between verbs and the noun phrases, adjective phrases, prepositional phrases, and sentence complements that they strictly subcategorize”.
+
+“[T]he ‘natural’ grammatical relations such as subject and object do not correspond in any simple fashion to the understood semantic relations.”
+
+Consider these examples:
+
 > `(2.1) The door opened.`
 >
 > `(2.2) Charlie opened the door.`
 
-m
+The noun phrase `the door` has the same semantic function in both these sentences, even though it is the subject of `opened` in (2.1) and the object in (2.2). Note that, in the traditional generative analysis, no movement transformations are assumed to have taken place in either sentence that would alter the underlying positions.
+
+Consider the next two examples:
 
 > `(2.3) Fred bought some hashish from Reuben.`
 >
 > `(2.4) Reuben sold some hashish to Fred.`
 
-m
+In both these sentences the relation between `Fred` and `Reuben` is *recipient-donor*, even though in (2.3) `Fred` is subject and `Reuben` is in a preposition phrase, and the positions are reversed in (2.4).
+
+
 
 > `(2.7) The glass dropped to the floor.`
 >
