@@ -15,11 +15,11 @@ Consider these examples:
 > `(2.2) Charlie opened the door.`
 
 In (2.1):
-- The noun phrase `the door` is the grammatical **subject** of the verb `opened`.
+- The noun phrase `the door` is the grammatical **subject** of the verb `opened`, at both deep and surface structure.
 - The material entity denoted by `the door` is the semantic **theme** of the event denoted by `opened`.
 
 In (2.2):
-- The noun phrase `the door` is the grammatical **object** of the verb `opened`.
+- The noun phrase `the door` is the grammatical **object** of the verb `opened`, at both deep and surface structure.
 - But the material entity denoted by `the door` is still the semantic **theme** of the event denoted by `opened`.
 
 
