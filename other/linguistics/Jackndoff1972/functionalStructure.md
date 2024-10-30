@@ -40,9 +40,9 @@ In order to enforce a straightforward correspondence between grammatical relatio
 - `Reuben` is the deep *from*-**complement** of both `bought` in `(2.3)` and `sold` in `(2.4)`. 
 
 These **deep** grammatical structures/relations are converted into the **surface** grammatical structures/relations via grammatical **transformations**:
-- The deep object `the door` is converted into the surface subject in (2.2).
-- The deep *to*-complement `Fred` is converted into the surface subject in (2.3) but not in (2.4).
-- The deep *from*-complement `Reuben` is converted into the surface subject in (2.4) but not in (2.3).
+- The deep object `the door` is converted into the surface subject in `(2.2)`.
+- The deep *to*-complement `Fred` is converted into the surface subject in `(2.3)` but not in `(2.4)`.
+- The deep *from*-complement `Reuben` is converted into the surface subject in `(2.4)` but not in `(2.3)`.
 
 The existence of deep structure/relations is a corollary of the (strong) **Katz-Postal Hypothesis**.
 
