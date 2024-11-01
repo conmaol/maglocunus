@@ -66,21 +66,21 @@ Generative semantics (Lakoff 1971)
 
 ex
 
-![mm](images/door-opened-gs.png)
+![mm](images/door-opened-gs.jpg)
 
 ex
 
-![mm](images/opened-the-door-gs.png)
+![mm](images/opened-the-door-gs.jpg)
 
 #### Case grammar
 
 Case Grammar (Fillmore)
 
-![mm](images/door-opened-cg.png)
+![mm](images/door-opened-cg.jpg)
 
 ex
 
-![mm](images/opened-the-door-cg.png)
+![mm](images/opened-the-door-cg.jpg)
 
 
 
