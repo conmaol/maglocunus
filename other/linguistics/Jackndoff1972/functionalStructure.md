@@ -98,39 +98,80 @@ And the proposed deep structure of `(2.2)` is:
 
 ## Thematic relations
 
-An alternative explanation is based on work by Jeffrey S. Gruber (1965 and 1967a).
+An alternative explanation is based on work by Jeffrey S. Gruber (see his doctoral dissertation *Studies in Lexical Relations* 1965), where traditional grammatial relations are supplemnetd by a system of ‘thematic relations’.
+
+#### Theme
+
+Every sentence (verb?) has a Theme.
+
+The Theme of a verb of (physical) motion is the noun phrase understood as undergoing the motion.
 
 > `(2.13) The rock moved away.`
 >
 > `(2.14) John rolled the rock from the dump to the house.`
 >
 > `(2.15) Bill forced the rock into the hole.`
->
-> `(2.16) Harry gave the book away.`
->
-> `(2.17) Will inherited a million dollars.`
->
-> `(2.18) Charlie bought the lamp from Max.`
-> 
-> `(2.19) Dave explained the proof to his students.`
 
-mm
+Note that:
+- In `(2.13)`, the Theme of `moved` is `the rock` (the subject).
+- In `(2.14)`, the Theme of `rolled` is `the rock` (the object).
+- In `(2.15)`, the Theme of `forced` is `the rock` (the object).
+
+The Theme of a verb of (physical) location is the noun phrase whose location is being asserted.
 
 > `(2.20) The rock stood in the corner.`
 >
 > `(2.21) John clung to the window sill.`
 >
 > `(2.22) Herman kept the book on the shelf.`
+
+Note that:
+- In `(2.20)`, the Theme of `stood` is `the rock`.
+- In `(2.21)`, the Theme of `clung` is `John`.
+- In `(2.22)`, the Theme of `kept` is `the book`.
+
+#### Location
+
+mm
+
+#### Source
+
+mm
+
+#### Goal
+
+mm
+
+#### Agent
+
+mm
+
+#### Possessional motion and location
+
+> `(2.16) Harry gave the book away.`
 >
+> `(2.17) Will inherited a million dollars.`
+>
+> `(2.18) Charlie bought the lamp from Max.`
+
+mm
+
 > `(2.23) Herman kept the book.`
 >
 > `(2.24) The book belongs to Herman.`
 >
 > `(2.25) Max owns the book.`
->
-> `(2.26) Max knows the answer.`
+
+
+#### Abstract motion and location
+
+> `(2.19) Dave explained the proof to his students.`
 
 mm
+
+> `(2.26) Max knows the answer.`
+
+#### mm
 
 > `(2.27) The circle contains the dot.`
 >
