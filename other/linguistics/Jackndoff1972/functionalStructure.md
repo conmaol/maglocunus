@@ -6,7 +6,7 @@ My notes from chapter 2 of Ray S. Jackendoff (1972) *Semantic Interpretation in 
 
 There is no straightforward correspondence between traditional grammatical relations and understood semantic relations (a.k.a. ‘functional structure’).
 
-Consider these examples:
+Consider these examples (demonstrating the causative/inchoative alternation):
 
 > `(2.1) The door opened.`
 >
