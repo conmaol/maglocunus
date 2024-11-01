@@ -64,9 +64,25 @@ Deep grammatical structures are converted into surface grammatical structures by
 
 Generative semantics (Lakoff 1971)
 
+ex
+
+![mm](images/door-opened-gs.png)
+
+ex
+
+![mm](images/opened-the-door-gs.png)
+
 #### Case grammar
 
 Case Grammar (Fillmore)
+
+![mm](images/door-opened-cg.png)
+
+ex
+
+![mm](images/opened-the-door-cg.png)
+
+
 
 > `(2.7) The glass dropped to the floor.`
 >
