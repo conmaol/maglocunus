@@ -6,7 +6,7 @@ My notes from chapter 2 of Ray S. Jackendoff (1972) *Semantic Interpretation in 
 
 There is no straightforward correspondence between traditional grammatical relations and understood semantic relations (a.k.a. ‘functional structure’).
 
-### Causative/inchoative alternation
+#### Causative/inchoative alternation
 
 Consider these examples:
 
@@ -25,7 +25,7 @@ Whereas in `(2.2)`:
 Thus, with the verb `open`: 
 - The semantic theme can correspond to either the grammatical subject or the grammatical object.
 
-### Verbs of buying and selling
+#### Verbs of buying and selling
 
 Consider the next two examples:
 
@@ -46,7 +46,7 @@ Thus, with the verbs `buy` and `sell`:
 - The semantic donor can correspond to either the grammatical subject or the grammatical *from*-complement.
 - The grammatical subject can correspond to either the semantic recipient or the semantic donor. 
 
-### Deep grammatical structure
+#### Deep grammatical structure
 
 Some generative grammarians believe that there must be a straightforward correspondence between grammatical relations and semantic relations (‘The Katz-Postal Hypothesis’), and have proposed a level of ‘deep’ grammatical structure, distinct from (but related to) the traditional notion of ‘surface’ grammatical structure.
 
@@ -60,9 +60,11 @@ Deep grammatical structures are converted into surface grammatical structures by
 - `Fred` is transformed into the surface grammatical subject in `(2.3)` but into the surface grammatical *to*-complement in `(2.4)`.
 - `Reuben` is transformed into the surface grammatical *from*-complement in `(2.3)` but into the surface grammatical subject in `(2.4)`.
 
-
+#### Generative semantics
 
 Generative semantics (Lakoff 1971)
+
+#### Case grammar
 
 Case Grammar (Fillmore)
 
@@ -74,7 +76,7 @@ Case Grammar (Fillmore)
 >
 > `(2.10) * Floyd dropped the glass to the floor by tickling Sally, who was holding it.`
 
-m
+
 
 ## Thematic relations
 
