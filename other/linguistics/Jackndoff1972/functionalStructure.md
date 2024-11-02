@@ -98,11 +98,18 @@ And the proposed deep structure of `(2.2)` is:
 
 ## Thematic relations
 
-An alternative explanation is based on work by Jeffrey S. Gruber (see his doctoral dissertation *Studies in Lexical Relations* 1965), where traditional grammatial relations are supplemnetd by a system of ‘thematic relations’.
+There is an alternative approach to the semantic insufficiency of traditional grammatical relations. Instead of positing multiple layers of grammatical relations, we can formalise an extra-grammatical level of ‘thematic relations’, as based on work by Jeffrey S. Gruber (see his doctoral dissertation *Studies in Lexical Relations* 1965).
+
+Five important thematic relations will be covered in the following sections:
+- Theme
+- Location
+- Source
+- Goal
+- Agent
 
 #### Theme
 
-Every sentence (verb?) has a Theme.
+Every sentence (or every verb) has a Theme.
 
 The Theme of a verb of (physical) motion is the noun phrase understood as undergoing the motion.
 
@@ -111,11 +118,17 @@ The Theme of a verb of (physical) motion is the noun phrase understood as underg
 > `(2.14) John rolled the rock from the dump to the house.`
 >
 > `(2.15) Bill forced the rock into the hole.`
+>
+> `(2.31) George got to Philadelphia.`
+>
+> `(2.33) Harry went from Bloomington to Boston.`
 
 Note that:
 - In `(2.13)`, the Theme of `moved` is `the rock` (the subject).
 - In `(2.14)`, the Theme of `rolled` is `the rock` (the object).
 - In `(2.15)`, the Theme of `forced` is `the rock` (the object).
+- In `(2.31)`, the Theme of `got` is `George` (the subject).
+- In `(2.33)`, the Theme of `went` is `Harry` (the subject).
 
 The Theme of a verb of (physical) location is the noun phrase whose location is being asserted.
 
@@ -124,23 +137,39 @@ The Theme of a verb of (physical) location is the noun phrase whose location is 
 > `(2.21) John clung to the window sill.`
 >
 > `(2.22) Herman kept the book on the shelf.`
+>
+> `(2.29) John stayed in the room.`
 
 Note that:
 - In `(2.20)`, the Theme of `stood` is `the rock`.
 - In `(2.21)`, the Theme of `clung` is `John`.
 - In `(2.22)`, the Theme of `kept` is `the book`.
+- In `(2.29)`, the Theme of `stayed` is `John`.
 
 #### Location
 
-mm
+The Location of a verb of (physical) location is the noun phrase expressing the location, usually within a prepositional phrase.
+
+Note that:
+- In `(2.20)`, the Location of `stood` is `(in) the corner`.
+- In `(2.21)`, the Location of `clung` is `(to) the window sill`.
+- In `(2.22)`, the Location of `kept` is `(on) the shelf`.
+- In `(2.29)`, the Location of `stayed` is `(in) the room`.
 
 #### Source
 
-mm
+Note that:
+- In `(2.14)`, the Source of `rolled` is `(from) the dump`.
+- In `(2.33)`, the Source of `went` is `(from) Bloomington`.
 
 #### Goal
 
-mm
+Note that:
+- In `(2.13)`, the Goal of `moved` is `away` (ie. ‘to another place’).
+- In `(2.14)`, the Goal of `rolled` is `(to) the house`.
+- In `(2.15)`, the Goal of `forced` is `(into) the hole`.
+- In `(2.31)`, the Goal of `got` is `(to) Philadelphia`.
+- In `(2.33)`, the Goal of `went` is `(to) Boston`.
 
 #### Agent
 
@@ -148,28 +177,57 @@ mm
 
 #### Possessional motion and location
 
+The notions of physical motion and location can be extended by analogy to the domain of ‘possession’.
+
 > `(2.16) Harry gave the book away.`
 >
 > `(2.17) Will inherited a million dollars.`
 >
 > `(2.18) Charlie bought the lamp from Max.`
-
-mm
-
+>
 > `(2.23) Herman kept the book.`
 >
 > `(2.24) The book belongs to Herman.`
 >
 > `(2.25) Max owns the book.`
 
+Note that:
+- In `(2.16)`, `the book` is the Theme, `Harry` is the Source, and `away` is the Goal.
+- In `(2.17)`, `a million dollars` is the Theme, and `Will` is the Goal.
+- In `(2.18)`, `the lamp` is the Theme, `(from) Max` is the Source, and `Charlie` is the Goal.
+- In `(2.23)`, `the book` is the Theme, and `Herman` is the Location.
+- In `(2.24)`, `the book` is the Theme, and `(to) Herman` is the Location.
+- In `(2.25)`, `the book` is the Theme, and `Max` is the Location.
+
+Note also the use of the verb `kept` to express location in both the physical `(2.22)` and the possessional `(2.23)` domains.
 
 #### Abstract motion and location
 
+The notions of physical motion and location can be extended by analogy into more abstract domains as well.
+
 > `(2.19) Dave explained the proof to his students.`
-
-mm
-
+>
+> `(2.32) George got angry.`
+>
+> `(2.34) Harry went from elated to depressed.`
+>
 > `(2.26) Max knows the answer.`
+>
+> `(2.30) John stayed angry.`
+
+Note that:
+- In `(2.19)`, `the proof` is the Theme, `Dave` is the Source, and `(to) his students` is the Goal.
+- In `(2.32)`, `George` is the Theme, and the adjective `angry` is the Goal.
+- In `(2.34)`, `Harry` is the Theme, `(from) elated` is the Source, and `(to) depressed` is the Goal.
+- In `(2.26)`, `the answer` is the Theme, and `Max` is the Location.
+- In `(2.30)`, `John` is the Theme, and the adjective `angry` is the Location.
+
+Note also the use of:
+- the verb `stayed` to express location in both the physical `(2.29)` and the abstract ‘quality space’ `(2.30)` domains
+- the verb `got` to express motion in both the physical `(2.31)` and the quality space `(2.32)` domains
+- the verb `went` to express motion in both the physical `(2.34)` and the quality space `(2.34)` domains.
+
+
 
 #### mm
 
@@ -179,19 +237,18 @@ mm
 
 mm
 
-> `(2.29) John stayed in the room.`
->
-> `(2.30) John stayed angry.`
+
+
 
 mm
 
-> `(2.31) George got to Philadelphia.`
+
 >
-> `(2.32) George got angry.`
+
 >
-> `(2.33) Harry went from Bloomington to Boston.`
+
 >
-> `(2.34) Harry went from elated to depressed.`
+
 
 mm
 
