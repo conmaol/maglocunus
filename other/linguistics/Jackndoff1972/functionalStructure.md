@@ -173,7 +173,21 @@ Note that:
 
 #### Agent
 
-mm
+The Agent of a verb of physical motion is the animate noun phrase (usually the grammatical subject) that has will or volition towards the action expressed by the sentence.
+
+Note that:
+- In `(2.13)`, there is no Agent (since `the rock` is inanimate).
+- In `(2.14)`, `John` is the Agent but not the Theme.
+- In `(2.15)`, `Bill` is the Agent but not the Theme.
+- In `John rolled down the hill`, `John` is the Theme and also optionally the Agent (dependeing on the reading)
+
+A good test for Agenthood involves ‘purposive adverbials’ like `deliberately`, `intentionally`, `accidentally`, `on purpose`, and purposive constructions using `in order to` and `so that`:
+
+> `(2.35) * The rock deliberately rolled down the hill.`
+> 
+> `(2.36) John deliberately rolled down the hill.`
+>
+> `(2.38) John took the book from Bill in order to read it.`
 
 #### Possessional motion and location
 
@@ -192,14 +206,22 @@ The notions of physical motion and location can be extended by analogy to the do
 > `(2.25) Max owns the book.`
 
 Note that:
-- In `(2.16)`, `the book` is the Theme, `Harry` is the Source, and `away` is the Goal.
-- In `(2.17)`, `a million dollars` is the Theme, and `Will` is the Goal.
-- In `(2.18)`, `the lamp` is the Theme, `(from) Max` is the Source, and `Charlie` is the Goal.
+- In `(2.16)`, `the book` is the Theme, `Harry` is the Source and Agent, and `away` is the Goal.
+- In `(2.17)`, `a million dollars` is the Theme, and `Will` is the Goal (but not the Agent).
+- In `(2.18)`, `the lamp` is the Theme, `(from) Max` is the Source, and `Charlie` is the Goal and Agent.
 - In `(2.23)`, `the book` is the Theme, and `Herman` is the Location.
 - In `(2.24)`, `the book` is the Theme, and `(to) Herman` is the Location.
 - In `(2.25)`, `the book` is the Theme, and `Max` is the Location.
 
 Note also the use of the verb `kept` to express location in both the physical `(2.22)` and the possessional `(2.23)` domains.
+
+Some examples with purposive adverbials and constructions:
+
+> `(2.37) * John received the book from Bill in order to read it.`
+>
+> `(2.39) ? John lost the money so that he could get sympathy.`
+>
+> `(2.40) John gave the money away so that he could win his friends’ admiration.`
 
 #### Abstract motion and location
 
@@ -216,7 +238,7 @@ The notions of physical motion and location can be extended by analogy into more
 > `(2.30) John stayed angry.`
 
 Note that:
-- In `(2.19)`, `the proof` is the Theme, `Dave` is the Source, and `(to) his students` is the Goal.
+- In `(2.19)`, `the proof` is the Theme, `Dave` is the Source and Agent, and `(to) his students` is the Goal.
 - In `(2.32)`, `George` is the Theme, and the adjective `angry` is the Goal.
 - In `(2.34)`, `Harry` is the Theme, `(from) elated` is the Source, and `(to) depressed` is the Goal.
 - In `(2.26)`, `the answer` is the Theme, and `Max` is the Location.
@@ -227,56 +249,17 @@ Note also the use of:
 - the verb `got` to express motion in both the physical `(2.31)` and the quality space `(2.32)` domains
 - the verb `went` to express motion in both the physical `(2.34)` and the quality space `(2.34)` domains.
 
+Some examples with purposives:
 
+> `(2.41) ? John intentionally struck Bill as funny.`
+>
+> `(2.42) John intentionally made Bill think of him as funny.`
 
 #### mm
 
 > `(2.27) The circle contains the dot.`
 >
 > `(2.28) The dot is contained in the circle.`
-
-mm
-
-
-
-
-mm
-
-
->
-
->
-
->
-
-
-mm
-
-> `(2.35) * The rock deliberately rolled down the hill.`
->
-> `(2.36) John deliberately rolled down the hill.`
->
-> `(2.37) * John received the book from Bill in order to read it.`
->
-> `(2.38) John took the book from Bill in order to read it.`
->
-> `(2.39) ? John lost the money so that he could get sympathy.`
->
-> `(2.40) John gave the money away so that he could win his friends’ admiration.`
->
-> `(2.41) ? John intentionally struck Bill as funny.`
->
-> `(2.42) John intentionally made Bill think of him as funny.`
-
-mm
-
-> `(2.43)`
-
-mm
-
-> `(2.44)`
-
-mm
 
 ## Thematic relations vs. Case Grammar
 
