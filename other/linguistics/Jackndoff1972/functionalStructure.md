@@ -255,7 +255,7 @@ Some examples with purposives:
 >
 > `(2.42) John intentionally made Bill think of him as funny.`
 
-#### mm
+#### Miscellaneous points
 
 > `(2.27) The circle contains the dot.`
 >
