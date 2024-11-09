@@ -40,15 +40,27 @@
 
 > `* Me loves Mary.`
 
-`me` can be the object of a verb, or the complement of a preposition, as long as the subject of the (finite) verb is not `I`:
+`me` can be the object of a verb, as long as the subject of the verb is not `I`:
 
 > `Mary loves me.`
 >
+> `* I love me.`
+
+`me` can be the complement of a preposition, as long as the subject of the verb is not `I`, and as long as the object of the verb is not `me`:
+
 > `Mary relies on me.`
 >
-> `* I love me.`
->
 > `* I rely on me.`
+>
+> * Mary showed me to me.
+
+`me` can be the second object of a verb, as long as the subject is not `I` and the first object is not `me`:
+
+> Mary showed John me.
+>
+> * Mary showed me me.
+>
+> * I showed Mary me.
 
 `me` can be the final conjunct in a conjoined object or complement:
 
@@ -70,14 +82,36 @@ But not in a conjoined subject in careful usage:
 
 ## `myself`
 
-> `* I like me.`
+`myself` cannot be the subject of a finite verb:
+
+> `* Myself loves Mary.`
+
+`myself` can be the object of a verb, or the complement of a preposition, as long as the subject of the (finite) verb is `I`:
+
+> `I love myself.`
+>
+> `I rely on myself.`
 > 
-> `I like myself.`
-> 
-> `She likes me.`
-> 
-> `* She likes myself.`
-> 
-> `* Myself likes me.`
-> 
-> `* Myself likes myself.`
+> `* Mary loves myself.`
+>
+> `* Mary relies on myself.`
+
+
+
+
+I showed myself to Mary.
+? I showed Mary myself.
+
+
+
+? I showed Mary to myself.
+? I showed myself Mary.
+
+Mary showed me myself.
+? Mary showed me to myself
+
+
+
+
+
+
