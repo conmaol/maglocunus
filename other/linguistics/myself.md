@@ -18,7 +18,7 @@
 >
 > `* Mary showed I them.`
 
-`I` *cannot* be the object of a preposition, which is itself a complement of a verb:
+`I` *cannot* be the object of a preposition:
 
 > `* Mary relies on I.`
 >
