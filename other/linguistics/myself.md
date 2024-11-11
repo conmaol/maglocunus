@@ -6,37 +6,47 @@
 
 > `I danced.`
 > 
-> `I love Mary.`
+> `I loved Mary.`
 >
-> `I can dance.`
+> `I will dance.`
 >
 > `I will love Mary.`
 
-The exceptions are those present verbs ending in `-s`, which must have a third-person singular subject:
-
-> `* I dances.`
-> 
-> `* I loves Mary.`
-
 `me` can be an object of most transitive verbs, whether finite or non-finite:
 
-> `Mary loves me.`
+> `Mary loved me.`
 >
 > `Mary will love me.`
 
 However, `I` *cannot* be an object of a transitive verb:
 
-> `* Mary loves I.`
+> `* Mary loved I.`
 >
 > `Mary will love I.`
 
 And `me` *cannot* be the subject of a finite verb:
 
-> `* Me loves Mary.`
+> `* Me loved Mary.`
 >
 > `* Me will love Mary.`
 
+## Morphosyntactic case
 
+> `I` – `N[case:nom]`
+>
+> `me` – `N[case:acc]`
+>
+> `Mary` – `N`
+
+> `[1] danced[2]` – `N[case:nom][1] <-sbj- V[mode:fin][2]`
+>
+> dance –
+>
+> loved –
+>
+> love –
+>
+> will –
 
 
 
