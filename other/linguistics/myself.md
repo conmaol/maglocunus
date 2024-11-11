@@ -100,10 +100,6 @@ Non-local subjects and objects are irrelevant:
 >
 > `* Mary told me (that) she loves myself.`
 
-
-
-----
-
 ## Objects of prepositions
 
 #### `I`
@@ -113,6 +109,48 @@ Non-local subjects and objects are irrelevant:
 > `* Mary relies on I.`
 >
 > `* Mary showed him to I.`
+
+#### `me`
+
+`me` can be the object of a preposition, as long as the subject of the (local) verb is not `I`, and as long as an object of the (local) verb is not `me`:
+
+> `Mary relies on me.`
+>
+> `Mary showed him to me.`
+> 
+> `* I rely on me.`
+>
+> `* I showed him to me.`
+>
+> `* Mary showed me to me.`
+
+#### `myself`
+
+`myself` can be the object of a preposition, as long as the subject of the (local) verb is `I`, or ...:
+
+> `I rely on myself.`
+>
+> `I showed Mary myself.`
+>
+> `Mary showed me myself.`
+
+
+
+
+
+> `* Mary relies on myself.`
+
+
+I showed myself to Mary.
+
+
+? I showed Mary to myself.
+
+
+? Mary showed me to myself
+
+
+
 
 ----
 
@@ -132,22 +170,7 @@ Non-local subjects and objects are irrelevant:
 >
 > `? John is as old as I.`
 
-## `me`
 
-
-
-
-`me` can be the object of a preposition, which is itself the complement of a verb, as long as the subject of the verb is not `I`, and as long as an object of the verb is not `me`:
-
-> `Mary relies on me.`
->
-> `Mary showed him to me.`
-> 
-> `* I rely on me.`
->
-> `* I showed him to me.`
->
-> `* Mary showed me to me.`
 
 ---
 
@@ -169,36 +192,9 @@ But not in a conjoined subject in careful usage:
 >
 > `John is as old as me.`
 
-## `myself`
 
 
 
-
-
-
-----
-
-`myself` can be the object of a transitive verb, or the complement of a preposition, as long as the subject of the (finite) verb is `I`:
-
-> `I love myself.`
->
-> `I rely on myself.`
-> 
-> `* Mary loves myself.`
->
-> `* Mary relies on myself.`
-
-
-I showed myself to Mary.
-? I showed Mary myself.
-
-
-
-? I showed Mary to myself.
-? I showed myself Mary.
-
-Mary showed me myself.
-? Mary showed me to myself
 
 
 
