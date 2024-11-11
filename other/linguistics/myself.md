@@ -22,9 +22,9 @@ However, `I` *cannot* be an object of a transitive verb:
 
 > `* Mary loved I.`
 >
-> `Mary will love I.`
+> `* Mary will love I.`
 
-And `me` *cannot* be the subject of a finite verb:
+Similarly, `me` *cannot* be the subject of a finite verb:
 
 > `* Me loved Mary.`
 >
@@ -32,22 +32,85 @@ And `me` *cannot* be the subject of a finite verb:
 
 ## Morphosyntactic case
 
-> `I` – `N[case:nom]`
->
-> `me` – `N[case:acc]`
->
-> `Mary` – `N`
+One way of capturing this is by assuming that English has the grammatical category of *case* – specifically a distintion between nominative and accusative nouns (and pronouns).
 
-> `[a] danced[b]` – `N[case:nom][a] <-sbj- V[mode:fin][b]`
->
-> `dance[a]` – `V[mode:inf][a] -sbj-> N[case:nom]` 
->
-> `[a] loved[b] [c]` – `N[case:nom][a] <-sbj- V[mode:fin][b] -obj-> N[case:acc][c]`
->
-> `love[a] [b]` – `N[case:nom] <-sbj- V[mode:inf][a] -obj-> N[case:acc][b]` 
->
-> `[a] will[b] [c]` – `N[case:nom][a][1] <-sbj- V[mode:fin][b] -xcomp-> V[mode:inf][c] -sbj-> [1]`
+The subject pronoun `I` is lexically marked for nominative case:
 
+> `(1) I : N[case:nom]`
+
+The object pronoun `me` is lexically marked for accusative case:
+
+> `(2) me : N[case:acc]`
+
+And a proper noun like `Mary` is underspecified for case:
+
+> `(3) Mary : N`
+
+#### `danced`
+
+An intransitive finite verb like `danced` lexically subcategorises for a (preceding) noun subject in the nominative case:
+
+> `(4) [a] danced[b] : N[case:nom][a] <-sbj- V[mode:fin][b]`
+
+`(1)` and `(4)` can be merged to yield the following structure for `I danced`:
+
+> `I[a] danced[b] : N[case:nom][a] <-sbj- V[mode:fin][b]`
+
+`(3)` and `(4)` can be merged to yield the following structure for `Mary danced`, since `N` and `N[case:nom]` can be merged:
+
+> `Mary[a] danced[b] : N[case:nom][a] <-sbj- V[mode:fin][b]`
+
+But `(2)` and `(4)` cannot be merged to yield a structure for `me danced` because of the clash between `N[case:acc]` in `(2)` and `N[case:nom]` in `(4)`.
+
+#### `loved`
+
+A transitive finite verb like `loved` lexically subcategorises for both a (preceding) noun subject in the nominative case, and a following noun object in the accusative case:
+
+> `(5) [a] loved[b] [c] : N[case:nom][a] <-sbj- V[mode:fin][b] -obj-> N[case:acc][c]`
+
+`(1)`, `(3)` and `(5)` can merge to yield the following structure for `I loved Mary`:
+
+> `I[a] loved[b] Mary[c] : N[case:nom][a] <-sbj- V[mode:fin][b] -obj-> N[case:acc][c]`
+
+Similarly, `(2)`, `(3)` and `(5)` can merge to yield the following structure for `Mary loved me`:
+
+> `Mary[a] loved[b] me[c] : N[case:nom][a] <-sbj- V[mode:fin][b] -obj-> N[case:acc][c]`
+
+But `(2)`, `(3)` and `(5)` cannot be merged to yield a structure for `Me loved Mary` because of the clash between `N[case:acc]` in `(2)` and `N[case:nom]` in `(5)`.
+
+But `(1)`, `(3)` and `(5)` cannot be merged to yield a structure for `Mary loved I` because of the clash between `N[case:nom]` in `(1)` and `N[case:acc]` in `(5)`.
+
+#### `will`
+
+The auxiliary verb `will` lexically subcategorises for both a (preceding) noun subject in the nominative case and a infinitiva verb complement with an ‘understood’ subject controlled by the main subject:
+
+> `(6) [a] will[b] [c] : N[case:nom][a][1] <-sbj- V[mode:fin][b] -xcomp-> V[mode:inf][c]) -sbj-> [1]`
+
+And the two infinitival verb forms `dance` and `love` each lexically subcategorises for an understood subject:
+
+> `(7) dance[a] : N[case:nom] <-sbj- V[mode:inf][a]` 
+>
+> `(8) love[a] [b] : N[case:nom] <-sbj- V[mode:inf][a] -obj-> N[case:acc][b]` 
+
+`(6)` and `(7)` can merge to yield a ‘complex verbal’ structure for `will dance`:
+
+> `[a] will[b] dance[c] : N[case:nom][a][1] <-sbj- V[mode:fin][b] -xcomp-> V[mode:inf][c] -sbj-> [1]`
+
+And `(6)` and `(8)` can merge to yield a complex verbal structure for `will love`:
+
+> `[a] will[b] love[c] [d] : N[case:nom][a][1] <-sbj- V[mode:fin][b] -xcomp-> (V[mode:inf][c] -sbj-> [1]) -obj-> N[case:acc][d]`
+
+## Subcategorising pronouns
+
+> `(9) I[a] [b] : N[a] <-sbj- V[mode:fin][b]`
+
+> `(10) [a] me[b] : V[mode:fin][a] -obj-> N[n]`
+
+> `(11) [a] danced[b] : N[a] <-sbj- V[mode:fin][b]`
+
+> `(12) [a] loved[b] [c] : N[a] <-sbj- V[mode:fin][b] -obj-> N[c]`
+
+Does this overgenerate? `Mary danced me`
 
 
 ----
