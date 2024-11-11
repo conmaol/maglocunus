@@ -58,6 +58,8 @@ This is true for embedded finite verbs too:
 >
 > `Mary showed me them.`
 >
+> `Mary expects me to love her.`
+>
 > `* I love me.`
 > 
 > `* I showed him me.`
@@ -65,12 +67,16 @@ This is true for embedded finite verbs too:
 > `* I showed me them.`
 >
 > `* Mary showed me me.`
+>
+> `* I expect me to love Mary.`
 
 Non-local subjects and objects are irrelevant though:
 
 > `I think (that) Mary loves me.`
 >
 > `Mary told me (that) she loves me.`
+>
+> `I expect Mary to love me.`
 
 #### `myself`
 
@@ -86,6 +92,14 @@ Non-local subjects and objects are irrelevant though:
 >
 > `I showed myself myself.`
 >
+> `I expect myself to love Mary.`
+>
+> `I expect to love myself.`
+>
+> `I expect myself to love myself.`
+>
+> `Mary expects me to love myself.`
+>
 > `* Mary loves myself.`
 >
 > `* Mary showed myself them.`
@@ -93,6 +107,8 @@ Non-local subjects and objects are irrelevant though:
 > `* Mary showed them myself.`
 >
 > `* Mary showed myself me.`
+>
+> `* I expect Mary to love myself.`
 
 Non-local subjects and objects are irrelevant:
 
@@ -192,7 +208,9 @@ But not in a conjoined subject in careful usage:
 >
 > `John is as old as me.`
 
+---
 
+`* My sister invited myself.`
 
 
 
