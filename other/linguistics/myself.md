@@ -38,15 +38,15 @@ And `me` *cannot* be the subject of a finite verb:
 >
 > `Mary` – `N`
 
-> `[1] danced[2]` – `N[case:nom][1] <-sbj- V[mode:fin][2]`
+> `[a] danced[b]` – `N[case:nom][a] <-sbj- V[mode:fin][b]`
 >
-> dance –
+> `dance[a]` – `V[mode:inf][a] -sbj-> N[case:nom]` 
 >
-> loved –
+> `[a] loved[b] [c]` – `N[case:nom][a] <-sbj- V[mode:fin][b] -obj-> N[case:acc][c]`
 >
-> love –
+> `love[a] [b]` – `N[case:nom] <-sbj- V[mode:inf][a] -obj-> N[case:acc][b]` 
 >
-> will –
+> `[a] will[b] [c]` – `N[case:nom][a][1] <-sbj- V[mode:fin][b] -xcomp-> V[mode:inf][c] -sbj-> [1]`
 
 
 
