@@ -1,5 +1,86 @@
 # Me, Myself and I
 
+## `I` and `me` as subjects and objects
+
+`I` can be the subject of most finite verbs, whether transitive or intransitive, main or auxiliary:
+
+> `I danced.`
+> 
+> `I love Mary.`
+>
+> `I can dance.`
+>
+> `I will love Mary.`
+
+The exceptions are those present verbs ending in `-s`, which must have a third-person singular subject:
+
+> `* I dances.`
+> 
+> `* I loves Mary.`
+
+`me` can be an object of most transitive verbs, whether finite or non-finite:
+
+> `Mary loves me.`
+>
+> `Mary will love me.`
+
+However, `I` *cannot* be an object of a transitive verb:
+
+> `* Mary loves I.`
+>
+> `Mary will love I.`
+
+And `me` *cannot* be the subject of a finite verb:
+
+> `* Me loves Mary.`
+>
+> `* Me will love Mary.`
+
+
+
+
+
+----
+
+## `me` and `myself` as objects
+
+However, if the subject of the local clause is `I`, then `me` is not allowed as the object:
+
+> `* I love me.`
+>
+> `* I will love me.`
+
+[Exceptions? You love me, she loves me, but most of all I love me!]
+
+
+
+----
+
+> `Mary showed him me.`
+>
+> `Mary showed me them.`
+>
+> `Mary expects me to love her.`
+>
+> `* I love me.`
+> 
+> `* I showed him me.`
+>
+> `* I showed me them.`
+>
+> `* Mary showed me me.`
+>
+> `* I expect me to love Mary.`
+
+Non-local subjects and objects are irrelevant though:
+
+> `I think (that) Mary loves me.`
+>
+> `Mary told me (that) she loves me.`
+>
+> `I expect Mary to love me.`
+
+
 ## Subjects of finite verbs
 
 #### `I`
