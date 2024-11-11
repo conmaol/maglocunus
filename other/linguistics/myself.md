@@ -102,6 +102,8 @@ And `(6)` and `(8)` can merge to yield a complex verbal structure for `will love
 
 ## Subcategorising pronouns
 
+Another way of capturing the facts about `I` and `me` as subjects and objects involves, not assuming that case is a grammatical category of English, but rather that pronouns lexically subcategorise for the verbs that they combine with.
+
 > `(9) I[a] [b] : N[a] <-sbj- V[mode:fin][b]`
 
 > `(10) [a] me[b] : V[mode:fin][a] -obj-> N[n]`
