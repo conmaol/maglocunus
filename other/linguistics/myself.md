@@ -100,9 +100,9 @@ And `(6)` and `(8)` can merge to yield a complex verbal structure for `will love
 
 > `[a] will[b] love[c] [d] : N[case:nom][a][1] <-sbj- V[mode:fin][b] -xcomp-> (V[mode:inf][c] -sbj-> [1]) -obj-> N[case:acc][d]`
 
-## Subcategorising pronouns
+## Supercategorising pronouns
 
-Another way of capturing the facts about `I` and `me` as subjects and objects involves, not assuming that case is a grammatical category of English, but rather that pronouns lexically subcategorise for the verbs that they combine with.
+Another way of capturing the facts about `I` and `me` as subjects and objects involves, not assuming that case is a grammatical category of English, but rather that pronouns lexically supercategorise for the verbs that they combine with.
 
 #### Finite verbs
 
@@ -124,36 +124,42 @@ We start by redefining the lexical structures for finite verbs so as to eliminat
 
 #### `I`
 
-The lexical structure for `I` is then redefined to make it clear that it occurs as the subject of a finite verb:
+The lexical structure for `I` can then be redefined to make it clear that it occurs as the subject of a finite verb:
 
 > `(1a) I[a] [b] : N[a] <-sbj- V[mode:fin][b]`
 
-Note that this is not simple subcategorisation, in that it does not involve a head selecting an argument, but vice versa.
+Note that this is not simple subcategorisation, in that it does not involve a head selecting an argument, but vice versa – supercategorisation.
 
-I danced (1a) and (4a):
+`(1a)` and `(4a)` can merge as follows:
 
 > `I[a] danced[b] : N[a] <-sbj- V[mode:fin][b]`
 
-
-I loved (1a) and (5a)
+`(1a)` and `(5a)` can merge too:
 
 > `I[a] loved[b] [c] : N[a] <-sbj- V[mode:fin][b] -obj-> N[c]`
 
-
-loved I?
-
-
-
+However, `(1a)` cannot merge into the object relation of `(5a)` to yield a structure for `loved I` because of the clash between `-sbj->` and `-obj->`.
 
 #### `me`
 
-> `(2a) [a] me[b] : V[mode:fin][a] -obj-> N[n]`
+The lexical structure for `me` can be redefined to make it clear that it occurs as the object of (ie. supercategorises for) a (transitive) finite verb:
+
+> `(2a) [a] me[b] : V[mode:fin][a] -obj-> N[b]`
+
+`(2a)` and `(5a)` can merge as follows:
+
+> `[a] loved[b] me[c] : N[a] <-sbj- V[mode:fin][b] -obj-> N[c]`
+
+However, `(2a)` cannot merge into the subject relation of `(5a)` to yield `me loved` because of the clash between `-obj->` and `-sbj->`.
+
+We also need to disallow (2a) from merging into (4a) to yield a structure for `I danced me`. Presumably, we would need to define the merge operation carefully to distinguish between subcategorisation and supercategorisation.
+
+Note that currently `(1a)`, `(2a)` and `(5a)` can all merge into the following structure:
+
+> `I[a] loved[b] me[c] : N[a] <-sbj- V[mode:fin][b] -obj-> N[c]`
 
 
-
-Does this overgenerate? `Mary danced me`
-
-
+----
 ----
 
 ## `me` and `myself` as objects
