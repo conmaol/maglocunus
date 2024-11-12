@@ -104,13 +104,52 @@ And `(6)` and `(8)` can merge to yield a complex verbal structure for `will love
 
 Another way of capturing the facts about `I` and `me` as subjects and objects involves, not assuming that case is a grammatical category of English, but rather that pronouns lexically subcategorise for the verbs that they combine with.
 
-> `(9) I[a] [b] : N[a] <-sbj- V[mode:fin][b]`
+#### Finite verbs
 
-> `(10) [a] me[b] : V[mode:fin][a] -obj-> N[n]`
+We start by redefining the lexical structures for finite verbs so as to eliminate explicit case features:
 
-> `(11) [a] danced[b] : N[a] <-sbj- V[mode:fin][b]`
+> `(4a) [a] danced[b] : N[a] <-sbj- V[mode:fin][b]`
+>
+> `(5a) [a] loved[b] [c] : N[a] <-sbj- V[mode:fin][b] -obj-> N[c]`
 
-> `(12) [a] loved[b] [c] : N[a] <-sbj- V[mode:fin][b] -obj-> N[c]`
+`(4a)` and `(5a)` can then merge with `(3)` yielding:
+
+> `Mary[a] danced[b] : N[a] <-sbj- V[mode:fin][b]`
+>
+> `Mary [a] loved[b] [c] : N[a] <-sbj- V[mode:fin][b] -obj-> N[c]`
+>
+> `[a] loved[b] Mary[c] : N[a] <-sbj- V[mode:fin][b] -obj-> N[c]`
+> 
+> `Mary[a] loved[b] Mary[c] : N[a] <-sbj- V[mode:fin][b] -obj-> N[c]`
+
+#### `I`
+
+The lexical structure for `I` is then redefined to make it clear that it occurs as the subject of a finite verb:
+
+> `(1a) I[a] [b] : N[a] <-sbj- V[mode:fin][b]`
+
+Note that this is not simple subcategorisation, in that it does not involve a head selecting an argument, but vice versa.
+
+I danced (1a) and (4a):
+
+> `I[a] danced[b] : N[a] <-sbj- V[mode:fin][b]`
+
+
+I loved (1a) and (5a)
+
+> `I[a] loved[b] [c] : N[a] <-sbj- V[mode:fin][b] -obj-> N[c]`
+
+
+loved I?
+
+
+
+
+#### `me`
+
+> `(2a) [a] me[b] : V[mode:fin][a] -obj-> N[n]`
+
+
 
 Does this overgenerate? `Mary danced me`
 
