@@ -82,7 +82,7 @@ But `(1)`, `(3)` and `(5)` cannot be merged to yield a structure for `Mary loved
 
 #### `will`
 
-The auxiliary verb `will` lexically subcategorises for both a (preceding) noun subject in the nominative case and a infinitiva verb complement with an ‘understood’ subject controlled by the main subject:
+The auxiliary verb `will` lexically subcategorises for both a (preceding) noun subject in the nominative case and a infinitival verb complement with an ‘understood’ subject controlled by the main subject:
 
 > `(6) [a] will[b] [c] : N[case:nom][a][1] <-sbj- V[mode:fin][b] -xcomp-> V[mode:inf][c]) -sbj-> [1]`
 
@@ -159,6 +159,25 @@ Note that currently `(1a)`, `(2a)` and `(5a)` can all merge into the following s
 > `I[a] loved[b] me[c] : N[a] <-sbj- V[mode:fin][b] -obj-> N[c]`
 
 #### `will`
+
+We can redefine the lexical structures for auxiliary and non-finite verbs to eliminate explicit case features:
+
+> `(6a) [a] will[b] [c] : N[a][1] <-sbj- V[mode:fin][b] -xcomp-> V[mode:inf][c]) -sbj-> [1]`
+>
+> `(7a) dance[a] : N <-sbj- V[mode:inf][a]` 
+>
+> `(8a) love[a] [b] : N <-sbj- V[mode:inf][a] -obj-> N[b]`
+
+(6a) and (7a) `will dance`:
+
+> `[a] will[b] dance[c] : N[a][1] <-sbj- V[mode:fin][b] -xcomp-> V[mode:inf][c]) -sbj-> [1]`
+
+(6a) and (8a) `will love`
+
+> `[a] will[b] love[c] [d] : N[a][1] <-sbj- V[mode:fin][b] -xcomp-> (V[mode:inf][c]) -sbj-> [1]) -obj-> N[d]`
+
+
+Adding `I` and `me`? Redraft entries?
 
 
 
