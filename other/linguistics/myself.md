@@ -158,11 +158,16 @@ Note that currently `(1a)`, `(2a)` and `(5a)` can all merge into the following s
 
 > `I[a] loved[b] me[c] : N[a] <-sbj- V[mode:fin][b] -obj-> N[c]`
 
+## `will`
+
+
 
 ----
 ----
 
-## `me` and `myself` as objects
+## Junk
+
+### `me` and `myself` as objects
 
 However, if the subject of the local clause is `I`, then `me` is not allowed as the object:
 
@@ -201,7 +206,7 @@ Non-local subjects and objects are irrelevant though:
 > `I expect Mary to love me.`
 
 
-## Subjects of finite verbs
+### Subjects of finite verbs
 
 #### `I`
 
@@ -237,7 +242,7 @@ This is true for embedded finite verbs too:
 >
 > `* I think (that) myself love(s) Mary.`
 
-## Objects of transitive verbs
+### Objects of transitive verbs
 
 #### `I`
 
@@ -317,7 +322,7 @@ Non-local subjects and objects are irrelevant:
 >
 > `* Mary told me (that) she loves myself.`
 
-## Objects of prepositions
+### Objects of prepositions
 
 #### `I`
 
