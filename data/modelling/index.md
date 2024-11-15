@@ -10,6 +10,10 @@ Goals/aims of data modelling:
 - to support master data management and data governance
 - to lower costs of maintaining/extending existing systems and building new systems (through increased reusability).
 
+Data models are an important form of Metadata.
+
+Data models embody an important aspect of ‘corporate memory’ by capturing knowledge in an explicit form, providing a ‘map’ for others to use in navigation.
+
 DMBoK sections:
 - [Data model components](DMBoK-data_model_components.md)
 - [Data modelling schemes](DMBoK-data_modeling_schemes.md)
