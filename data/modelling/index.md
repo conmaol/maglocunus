@@ -9,4 +9,4 @@ DMBoK definition:
 DMBoK sections:
 - [Data model components](DMBoK-data_model_components.md)
 - [Data modeling schemes](DMBoK-data_modeling_schemes.md)
-- 
+- [Data model levels of detail](DMBoK-data_model_levels.md)
