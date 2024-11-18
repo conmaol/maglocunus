@@ -42,19 +42,31 @@ SELECT * FROM actor WHERE first_name LIKE 'JOHN%'
 SELECT * FROM actor WHERE first_name LIKE 'JA_NE'
 ```
 
-## ORDER BY
+## `ORDER BY`
 
 ```
 SELECT * FROM actor WHERE first_name = 'PENELOPE'
 ORDER BY last_name ASC
 ```
 
+## `LENGTH`, `CONCAT`, `LOWER`, `UPPER`, `INITCAP`, `LEFT`, `RIGHT`
+
+```
+SELECT actor_id, LENGTH(CONCAT(first_name, ' ', last_name)) FROM actor
+ORDER BY LENGTH(CONCAT(first_name, ' ', last_name))
+
+SELECT LOWER(first_name) FROM actor
+
+SELECT UPPER(first_name) FROM actor
+```
+
+```
+SELECT INITCAP(first_name) FROM actor
+
+SELECT CONCAT(LEFT(first_name,1), RIGHT(first_name, LENGTH(first_name)-1)) FROM ACTOR
+```
 
 
-## String functions
 
-In SELECT statements
 
-length
-concat
 
