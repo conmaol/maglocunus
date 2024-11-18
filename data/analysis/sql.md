@@ -43,8 +43,19 @@ SELECT * FROM actor WHERE actor_id BETWEEN 5 AND 7
 SELECT * FROM actor WHERE actor_id <= 5 OR actor_id >= 7
 ```
 
+## `IN`, `NOT`, `LIKE`, '%', '_'
 
-## `LIKE`, `IN`
+```
+SELECT * FROM actor WHERE first_name IN ('PENELOPE', 'NICK', ED)
+```
+
+```
+SELECT * FROM actor WHERE first_name NOT IN ('PENELOPE', 'NICK', ED)
+```
+
+```
+SELECT * FROM actor WHERE first_name LIKE 'JOHN%'
+```
 
 
 ## ORDER BY
