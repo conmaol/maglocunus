@@ -125,15 +125,22 @@ Notes:
 
 #### `left`, `right`
 
-left = the n characters at the start of the string
-
-right = the n characters at the end of the string
-
-
 ```
-SELECT CONCAT(LEFT(first_name,1), RIGHT(first_name, LENGTH(first_name)-1)) FROM ACTOR
+SELECT LEFT(first_name,3) FROM actor
+
+SELECT * FROM actor
+WHERE RIGHT(last_name,1) = 'E'
+
+SELECT * FROM actor
+ORDER BY RIGHT(last_name,4)
+
+SELECT CONCAT(LEFT(first_name,1), RIGHT(first_name, LENGTH(first_name)-1))
+FROM ACTOR
 ```
 
+Notes:
+- `left(string,n)` returns the first n characters of the string
+- `right(string,n)` returns the last n characters of the string
 
 
 
