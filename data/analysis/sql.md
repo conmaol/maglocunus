@@ -142,6 +142,40 @@ Notes:
 - `left(string,n)` returns the first n characters of the string
 - `right(string,n)` returns the last n characters of the string
 
+#### `substring`
+
+```
+SELECT SUBSTRING(first_name,1,3) FROM actor
+
+SELECT SUBSTRING(first_name,4) FROM actor
+
+SELECT SUBSTRING(first_name,-4) FROM actor
+
+SELECT CONCAT(SUBSTRING(first_name,1,1), LOWER(SUBSTRING(first_name,2))) FROM actor
+```
+
+Notes:
+- `substring(string,n,m)` returns the first m characters in string starting at position n (non-zero indexing).
+- `substring(string,n)` returns the end of string starting from position n.
+- `substring(string,-n)` returns ??
+- Do these all work in Postrgres?
+
+#### `trim`
+
+```
+SELECT TRIM(first_name) FROM actor
+
+TRIM(LEADING 'A ' FROM description) FROM film_text
+
+TRIM(TRAILING '.' FROM description) FROM film_text
+```
+
+Notes:
+- `trim(string)` removes leading and trailing spaces from string.
+- `trim(leading substring from string)` removes substring from the start of string.
+- `trim(trailing substring from string)` removes substring from the end of string.
+
+#### `locate`
 
 
 
