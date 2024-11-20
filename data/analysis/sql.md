@@ -121,7 +121,7 @@ ORDER BY LOWER(first_name)
 ```
 
 Notes:
-- `initcap` will make the first character uppercase, and the rest lowercase (system-dependent).
+- `initcap` will make the first character (of each word) uppercase, and the rest lowercase (system-dependent).
 
 #### `left`, `right`
 
@@ -176,6 +176,15 @@ Notes:
 - `trim(trailing substring from string)` removes substring from the end of string.
 
 #### `locate`
+
+### Date functions
+
+#### `extract`
+
+```
+SELECT EXTRACT(YEAR FROM last_update)
+FROM address
+```
 
 ## Group your SQL results
 
