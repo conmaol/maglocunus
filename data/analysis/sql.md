@@ -177,13 +177,43 @@ Notes:
 
 #### `locate`
 
-
-
-
 ## Group your SQL results
 
+### `count`
 
+```
+SELECT COUNT(*) FROM address
 
+SELECT COUNT(address2) FROM address
+```
+
+Notes:
+- `count(fieldname)` does not count `null` values.
+- Can count be used with more than one field name?
+- The following query return an error: `SELECT district, COUNT(*) FROM address`. You cannot query grouped and ungrouped data in the same query.
+
+### `group by`
+
+```
+SELECT district, COUNT(*)
+FROM address
+GROUP BY district
+
+SELECT district, COUNT(*) AS c
+FROM address
+GROUP BY district
+ORDER BY c DESC
+
+SELECT district, COUNT(*) AS c
+FROM address
+WHERE address_id < 10
+GROUP BY district
+ORDER BY c DESC
+```
+
+Notes:
+- Aggregating functions like `count` should be used with `group by`.
+- `where` cannot be used to filter on a grouped field, like `SELECT district, COUNT(*) AS c FROM address WHERE c < 10`.
 
 
 
