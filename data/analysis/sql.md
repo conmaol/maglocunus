@@ -213,6 +213,7 @@ ORDER BY c DESC
 
 Notes:
 - Aggregating functions like `count` should be used with `group by`.
+- Similarly, `group by` can only be used with an aggregating function.
 - `where` cannot be used to filter on a grouped field, like `SELECT district, COUNT(*) AS c FROM address WHERE c < 10`.
 
 
