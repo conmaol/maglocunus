@@ -175,7 +175,15 @@ Notes:
 - `trim(leading substring from string)` removes substring from the start of string.
 - `trim(trailing substring from string)` removes substring from the end of string.
 
-#### `locate`
+#### `position`
+
+```
+SELECT POSITION('lope' IN first_name)
+FROM actor
+```
+
+Notes:
+- `position(substring IN string)` returns the location of (the first instance of) substring in string. 
 
 ### Date functions
 
