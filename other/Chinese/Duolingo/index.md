@@ -29,13 +29,13 @@
 
 ### 這 (这)
 
-**這是冰茶** `zhè shì bīngchá` ‘this is iced tea’
+**這是冰茶** `zhè shì bīng chá` ‘this is iced tea’
 
 **這是你的水** `zhè shì nī de shuǐ` ‘this is your water’
 
 ### 是 (昰)
 
-**這是冰茶** `zhè shì bīngchá` ‘this is iced tea’
+**這是冰茶** `zhè shì bīng chá` ‘this is iced tea’
 
 **這是你的水** `zhè shì nī de shuǐ` ‘this is your water’
 
