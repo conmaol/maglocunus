@@ -21,29 +21,29 @@
 
 **粥** (鬻) `zhōu` ‘(rice) gruel’
 
-### 和
+### Noun coordination 和
 
 **湯和冰茶** `tāng hé bīng chá` ‘broth and iced tea’
 
 **粥和水** `zhōu hé shuǐ` ‘gruel and water’
 
-### 這 (这)
+### Proximal demonstrative 這 (这)
 
 **這是冰茶** `zhè shì bīng chá` ‘this is iced tea’
 
 **這是你的水** `zhè shì nī de shuǐ` ‘this is your water’
 
-### 是 (昰)
+### Copula 是 (昰)
 
 **這是冰茶** `zhè shì bīng chá` ‘this is iced tea’
 
 **這是你的水** `zhè shì nī de shuǐ` ‘this is your water’
 
-### 你 (妳)
+### Possessive pronoun 你 (妳)
 
 **這是你的水** `zhè shì nī de shuǐ` ‘this is your water’
 
-### 的
+### Possessive suffix 的
 
 **這是你的水** `zhè shì nī de shuǐ` ‘this is your water’
 
