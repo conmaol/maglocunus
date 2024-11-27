@@ -2,29 +2,51 @@
 
 ## Section 1 Unit 1: Basic food and drink
 
-### Nouns
+### Nouns denoting food and drink
 
 **水** `shuǐ` ‘water’
+- **熱水** (**热水**) `rè shuǐ` ‘hot water’
 
 **茶** `chá` ‘tea’
-
-**冰茶** `bīngchá` ‘iced tea’
+- **冰茶** `bīng chá` ‘iced tea’
 
 **咖啡** `kāfēi` ‘coffee’
+- **冰咖啡** `bīng kāfēi` ‘iced coffee’
 
-**湯** / **汤** `tāng` ‘broth’
+**湯** (**汤**) `tāng` ‘broth’
 
-**米飯** / **米饭** `mǐfàn` ‘(cooked) rice’
+**米飯** (**米饭**) `mǐfàn` ‘(cooked) rice’
 
 **豆腐** `dòufu | dòufǔ` ‘bean curd’
 
 **粥** (鬻) `zhōu` ‘(rice) gruel’
 
+### 和
 
-**熱** / **热** `rè` ‘hot’
+**湯和冰茶** `tāng hé bīng chá` ‘broth and iced tea’
 
-... and ...
+**粥和水** `zhōu hé shuǐ` ‘gruel and water’
 
-this is ...
+### 這 (这)
 
-your ...
+**這是冰茶** `zhè shì bīngchá` ‘this is iced tea’
+
+**這是你的水** `zhè shì nī de shuǐ` ‘this is your water’
+
+### 是 (昰)
+
+**這是冰茶** `zhè shì bīngchá` ‘this is iced tea’
+
+**這是你的水** `zhè shì nī de shuǐ` ‘this is your water’
+
+### 你 (妳)
+
+**這是你的水** `zhè shì nī de shuǐ` ‘this is your water’
+
+### 的
+
+**這是你的水** `zhè shì nī de shuǐ` ‘this is your water’
+
+
+
+
