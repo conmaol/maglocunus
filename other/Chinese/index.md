@@ -85,8 +85,45 @@ woman
 
 Cantonese: neoi-5
 
+### 手
 
+shǒu
 
+hand
+
+[https://en.wiktionary.org/wiki/手]
+
+Cantonese: sau-2
+
+### 日
+
+rì
+
+sun, day
+
+[https://en.wiktionary.org/wiki/日#Chinese]
+
+Cantonese: jat-6
+
+### 大
+
+dà
+
+big
+
+[https://en.wiktionary.org/wiki/大]
+
+Cantonese: daai-6
+
+### 力
+
+lì
+
+strength
+
+[https://en.wiktionary.org/wiki/力]
+
+Cantonese: lik-6
 
 
 
