@@ -9,6 +9,7 @@
 
 **茶** `chá` ‘tea’
 - **冰茶** `bīng chá` ‘iced tea’
+- **熱茶** (**热茶**) `rè chá` ‘hot tea’
 
 **咖啡** `kāfēi` ‘coffee’
 - **冰咖啡** `bīng kāfēi` ‘iced coffee’
@@ -27,11 +28,15 @@
 
 **粥和水** `zhōu hé shuǐ` ‘gruel and water’
 
+**茶和咖啡** `chá hé kāfēi` ‘tea and coffee’
+
 ### Proximal demonstrative 這 (这)
 
 **這是冰茶** `zhè shì bīng chá` ‘this is iced tea’
 
 **這是你的水** `zhè shì nī de shuǐ` ‘this is your water’
+
+**這是米飯** `zhè shì mǐfàn` ‘this is rice’
 
 ### Copula 是 (昰)
 
@@ -39,9 +44,13 @@
 
 **這是你的水** `zhè shì nī de shuǐ` ‘this is your water’
 
+**這是米飯** `zhè shì mǐfàn` ‘this is rice’
+
 ### Possessive pronoun 你 (妳)
 
 **這是你的水** `zhè shì nī de shuǐ` ‘this is your water’
+
+**這是你的熱茶** `zhè shì nī de rè chá` ‘this is your hot tea’
 
 ### Possessive suffix 的
 
