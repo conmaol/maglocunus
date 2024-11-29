@@ -123,3 +123,34 @@ strength
 
 Cantonese: lik-6
 
+## 一
+
+yī
+
+one
+
+[https://en.wiktionary.org/wiki/一]
+
+Cantonese: jat-1
+
+
+## 二
+
+èr
+
+two
+
+[https://en.wiktionary.org/wiki/二]
+
+Cantonese: ji-3
+
+## 三
+
+sān
+
+three
+
+[https://en.wiktionary.org/wiki/三]
+
+Cantonese: saam-1
+
