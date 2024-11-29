@@ -154,3 +154,65 @@ three
 
 Cantonese: saam-1
 
+## 上
+
+shàng
+
+above
+
+[https://en.wiktionary.org/wiki/上]
+
+Cantonese: soeng-6
+
+## 下
+
+xia
+
+below
+
+[https://en.wiktionary.org/wiki/下]
+
+Cantonese: haa-6
+
+## 言
+
+yán
+
+speak
+
+[https://en.wiktionary.org/wiki/言]
+
+Cantonese: jin-4
+
+## 太
+
+tài
+
+too much
+
+[https://en.wiktionary.org/wiki/太]
+
+Cantonese: taai-3-2
+
+## 王
+
+wáng
+
+king
+
+[https://en.wiktionary.org/wiki/王]
+
+Cantonese: wong-4
+
+## 玉
+
+yù
+
+jade
+
+[https://en.wiktionary.org/wiki/玉]
+
+Cantonese: juk-6
+
+
+
