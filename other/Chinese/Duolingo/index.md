@@ -22,6 +22,12 @@
 
 **粥** (鬻) `zhōu` ‘(rice) gruel’
 
+### Nouns denoting pets
+
+**狗** `gǒu` ‘a dog’
+
+**貓**／**猫** `māo` ‘a cat’
+
 ### Noun coordination 和
 
 **湯和冰茶** `tāng hé bīng chá` ‘broth and iced tea’
@@ -52,10 +58,26 @@
 
 **這是你的熱茶** `zhè shì nī de rè chá` ‘this is your hot tea’
 
+**你有狗嗎** `nǐ yǒu gǒu ma` ‘Do you have a dog?’
+
+### Possessive pronoun 我
+
+**我有狗**  `wǒ yǒu gǒu` ‘I have a dog’
+
 ### Possessive suffix 的
 
 **這是你的水** `zhè shì nī de shuǐ` ‘this is your water’
 
+### Possessive verb 有
 
+你有狗嗎 `nǐ yǒu gǒu ma` ‘Do you have a dog?’
+
+我有貓 `wǒ yǒu māo` ‘I have a cat’
+
+### Interrogative particle 嗎 / 吗
+
+你有狗嗎 `nǐ yǒu gǒu ma` ‘Do you have a dog?’
+
+你有 貓 嗎 `nǐ yǒu māo ma` ‘Do you have a cat?’
 
 
