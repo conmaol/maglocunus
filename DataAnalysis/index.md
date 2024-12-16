@@ -28,24 +28,24 @@ If the mean and the median are close together, then the data is generally very e
 ### Datasets as graphs
 
 Importantly, at its most fundamental level, even this very simple kind of dataset is a graph:
-- there are 11 (labelled) nodes, each of which represents a shipment
-- there is a non-finite set of (non-negative) integers, representing the number of days the shipment was in transit
-- every shipment node is connected to exactly one integer node, by a labelled edge (ie. this is numeric data).
+- There are 11 (labelled) nodes, each of which represents a shipment.
+- There is a non-finite set of (non-negative) integers, representing the number of days the shipment was in transit.
+- Every shipment node is connected to exactly one integer node, by a labelled edge (ie. this is numeric data).
 
 The basic facts are:
 
 ```
-shipment(x1)
-shipment(x2)
+shipment(s1)
+shipment(s2)
 . . .
-shipment(x11)
-days_in_transit(x1,23)
-days_in_transit(x2,38)
+shipment(s11)
+days_in_transit(s1,27)
+days_in_transit(s2,26)
 . . .
-days_in_transit(x11,37)
+days_in_transit(s11,37)
 ```
 
-And the dataset schema is:
+And the dataset schema (data model?) is:
 
 ```
 ∀x. shipment(x) ∨ x ∈ {1, 2, 3, ...}
