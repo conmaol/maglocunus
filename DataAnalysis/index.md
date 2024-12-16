@@ -16,14 +16,23 @@ One basic operation on this kind of (numeric) dataset is to **sort** it:
 Days in transit (sorted) = [23, 27, 27, 28, 28, 28, 29, 29, 30, 37, 38]
 ```
 
-### Mean, median, mode
+### Descriptive measures of a smple dataset
 
 The most basic descriptive facts about (the distribution of values in) this kind of dataset are:
 - the **mean** – the average value ie. `(23 + 38 + 29 + 28 + 30 + 28 + 29 + 27 + 27 + 28 + 37) / 11 = 29.45 days`
 - the **median** – the middle value in the sorted dataset ie. `28 days`
 - the **mode** – the mode common value ie. `28 days`
+- the **minimum** value – the first value in the sorted dataset ie. 23 days
+- the **maximum** value - the last value in the sorted dataset ie. 38 days
+- the **first quartile** (or 25th percentile) – the median of the lower half of the sorted dataset
+- the **third quartile** (or 75th percentile) – the median of the upper half of the sorted dataset
+- the **variance** – the mean of the squared differences between each datum in the dataset and the mean
+- the **standard deviation** – the square root of the variance
 
 If the mean and the median are close together, then the data is generally very evenly distributed (with few outliers).
+
+
+
 
 ### Datasets as graphs
 
