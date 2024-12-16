@@ -4,7 +4,7 @@ Some introductory notes from LinkedIn Learning course *Learning Excel: Data Anal
 
 ## Foundational concepts
 
-In its simplest form a dataset can be presented as a list of numbers (integers), eg. a column of cells in a spreadsheet, like:
+In its simplest form a dataset can be presented as a list of numbers (eg. integers), ie. a column of cells in a spreadsheet, like:
 
 ```
 Days in transit = [23, 38, 29, 28, 30, 28, 29, 27, 27, 28, 37]
@@ -16,7 +16,7 @@ One basic operation on this kind of (numeric) dataset is to **sort** it:
 Days in transit (sorted) = [23, 27, 27, 28, 28, 28, 29, 29, 30, 37, 38]
 ```
 
-### Descriptive measures of a smple dataset
+### Descriptive measures of a simple dataset
 
 The most basic descriptive facts about (the distribution of values in) this kind of dataset are:
 - the **mean** – the average value ie. `(23 + 38 + 29 + 28 + 30 + 28 + 29 + 27 + 27 + 28 + 37) / 11 = 29.45 days`
@@ -30,9 +30,6 @@ The most basic descriptive facts about (the distribution of values in) this kind
 - the **standard deviation** – the square root of the variance
 
 If the mean and the median are close together, then the data is generally very evenly distributed (with few outliers).
-
-
-
 
 ### Datasets as graphs
 
@@ -48,20 +45,32 @@ shipment(s1)
 shipment(s2)
 . . .
 shipment(s11)
-days_in_transit(s1,27)
-days_in_transit(s2,26)
+days_in_transit(s1,23)
+days_in_transit(s2,38)
 . . .
 days_in_transit(s11,37)
 ```
 
-And the dataset schema (data model?) is:
+Here is an example of a fragment of this dataset represented as a graph (though the actual numbers involved are slightly different). The red lines encode the `days_in_transit` relation, the black lines encode the linear ordering relationship on integers.
+
+![A simple model](simple-model.jpg)
+
+The basic descriptive measures are functions on the relation, for example:
+
+```
+mean(days_in_transit) = sum(days_in_transit) / count(days_in_transit) = 29.45
+```
+
+And the data model for this simple dataset is:
 
 ```
 ∀x. shipment(x) ∨ x ∈ {1, 2, 3, ...}
 ∀x. shipment(x) ↔ x ∉ {1, 2, 3, ...}
-∀x. shipment(x) ↔ ∃y. ~shipment(y) & days_in_transit(x,y)
+
+∀x. shipment(x) → ∃y. ~shipment(y) & days_in_transit(x,y)
+∀x∀y∀z. days_in_transit(x,y) & days_in_transit(x,z) → y=z
+∀x∀y. days_in_transit(x,y) → shipment(x) & ~shipment(y)
+
 ∀x∀y∀P. P(x,y) → days_in_transit(x,y)
 ```
-Here is an example of a fragment of this dataset represented as a graph. The red lines encode the `days_in_transit` relation, the black lines encode the linear ordering relationship on integers.
 
-![A simple model](simple-model.jpg)
