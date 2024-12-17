@@ -18,7 +18,7 @@ Days in transit (sorted) = [23, 27, 27, 28, 28, 28, 29, 29, 30, 37, 38]
 
 ### Descriptive measures of a simple dataset
 
-The most basic descriptive facts about (the distribution of values in) this kind of dataset are:
+The most basic descriptive facts about (the distribution of values in) this kind of (numeric) dataset are:
 - the **mean** – the average value ie. `(23 + 38 + 29 + 28 + 30 + 28 + 29 + 27 + 27 + 28 + 37) / 11 = 29.45 days`
 - the **median** – the middle value in the sorted dataset ie. `28 days`
 - the **mode** – the mode common value ie. `28 days`
@@ -73,4 +73,26 @@ And the data model for this simple dataset is:
 
 ∀x∀y∀P. P(x,y) → days_in_transit(x,y)
 ```
+
+### The Central Limit Theorem
+
+The Central Limit Theorem is a principle of data analysis that states that:
+
+> As the number of measurements increases, the more likely it is that your data will be distributed as you expect.
+
+Frequency distribution
+
+Normal distribution
+
+### Margin of error
+
+Standard error = standard deviation / the square root of the number of measurements
+
+Margin of error = standard error x Z score 
+
+Z score = the number of standard deviations your desired confidence level is from the mean.
+
+
+
+
 
