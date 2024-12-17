@@ -4,7 +4,7 @@ Some introductory notes from LinkedIn Learning course *Learning Excel: Data Anal
 
 ## Foundational concepts
 
-In its simplest form a dataset can be presented as a list of numbers (eg. integers), ie. a column of cells in a spreadsheet, like:
+In its simplest form a dataset can be presented as a list of numbers (eg. integers), ie. a column of cells in a spreadsheet or table, like:
 
 ```
 Days in transit = [23, 38, 29, 28, 30, 28, 29, 27, 27, 28, 37]
@@ -15,6 +15,14 @@ One basic operation on this kind of (numeric) dataset is to **sort** it:
 ```
 Days in transit (sorted) = [23, 27, 27, 28, 28, 28, 29, 29, 30, 37, 38]
 ```
+
+Another operation is to **bucket** it, for example:
+
+```
+Days in transit (sorted and bucketed) = [20-24, 25-29, 25-29, 25-29, 25-29, 25-29, 25-29, 25-29, 30-34, 35-39, 35-39]
+```
+
+bucketing requires a bucket function, eg. 23: 20–24 etc.
 
 ### Descriptive measures of a simple dataset
 
