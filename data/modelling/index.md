@@ -1,20 +1,23 @@
-# Data Modelling (and Design)
+# Data Modelling
 
-DMBoK definition:
+The DAMA [Data Management Body of Knowledge 2](https://www.dama.org/cpages/body-of-knowledge) (DMBoK) defines data modelling (aka. data design) as follows:
 
-> Data modeling is the process of discovering, analyzing, and scoping data requirements,  
-> and then representing and communicating these data requirements in a precise form called the *data model*.
+> Data modelling is the process of discovering, analysing, and scoping data **requirements**,  
+> and then representing and communicating these data requirements in a precise form called the **data model**.
 
-Goals/aims of data modelling:
-- to confirm and document an understanding of different perspectives, leading to application that more closely align with current and future business requirements
-- to support master data management and data governance
-- to lower costs of maintaining/extending existing systems and building new systems (through increased reusability).
+Why do we do data modelling?
+- To understand different **perspectives** on (current and future) business requirements
+- To build applications that are better **aligned** to business requirements
+- To **support** master data management and data governance
+- To lower costs of maintaining/extending existing applications and building new application through increased **reusability**
+- To record and preserve **corporate memory**, by capturing knowledge in an explicit form
 
-Data models are an important form of Metadata.
-
-Data models embody an important aspect of ‘corporate memory’ by capturing knowledge in an explicit form, providing a ‘map’ for others to use in navigation.
-
-DMBoK sections:
-- [Data model components](DMBoK-data_model_components.md)
-- [Data modelling schemes](DMBoK-data_modeling_schemes.md)
-- [Data model levels of detail](DMBoK-data_model_levels.md)
+Here are some notes on individual sections from Chapter 5 (*Data Modeling and Design*) of the DMBoK:
+- §1.3. Concepts
+  - §1.3.3. [Data model components](DMBoK-data_model_components.md)
+  - §1.3.4. [Data modelling schemes](DMBoK-data_modeling_schemes.md)
+  - §1.3.5. [Data model levels of detail](DMBoK-data_model_levels.md)
+- §2. Activities
+- §3. Tools
+- §4. Best practices
+- §5. Governance
