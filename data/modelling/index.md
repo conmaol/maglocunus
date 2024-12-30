@@ -21,3 +21,6 @@ Here are some notes on individual sections from Chapter 5 (*Data Modeling and De
 - §3. Tools
 - §4. Best practices
 - §5. Governance
+
+Here are some other resources:
+- [Understanding data modelling](other/Reichental.md) (from course on *Learning Data Governance*)
