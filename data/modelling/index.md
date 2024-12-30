@@ -23,4 +23,4 @@ Here are some notes on individual sections from Chapter 5 (*Data Modeling and De
 - §5. Governance
 
 Here are some other resources:
-- [Understanding data modelling](other/Reichental.md) (from course on *Learning Data Governance*)
+- [Understanding data modelling](other/Reichental-modelling.md) (from course on *Learning Data Governance*)
