@@ -1,6 +1,6 @@
 # Data
 
-- [Data modelling]()
-- [Data analysis]()
+- [Data modelling](modelling/index.md)
+- [Data analysis](analysis/index.md)
 
   
