@@ -5,6 +5,7 @@ My notes about computers, data and AI.
 - January:
   - SVG
   - Anarcho-capitalism
+  - Structuralism
   - Wambsgans: Stefan Zweig, Christoph Hein
  
 
