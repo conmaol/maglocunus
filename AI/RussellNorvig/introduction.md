@@ -65,6 +65,8 @@ Problems with this approach:
 ### Acting rationally: the rational agent approach
 
 AI is the study and construction of <mark>rational agents</mark>.
+- *Agents* are entities which <mark>perceive</mark> and <mark>act</mark>.
+- Acting *rationally* involves acting to achieve one’s <mark>goals</mark>, given one’s <mark>beliefs</mark>.
 
 
 
