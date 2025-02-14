@@ -30,15 +30,27 @@ Orthogonal to this, definitions of AI fall into two further groups:
 - understanding and building entities that are <mark>intelligent</mark>
   - rational – do the right thing
 
+### Acting humanly: the Turing Test approach
 
+The Turing Test (1950) aims to provide an **operational definition of intelligence** (or at least intelligent behaviour):
 
-Acting humanly: the Turing Test approach
+> the ability to achieve human-level performance in all cognitive tasks, sufficient to fool an interrogator
 
-Thinking humanly: the cognitive modelling approach
+This involves the following capabilities:
+- <mark>natural language processing</mark> – communicating successfully in English
+- <mark>knowledge representation</mark> – storing information provided before or during the interview
+- <mark>automated reasoning</mark> – using stored information to answer questions and draw new conclusions
+- <mark>machine learning</mark> – adapting to new circumstances, detecting and extrapolating patterns
 
-Thinking rationally: the laws of thought approach
+The **Total Turing Test** adds physical interaction to the mix (using a video signal and a hatch):
+- <mark>computer vision</mark> – perceiving objects
+- <mark>robotics</mark> – moving objects around
 
-Acting rationally: the rational agent approach
+### Thinking humanly: the cognitive modelling approach
+
+### Thinking rationally: the laws of thought approach
+
+### Acting rationally: the rational agent approach
 
 Back up to: [Top](#)
 
