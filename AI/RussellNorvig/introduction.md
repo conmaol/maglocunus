@@ -40,15 +40,16 @@ Thinking rationally: the laws of thought approach
 
 Acting rationally: the rational agent approach
 
+Back up to: [Top](#)
+
 ## 1.2. The foundations of Artificial Intelligence
 
 
-
+Back up to: [Top](#)
 
 ## 1.3. The history of Artificial Intelligence
 
-
-
+Back up to: [Top](#)
 
 
 
