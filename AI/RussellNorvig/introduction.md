@@ -46,7 +46,7 @@ The **Total Turing Test** adds physical interaction to the mix (using a video si
 - <mark>computer vision</mark> – perceiving objects
 - <mark>robotics</mark> – moving objects around
 
-Simply trying to passing the Turing Test (as in mimicking human behaviour to fool users) has not been a huge priority in AI research, apart from when desiging machines that need to interact with humans and hence need to behave according to certain established conventions of human interaction.
+Simply trying to passing the Turing Test (as in mimicking human behaviour to fool users) has not been a huge priority in AI research, apart from when designing machines that need to interact with humans and hence need to behave according to certain established conventions of human interaction.
 
 ### Thinking humanly: the cognitive modelling approach
 
