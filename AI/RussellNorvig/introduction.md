@@ -12,7 +12,7 @@ Contents:
 AI attempts to understand, <mark>and strives to build</mark>, intelligent entities – entities (biological or electronic) which can perceive, understand, predict and manipulate a world far larger and more complicated than themselves.
 
 AI was formally initiated as a field of study in 1956, combining:
-- 2000 years of philosophical study of intelligence – seeing, learning, remembering, reasoning
+- 2000 years of philosophical study of intelligence – seeing, learning, remembering, reasoning, <mark>rationality</mark>
 - the advent of usable computers in the early 1950s – ‘electronic super-brains’ – to test out the philosophical theories
 
 AI has **subfields** (eg. perception, logical reasoning) and specific **tasks** (eg. playing chess, proving mathematical theorems, writing poetry, diagnosing diseases).
@@ -64,17 +64,16 @@ Problems with this approach:
 
 ### Acting rationally: the rational agent approach
 
-AI is the study and construction of <mark>rational agents</mark>.
+<mark>AI is the study and construction of **rational agents**</mark>.
 - *Agents* are entities which <mark>perceive</mark> and <mark>act</mark>.
 - Acting *rationally* involves acting to achieve one’s <mark>goals</mark>, given one’s <mark>beliefs</mark>.
 
-Correct inference is part of acting rationally (i.e. reasoning logically to the conclusion that a given action will help achieve one's goals) but so is:
-- deciding what to do when no one course of action is provably correct
-- acting in a reflex action without deliberation (eg. pulling one's hand off a hot stove)
-
-All of the 'cognitive skills' needed to pass the Turing Test are there to allow rational agency. 
-
-Achieving perfect rationality (always doing the right thing) is not possible in complex environments, because the computational demands are too high. But understanding perfect decision making is a good starting point for understanding limited rationality – acting appropriately given time constraints. 
+This definition of AI subsumes the others:
+- Correct inference is part of acting rationally (i.e. reasoning logically to the conclusion that a given action will help achieve one's goals) but so is:
+  - deciding what to do when no one course of action is provably correct
+  - acting in a reflex action without deliberation (eg. pulling one's hand off a hot stove)
+- All of the 'cognitive skills' needed to pass the Turing Test are there to allow rational agency. 
+- Achieving perfect rationality (always doing the right thing) is not possible in complex environments, because the computational demands are too high. But understanding perfect decision making is a good starting point for understanding limited rationality – acting appropriately given time constraints. 
 
 Back up to: [Top](#)
 
@@ -82,9 +81,37 @@ Back up to: [Top](#)
 
 ### Philosophy (428 B.C. to present)
 
+dualism
+
+materialism
+
+empiricism
+
+induction
+
+logical positivism
+
+means-end analysis
+
 ### Mathematics (c. 800 to present)
 
+algorithm
+
+incompleteness theorem
+
+intractability
+
+reduction
+
+NP-complete
+
+decision theory
+
 ### Psychology (1879 to present)
+
+behaviourism
+
+cognitive psychology
 
 ### Computer engineering (1940 to present)
 
