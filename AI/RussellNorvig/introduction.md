@@ -56,7 +56,7 @@ cf. Newell and Simon’s *General Problem Solver* (GPS, 1961) – a program whic
 
 ### Thinking rationally: the laws of thought approach
 
-The <mark>logicist</mark> tradition within AI attempts to write programs that take a description of a problem in logical notation and find a solution. This builds on thousands of years of investigation into formal logic starting with Aristotle's syllogisms (laws of thought, right thinking).
+The <mark>logicist</mark> tradition within AI attempts to write programs that take a description of a problem in logical notation and find a solution. This builds on thousands of years of investigation into formal logic starting with Aristotle's syllogisms (laws of thought, right thinking, correct inferences).
 
 Problems with this approach:
 - It is not easy to codify informal knowledge in formal notation, especially where the knowledge is less than 100% certain.
@@ -68,12 +68,27 @@ AI is the study and construction of <mark>rational agents</mark>.
 - *Agents* are entities which <mark>perceive</mark> and <mark>act</mark>.
 - Acting *rationally* involves acting to achieve one’s <mark>goals</mark>, given one’s <mark>beliefs</mark>.
 
+Correct inference is part of acting rationally (i.e. reasoning logically to the conclusion that a given action will help achieve one's goals) but so is:
+- deciding what to do when no one course of action is provably correct
+- acting in a reflex action without deliberation (eg. pulling one's hand off a hot stove)
 
+All of the 'cognitive skills' needed to pass the Turing Test are there to allow rational agency. 
+
+Achieving perfect rationality (always doing the right thing) is not possible in complex environments, because the computational demands are too high. But understanding perfect decision making is a good starting point for understanding limited rationality – acting appropriately given time constraints. 
 
 Back up to: [Top](#)
 
 ## 1.2. The foundations of Artificial Intelligence
 
+### Philosophy (428 B.C. to present)
+
+### Mathematics (c. 800 to present)
+
+### Psychology (1879 to present)
+
+### Computer engineering (1940 to present)
+
+### Linguistics (1957 to present)
 
 Back up to: [Top](#)
 
