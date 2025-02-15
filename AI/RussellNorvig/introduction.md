@@ -22,7 +22,7 @@ AI has **subfields** (eg. perception, logical reasoning) and specific **tasks** 
 Definitions of AI fall into two general groups:
 - understanding and building entities that <mark>think</mark>
   - reasoning, minds, mental faculties, decision-making, problem-solving, learning, computations
-- understanding and building entities that <mark>act</mark>
+- understanding and building entities that <mark>act (intelligently)</mark>
   - intelligent behaviour, performing functions
 
 Orthogonal to this, definitions of AI fall into two further groups:
