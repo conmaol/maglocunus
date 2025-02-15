@@ -81,15 +81,21 @@ Back up to: [Top](#)
 
 ### Philosophy (428 B.C. to present)
 
-dualism
+Plato’s *Euthyphro* dialogue has Socrates posit an *algorithm* for distinguishing ‘pious’ from ‘non-pious’ actions.
 
-materialism
+Aristotle’s system of syllogisms allows, in principle, for the *mechanical generation* of conclusions, given initial premises.
 
-empiricism
+Descartes (1596–1650) proposed <mark>dualism</mark> – a part of the (human) mind (soul, spirit) is outside of nature, exempt from the laws of physics.
 
-induction
+Leibniz (1646–1717) espoused <mark>materialism</mark> – the brain and mind operate according to physical laws, and hence are *mechanical*. The mind is a physical device operating principally by reasoning with the knowledge that it contains.
 
-logical positivism
+Francis Bacon (1561–1626) and John Locke (1632–1704) developed <mark>empiricism</mark> – all knowledge contained in the mind ultimately comes from sensory experience.
+
+David Hume (1711–1776) proposed the principle of <mark>induction</mark> – general rules are acquired by exposure to repeated associations between their elements.
+
+Bertrand Russell (1872–1970) introduced <mark>logical positivism</mark> – all knowledge can be characterised by logical theories connected to observation sentences that correspond to sensory inputs (ie. most of metaphysics is ruled out). 
+
+What is the connection between knowledge and action?
 
 means-end analysis
 
