@@ -1,4 +1,4 @@
-# Artificial intelligence - introduction
+# Artificial intelligence - Introduction
 
 \[My notes from Chapter 1 of *Artificial Intelligence: A Modern Approach* by Stuart Russell and Peter Norvig (1995).\]
 
