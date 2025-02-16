@@ -22,6 +22,8 @@ graph TD
     program -- output --> effectors
 ```
 
+----
+
 Contents:
 - [How agents should act](how-agents-should-act)
 - [Structure of intelligent agents](#structure-of-intelligent-agents)
