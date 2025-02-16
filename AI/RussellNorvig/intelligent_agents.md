@@ -6,7 +6,6 @@
 >
 > An intelligent agent **does a good job** in acting upon its environment, by **knowing things**.
 
-----
 **Figure 2.1** – *Agents interact with environments through sensors and effectors.*
 
 ```mermaid
@@ -22,7 +21,6 @@ graph TD
     sensors -- input --> program
     program -- output --> effectors
 ```
-----
 
 Contents:
 - [How agents should act](how-agents-should-act)
