@@ -21,6 +21,9 @@
 
 §7. *Google Brain* (2011) is an unsupervised deep learning ANN that found patterns in (ie. clustered) still images from YouTube. This kind of AI led to the development of *Generative AI*, which could use these clusters/patterns to create brand new images.
 
+§8. An ML <mark>model</mark> is an abstraction (generalised knowledge) that maps known data to something new (via training).
+
+§9. A trained model is good for a specific task but is not flexible – this is a problem for Generative AI.
 
 
 
@@ -48,6 +51,15 @@ Some other things to learn about:
 > An **unsupervised ML algorithm** is an ML algorithm which clusters.
 >
 > A **deep learning** ANN is an ANN which has lots of layers.
+
+
+
+A <mark>classifier</mark> is a computer which decides which of a small set of predefined output classes the input belongs to.
+- A <mark>binary classifier</mark> is a classifier with just two output classes (eg. `True` and `False`). 
+
+
+
+
 
 ----
 
