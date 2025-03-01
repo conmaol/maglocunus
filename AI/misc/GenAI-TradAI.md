@@ -1,8 +1,9 @@
 # Generative AI vs. Traditional AI
 
-\[My notes from LinkedIn Learning course *Generative AI vs. Traditional AI* by Doug Rose (2023)/]
+\[My notes from LinkedIn Learning course *Generative AI vs. Traditional AI* by Doug Rose (2023)\]
 
 §1. *Generative AI* builds on decades of work in *Predictive AI*.
+
 
 
 
@@ -16,4 +17,4 @@ Some other things to learn about:
 
 ----
 
-Back up to: [AI](../index.md)
+Back up to: [Artificial intelligence](../index.md)
