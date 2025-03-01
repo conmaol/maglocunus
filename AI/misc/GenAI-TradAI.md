@@ -15,6 +15,14 @@
 - <mark>Supervised learning</mark> algorithms are *trained* to *classify* inputs according to a predetermined classification.
 - <mark>Unsupervised learning</mark> algorithms *cluster* inputs and hence create their own classification.
 
+§5. Artificial Neural Networks (ANNs) are Machine Learning algorithms that are inspired by the (low-level) architecture of the human brain.
+
+§6. <mark>Deep learning</mark> ANNs are ANNs with lots of ‘layers’. 
+
+§7. *Google Brain* (2011) is an unsupervised deep learning ANN that found patterns in (ie. clustered) still images from YouTube. This kind of AI led to the development of *Generative AI*, which could use these clusters/patterns to create brand new images.
+
+
+
 
 Some other things to learn about:
 - self-supervised learning
@@ -38,6 +46,8 @@ Some other things to learn about:
 > A **supervised ML algorithm** is an ML algorithm which classifies.
 >
 > An **unsupervised ML algorithm** is an ML algorithm which clusters.
+>
+> A **deep learning** ANN is an ANN which has lots of layers.
 
 ----
 
