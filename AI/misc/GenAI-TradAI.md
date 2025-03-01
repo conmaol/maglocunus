@@ -57,9 +57,11 @@ Some other things to learn about:
 A <mark>classifier</mark> is a computer which decides which of a small set of predefined output classes the input belongs to.
 - A <mark>binary classifier</mark> is a classifier with just two output classes (eg. `True` and `False`). 
 
-A <mark>supervised learner</mark> is a computer which builds classifiers. The input is a collection of pre-classified inputs and the output is a (trained) classifier.
+A <mark>machine-learner</mark> is a computer which builds classifiers. It takes in a collection of inputs, and then outputs a (trained) classifier.
 
-A <mark>clusterer</mark> (or unsupervised learner) is a computer which ... The input is a collection of (unclassified) inputs and the output is a ... (classifier?).
+A <mark>supervised learner</mark> is a machine-learners whose input is <mark>pre-classified</mark>.
+
+A <mark>clusterer</mark> (or <mark>unsupervised learner</mark>) is a machine-learner whose input is unclassified.
 
 
 ----
