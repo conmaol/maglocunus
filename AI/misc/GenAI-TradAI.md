@@ -2,16 +2,8 @@
 
 \[My notes from LinkedIn Learning course *Generative AI vs. Traditional AI* by Doug Rose (2023)\]
 
-> An **artificial intelligence** (AI) is a ‘fancy’ (cutting edge, technologically advanced) computer.
->
-> A **predictive AI** is an AI which ...
->
-> A **generative AI** is a predictive (?) AI which ...
->
-> A **machine learning (ML) algorithm** is a computer which ...
->
-> An **artificial neural network** (ANN) is an ML algorithm which ...
 
+## Main points
 
 §1. <mark>Generative AI</mark> builds on decades of work in <mark>Predictive AI</mark>.
 
@@ -29,6 +21,17 @@ Some other things to learn about:
 - diffusion models
 - auto-encoding
 
+## Summary
+
+> An **artificial intelligence** (AI) is a ‘fancy’ (cutting edge, technologically advanced) computer.
+>
+> A **predictive AI** is an AI which ...
+>
+> A **generative AI** is a predictive (?) AI which ...
+>
+> A **machine learning (ML) algorithm** is a computer which ...
+>
+> An **artificial neural network** (ANN) is an ML algorithm which ...
 
 ----
 
