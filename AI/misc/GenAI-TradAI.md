@@ -9,9 +9,11 @@
 
 §2. There is not ‘one big AI’ – AI is ‘just a set of tools’ built to solve specific problems.
 
-§3. Predictive AI uses <mark>Machine Learning algorithms</mark> (typically <mark>Artificial Neural Networks</mark>) to get more value from massive amounts of data, by *generalising* over past events/behaviour and hence *predicting* future events/behaviour.
+§3. Predictive AI uses <mark>Machine Learning</mark> algorithms (typically <mark>Artificial Neural Networks</mark>) to get more value from massive amounts of data, by *generalising* over past events/behaviour and hence *predicting* future events/behaviour.
 
-
+§4. There are two different kinds of Machine Learning algorithm used in Predictive AI:
+- <mark>Supervised learning</mark> algorithms are *trained* to *classify* inputs according to a predetermined classification.
+- <mark>Unsupervised learning</mark> algorithms *cluster* inputs and hence create their own classification.
 
 
 Some other things to learn about:
@@ -32,6 +34,10 @@ Some other things to learn about:
 > A **machine learning (ML) algorithm** is a computer which ...
 >
 > An **artificial neural network** (ANN) is an ML algorithm which ...
+>
+> A **supervised ML algorithm** is an ML algorithm which classifies.
+>
+> An **unsupervised ML algorithm** is an ML algorithm which clusters.
 
 ----
 
