@@ -25,13 +25,18 @@
 
 §9. A trained model is good for a specific task but is not flexible – this is a problem for Generative AI.
 
+§10. A Generative AI is usually based on a <mark>Foundation Model</mark> – a model trained on broad data which can be adapted to a wider range of downstream tasks.
+
+§11. A <mark>Large Language Model</mark> (LLM) is a kind of Foundation Model, trained on texts (collections of words) – a ‘stochastic parrot’.
+
+§12. An <mark>Image Diffusion Model</mark> is another kind of Foundation model, trained by destroying (blurring) millions of images and trying to recreate (unblur) them (eg. DALL-E 2, Stable Diffusion).
+
+§13. <mark>Generative Pre-trained Transformer</mark> (GPT) is an LLM built by OpenAI and used by ChatGPT. A transformer transforms a group of words into something different, via encoding and decoding.
 
 
 Some other things to learn about:
 - self-supervised learning
-- foundation models
-- Large Language Models
-- diffusion models
+
 - auto-encoding
 
 ## Summary
@@ -55,7 +60,8 @@ Some other things to learn about:
 
 
 A <mark>classifier</mark> is a computer (program) which decides which of a small set of predefined output classes the input belongs to.
-- A <mark>binary classifier</mark> is a classifier with just two output classes (eg. `True` and `False`). 
+- A <mark>binary classifier</mark> is a classifier with just two output classes (eg. `True` and `False`).
+- A classifier is also known as a ‘predictive AI’, under the assumption that the output classes are predictions of future events or states.
 
 A <mark>machine learning system</mark> is a computer (program) which builds classifiers. It takes in a collection of inputs, and then outputs a (trained) classifier.
 
