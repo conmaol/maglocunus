@@ -65,9 +65,9 @@ A <mark>classifier</mark> is a computer (program) which decides which of a small
 
 A <mark>machine learning system</mark> is a computer (program) which builds classifiers. It takes in a collection of inputs, and then outputs a (trained) classifier.
 
-A <mark>supervised learner</mark> is a machine-learners whose input is <mark>pre-classified</mark>.
+A <mark>supervised learning system</mark> is a machine learning system whose input is <mark>pre-classified</mark>.
 
-A <mark>clusterer</mark> (or <mark>unsupervised learner</mark>) is a machine-learner whose input is unclassified.
+An <mark>unsupervised learning system</mark> (or a ‘clusterer’) is a machine learning system whose input is <mark>unclassified(/mark).
 
 
 ----
