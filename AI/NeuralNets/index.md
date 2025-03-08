@@ -12,7 +12,9 @@
 
 §4. An <mark>artificial neural network</mark> (ANN) consists of perceptrons connected together via weighted inputs and outputs. 
 
-§5. ANNs can be used as <mark>inductive learners</mark> - they can be trained on example data to become classifiers, by adjusting the weights on the connections between perceptrons.
+§5. ANNs can be used as <mark>inductive learners</mark> - they can be trained on example data to become classifiers, by adjusting the weights on the connections between perceptrons:
+- if the actual output is 0 but the target output is 1, then the weights on active inputs are increased by a small amount
+- if the actual output is 1 but the target output is 0, then the weights on active inputs are decreased by a small amount
 
 §6. A trained ANN classifier embodies <mark>subsymbolic</mark> knowledge, and is hence a ‘black box’.
 
