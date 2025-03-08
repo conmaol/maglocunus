@@ -25,22 +25,43 @@
 §7. Here is a simple one-perceptron network that can be trained as a classifier for this example data:
 
 ```mermaid
-
-
-
+graph LR
+    a1:::hidden
+    a2:::hidden
+    a3:::hidden
+    a4:::hidden
+    a1 --> input1("got a first last year")
+    a2 --> input2("is male")
+    a3 --> input3("works hard")
+    a4 --> input4("drinks a lot")
+    perceptron("will get a first this year")
+    input1 -- "0.2" --> perceptron
+    input2 -- "0.2" --> perceptron
+    input3 -- "0.2" --> perceptron
+    input4 -- "0.2" --> perceptron
+    perceptron --> output:::hidden
+    classDef hidden display: none;
 ```
 
+§8. The training algorithm for this one-perceptron network is as follows:
 
-:
-- if the actual output is 0 but the target output is 1, then the weights on active inputs are increased by a small amount
-- if the actual output is 1 but the target output is 0, then the weights on active inputs are decreased by a small amount
+```
+Randomly initialise all weights.
 
-§6. A trained ANN classifier embodies <mark>subsymbolic</mark> knowledge, and is hence a ‘black box’.
+Until the network has converged:
+    For each student in the training data:
+        Fire the relevant input perceptrons.
+        If the perceptron fired but shouldn’t have:
+            Decrease the weights on all active inputs by 0.05.
+        Else if the perception didn’t fire but should have:
+            Increase the weights on all active inputs by 0.05.
+```
 
+§9. A trained ANN classifier embodies <mark>subsymbolic</mark> knowledge, and is hence a ‘black box’.
 
+§10. Minsky & Papert demonstrated in *Perceptions* (1969) that many important functions cannot be implemented using a perceptron classifier, eg. ‘exclusive *or*’. This led to a decline in interest in neural networks during the 1970s.
 
-
-There are many other kinds of ANN, other than those based on perceptrons.
+§11. There are many other kinds of ANN, other than those based on perceptrons.
 
 
 ----
