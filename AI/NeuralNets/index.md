@@ -14,7 +14,7 @@
 
 §5. ANNs can be used as <mark>inductive learners</mark> - they can be trained on example data to become classifiers, by adjusting the weights on the connections between perceptrons.
 
-§6. A trained ANN classifier thus embodies <mark>subsymbolic</mark> knowledge, and is hence a ‘black box’.
+§6. A trained ANN classifier embodies <mark>subsymbolic</mark> knowledge, and is hence a ‘black box’.
 
 
 
