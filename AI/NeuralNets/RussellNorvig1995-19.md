@@ -14,7 +14,7 @@ Contents:
 
 §0.2. Other names for neural networks are: connectionism, parallel distributed processing, neural computation, adaptive networks, collective computation.
 
-## 19-1. How the brain works
+## How the brain works
 
 §1.1. Brains consist of neurons. Neurons have a soma, dendrites, and an axon. Axons transmit an action potential to synapses. Synapses can be excitatory or inhibitatory.
 
@@ -37,7 +37,7 @@ Contents:
 
 §1.9. Perhaps, artificial neural networks offer a way of building a massively parallel computer, which is more fault tolerant, has <mark>graceful degradation</mark> (performance drops off gradually rather than sharply as conditions worsen), and can do <mark>inductive learning</mark> from input/output pairs.
 
-## 19-2. Neural networks
+## Neural networks
 
 ### Simple computing elements
 
