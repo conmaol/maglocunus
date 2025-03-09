@@ -41,27 +41,54 @@ Back up to: [Top](#)
 
 ## Neural networks
 
+§2.1. A neural network is composed of nodes/units connected by (numerically) weighted links:
+- The weights are the primary means of long-term storage.
+- Learning usually involved updating the weights.
+- Input and output units are connected to the external environment.
+- The weights are modified to bring the network’s input/output behaviour more into line with that of the environment producing the inputs.
+
+§2.2. In theory, each unit does a local computation based on inputs from its neighbours, without the need for any global control.
+- In practice, neural networks are implemented in software and hence use synchronous control to update all the units in a fixed sequence.
+
+§2.3. To build a neural network for a task:
+- decide how many units to use
+- decide what kind of units to use
+- decide how the units should be connected
+- initialise the weights
+- train the weights using a learning algorithm applied to a set of training examples for the task.
+
 ### Simple computing elements
+
+§2.4. A unit receives signals from its input links and computes a new <mark>activation level</mark> which it sends along each of its output links.
+
+§2.5. The activation level is computed by applying a (non-linear) <mark>activation function</mark> to the <mark>weighted sum</mark> of the input signals.
+
+§2.6. The three most common choices of activation function are:
+- a <mark>step function</mark> – Output is 0 or 1 depending on whether or not the weighted input is below or above the threshold.
+- a <mark>sign function</mark> – Output is -1 or 1 depending on whether or not the weighted input is below or above the threshold.
+- a <mark>sigmoid function</mark> – Output is between 0 and 1 depending on how close the weighted input is to the threshold.
+
+§2.7. In most cases, it is mathematically convenient to replace the threshold with an extra input weight.
 
 ### Network structures
 
-§2.1. The main distinction is between <mark>feed-forward</mark> networks and <mark>recurrent</mark> networks.
+§2.8. The main distinction is between <mark>feed-forward</mark> networks and <mark>recurrent</mark> networks.
 
-§2.2. In a <mark>feed-forward network</mark>, links are unidirectional and there are no cycles (ie. they are directed acyclic graphs).
+§2.9. In a <mark>feed-forward network</mark>, links are unidirectional and there are no cycles (ie. they are directed acyclic graphs).
 
-§2.3. In a <mark>layered</mark> feed-forward network, each unit is layered only to units in the next layer – no links between units in the same layer, no links backward to a previous layer, and no links that skip a layer. Computation proceeds uniformly from input units to output units. 
+§2.10. In a <mark>layered</mark> feed-forward network, each unit is layered only to units in the next layer – no links between units in the same layer, no links backward to a previous layer, and no links that skip a layer. Computation proceeds uniformly from input units to output units. 
 
-§2.4. Feed-forward networks are relatively well-understood. They simply compute a function of the input values that depends on the weight settings – they have no internal state other than the weights themselves.
+§2.11. Feed-forward networks are relatively well-understood. They simply compute a function of the input values that depends on the weight settings – they have no internal state other than the weights themselves.
 
-§2.5. In a <mark>recurrent network</mark>, links can form arbitrary topologies. Activation can be fed back to the units which caused it, and hence recurrent networks have internal state stored in the activation levels of the units. Computation is much less orderly, and recurrent networks can become unstable and exhibit chaotic behaviour, though they can be implement more complex agent designs.
+§2.12. In a <mark>recurrent network</mark>, links can form arbitrary topologies. Activation can be fed back to the units which caused it, and hence recurrent networks have internal state stored in the activation levels of the units. Computation is much less orderly, and recurrent networks can become unstable and exhibit chaotic behaviour, though they can be implement more complex agent designs.
 
-§2.6. The brain is a recurrent network, since we have short-term memories.
+§2.13. The brain is a recurrent network, since we have short-term memories.
 
-§2.7. <mark>Hopfield</mark> networks are a kind of recurrent network ...
+§2.14. <mark>Hopfield</mark> networks are a kind of recurrent network ...
 
-§2.8. <mark>Boltzman machines</mark> are another kind of recurrent network ...
+§2.15. <mark>Boltzman machines</mark> are another kind of recurrent network ...
 
-§2.9. Perceptrons versus multi-layer networks.
+§2.16. Perceptrons versus multi-layer networks.
 
 
 ### Optimal network structure
