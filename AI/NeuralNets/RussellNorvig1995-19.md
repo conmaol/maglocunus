@@ -10,7 +10,9 @@ Contents:
 - [Applications of neural networks](#applications-of-neural-networks)
 - [Bayesian methods for learning belief networks](#bayesian-methods-for-learning-belief-networks)
 
+A neural network is a network of simple arithmetic computing elements that represents a function (just as circuits of simple logic gates represent Boolean functions). Neural networks are “particularly useful for complex functions with continuous-valued outputs and large numbers of noisy inputs”.
 
+Other names for neural networks are: connectionism, parallel distributed processing, neural computation, adaptive networks, collective computation.
 
 ## How the brain works
 
