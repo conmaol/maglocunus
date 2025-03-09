@@ -37,6 +37,8 @@ Contents:
 
 §1.9. Perhaps, artificial neural networks offer a way of building a massively parallel computer, which is more fault tolerant, has <mark>graceful degradation</mark> (performance drops off gradually rather than sharply as conditions worsen), and can do <mark>inductive learning</mark> from input/output pairs.
 
+Back up to: [Top](#)
+
 ## Neural networks
 
 ### Simple computing elements
@@ -45,11 +47,15 @@ Contents:
 
 ### Optimal network structure
 
+Back up to: [Top](#)
+
 ## Perceptrons
 
 ### What perceptrons can represent
 
 ### Learning linearly separable functions
+
+Back up to: [Top](#)
 
 ## Multilayer feed-forward networks
 
@@ -59,6 +65,8 @@ Contents:
 
 ### Discussion
 
+Back up to: [Top](#)
+
 ## Applications of neural networks
 
 ### Pronunciation
@@ -66,6 +74,8 @@ Contents:
 ### Handwritten character recognition
 
 ### Driving
+
+Back up to: [Top](#)
 
 ## Bayesian methods for learning belief networks
 
@@ -77,6 +87,7 @@ Contents:
 
 ### A comparison of belief networks and neural networks
 
+Back up to: [Top](#)
 
 ----
 
