@@ -27,6 +27,16 @@ Contents:
 
 ### Comparing brains with digital computers
 
+§1.5. Computers have a much higher ‘switching speed’ (time to execute instructions) than do brains (nanoseconds versus milliseconds).
+
+§1.6. However, brains are <mark>massively parallel</mark>, whereas computer hardware is serial.
+
+§1.7. Therefore, brain are faster than computers at what they do.
+
+§1.8. Brains are more <mark>fault tolerant</mark> than computers.
+
+§1.9. Perhaps, artificial neural networks offer a way of building a massively parallel computer, which is more fault tolerant, has <mark>graceful degradation</mark> (performance drops off gradually rather than sharply as conditions worsen), and can do <mark>inductive learning</mark> from input/output pairs.
+
 ## 19-2. Neural networks
 
 ### Simple computing elements
