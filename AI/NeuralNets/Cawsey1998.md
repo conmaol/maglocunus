@@ -102,8 +102,19 @@ graph LR
 - The activation state of a perceptron is a value *between* 0 and 1.
 - This means that weights can be adjusted proportionately to how wrong the classifier’s guesses are (the difference between actual and target output), backpropogated to earlier layers.
 
-  
+§14. You can use an ANN to build a digit recognition system:
+- You need lots of input data for training.
+- Each example datum consists of a bitmapped image of a digit in some font (i.e. a sequence of pixel values) and a (unicode) digit character.
+- Each pixel has its own input perceptron.
+- There are one or more hidden layers.
+- Each of the 10 digit characters has its own output perceptron.
+- A small proportion of the training data is reserved for testing.
 
+§15. ANNs are good at tasks involving finding patterns in visual or auditory data. Also:
+- learning to pronounce English words
+- learning to distinguish tanks from rocks in military images
+- learning to recognise people’s handwriting
+- learning to determine whether someone has had a heart attack given their ECG signal
 
 ----
 
