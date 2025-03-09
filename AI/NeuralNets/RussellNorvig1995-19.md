@@ -45,6 +45,25 @@ Back up to: [Top](#)
 
 ### Network structures
 
+§2.1. The main distinction is between <mark>feed-forward</mark> networks and <mark>recurrent</mark> networks.
+
+§2.2. In a <mark>feed-forward network</mark>, links are unidirectional and there are no cycles (ie. they are directed acyclic graphs).
+
+§2.3. In a <mark>layered</mark> feed-forward network, each unit is layered only to units in the next layer – no links between units in the same layer, no links backward to a previous layer, and no links that skip a layer. Computation proceeds uniformly from input units to output units. 
+
+§2.4. Feed-forward networks are relatively well-understood. They simply compute a function of the input values that depends on the weight settings – they have no internal state other than the weights themselves.
+
+§2.5. In a <mark>recurrent network</mark>, links can form arbitrary topologies. Activation can be fed back to the units which caused it, and hence recurrent networks have internal state stored in the activation levels of the units. Computation is much less orderly, and recurrent networks can become unstable and exhibit chaotic behaviour, though they can be implement more complex agent designs.
+
+§2.6. The brain is a recurrent network, since we have short-term memories.
+
+§2.7. <mark>Hopfield</mark> networks are a kind of recurrent network ...
+
+§2.8. <mark>Boltzman machines</mark> are another kind of recurrent network ...
+
+§2.9. Perceptrons versus multi-layer networks.
+
+
 ### Optimal network structure
 
 Back up to: [Top](#)
