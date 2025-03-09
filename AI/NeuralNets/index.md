@@ -36,9 +36,9 @@ graph LR
     a4 --> input4("drinks a lot")
     perceptron("will get a first this year")
     input1 -- "0.2" --> perceptron
-    input2 -- "0.2" --> perceptron
-    input3 -- "0.2" --> perceptron
-    input4 -- "0.2" --> perceptron
+    input2 -- "0.35" --> perceptron
+    input3 -- "0.15" --> perceptron
+    input4 -- "0.85" --> perceptron
     perceptron --> output:::hidden
     classDef hidden display: none;
 ```
@@ -62,6 +62,49 @@ Until the network has converged:
 §10. Minsky & Papert demonstrated in *Perceptions* (1969) that many important functions cannot be implemented using a perceptron classifier, eg. ‘exclusive *or*’. This led to a decline in interest in neural networks during the 1970s.
 
 §11. There are many other kinds of ANN, other than those based on perceptrons.
+
+§12. <mark>Multilayer</mark> perceptron networks have at least one ‘hidden layer’ between the input and output layers:
+
+```mermaid
+graph LR
+    a1:::hidden
+    a2:::hidden
+    a3:::hidden
+    a4:::hidden
+    a1 --> input1("got a first last year")
+    a2 --> input2("is male")
+    a3 --> input3("works hard")
+    a4 --> input4("drinks a lot")
+    subgraph "hidden layer"
+    hidden1(" ")
+    hidden2(" ")
+    end
+    input1 -- "0.2" --> hidden1
+    input1 -- "0.35" --> hidden2
+    input2 -- "0.6" --> hidden1
+    input2 -- "0.15" --> hidden2
+    input3 -- "0.1" --> hidden1
+    input3 -- "0.9" --> hidden2
+    perceptron1("will get a first this year")
+    perceptron2("will get an upper second this year")
+    perceptron3("will get a lower second this year")
+    hidden1 -- "0.45" --> perceptron1
+    hidden1 -- "0.8" --> perceptron2
+    hidden1 -- "0.2" --> perceptron3
+    hidden2 -- "0.65" --> perceptron1
+    hidden2 -- "0.15" --> perceptron2
+    hidden2 -- "0.25" --> perceptron3
+    perceptron1 --> output1:::hidden
+    perceptron2 --> output2:::hidden
+    perceptron3 --> output3:::hidden
+    classDef hidden display: none;
+```
+
+§13. The training algorithm for a multilayer network is called <mark>backpropogation</mark>, and was proposed in 1986 by Rumelhart, McClelland and Williams. This differs from the simple training algorith above in the following ways:
+- The activation state of a perceptron is a value *between* 0 and 1.
+- This means that weights can be adjusted proportionately to how wrong the classifier’s guesses are (the difference between actual and target output), backpropogated to earlier layers.
+
+  
 
 
 ----
