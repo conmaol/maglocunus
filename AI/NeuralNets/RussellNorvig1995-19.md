@@ -122,7 +122,7 @@ Back up to: [Top](#)
 
 §2.26. There is a perceptron algorithm that will learn any linearly separable function, given enough training examples – the <mark>perceptron learning rule</mark> proposed by Frank Rosenblatt (1960).
 
-§2.27. Rosenblatt proved the <mark>perceptron convergence theorem</mark> – a learning system using the perceptron learning rule will convergeto a set of weights that correctly represents the examples, as long as the examples represent a linearly separable function.
+§2.27. Rosenblatt proved the <mark>perceptron convergence theorem</mark> – a learning system using the perceptron learning rule will converge to a set of weights that correctly represents the examples, as long as the examples represent a linearly separable function.
 
 §2.28. However, Minsky & Papert’s book *Perceptrons* (1968) demonstrated the limits of linearly separable functions, dashing hopes that intelligent machines could be built from perceptrons. 
 
