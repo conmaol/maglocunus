@@ -98,7 +98,13 @@ Back up to: [Top](#)
 
 ### Optimal network structure
 
-§2.20.
+§2.20. If a neural network is too small, then it will not be able to learn to compute the desired function. If it is too large, then it may be subject to <mark>overfitting</mark> – it will just memorise all the examples and hence be unable to generalise sufficiently to classify unseen examples.
+
+§2.21. Finding the right size of network can be thought of as a **search** problem.
+
+§2.22. One approach is <mark>optimal brain damage</mark> – start with a fully connected network and then keep dropping connections (and units) and retraining, until the network breaks.
+
+§2.23. In contrast, the tiling algorithm starts with a single unit and then keeps adding new units and retraining, until the desired function has been ‘learned’.
 
 Back up to: [Top](#)
 
