@@ -51,7 +51,7 @@ Until the network has converged:
         Fire the relevant input perceptrons.
         If the perceptron fired but shouldn’t have:
             Decrease the weights on all active inputs by 0.05.
-        Else if the perception didn’t fire but should have:
+        Else if the perceptron didn’t fire but should have:
             Increase the weights on all active inputs by 0.05.
 ```
 
@@ -98,9 +98,9 @@ graph LR
     classDef hidden display: none;
 ```
 
-§13. The training algorithm for a multilayer network is called <mark>backpropogation</mark>, and was proposed in 1986 by Rumelhart, McClelland and Williams. This differs from the simple training algorith above in the following ways:
+§13. The training algorithm for a multilayer network is called <mark>backpropagation</mark>, and was proposed in 1986 by Rumelhart, McClelland and Williams. This differs from the simple training algorithm above in the following ways:
 - The activation state of a perceptron is a value *between* 0 and 1.
-- This means that weights can be adjusted proportionately to how wrong the classifier’s guesses are (the difference between actual and target output), backpropogated to earlier layers.
+- This means that weights can be adjusted proportionately to how wrong the classifier’s guesses are (the difference between actual and target output), backpropagated to earlier layers.
 
 §14. You can use an ANN to build a digit recognition system:
 - You need lots of input data for training.
