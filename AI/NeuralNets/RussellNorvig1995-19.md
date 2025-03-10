@@ -31,7 +31,7 @@ Contents:
 
 §1.6. However, brains are <mark>massively parallel</mark>, whereas computer hardware is serial.
 
-§1.7. Therefore, brain are faster than computers at what they do.
+§1.7. Therefore, brains are faster than computers at what they do.
 
 §1.8. Brains are more <mark>fault tolerant</mark> than computers.
 
@@ -43,11 +43,11 @@ Back up to: [Top](#)
 
 §2.1. A neural network is composed of nodes/units connected by (numerically) weighted links:
 - The weights are the primary means of long-term storage.
-- Learning usually involved updating the weights.
+- Learning usually involves updating the weights.
 - Input and output units are connected to the external environment.
 - The weights are modified to bring the network’s input/output behaviour more into line with that of the environment producing the inputs.
 
-§2.2. In theory, each unit does a local computation based on inputs from its neighbours, without the need for any global control.
+§2.2. In theory, each unit does a <mark>local computation</mark> based on inputs from its neighbours, without the need for any global control.
 - In practice, neural networks are implemented in software and hence use synchronous control to update all the units in a fixed sequence.
 
 §2.3. To build a neural network for a task:
@@ -66,7 +66,7 @@ Back up to: [Top](#)
 §2.6. The three most common choices of activation function are:
 - a <mark>step function</mark> – Output is 0 or 1 depending on whether or not the weighted input is below or above the threshold.
 - a <mark>sign function</mark> – Output is -1 or 1 depending on whether or not the weighted input is below or above the threshold.
-- a <mark>sigmoid function</mark> – Output is between 0 and 1 depending on how close the weighted input is to the threshold.
+- a <mark>sigmoid function</mark> – Output is **between** 0 and 1 depending on how close the weighted input is to the threshold.
 
 §2.7. In most cases, it is mathematically convenient to replace the threshold with an extra input weight.
 
@@ -76,7 +76,7 @@ Back up to: [Top](#)
 
 §2.9. In a <mark>feed-forward network</mark>, links are unidirectional and there are no cycles (ie. they are directed acyclic graphs).
 
-§2.10. In a <mark>layered</mark> feed-forward network, each unit is layered only to units in the next layer – no links between units in the same layer, no links backward to a previous layer, and no links that skip a layer. Computation proceeds uniformly from input units to output units. 
+§2.10. In a <mark>layered</mark> feed-forward network, each unit is linked only to units in the next layer – no links between units in the same layer, no links backward to a previous layer, and no links that skip a layer. Computation proceeds uniformly from input units to output units. 
 
 §2.11. Feed-forward networks are relatively well-understood. They simply compute a function of the input values that depends on the weight settings – they have no internal state other than the weights themselves.
 
@@ -84,14 +84,21 @@ Back up to: [Top](#)
 
 §2.13. The brain is a recurrent network, since we have short-term memories.
 
-§2.14. <mark>Hopfield</mark> networks are a kind of recurrent network ...
+§2.14. <mark>Hopfield networks</mark> are a kind of recurrent network – all connections are bidirectional with symmetric weights; all units are both input and output units; the activation function is signed; and activation levels are either +1 or -1. A Hopfield network functions as an <mark>associative memory</mark>.
 
-§2.15. <mark>Boltzman machines</mark> are another kind of recurrent network ...
+§2.15. <mark>Boltzman machines</mark> are another kind of recurrent network, with hidden units and a stochastic activation function.
 
-§2.16. Perceptrons versus multi-layer networks.
+§2.16. <mark>Perceptrons</mark> are feed-forward networks with no hidden units. <mark>Multi-layer</mark> feed-forward networks have at least one layer of hidden units.
 
+§2.17. A multi-layer network with **one** (sufficiently large) layer of hidden units can compute **any continuous function** of the inputs. 
+
+§2.18. A multi-layer network with **two** (sufficiently large) layer of hidden units can compute **any function** of the inputs, including discontinuous functions. 
+
+§2.19. From the viewpoint of statistics, neural networks perform <mark>nonlinear regression</mark> – they learn by tuning the parameters (weights) to fit the data in the training set.
 
 ### Optimal network structure
+
+§2.20.
 
 Back up to: [Top](#)
 
