@@ -6,10 +6,10 @@ Contents:
 - [Units](#units)
 - [The XOR problem](#the-xor-problem)
 - [Feedforward Neural Networks](#feedforward-neural-networks)
-- [Feedforward networks for NLP: Classification](#)
-- [Training Neural Nets](#)
-- [Feedforward Neural Language Modeling](#)
-- [Training the neural language model](#)
+- [Feedforward networks for NLP: Classification](#feedforward-networks-for-nlp-classification)
+- [Training Neural Nets](#training-neural-nets)
+- [Feedforward Neural Language Modeling](#feedforward-neural-language-modeling)
+- [Training the neural language model](#training-the-neural-language-model)
 
 ## Units
 
