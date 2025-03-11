@@ -170,17 +170,15 @@ Back up to: [Top](#)
 
 §5.3. <mark>NETtalk</mark> (Sejnowski & Rosenberg 1987) is a neural network that maps written text to sequences of phonemes.
 
-§5.4. The input consists of the alphabetic character to be pronounced, along with the preceding and following three characters (seven inputs in total).
+§5.4. The input consists of the character to be pronounced, along with the preceding and following three characters (seven inputs in total).
 
-§5.5. Structure of the network.
+§5.5. This input corresponds in reality to 7x29 input units, since each character can either be one of the 26 alphabetic characters, a space, a full stop, or another punctuation character. In addition, there are 80 hidden units.
 
-§5.6. Training the network.
+§5.6. The output layer consists of phonological features of the sound to be produced – high vs. low, voiced vs. unvoiced, etc. The output can also be nothing, eg. for the second letter in a digraph.
 
-§5.7. Performamnce of the network.
+§5.7. The network was trained on a hand-transcribed 1024-word text.
 
-
-
-
+§5.8. After 50 passes through the training data (epochs), the network performed at 95% accuracy on the training data itself, and at 75% accuracy on test data. This is not spectacular when compared to other methods, eg. Markov models.
 
 ### Handwritten character recognition
 
