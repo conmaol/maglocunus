@@ -130,11 +130,33 @@ Back up to: [Top](#)
 
 ## Multilayer feed-forward networks
 
+§4.1. Developing a learning algorithm to train a multi-layer feed-forward network was more difficult than for a perceptron network, because of having to find a way to update the weights between the input and the hidden units. Such learning algorithms are neither efficient nor guaranteed to converge to a global optimum. However, we know anyway from computational learning theory that <mark>learning general functions from examples is an intractable problem in the worst case</mark>.
+
+§4.2. Back-propagation is the most popular method for learning in multi-layer networks, invented in 1969 by Bryson and Ho, but ignored till the mid-1980s (because of sociological reasons and computational requirements).
+
 ### Back-propagation learning
+
+§4.3. Learning in a multi-layer network proceeds the same way as for perceptrons: example inputs are presented to the network, and if the network computes an output vector that matches the target then nothing is done. If there is an error, then the weights are adjusted to reduce this error.
+
+§4.4. The trick with back-propagation is to asses the blame for the error and divide it among all the contributing weights.
 
 ### Back-propagation as gradient descent search
 
+§4.5. Back-propagation provides a way of dividing the calculation of the gradient among the units, so that the change in each weight can be calculated by the unit to which the weight is attached, using only local information.
+
+§4.6. This decomposition of the learning algorithm is a major step towards parallelisable and biologically plausible learning mechanisms.
+
 ### Discussion
+
+§4.7. Neural networks do not have the expressive power of general logical representations (eg. decision trees), but they are better-suited for continuous inputs and outputs. However, designing a good topology is a black art.
+
+§4.8. Neural networks do a good job of generalisation (for the functions for which they are well-suited). They have had reasonable success in a number of real-world problems.
+
+§4.9. Neural networks are very tolerant of noise in the input data (because they are essentially doing non-linear regression).
+
+§4.10. Neural networks are essentially ‘black boxes’. Even if a network does a good job of predicting new cases, many users will still be dissatisfied because they will have no idea *why* a given output value is reasonable.
+
+§4.11. Because of the lack of transparency, it is quite hard to use expert knowledge to ‘prime’ a network to learn better.
 
 Back up to: [Top](#)
 
