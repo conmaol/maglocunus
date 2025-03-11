@@ -162,7 +162,25 @@ Back up to: [Top](#)
 
 ## Applications of neural networks
 
+§5.1. John Denker: <mark>“Neural networks are the second best way of doing just about anything.”</mark>
+
+§5.2. Neural networks provide passable performance on many tasks that would be difficult to solve explicitly with other programming techniques, given enough thought and trial-and-error experimentation on the part of the network designer.
+
 ### Pronunciation
+
+§5.3. NETtalk (Sejnowski & Rosenberg 1987) is a neural network that maps written text to sequences of phonemes.
+
+§5.4. The input consists of the alphabetic character to be pronounced, along with the preceding and following three characters (seven inputs in total).
+
+§5.5. Structure of the network.
+
+§5.6. Training the network.
+
+§5.7. Performamnce of the network.
+
+
+
+
 
 ### Handwritten character recognition
 
