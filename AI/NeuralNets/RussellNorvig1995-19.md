@@ -168,7 +168,7 @@ Back up to: [Top](#)
 
 ### Pronunciation
 
-§5.3. NETtalk (Sejnowski & Rosenberg 1987) is a neural network that maps written text to sequences of phonemes.
+§5.3. <mark>NETtalk</mark> (Sejnowski & Rosenberg 1987) is a neural network that maps written text to sequences of phonemes.
 
 §5.4. The input consists of the alphabetic character to be pronounced, along with the preceding and following three characters (seven inputs in total).
 
