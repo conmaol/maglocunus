@@ -182,6 +182,26 @@ Back up to: [Top](#)
 
 ### Handwritten character recognition
 
+§5.9. learning zipcodes on hand-addressed envelopes (Le Cun et al 1989)
+
+preprocessor identifies squares where a digit is
+
+16x16 array of pixels
+
+
+
+10 output units, one for each digit
+
+three hidden layers (768, 192, 30 units respectively)
+
+fully connected would be 200,000 weights, reduced to 9760 weights by clever design
+
+7300 examples in training set
+2000 examples in test set
+
+99% accuracy
+
+
 ### Driving
 
 Back up to: [Top](#)
