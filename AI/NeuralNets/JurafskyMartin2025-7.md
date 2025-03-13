@@ -21,6 +21,10 @@ Contents:
 
 ## Units
 
+Neural networks are built out of neural units, originally inspired by biological neurons but now simply an abstract computational device.
+
+Each neural unit multiplies input values by a weight vector, adds a bias, and then applies a non-linear activation function like sigmoid, tanh, or rectified linear unit.
+
 bias term
 
 vector
@@ -53,6 +57,10 @@ Back up to: [Top](#)
 
 ## Feedforward Neural Networks
 
+In a fully-connected, feedforward network, each unit in layer i is connected to each unit in layer i + 1, and there are no cycles.
+
+The power of neural networks comes from the ability of early layers to learn representations that can be utilized by later layers in the network.
+
 Back up to: [Top](#)
 
 ## Feedforward networks for NLP: Classification
@@ -61,13 +69,26 @@ Back up to: [Top](#)
 
 ## Training Neural Nets
 
+Neural networks are trained by optimization algorithms like gradient descent.
+
+Error backpropagation, backward differentiation on a computation graph, is used to compute the gradients of the loss function for a network.
+
 Back up to: [Top](#)
 
 ## Feedforward Neural Language Modeling
 
+Neural language models use a neural network as a probabilistic classifier, to compute the probability of the next word given the previous n words.
+
 Back up to: [Top](#)
 
 ## Training the neural language model
+
+Neural language models can use pretrained embeddings, or can learn embed- dings from scratch in the process of language modeling.
+
+• 
+• 
+• 
+
 
 Back up to: [Top](#)
 
