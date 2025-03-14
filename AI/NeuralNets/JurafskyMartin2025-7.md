@@ -51,21 +51,23 @@ Back up to: [Top](#)
 
 ## Feedforward Neural Networks
 
-§2.7. In a fully-connected, feedforward network, each unit in layer i is connected to each unit in layer i + 1, and there are no cycles. The power of neural networks comes from the ability of early layers to learn representations that can be utilized by later layers in the network.
+§3.1. In a fully-connected, feedforward network, each unit in layer i is connected to each unit in layer i + 1, and there are no cycles. The power of neural networks comes from the ability of early layers to learn representations that can be utilized by later layers in the network.
 
-§2.8. A feedforward network (the simplest kind of neural network) is a multilayer network in which the units are connected with no cycles – the outputs from units in each layer are passed to units in the next higher layer, and no outputs are passed back to lower layers (ie. the network is non-recurrent). 
+§3.2. A feedforward network (the simplest kind of neural network) is a multilayer network in which the units are connected with no cycles – the outputs from units in each layer are passed to units in the next higher layer, and no outputs are passed back to lower layers (ie. the network is non-recurrent). 
 
-§2.9. Simple feedforward networks have three kinds of nodes: input units, hidden units, and output units. In the <mark>standard architecture</mark>, each layer is fully-connected, meaning that each unit in each layer takes as input the outputs from all the units in the previous layer, and there is a link between every pair of units from two adjacent layers.
+§3.3. Simple feedforward networks have three kinds of nodes: input units, hidden units, and output units. In the <mark>standard architecture</mark>, each layer is fully-connected, meaning that each unit in each layer takes as input the outputs from all the units in the previous layer, and there is a link between every pair of units from two adjacent layers.
 
-§2.10. If we are doing a <mark>binary classification task</mark> like sentiment classification, we might have a single output node, and its scalar value is the probability of positive versus negative sentiment. 
+§3.4. If we are doing a <mark>binary classification task</mark> like sentiment classification, we might have a single output node, and its scalar value is the probability of positive versus negative sentiment. 
 
-§2.11. If we are doing <mark>multinomial classification</mark>, such as assigning a part-of-speech tag, we might have one output node for each potential part-of-speech, whose output value is the probability of that part-of-speech, and the values of all the output nodes must sum to one. 
+§3.5. If we are doing <mark>multinomial classification</mark>, such as assigning a part-of-speech tag, we might have one output node for each potential part-of-speech, whose output value is the probability of that part-of-speech, and the values of all the output nodes must sum to one. 
 
-§2.12. A neural network is like multinomial logistic regression, but (a) with many layers, since a deep neural network is like layer after layer of logistic regression classifiers; (b) with those intermediate layers having many possible activation functions (tanh, ReLU, sigmoid) instead of just sigmoid; and (c) rather than forming the features by feature templates, the prior layers of the network induce the feature representations themselves.
+§3.6. A neural network is like multinomial logistic regression, but (a) with many layers, since a deep neural network is like layer after layer of logistic regression classifiers; (b) with those intermediate layers having many possible activation functions (tanh, ReLU, sigmoid) instead of just sigmoid; and (c) rather than forming the features by feature templates, the prior layers of the network induce the feature representations themselves.
 
 Back up to: [Top](#)
 
 ## Feedforward networks for NLP: Classification
+
+§4.1. 
 
 Back up to: [Top](#)
 
