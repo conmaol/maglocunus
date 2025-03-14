@@ -33,11 +33,15 @@ Back up to: [Top](#)
 
 ## The XOR problem
 
-perceptron
+§2.1. The power of neural networks, as with the real neurons that inspired them, comes from combining the computational units into larger networks.
 
-decision boundary
+§2.2. Minsky and Papert (1969) proved that a single neural unit (or a single layer of units) cannot compute some very simple functions of its input (eg. XOR), therefore we need <mark>multi-layer networks</mark>. 
 
-linearly separable
+§2.3. A <mark>perceptron</mark> is a very simple neural unit that has a binary output ($0$ or $1$) and has a very simple step function as its non-linear activation function.
+
+§2.4. a perceptron is a linear classifier. The line acts as a <mark>decision boundary</mark> in two-dimensional space in which the output $0$ is assigned to all inputs lying on one side of the line, and the output $1$ to all input points lying on the other side of the line.
+
+§2.5. XOR is not a <mark>linearly separable</mark> function (unlike AND and OR). 
 
 ### The solution: neural networks
 
