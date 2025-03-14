@@ -21,25 +21,13 @@ Contents:
 
 ## Units
 
-Neural networks are built out of neural units, originally inspired by biological neurons but now simply an abstract computational device.
+§1.1. The building block of a neural network is a <mark>single computational unit</mark>. A unit takes a set of real valued numbers as input, performs some computation on them, and produces an output. Neural networks are built out of neural units, originally inspired by biological neurons but now simply an abstract computational device.
 
-Each neural unit multiplies input values by a weight vector, adds a bias, and then applies a non-linear activation function like sigmoid, tanh, or rectified linear unit.
+§1.2. At its heart, a neural unit is taking a <mark>weighted sum</mark> of its inputs, with one additional term in the sum called a <mark>bias term</mark>. 
 
-bias term
+§1.3. Each neural unit multiplies input values by a weight vector, adds the bias, and then applies a non-linear activation function like <mark>sigmoid</mark> (squashing outliers toward $0$ or $1$), <mark>tanh</mark> (a variant of the sigmoid that ranges from $-1$ to $+1$), or rectified linear unit (<mark>ReLU</mark> – the most commonly used, the same as the weighted sum $z$ when $z$ is positive, and $0$ otherwise).
 
-vector
-
-activation
-
-sigmoid
-
-tanh
-
-ReLU (rectified linear unit)
-
-saturated
-
-vanishing gradient
+§1.4. These activation functions have different properties that make them useful for different language applications or network architectures.
 
 Back up to: [Top](#)
 
