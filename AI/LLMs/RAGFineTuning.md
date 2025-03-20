@@ -40,7 +40,13 @@
 
 # Embeddings: Helping AI understand data
 
+§7. An LLM uses an <mark>embeddings model</mark> to convert English texts (including user prompts and unstructured data in the knowledge base) into embeddings – points and vectors in a multidimensional space, where each dimensional measures some parameter. Embeddings are then compared to establish the semantic closeness of two texts, based on how far apart the points/vectors are.
+
+§8. Embeddings are stored in the knowledge base alongside the originsl text.
+
 # Knowledge Graphs
+
+§9. 
 
 # Fine-tuning
 
