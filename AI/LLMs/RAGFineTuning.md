@@ -2,13 +2,13 @@
 
 [Notes on the LinkedIn Learning course *RAG and Fine-Tuning Explained* by Morten Rand-Hendriksen (2024)]
 
-§1. Retrieval Augmented Generation (RAG) and fine-tuning are the current best-practice solutions to the two main challneges of implementing LLMs in the enterprise:
+§1. Retrieval Augmented Generation (RAG) and fine-tuning are the current best-practice solutions to the two main challenges of implementing LLMs in the enterprise:
 - grounding LLMs in real world enterprise data
 - ensuring they provide the right data in return.
 
 # How LLMs work
 
-§2. LLMs are not ‘intelligent’. They don’t ‘look up’ the answers to questions we ask them. They are just language transformers. They contain an enormously complex multidimensional map of English, to which they apply advanced mathematics to probabilistically <mark>autocomplete</mark> the document we have started with our prompt. 
+§2. LLMs are not ‘intelligent’. They don’t ‘look up’ the answers to questions we ask them. They are just language transformers. They contain an enormously complex multi-dimensional map of English, to which they apply advanced mathematics to probabilistically <mark>autocomplete</mark> the document we have started with our prompt. 
 
 # Context makes all the difference
 
@@ -16,7 +16,7 @@
 
 # RAG: Retrieval Augmented Generation
 
-§4. LLMs don’t actually ‘know’ anything, so they can produce incorect information with 100% confidence – <mark>hallucinations</mark>.
+§4. LLMs don’t actually ‘know’ anything, so they can produce incorrect information with 100% confidence – <mark>hallucinations</mark>.
 
 §5. The solution is to use RAG. Before starting to autocomplete the prompt, the LLM first <mark>retrieves</mark> some additional context from a knowledge base (eg. the web, or any structured data source, vector database, etc). It then augments the prompt with this retrieved context, and then sends the whole thing to the LLM for to <mark>generate</mark> the response.
 
@@ -32,8 +32,8 @@
 
 4. The LLM combines the original prompt with the retrieved data and probabilistically generates a response.
 
-5. Until the LLM judges the response to be sufficiently faithful to the retrieved data:
-    a. The LLM regenerates the response. [the verification loop]
+5. [Optional verification loop] Until the LLM judges the response to be sufficiently faithful to the retrieved data:
+    a. The LLM re-generates the response.
 
 6. The LLM returns the generated response to the user.
 ```
@@ -47,6 +47,11 @@
 # Knowledge Graphs
 
 §9. 
+
+How do embedding systems deal with lexical ambiguity, where the same word can mean different things in different contexts. They have no understanding of semantics.
+
+Knowledge Graphs add direction and semantic meaning to the vectors connecting the dots in the mebeddings map.
+
 
 # Fine-tuning
 
