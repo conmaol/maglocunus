@@ -134,7 +134,7 @@ Sort OUTPUT in descending order
 Return OUTPUT
 ```
 
-A generative AI seeded with a random word?
+A generative AI seeded with a prompt?
 
 
 ## Smoothing
