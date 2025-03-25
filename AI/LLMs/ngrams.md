@@ -23,14 +23,21 @@ graph LR;
     input(["yesterday I saw a white rabbit"])
     model["Language Model"]
     output(["0.000453"])
-    input --[input]--> model
-    model --[output]--> output
+    input -- input --> model
+    model -- output --> output
 ```
 
-§2.2. A <mark>bigram</mark> language model contains/consults a look-up table which contains, for every pair of words $w_1, w_2$ in the vocabulary, the probability of $w_2$ occurring immediately after $w_1$, ie. $P(w_2 | w_1)$.
-- If there are $N$ words in the vocabulary, this table will have $N$ rows (representing the first word) and $N$ columns (representing the second word) and hence $N^2$ cells.
+§2.2. A <mark>bigram</mark> language model contains/consults a look-up table which assigns, for every pair of words $w_1, w_2$ in the vocabulary, the probability of $w_2$ occurring immediately after $w_1$, ie. $P(w_2 | w_1)$.
+- If there are $N$ words in the vocabulary, this table will have $N+1$ rows (representing the first word, or the start of the text) and $N$ columns (representing the second word) and hence $N(N+1)$ cells.
 
-Algorithm?
+§2.3. The algorithm underlying the bigram language model is as follows:
+
+```
+Let $output = 1
+Repeat for every bigram *w_1w_2$ in the (tokenised) input, from left to right:
+  output = output x P(w_2 | w_1)
+Return $output
+```
 
 Training from a corpus?
 
