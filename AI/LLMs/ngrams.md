@@ -126,6 +126,13 @@ graph LR;
 
 Find the most likely next word(s)?
 
+```
+Let OUTPUT = []
+Repeat for every word w in the vocabulary:
+  OUTPUT = P(w|INPUT) + OUTPUT
+Sort OUTPUT in descending order
+Return OUTPUT
+```
 
 
 
