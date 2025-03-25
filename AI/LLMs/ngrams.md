@@ -136,6 +136,8 @@ Return OUTPUT
 
 A generative AI seeded with a prompt?
 
+Temperature?
+
 
 ## Smoothing
 
