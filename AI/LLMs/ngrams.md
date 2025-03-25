@@ -86,7 +86,7 @@ Repeat for every word w1 in the corpus vocabulary:
 
 ### Predictive n-gram language models
 
-§2.1. A <mark>predictive language model</mark> is a computer (program) which accepts two inputs – a sequence of words and another word – and assigns a probability as output.
+§2.12. A <mark>predictive language model</mark> is a computer (program) which accepts two inputs – a sequence of words and another word – and assigns a probability as output.
 
 ```mermaid
 graph LR;
@@ -99,10 +99,32 @@ graph LR;
     model -- output --> output
 ```
 
-Find the probability of yesterday I saw a white rabbit
-Divide it by the probability of I saw a white
+§2.13. The algorithm underlying the predictive language model is as follows:
 
-??
+```
+Let P be the probability of INPUT-1
+Let Q be the probability of INPUT-1 + INPUT-2
+Return Q / P
+```
+
+§2.14. Note that a predictive language model contains an n-gram language model as a component:
+
+```mermaid
+graph LR;
+    input1(["yesterday I saw a white"])
+    input2(["rabbit"])
+    subgraph model["Predictive Language Model"]
+    subgraph languagemodel["Language Model"]
+       table["Look-up Table"]
+    end
+    end
+    output(["0.00861"])
+    input1 -- input-1 --> model
+    input2 -- input-2 --> model
+    model -- output --> output
+```
+
+
 
 
 ## Smoothing
