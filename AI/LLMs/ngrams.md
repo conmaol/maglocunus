@@ -30,7 +30,7 @@ graph LR;
 ### Bigrams
 
 §2.2. A <mark>bigram</mark> language model contains/consults a look-up table which assigns, for every pair of words $w_1, w_2$ in the vocabulary, the probability of $w_2$ occurring immediately after $w_1$, ie. $P(w_2 | w_1)$.
-- If there are $N$ words in the vocabulary, this table will have $N+1$ rows (representing the first word, or the start of the text) and $N$ columns (representing the second word) and hence $N(N+1)$ cells.
+- If there are $N$ words in the vocabulary, this table will have $N+1$ rows (representing the first word, or the start of the text) and $N$ columns (representing the second word) and hence $O(N^2)$ cells.
 
 §2.3. The algorithm underlying the bigram language model is as follows:
 
@@ -53,13 +53,56 @@ Repeat for every word w1 in the corpus vocabulary:
 ```
 
 §2.6. For example:
-- $P(rabbit|white) = |white\ rabbit| / |white|$
+- $P(rabbit|white) = \frac{|white\ rabbit|}{|white|}$
 
 ### Trigrams
 
-Trigrams?
+§2.7. A <mark>trigram</mark> language model contains/consults a look-up table which assigns, for every triple of words $w_1, w_2, w_3$ in the vocabulary, the probability of $w_3$ occurring immediately after $w_1\ w_2$, ie. $P(w_3 | w_1\ w_2)$.
+- If there are $N$ words in the vocabulary, this table will have $(N+1)^2$ rows (representing the first two words, or the start of the text) and $N$ columns (representing the third word) and hence $O(N^3)$ cells.
 
+§2.8. The algorithm underlying the trigram language model is as follows:
 
+```
+Let OUTPUT = 1
+Repeat for every trigram w1 w2 w3 in the (tokenised) input, from left to right:
+  OUTPUT = OUTPUT * P(w3|w1 w2)
+Return OUTPUT
+```
+
+§2.9. For example:
+- $P(yesterday\ I\ saw\ a\ white\ rabbit) = P(yesterday|START\ START) \cdot P(I|START\ yesterday) \cdot P(saw|yesterday\ I) \cdot P(a|I\ saw) \cdot P(white|saw\ a) \cdot P(rabbit|a\ white)$
+
+§2.10. A trigram language model can be ‘trained’ from a corpus as follows:
+
+```
+Repeat for every word w1 in the corpus vocabulary:
+  Repeat for every word w2 in the corpus vocabulary:
+    Repeat for every word w3 in the corpus vocabulary:
+      Let P(w3|w1\ w2) = |w1 w2 w3| / |w1 w2|
+```
+
+§2.11. For example:
+- $P(rabbit|a\ white) = \frac{|a\ white\ rabbit|}{|a\ white|}$
+
+### Predictive n-gram language models
+
+§2.1. A <mark>predictive language model</mark> is a computer (program) which accepts two inputs – a sequence of words and another word – and assigns a probability as output.
+
+```mermaid
+graph LR;
+    input1(["yesterday I saw a white"])
+    input2(["rabbit"])
+    model["Predictive Language Model"]
+    output(["0.00861"])
+    input1 -- input-1 --> model
+    input2 -- input-2 --> model
+    model -- output --> output
+```
+
+Find the probability of yesterday I saw a white rabbit
+Divide it by the probability of I saw a white
+
+??
 
 
 ## Smoothing
