@@ -2,6 +2,12 @@
 
 \[My notes from Jurafsky and Martin (2000) §6\]
 
+Contents:
+- [Counting words in corpora](#counting-words-in-corpora)
+- [Simple unsmoothed n-grams](#simple-unsmoothed-n-grams)
+- [Smoothing](#smoothing)
+- [Backoff](#backoff)
+
 §0.1. <mark>Word prediction</mark> is an essential subtask for speech recognition, handwriting recognition, augmentative communication for the disabled, and spelling error detection (especially real-word, context-sensitive spelling errors).
 
 §0.2. An <mark>n-gram language model</mark> uses the previous $n-1$ words to predict the next one.
@@ -10,11 +16,13 @@
 
 §1.1. Probabilities for the word prediction task comes from counting words in <mark>corpora</mark> – online collections of text and transcribed speech, eg.
 - the Brown Corpus (1963–4) – a one million word collection of samples from 500 written texts from different genres
-- the Switchboard Corpus (early 1990s) of telephone conversations (including sentence fragments and filled pauses) between strangers – 240 hours, three million words.
+- the Switchboard Corpus (early 1990s) of telephone conversations (including sentence fragments and filled pauses) – 240 hours, three million words.
 
 §1.2. Every word (token) in a corpus is an instance of a <mark>wordform</mark>, which is itself a member of a <mark>lemma</mark> – a set of lexical forms having the same stem, major part-of-speech and word-sense.
 
-## Simple (unsmoothed) n-grams
+Back up to: [Top](#)
+
+## Simple unsmoothed n-grams
 
 §2.1. A <mark>language model</mark> is a computer (program) which accepts a sequence of words (and other tokens) as input and assigns a probability as output.
 
@@ -44,7 +52,7 @@ Return OUTPUT
 §2.4. For example:
 - $P(yesterday\ I\ saw\ a\ white\ rabbit) = P(yesterday|START) \cdot P(I|yesterday) \cdot P(saw|I) \cdot P(a|saw) \cdot P(white|a) \cdot P(rabbit|white)$
 
-§2.5. A bigram language model can be ‘trained’ from a corpus as follows:
+§2.5. A bigram language model can be ‘trained’ from a corpus by counting and normalising, as follows:
 
 ```
 Repeat for every word w1 in the corpus vocabulary:
@@ -54,6 +62,13 @@ Repeat for every word w1 in the corpus vocabulary:
 
 §2.6. For example:
 - $P(rabbit|white) = \frac{|white\ rabbit|}{|white|}$
+
+§2.7. Bigram language models are <mark>Markov models</mark> – the class of probabilistic models that assume that we can predict the probability of some future unit without looking too far into the past. More specifically, bigram language models are <mark>first-order</mark> Markov models, a simple kind of Markov chain (ie. weighted finite state automaton) which has one state for each word.
+
+§2.8. Note that the product of many probabilities gets smaller the more probabilities we multiple, leading to <mark>numeric underflow</mark>. It is more customary to do the computation in <mark>log space</mark> – adding the logs of each probability, and taking the anti-log of the result.
+
+§2.9. Bigram training is an example of <mark>Maximum Likelihood Estimation</mark> (MLE) – using relative frequencies means that the likelihood of the training set given the model is maximised. This can lead to sparse look-up tables with lots of 0 probabilities – see discussion of ‘smoothing’ below.
+
 
 ### Trigrams
 
@@ -70,7 +85,7 @@ Return OUTPUT
 ```
 
 §2.9. For example:
-- $P(yesterday\ I\ saw\ a\ white\ rabbit) = P(yesterday|START\ START) \cdot P(I|START\ yesterday) \cdot P(saw|yesterday\ I) \cdot P(a|I\ saw) \cdot P(white|saw\ a) \cdot P(rabbit|a\ white)$
+- $P(yesterday\ I\ saw\ a\ white\ rabbit) = P(yesterday|START1\ START2) \cdot P(I|START2\ yesterday) \cdot P(saw|yesterday\ I) \cdot P(a|I\ saw) \cdot P(white|saw\ a) \cdot P(rabbit|a\ white)$
 
 §2.10. A trigram language model can be ‘trained’ from a corpus as follows:
 
@@ -78,11 +93,14 @@ Return OUTPUT
 Repeat for every word w1 in the corpus vocabulary:
   Repeat for every word w2 in the corpus vocabulary:
     Repeat for every word w3 in the corpus vocabulary:
-      Let P(w3|w1\ w2) = |w1 w2 w3| / |w1 w2|
+      Let P(w3|w1 w2) = |w1 w2 w3| / |w1 w2|
 ```
 
 §2.11. For example:
 - $P(rabbit|a\ white) = \frac{|a\ white\ rabbit|}{|a\ white|}$
+
+Trigram language models are <mark>second-order Markov models</mark>.
+
 
 ### Predictive n-gram language models
 
@@ -138,16 +156,23 @@ A generative AI seeded with a prompt?
 
 Temperature?
 
+Back up to: [Top](#)
 
 ## Smoothing
 
+Back up to: [Top](#)
+
 ## Backoff
+
+Back up to: [Top](#)
 
 ## N-grams for spelling and pronunciation
 
+Back up to: [Top](#)
+
 ## Entropy
 
-
+Back up to: [Top](#)
 
 ----
 
