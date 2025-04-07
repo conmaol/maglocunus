@@ -1,6 +1,6 @@
 # Vector semantics
 
-§1. Given vocabulary V of words, a document over V is a finite sequence D = <w1, w2, …, wn> where every wi in D is in V.
+§1. Given vocabulary $V$ of words, a <mark>document</mark> over $V$ is a finite sequence $D = w_1w_2...w_n$ where every $w_i$ in $D$ is in $V$.
 
 And a corpus over V is a finite set of documents over V.
 
