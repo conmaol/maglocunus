@@ -28,25 +28,20 @@
 - the squashed term frequency of $w$ wrt. $D$ is the $\log_{10}$ of the number of times $w$ occurs in $D$, and
 - the inverse document frequency of $w$ wrt. $C$ is the $\log_{10}$ of the quotient of the number of documents in $C$ and the number of distinct documents in $C$ that $w$ occurs within. 
 
+§9. To be more precise, the `squashing‘ function is defined as either:
+- n
+- m
+
+§10. The squashing function is useful because ...
 
 
 
 
-
-
-Squashed using the log10 function. 
 
 If count = 0, tf = 0; otherwise 1 + log10 count
 
 Or log10 count+ 1
 
-Df is the number of different documents a term occurs in.
-
-Inverse df is number of docs in corpus divided by the df.
-
-Often squashed using log10. 
-
-Tf-idf = tf . Idf 
 
 ## Word embeddings
 
