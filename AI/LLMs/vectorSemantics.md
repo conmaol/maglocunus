@@ -2,10 +2,10 @@
 
 §1. Given vocabulary $V$ of words:
 - a <mark>document</mark> over $V$ is a finite sequence $D = w_1w_2...w_n$ where every $w_i$ in $D$ is in $V$
-- a <mark>corpus</mark> over V is a finite set of documents over V.
+- a <mark>corpus</mark> over  $V$ is a finite set of documents over $V$.
 
-§2. Given vocabulary $V$ and corpus $C$ over $V$, the meaning of document $D$ in $C$, written $[[D]]$, is the function from $V$ to $N$ defined as follows:
-- $[[D]](w)$ is the number of times word $w$ occurs in $D$. 
+§2. Given vocabulary $V$ and corpus $C$ over $V$, the meaning of document $D$ in $C$, written $\Vert D\Vert$, is the function from $V$ to $N$ defined as follows:
+- $\Vert D\Vert(w)$ is the number of times word $w$ occurs in $D$. 
 
 Given vocabulary V and corpus C over V, the macro-level meaning of word w in V is the function f from C to N such that f(D) is the number of times w occurs in document D.
 
