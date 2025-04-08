@@ -26,7 +26,7 @@
 §8. With this in mind, we can redefine the notion of document meaning presented in §2 to weight the raw counts — Given vocabulary $V$, corpus $C$ over $V$, and document $D$ in $C$, $\Vert D\Vert$ is the function from $V$ to $N$ defined as follows:
 - $\Vert D\Vert(w)$ is product of the `squashed‘ <mark>term frequency</mark> of $w$ wrt. $D$ and the <mark>inverse document frequency</mark> of $w$ wrt. $C$, where
 - the squashed term frequency of $w$ wrt. $D$ is the $\log_{10}$ of the number of times $w$ occurs in $D$, and
-- the inverse document frequency of $w$ wrt. $C$ is the $\log_{10}$ of the quotient of the number of documents in $C$ and by the number of distinct documents in $C$ that $w$ occurs within. 
+- the inverse document frequency of $w$ wrt. $C$ is the $\log_{10}$ of the quotient of the number of documents in $C$ and the number of distinct documents in $C$ that $w$ occurs within. 
 
 
 
