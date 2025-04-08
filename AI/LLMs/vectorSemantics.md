@@ -19,7 +19,7 @@
 
 ## Word embeddings
 
-§7. Given vocabulary $V$ and corpus $C$ over $V$, the <mark>meaning of word</mark> $w_1$ in $V$ wrt. $C$, written $\Vert w_1\Vert^C$, is the function from $V$ to $V$ defined as follows:
+§7. Given vocabulary $V$ and corpus $C$ over $V$, the <mark>meaning of word</mark> $w_1$ in $V$ wrt. $C$, written $\Vert w_1\Vert^C$, is the function from $V$ to $N$ defined as follows:
 - $\Vert w_1\Vert^C(w_2)$ is the number of times word $w_2$ occurs in the context (eg. within four words) of $w_1$.
 
 
