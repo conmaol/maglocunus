@@ -29,18 +29,10 @@
 - the inverse document frequency of $w$ wrt. $C$ is the $\log_{10}$ of the quotient of the number of documents in $C$ and the number of distinct documents in $C$ that $w$ occurs within. 
 
 §9. To be more precise, the `squashing‘ function is defined as either:
-- if x is 0: 0; otherwise 1+\
-- m
+- if $x$ is $0$: $0$; otherwise $1+\log_{10}x$
+- $\log_{10}x+1$
 
 §10. The squashing function is useful because ...
-
-
-
-
-
-If count = 0, tf = 0; otherwise 1 + log10 count
-
-Or log10 count+ 1
 
 
 ## Word embeddings
