@@ -6,38 +6,37 @@
 
 ## Document embeddings — information retrieval
 
-§2. Given vocabulary $V$ and corpus $C$ over $V$, the <mark>meaning of document</mark> $D$ in $C$, written $\Vert D\Vert$, is the function from $V$ to $N$ defined as follows:
+§2. Given vocabulary $V$ and corpus $C$ over $V$, the <mark>meaning of document</mark> $D$ in $C$, written $\Vert D\Vert$, is the function from $V$ to $\mathbb{N}$ defined as follows:
 - $\Vert D\Vert(w)$ is the number of times word $w$ occurs in $D$. 
 
 §3. The meaning of a document can be represented as a column in a <mark>term-document matrix</mark> — a table where every row represents a word in the vocabulary, every column represents a different document in the corpus, and every cell contains the number of times the relevant word occurs in the relevant document. 
 
 §4. The meaning of a document can also be represented as a <mark>semantic vector</mark> — a sequence of non-negative integers read off top-to-bottom from the relevant column.
 
-§5. The degree of <mark>similarity</mark> between document $D_1$ and $D_2$ over vocabulary $V$ is defined as the cosine of the angle between (the semantic vectors underlying) $\Vert D_1\Vert$ and $\Vert D_2\Vert$. This is a real number between $0$ (orthogonal) and $1$ (identical).
+§5. The degree of <mark>similarity</mark> between documents $D_1$ and $D_2$ over vocabulary $V$ is defined as the cosine of the angle between (the semantic vectors underlying) $\Vert D_1\Vert$ and $\Vert D_2\Vert$. This is a real number between $0$ (orthogonal) and $1$ (identical).
 
-§6. An <mark>information retrieval</mark> system is a computer (program) which takes in two inputs — a corpus of documents over some vocabulary $V$, and a query $Q$ (sequence, document) over $V$ — and returns the corpus ordered by similarity to $Q$.
+§6. An <mark>information retrieval</mark> system is a computer (program) which takes in two inputs — a corpus of documents over some vocabulary $V$, and a query $Q$ (sequence, document) over $V$ — and returns the corpus ordered by cosine similarity to $Q$.
 
 ## TF-IDF weighting
 
-§7. Raw frequency is not the best measure of association between words and documents:
+§7. Raw frequency is, on its own, not the best measure of association between words and documents:
 - Words that appear frequently are more important than words that appear once or twice.
 - But words that are too frequent are unimportant. 
 
-§8. With this in mind, we can redefine the notion of document meaning presented in §2 to weight the raw counts — Given vocabulary $V$, corpus $C$ over $V$, and document $D$ in $C$, $\Vert D\Vert$ is the function from $V$ to $N$ defined as follows:
-- $\Vert D\Vert(w)$ is product of the `squashed‘ <mark>term frequency</mark> of $w$ wrt. $D$ and the <mark>inverse document frequency</mark> of $w$ wrt. $C$, where
-- the squashed term frequency of $w$ wrt. $D$ is the $\log_{10}$ of the number of times $w$ occurs in $D$, and
-- the inverse document frequency of $w$ wrt. $C$ is the $\log_{10}$ of the quotient of the number of documents in $C$ and the number of distinct documents in $C$ that $w$ occurs within. 
+§8. With this in mind, we can redefine the notion of document meaning presented in §2 to weight the raw counts — Given vocabulary $V$, corpus $C$ over $V$, and document $D$ in $C$, $\Vert D\Vert$ is the function from $V$ to $\mathbb{R}$ defined as follows:
+- $\Vert D\Vert(w)$ is the product of the `squashed‘ <mark>term frequency</mark> of $w$ in $D$ and the <mark>inverse document frequency</mark> of $w$ in $C$, where
+- the squashed term frequency of $w$ in $D$ is the $\log_{10}$ of the number of times $w$ occurs in $D$, and
+- the inverse document frequency of $w$ in $C$ is the $\log_{10}$ of the quotient of the number of documents in $C$ and the number of distinct documents in $C$ that $w$ occurs within. 
 
 §9. To be more precise, the `squashing‘ function is defined as either:
 - if $x$ is $0$: $0$; otherwise $1+\log_{10}x$
 - $\log_{10}x+1$
 
-§10. The squashing function is useful because ...
-
+§10. The squashing function is useful because even if one word is 100 times more frequent in a document than another word, then this does not mean it is 100 times more important to the meaning of the document.
 
 ## Word embeddings
 
-§7. Given vocabulary $V$ and corpus $C$ over $V$, the <mark>meaning of word</mark> $w_1$ in $V$ wrt. $C$, written $\Vert w_1\Vert^C$, is the function from $V$ to $N$ defined as follows:
+§7. Given vocabulary $V$ and corpus $C$ over $V$, the <mark>meaning of word</mark> $w_1$ in $V$ wrt. $C$, written $\Vert w_1\Vert^C$, is the function from $V$ to $\mathbb{N}$ defined as follows:
 - $\Vert w_1\Vert^C(w_2)$ is the number of times word $w_2$ occurs in the context (eg. within four words) of $w_1$ in (some document in) $C$.
 
 §8. Note that for every vocabulary $V$, words $w_1$, $w_2$ over $V$, and corpus $C$ over $V$:
