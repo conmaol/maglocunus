@@ -23,7 +23,7 @@
 - Words that appear frequently are more important than words that appear once or twice.
 - But words that are too frequent are unimportant. 
 
-§8. With this in mind, we can redefine the notion of document meaning presented in §2 to weight the raw counts — Given vocabulary $V$, corpus $C$ over $V$, and document $D$ in $C$, $\Vert D\Vert$ is the function from $V$ to $\mathbb{R}$ defined as follows:
+§8. With this in mind, we can redefine the notion of document meaning presented in §2 to weight the raw counts — Given vocabulary $V$, corpus $C$ over $V$, and document $D$ in $C$, $\Vert D\Vert$ is the function from $V$ to (non-negative) $\mathbb{R}$ defined as follows:
 - $\Vert D\Vert(w)$ is the product of the `squashed‘ <mark>term frequency</mark> of $w$ in $D$ and the <mark>inverse document frequency</mark> of $w$ in $C$, where
 - the squashed term frequency of $w$ in $D$ is the $\log_{10}$ of the number of times $w$ occurs in $D$, and
 - the inverse document frequency of $w$ in $C$ is the $\log_{10}$ of the quotient of the number of documents in $C$ and the number of distinct documents in $C$ that $w$ occurs within. 
