@@ -29,7 +29,7 @@
 - the inverse document frequency of $w$ wrt. $C$ is the $\log_{10}$ of the quotient of the number of documents in $C$ and the number of distinct documents in $C$ that $w$ occurs within. 
 
 §9. To be more precise, the `squashing‘ function is defined as either:
-- n
+- if x is 0: 0; otherwise 1+\
 - m
 
 §10. The squashing function is useful because ...
