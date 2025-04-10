@@ -1,21 +1,64 @@
 # Vector semantics
 
-§1. Given vocabulary $V$ (of words/terms/tokens):
+§0.1. The <mark>distributional hypothesis</mark> – words that occur in similar contexts have similar meanings.
+
+§0.2. <mark>Vector semantics</mark> – learning representations of the meanings of words (aka. <mark>embeddings</mark>) directly from their distributions in texts.
+
+§0.3. Vector semantics is an example of <mark>representation learning</mark> – automatically learning useful representations of an input text via self-supervised methods, rather than manually using feature-engineering. 
+
+## Lexical semantics
+
+§1.1. 
+
+## Vector semantics
+
+§2.1. A word can be represented as a point in a multi-dimensional semantic space that is derived from the distributions of word neighbours.
+
+§2.2. Vectors for representing words are often called ‘embeddings’.
+
+## Words and vectors
+
+§3.0. Vector models of meaning are generally based on a <mark>co-occurrence matrix</mark> – a way of representing how often words co-occur.
+
+### Vectors and documents
+
+§3.1.1. Given vocabulary $V$ (of words/terms/tokens):
 - A <mark>document</mark> over $V$ is a finite sequence $w_1w_2...w_n$ where every $w_i$ is in $V$.
 - A <mark>corpus</mark> over  $V$ is a finite set of documents over $V$.
 
-## Document vectors
-
-§2. Given vocabulary $V$ and document $D$ over $V$, the <mark>meaning</mark> of $D$, written $\Vert D\Vert$, is the function from $V$ to $\mathbb{N}$ defined as follows:
+§3.1.2. Given vocabulary $V$ and document $D$ over $V$, the <mark>meaning</mark> of $D$, written $\Vert D\Vert$, is the function from $V$ to $\mathbb{N}$ defined as follows:
 - $\Vert D\Vert(w)$ is the number of times word $w$ occurs in $D$. 
 
-§3. The meaning of a document can be represented as a column in a <mark>term-document matrix</mark> — a table where every row represents a word in the vocabulary, every column represents a different document in the corpus, and every cell contains the number of times the relevant word occurs in the relevant document. 
+§3.1.3. The meaning of a document can be represented as a column in a <mark>term-document matrix</mark> — a table where every row represents a word in the vocabulary, every column represents a different document in the corpus, and every cell contains the number of times the relevant word occurs in the relevant document. 
 
-§4. The meaning of a document can also be represented as a <mark>semantic vector</mark> — a sequence of non-negative integers read off top-to-bottom from the relevant column.
+§3.1.4. The meaning of a document can also be represented as a <mark>semantic vector</mark> — a sequence of non-negative integers read off top-to-bottom from the relevant column in the term-document matrix.
 
-§5. The degree of <mark>similarity</mark> between documents $D_1$ and $D_2$ over vocabulary $V$ is defined as the cosine of the angle between (the semantic vectors underlying) $\Vert D_1\Vert$ and $\Vert D_2\Vert$. This is a real number between $0$ (orthogonal) and $1$ (identical).
+§3.1.5. An <mark>information retrieval</mark> system is a computer (program) which takes in two inputs — a corpus of documents over some vocabulary $V$, and a query $Q$ (sequence, document) over $V$ — and returns the corpus ordered by <mark>similarity</mark> to $Q$. This is done by converting each document and the query into vectors, and then comparing these vectors.
 
-§6. An <mark>information retrieval</mark> system is a computer (program) which takes in two inputs — a corpus of documents over some vocabulary $V$, and a query $Q$ (sequence, document) over $V$ — and returns the corpus ordered by cosine similarity to $Q$.
+### Document dimensions
+
+§3.2.1. Given vocabulary $V$, word $w$ over $V$, and corpus $C$ over $V$, the <mark>macro-meaning</mark> of $w$ in $C$, written $\Vert w\Vert^C$, is the function from $C$ to $\mathbb{N}$ defined as follows:
+- $\Vert w\Vert^C(D)$ is the number of times $w$ occurs in document $D$ in $C$. 
+
+§3.2.2. The macro-meaning of a word can be represented as a *row* in a term-document matrix. It can also be represented as a semantic vector read off from that row, from left to right. In this way, the meaning of a word can be represented by the documents it tends to occur in.
+
+### Word dimensions
+
+§3.3.1.
+
+§7. Given vocabulary $V$ and corpus $C$ over $V$, the <mark>meaning of word</mark> $w_1$ in $V$ wrt. $C$, written $\Vert w_1\Vert^C$, is the function from $V$ to $\mathbb{N}$ defined as follows:
+- $\Vert w_1\Vert^C(w_2)$ is the number of times word $w_2$ occurs in the context (eg. within four words) of $w_1$ in (some document in) $C$.
+
+§8. Note that for every vocabulary $V$, words $w_1$, $w_2$ over $V$, and corpus $C$ over $V$:
+- $\Vert w_1\Vert^C(w_1)$ is undefined.
+- $\Vert w_1\Vert^C(w_2)=\Vert w_2\Vert^C(w_1)$.
+
+## Cosine for measuring similarity
+
+§4.1. The degree of <mark>similarity</mark> between documents $D_1$ and $D_2$ over vocabulary $V$ is defined as the cosine of the angle between (the semantic vectors underlying) $\Vert D_1\Vert$ and $\Vert D_2\Vert$. This is a real number between $0$ (orthogonal) and $1$ (identical).
+
+
+
 
 ## TF-IDF weighting
 
@@ -36,12 +79,7 @@
 
 ## Word embeddings
 
-§7. Given vocabulary $V$ and corpus $C$ over $V$, the <mark>meaning of word</mark> $w_1$ in $V$ wrt. $C$, written $\Vert w_1\Vert^C$, is the function from $V$ to $\mathbb{N}$ defined as follows:
-- $\Vert w_1\Vert^C(w_2)$ is the number of times word $w_2$ occurs in the context (eg. within four words) of $w_1$ in (some document in) $C$.
 
-§8. Note that for every vocabulary $V$, words $w_1$, $w_2$ over $V$, and corpus $C$ over $V$:
-- $\Vert w_1\Vert^C(w_1)$ is undefined.
-- $\Vert w_1\Vert^C(w_2)=\Vert w_2\Vert^C(w_1)$.
 
 
 
