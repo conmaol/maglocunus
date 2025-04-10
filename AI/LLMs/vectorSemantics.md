@@ -4,9 +4,9 @@
 - A <mark>document</mark> over $V$ is a finite sequence $w_1w_2...w_n$ where every $w_i$ is in $V$.
 - A <mark>corpus</mark> over  $V$ is a finite set of documents over $V$.
 
-## Document embeddings — information retrieval
+## Document vectors
 
-§2. Given vocabulary $V$ and corpus $C$ over $V$, the <mark>meaning of document</mark> $D$ in $C$, written $\Vert D\Vert$, is the function from $V$ to $\mathbb{N}$ defined as follows:
+§2. Given vocabulary $V$ and document $D$ over $V$, the <mark>meaning</mark> of $D$, written $\Vert D\Vert$, is the function from $V$ to $\mathbb{N}$ defined as follows:
 - $\Vert D\Vert(w)$ is the number of times word $w$ occurs in $D$. 
 
 §3. The meaning of a document can be represented as a column in a <mark>term-document matrix</mark> — a table where every row represents a word in the vocabulary, every column represents a different document in the corpus, and every cell contains the number of times the relevant word occurs in the relevant document. 
