@@ -1,8 +1,8 @@
 # Vector semantics
 
-§1. Given vocabulary $V$ of words:
-- a <mark>document</mark> over $V$ is a finite sequence $D = w_1w_2...w_n$ where every $w_i$ in $D$ is in $V$
-- a <mark>corpus</mark> over  $V$ is a finite set of documents over $V$.
+§1. Given vocabulary $V$ (of words/terms/tokens):
+- A <mark>document</mark> over $V$ is a finite sequence $w_1w_2...w_n$ where every $w_i$ is in $V$.
+- A <mark>corpus</mark> over  $V$ is a finite set of documents over $V$.
 
 ## Document embeddings — information retrieval
 
