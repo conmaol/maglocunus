@@ -6,6 +6,9 @@ Contents:
 - [Words and vectors](#words-and-vectors)
 - [Cosine for measuring similarity](#cosine-for-measuring-similarity)
 - [TF-IDF: Weighing terms in the vector](#tf-idf-weighing-terms-in-the-vector)
+- [PMI: Pointwise Mutual Information](#pmi-pointwise-mutual-information)
+- [Applications of the tf-idf or PPMI vector models](#applications-of-the-tf-idf-or-ppmi-vector-models)
+- [Word2vec](#word2vec)
 
 §0.1. The <mark>distributional hypothesis</mark> – words that occur in similar contexts have similar meanings.
 
@@ -88,7 +91,7 @@ Back up to: [Top](#)
 - Words that appear frequently are certainly more important than words that appear once or twice.
 - But words that are too frequent are usually unimportant. 
 
-§5.2. With this in mind, we can redefine the notion of document meaning presented in §3.3 to weight the raw counts — 
+§5.2. With this in mind, we can redefine the notion of document meaning presented in §3.3 to weight the raw counts in the cells of the term-document matrix — 
 
 Given vocabulary $V$, corpus $C$ over $V$, and document $D$ in $C$, $\Vert D\Vert$ is the function from $V$ to (non-negative) $\mathbb{R}$ defined as follows:
 - $\Vert D\Vert(w)$ is the product of the <mark>term frequency</mark> of $w$ in $D$ and the <mark>inverse document frequency</mark> of $w$ in $C$, where
@@ -102,7 +105,28 @@ Given vocabulary $V$, corpus $C$ over $V$, and document $D$ in $C$, $\Vert D\Ver
 
 Back up to: [Top](#)
 
+## PMI: Pointwise Mutual Information
 
+§6.1. Positive PMI is used to weight term-term matrices – the best way to weight the association between two words is to ask how much more the two words co-occur in the corpus than we would have a priori expected them to appear by chance.
+
+Back up to: [Top](#)
+
+## Applications of the tf-idf or PPMI vector models
+
+§7.1. Document similarity (using tf-idf) is useful for: IR; plagiarism detection; news recommender systems; and digital humanities textual scholarship (eg. comparing different versions).
+
+§7.2. Word similarity (using either tf-idf or PPMI) is useful for: finding word paraphrases; tracking changes in word meaning; or automatically discovering meanings of words in different corpora.
+
+Back up to: [Top](#)
+
+## Word2vec
+
+§8.1.
+
+Back up to: [Top](#)
+
+
+----
 
 
 
