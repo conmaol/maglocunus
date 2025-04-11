@@ -1,5 +1,12 @@
 # Vector semantics
 
+Contents:
+- [Lexical semantics](#lexical-semantics)
+- [Vector semantics](#vector-semantics)
+- [Words and vectors](#words-and-vectors)
+- [Cosine for measuring similarity](#cosine-for-measuring-similarity)
+- nn
+
 §0.1. The <mark>distributional hypothesis</mark> – words that occur in similar contexts have similar meanings.
 
 §0.2. <mark>Vector semantics</mark> – we can learn representations of the meanings of words (aka. ‘embeddings’) directly from their distributions in texts.
