@@ -84,20 +84,21 @@ Back up to: [Top](#)
 
 ## TF-IDF: Weighing terms in the vector
 
-§5.1. Raw frequency is, on its own, not the best measure of association between words and documents:
-- Words that appear frequently are more important than words that appear once or twice.
-- But words that are too frequent are unimportant. 
+§5.1. Raw frequency is, on its own, not the best measure of association between words and documents, because of the following paradox:
+- Words that appear frequently are certainly more important than words that appear once or twice.
+- But words that are too frequent are usually unimportant. 
 
-§5.2. With this in mind, we can redefine the notion of document meaning presented in §2 to weight the raw counts — Given vocabulary $V$, corpus $C$ over $V$, and document $D$ in $C$, $\Vert D\Vert$ is the function from $V$ to (non-negative) $\mathbb{R}$ defined as follows:
-- $\Vert D\Vert(w)$ is the product of the `squashed‘ <mark>term frequency</mark> of $w$ in $D$ and the <mark>inverse document frequency</mark> of $w$ in $C$, where
-- the squashed term frequency of $w$ in $D$ is the $\log_{10}$ of the number of times $w$ occurs in $D$, and
-- the inverse document frequency of $w$ in $C$ is the $\log_{10}$ of the quotient of the number of documents in $C$ and the number of distinct documents in $C$ that $w$ occurs within. 
+§5.2. With this in mind, we can redefine the notion of document meaning presented in §3.3 to weight the raw counts — 
 
-§5.3. To be more precise, the `squashing‘ function is defined as either:
-- if $x$ is $0$: $0$; otherwise $1+\log_{10}x$
-- $\log_{10}x+1$
+Given vocabulary $V$, corpus $C$ over $V$, and document $D$ in $C$, $\Vert D\Vert$ is the function from $V$ to (non-negative) $\mathbb{R}$ defined as follows:
+- $\Vert D\Vert(w)$ is the product of the <mark>term frequency</mark> of $w$ in $D$ and the <mark>inverse document frequency</mark> of $w$ in $C$, where
+  - the term frequency of $w$ in $D$ is the number of times $w$ occurs in $D$
+  - the inverse document frequency of $w$ in $C$ is the quotient of the number of documents in $C$ and the number of distinct documents in $C$ that $w$ occurs within
+  - both the term frequency and the inverse document frequency are generally ‘squashed’ using one of the following smoothed $\log_{10}$ functions:
+    - if $x$ is $0$: $0$; otherwise $1+\log_{10}x$
+    - $\log_{10}x+1$
 
-§5.4. The squashing function is useful because even if one word is 100 times more frequent in a document than another word, then this does not mean it is 100 times more important to the meaning of the document.
+§5.3. The squashing function is useful because even if one word is 100 times more frequent in a document than another word, then this does not mean it is 100 times more important to the meaning of the document.
 
 Back up to: [Top](#)
 
