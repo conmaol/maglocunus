@@ -17,11 +17,15 @@ Contents:
 
 §1.1. 
 
+Back up to: [Top](#)
+
 ## Vector semantics
 
 §2.1. The meaning of a word can be represented as a point (vector) in a multi-dimensional semantic space that is derived from the distributions of its word neighbours.
 
 §2.2. Vectors for representing words are often called ‘embeddings’.
+
+Back up to: [Top](#)
 
 ## Words and vectors
 
@@ -60,11 +64,13 @@ Contents:
 
 §3.11. The micro-meaning of a word can be represented as a row in a <mark>term-term matrix</mark> — a table where every row and every column represents a word in the vocabulary, and every cell contains the number of times the relevant words occur within each others’ context. This can also be represented as a semantic vector — a sequence of non-negative integers read off left-to-right (or top-to-bottom) from the relevant row (or column) in the term-term matrix.
 
+Back up to: [Top](#)
+
 ## Cosine for measuring similarity
 
 §4.1. The degree of <mark>similarity</mark> between documents $D_1$ and $D_2$ over vocabulary $V$ is defined as the cosine of the angle between (the semantic vectors underlying) $\Vert D_1\Vert$ and $\Vert D_2\Vert$. This is a real number between $0$ (orthogonal) and $1$ (identical).
 
-
+Back up to: [Top](#)
 
 
 ## TF-IDF weighting
@@ -84,7 +90,8 @@ Contents:
 
 §10. The squashing function is useful because even if one word is 100 times more frequent in a document than another word, then this does not mean it is 100 times more important to the meaning of the document.
 
-## Word embeddings
+Back up to: [Top](#)
+
 
 
 
