@@ -44,14 +44,14 @@
 
 ### Word dimensions
 
-§3.9.
+§3.9. Given vocabulary $V$, word $w$ over $V$, and corpus $C$ over $V$, the <mark>micro-meaning</mark> of $w$ in $V$ wrt. $C$, written $\Vert w\Vert^C$, is the function from $V$ to $\mathbb{N}$ defined as follows:
+- $\Vert w\Vert^C(u)$ is the number of times word $u$ occurs in the context (eg. within four words) of $w$ in (some document in) $C$.
 
-§7. Given vocabulary $V$ and corpus $C$ over $V$, the <mark>meaning of word</mark> $w_1$ in $V$ wrt. $C$, written $\Vert w_1\Vert^C$, is the function from $V$ to $\mathbb{N}$ defined as follows:
-- $\Vert w_1\Vert^C(w_2)$ is the number of times word $w_2$ occurs in the context (eg. within four words) of $w_1$ in (some document in) $C$.
+§3.10. Note that for every vocabulary $V$, words $w$, $u$ over $V$, and corpus $C$ over $V$:
+- $\Vert w\Vert^C(w)$ is undefined.
+- $\Vert w\Vert^C(u)=\Vert u\Vert^C(w)$.
 
-§8. Note that for every vocabulary $V$, words $w_1$, $w_2$ over $V$, and corpus $C$ over $V$:
-- $\Vert w_1\Vert^C(w_1)$ is undefined.
-- $\Vert w_1\Vert^C(w_2)=\Vert w_2\Vert^C(w_1)$.
+§3.11. The micro-meaning of a word can be represented as a row in a <mark>term-term matrix</mark> — a table where every row and every column represents a word in the vocabulary, and every cell contains the number of times the relevant words occur within each others’ context. This can also be represented as a semantic vector — a sequence of non-negative integers read off left-to-right (or top-to-bottom) from the relevant row (or column) in the term-term matrix.
 
 ## Cosine for measuring similarity
 
