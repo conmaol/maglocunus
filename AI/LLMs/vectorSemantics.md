@@ -62,13 +62,23 @@ Back up to: [Top](#)
 - $\Vert w\Vert^C(w)$ is undefined.
 - $\Vert w\Vert^C(u)=\Vert u\Vert^C(w)$.
 
-§3.11. The micro-meaning of a word can be represented as a row in a <mark>term-term matrix</mark> — a table where every row and every column represents a word in the vocabulary, and every cell contains the number of times the relevant words occur within each others’ context. This can also be represented as a semantic vector — a sequence of non-negative integers read off left-to-right (or top-to-bottom) from the relevant row (or column) in the term-term matrix.
+§3.11. The micro-meaning of a word can be represented as a row in a (sparse) <mark>term-term matrix</mark> — a table where every row and every column represents a word in the vocabulary, and every cell contains the number of times the relevant words occur within each others’ context. This can also be represented as a semantic vector — a sequence of non-negative integers read off left-to-right from the relevant row in the term-term matrix.
 
 Back up to: [Top](#)
 
 ## Cosine for measuring similarity
 
-§4.1. The degree of <mark>similarity</mark> between documents $D_1$ and $D_2$ over vocabulary $V$ is defined as the cosine of the angle between (the semantic vectors underlying) $\Vert D_1\Vert$ and $\Vert D_2\Vert$. This is a real number between $0$ (orthogonal) and $1$ (identical).
+§4.1. The <mark>dot product</mark> (or ‘inner’ product) is a simple similarity measure between two vectors of the same dimensionality, whether both vectors represent documents or words:
+- $v\cdot w = v_1w_1 + v_2w_2 + ... + v_nw_n$
+
+§4.2. The dot product of two vectors tends to be high just when the two vectors have large values in the same dimensions. However, the raw dot product favours vectors of high magnitude (ie. points far from the origin), and hence overemphasises more frequent words.
+
+§4.3. We can normalise the dot product for vector magnitude by dividing it by the magnitudes of each of the two vectors, which is identical to the cosine of the angle between the two vectors:
+- $\frac{v\cdot w}{|v||w|} = \cos\theta$
+
+§4.4. Thus, the degree of similarity between documents $D$ and $E$ over vocabulary $V$ is defined as the cosine of the angle between (the semantic vectors underlying) $\Vert D\Vert$ and $\Vert E\Vert$. This is a real number between $0$ (orthogonal) and $1$ (identical).
+
+§4.5. Similarly, the degree of similarity between words $w$ and $u$ over vocabulary $V$ in corpus $C$ over $V$ is defined as the cosine of the angle between (the semantic vectors underlying) $\Vert w\Vert^C$ and $\Vert w\Vert^C$.
 
 Back up to: [Top](#)
 
