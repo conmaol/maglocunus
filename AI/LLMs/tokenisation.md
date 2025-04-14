@@ -79,18 +79,16 @@ Back up to: [Top](#)
 
 ### Comparing Trained LLM tokenisers
 
-Some common problems for tokenisers:
-- capitalisation
-- languages other than English
-- emojis
-- programming code, including meaningful whitespace
-- numbers and digits
-- special tokens
-
 #### BERT base model (uncased) (2018)
 
 - Method: [Wordpiece](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/37842.pdf)
 - Vocab: 30,522 tokens
+- Special tokens: `unk_token [UNK]`, `sep_token [SEP]`, `pad_token [PAD]`, `cls_token [CLS]` (classification), `mask_token [MASK]`
+- Vertical whitespace is omitted.
+- Uppercase letters are normalised to lowercase.
+- Suffix tokens are preceded by `##`.
+- Emoji and Chinese characters are `[UNK]`.
+- `[CLS]` token at start of input, `[SEP]` at end.
 
 #### BERT base model (cased) (2018)
 
@@ -101,19 +99,36 @@ Some common problems for tokenisers:
 
 - Method: [BPE](https://arxiv.org/pdf/1508.07909)
 - Vocab: 50,257 tokens
+- Special tokens: `<|endoftext|>`
+- Sensitive to case.
+- Subword tokens.
+- Vertical and horizontal whitespace is retained (hence good for dealing with code).
+- Emoji and non-Roman characters are represented as a sequence of byte symbols, and can be recreated in the output.
 
 #### Flan-T5 (2022)
 
 - Method: [SentencePiece](https://arxiv.org/pdf/1808.06226), [supporting](https://arxiv.org/pdf/1804.10959) BPE and the unigram language model
 - Vocab: 32,100 tokens
+- Special tokens: `unk_token <unk>`, `pad_token <pad>`
+- Sensitive to case.
+- Subword tokens.
+- Whitespace is collapsed.
+- Blind to non-Roman characters.
 
 #### GPT-4 (2023)
 
-BPE
+- Method: BPE
+- Vocab: > 100,000 tokens
+- Special tokens: `<|endoftext|>`, [fill in the middle tokens](https://arxiv.org/pdf/2207.14255): `<|fim_prefix|>`, `<|fim_middle|>`, `<|fim_suffix|>`,
+- Specific tokens for all combinations of whitespace, and for common coding keywords (eg. `elif`).
 
 #### StarCoder2 (2024)
 
-BPE
+- Method: BPE
+- Vocab: 49,152
+- Special tokens: `<|endoftext|>` and fill in the middle tokens. Also, special tokens for names of files and repos: `<filename>`, `<reponame>`, `<gh_stars>`
+- Optimised for generating [code](https://arxiv.org/pdf/2305.06161); [also](https://arxiv.org/pdf/2402.19173).
+- Each digit is assigned its own token, for better maths potential.
 
 #### Galactica
 
