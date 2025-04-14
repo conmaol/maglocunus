@@ -89,19 +89,23 @@ Some common problems for tokenisers:
 
 #### BERT base model (uncased) (2018)
 
-Wordpiece
+- Method: [Wordpiece](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/37842.pdf)
+- Vocab: 30,522 tokens
 
 #### BERT base model (cased) (2018)
 
-Also Wordpiece
+- Method: Wordpiece
+- Vocab: 28,966 tokens
 
 #### GPT-2 (2019)
 
-BPE
+- Method: [BPE](https://arxiv.org/pdf/1508.07909)
+- Vocab: 50,257 tokens
 
 #### Flan-T5 (2022)
 
-SentencePiece
+- Method: [SentencePiece](https://arxiv.org/pdf/1808.06226), [supporting](https://arxiv.org/pdf/1804.10959) BPE and the unigram language model
+- Vocab: 32,100 tokens
 
 #### GPT-4 (2023)
 
