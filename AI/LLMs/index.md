@@ -5,6 +5,7 @@
 - Introduction to Prompt Engineering for Generative AI
 - Prompt Engineering with ChatGPT
 - [N-grams](ngrams.md) (Jurafsky and Martin)
+- [Tokenisation](tokenisation.md)
 
 ----
 
