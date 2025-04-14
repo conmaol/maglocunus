@@ -2,6 +2,14 @@
 
 [Notes from Chapter 2 of *Hands-On Large Language Models* by Jay Alammar and Maarten Grootendorst (2024)]
 
+Contents:
+- [How tokenisers prepare the inputs to the language model](#how-tokenisers-prepare-the-inputs-to-the-language-model)
+- [Downloading and running an LLM](#downloading-and-running-an-llm)
+- [How does the tokeniser break down text?](#how-does-the-tokeniser-break-down-text)
+- [Word versus subword versus character versus byte tokens](#word-versus-subword-versus-character-versus-byte-tokens)
+- [Comparing Trained LLM tokenisers](#comparing-trained-llm-tokenisers)
+- [Tokeniser properties](#tokeniser-properties)
+
 §1. A <mark>tokeniser</mark> breaks down the input text prompt into smaller pieces/chunks – words or parts of words.
 - eg. `"Have the bards who preceded"`: `"Have", "the", "bards", "who", "preceded"`
 - These tokens are then turned into ‘embeddings’ – numeric representations (ie. vectors) capturing their meaning.
@@ -17,6 +25,8 @@ Questions:
 - Why is leading whitespace preserved at the start of a token, rather than just being the default token separator?
 - Why is `bards` tokenised as `" b", "ards"`, and `unsung` as `" uns", "ung"`? Surely `"bard", "s"` and `"un", "sung"` would make more sense?
 
+Back up to: [Top](#)
+
 ### Downloading and running an LLM
 
 §3. Here is an example using the Microsoft Phi-3-mini-4k LLM tokeniser:
@@ -31,6 +41,8 @@ Notes:
 - Words are broken up inconsistently – `garden ing`, `apolog izing`, `trag ic`, `m ish ap`, `Exp lain`, `happened`.
 - Suffix tokens have a special hidden character at the beginning. 
 
+Back up to: [Top](#)
+
 ### How does the tokeniser break down text?
 
 §4. A tokeniser uses a specific tokenisation method, eg.
@@ -43,13 +55,75 @@ Notes:
 - <mark>What does ‘training’ mean here?</mark>
 - <mark>Isn’t a tokeniser left-to-right deterministic?</mark>
 
+Back up to: [Top](#)
+
 ### Word versus subword versus character versus byte tokens
 
-## Comparing Trained LLM tokenisers
+§7. An early LLM tokenisation scheme/approach involved (whole) <mark>word tokens</mark>, as used in `word2vec` for example. This approach is used less and less because:
+- It is unable to deal with new words that were not in its training set.
+- It leads to lots of tokens with minimal differences between them, eg. `apology`, `apologise`, `apologetic`, `apologist`.
 
-## Tokeniser properties
+§8. Using <mark>subword tokens</mark> can solve these problem (to an extent), with distinct tokens for stems (eg. `apolog`) and suffixes (eg. `-y`, `-ise`, `-etic`, `-ist`).
 
+§9. <mark>Character tokens</mark> probably take this too far – it can make modelling more difficult than subword tokens, and uses the LLM context length/window less efficiently.
 
+§10. Using <mark>byte tokens</mark> allows for ‘tokenisation-free’ encoding, which can be useful in multilingual scenarios:
+- [CANINE: Pre-training an efficient tokenization-free encoder for language representation](https://arxiv.org/pdf/2103.06874)
+- [ByT5: Towards a token-free future with pre-trained byte-to-byte models](https://arxiv.org/pdf/2105.13626)
+
+§11. Some subword tokenisers can <mark>fall back</mark> to byte tokens when needed, eg. GPT-2 and RoBERTa.
+
+cf. Designing Large Language Model Applications
+
+Back up to: [Top](#)
+
+### Comparing Trained LLM tokenisers
+
+Some common problems for tokenisers:
+- capitalisation
+- languages other than English
+- emojis
+- programming code, including meaningful whitespace
+- numbers and digits
+- special tokens
+
+#### BERT base model (uncased) (2018)
+
+Wordpiece
+
+#### BERT base model (cased) (2018)
+
+Also Wordpiece
+
+#### GPT-2 (2019)
+
+BPE
+
+#### Flan-T5 (2022)
+
+SentencePiece
+
+#### GPT-4 (2023)
+
+BPE
+
+#### StarCoder2 (2024)
+
+BPE
+
+#### Galactica
+
+BPE
+
+#### Phi-3 (and Llama 2)
+
+BPE
+
+Back up to: [Top](#)
+
+### Tokeniser properties
+
+Back up to: [Top](#)
 
 
 ----
