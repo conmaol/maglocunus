@@ -38,7 +38,7 @@ graph LR;
 ### Bigrams
 
 §2.2. A <mark>bigram</mark> language model contains/consults a look-up table which assigns, for every pair of words $w_1, w_2$ in the vocabulary, the probability of $w_2$ occurring immediately after $w_1$, ie. $P(w_2 | w_1)$.
-- If there are $N$ words in the vocabulary, this table will have $N+1$ rows (representing the first word, or the start of the text) and $N$ columns (representing the second word) and hence $O(N^2)$ cells.
+- If there are $N$ words in the vocabulary, this table will have $N+1$ rows (representing the first word, or the start of the text `$`) and $N$ columns (representing the second word) and hence c. $N^2$ cells.
 
 §2.3. The algorithm underlying the bigram language model is as follows:
 
@@ -50,7 +50,7 @@ Return OUTPUT
 ```
 
 §2.4. For example:
-- $P(yesterday\ I\ saw\ a\ white\ rabbit) = P(yesterday|START) \cdot P(I|yesterday) \cdot P(saw|I) \cdot P(a|saw) \cdot P(white|a) \cdot P(rabbit|white)$
+- $P(yesterday\ I\ saw\ a\ white\ rabbit) = P(yesterday|£) \cdot P(I|yesterday) \cdot P(saw|I) \cdot P(a|saw) \cdot P(white|a) \cdot P(rabbit|white)$
 
 §2.5. A bigram language model can be ‘trained’ from a corpus by counting and normalising, as follows:
 
@@ -65,7 +65,7 @@ Repeat for every word w1 in the corpus vocabulary:
 
 §2.7. Bigram language models are <mark>Markov models</mark> – the class of probabilistic models that assume that we can predict the probability of some future unit without looking too far into the past. More specifically, bigram language models are <mark>first-order</mark> Markov models, a simple kind of Markov chain (ie. weighted finite state automaton) which has one state for each word.
 
-§2.8. Note that the product of many probabilities gets smaller the more probabilities we multiple, leading to <mark>numeric underflow</mark>. It is more customary to do the computation in <mark>log space</mark> – adding the logs of each probability, and taking the anti-log of the result.
+§2.8. Note that the product of many probabilities gets smaller the more probabilities we multiply, leading to <mark>numeric underflow</mark>. It is more customary to do the computation in <mark>log space</mark> – adding the logs of each probability, and taking the anti-log of the result.
 
 §2.9. Bigram training is an example of <mark>Maximum Likelihood Estimation</mark> (MLE) – using relative frequencies means that the likelihood of the training set given the model is maximised. This can lead to sparse look-up tables with lots of 0 probabilities – see discussion of ‘smoothing’ below.
 
@@ -73,7 +73,7 @@ Repeat for every word w1 in the corpus vocabulary:
 ### Trigrams
 
 §2.7. A <mark>trigram</mark> language model contains/consults a look-up table which assigns, for every triple of words $w_1, w_2, w_3$ in the vocabulary, the probability of $w_3$ occurring immediately after $w_1\ w_2$, ie. $P(w_3 | w_1\ w_2)$.
-- If there are $N$ words in the vocabulary, this table will have $(N+1)^2$ rows (representing the first two words, or the start of the text) and $N$ columns (representing the third word) and hence $O(N^3)$ cells.
+- If there are $N$ words in the vocabulary, this table will have $(N+1)^2$ rows (representing the first two words, or the start of the text) and $N$ columns (representing the third word) and hence c. $N^3$ cells.
 
 §2.8. The algorithm underlying the trigram language model is as follows:
 
@@ -85,7 +85,7 @@ Return OUTPUT
 ```
 
 §2.9. For example:
-- $P(yesterday\ I\ saw\ a\ white\ rabbit) = P(yesterday|START1\ START2) \cdot P(I|START2\ yesterday) \cdot P(saw|yesterday\ I) \cdot P(a|I\ saw) \cdot P(white|saw\ a) \cdot P(rabbit|a\ white)$
+- $P(yesterday\ I\ saw\ a\ white\ rabbit) = P(yesterday|££) \cdot P(I|£\ yesterday) \cdot P(saw|yesterday\ I) \cdot P(a|I\ saw) \cdot P(white|saw\ a) \cdot P(rabbit|a\ white)$
 
 §2.10. A trigram language model can be ‘trained’ from a corpus as follows:
 
@@ -99,12 +99,11 @@ Repeat for every word w1 in the corpus vocabulary:
 §2.11. For example:
 - $P(rabbit|a\ white) = \frac{|a\ white\ rabbit|}{|a\ white|}$
 
-Trigram language models are <mark>second-order Markov models</mark>.
-
+§2.12. Trigram language models are <mark>second-order Markov models</mark>.
 
 ### Predictive n-gram language models
 
-§2.12. A <mark>predictive language model</mark> is a computer (program) which accepts two inputs – a sequence of words and another word – and assigns a probability as output.
+§2.13. A <mark>predictive language model</mark> is a computer (program) which accepts two inputs – a sequence of words and another (potentially next) word – and assigns a probability as output.
 
 ```mermaid
 graph LR;
@@ -117,15 +116,15 @@ graph LR;
     model -- output --> output
 ```
 
-§2.13. The algorithm underlying the predictive language model is as follows:
+§2.14. The algorithm underlying the predictive language model is as follows:
 
 ```
 Let P be the probability of INPUT-1
-Let Q be the probability of INPUT-1 + INPUT-2
+Let Q be the probability of INPUT-1 INPUT-2
 Return Q / P
 ```
 
-§2.14. Note that a predictive language model contains an n-gram language model as a component:
+§2.15. Note that a predictive language model contains an n-gram language model as a component:
 
 ```mermaid
 graph LR;
@@ -142,15 +141,25 @@ graph LR;
     model -- output --> output
 ```
 
-Find the most likely next word(s)?
+§2.16. A predictive language model can itself be embedded in a computer (program) which outputs the most likely next word given a sequence of prior words:
 
 ```
-Let OUTPUT = []
+Let CURRENT-PROB be 0
+Let CURRENT-WORD be null
 Repeat for every word w in the vocabulary:
-  OUTPUT = P(w|INPUT) + OUTPUT
-Sort OUTPUT in descending order
-Return OUTPUT
+  Let NEW-PROB be the probability of w being the next word after INPUT (according to the predictive language model)
+  If NEW-PROB > CURRENT-PROB:
+    CURRENT-WORD = w
+    CURRENT-PROB = NEW-PROB
+Return CURRENT-WORD
 ```
+
+§2.17. Elaborations of this basic model include computers (or computer programs) which predict the nth most likely next word, or the n most likely next words (in descending order of likelihood), etc.
+
+
+----
+
+
 
 A generative AI seeded with a prompt?
 
