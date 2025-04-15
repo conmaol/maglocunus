@@ -186,6 +186,39 @@ Back up to: [Top](#)
 
 ## Smoothing
 
+§3.1. Assuming MLE training, the n-gram matrix for any given training corpus will be <mark>sparse</mark> – there will be many acceptable English n-grams that do not appear in the corpus, and hence will have a zero count, and hence a zero probability.
+
+§3.2. <mark>Smoothing</mark> is the task of re-evaluating some of the zero-probability and low-probability n-grams to improve language model performance.
+
+### Add-one smoothing
+
+§3.3. The simplest approach (though not commonly used any more) is just to add one to each count in the n-gram matrix for the corpus.
+
+§3.4. For bigrams, the unsmoothed calculation was:
+- $P(rabbit|white) = \frac{|white\ rabbit|}{|white|}$
+
+With add-one smoothing, where V is the corpus vocabulary, we get
+- $P(rabbit|white) = \frac{|white\ rabbit| + 1}{|white| + |V|}$
+
+§3.5. For trigrams, the unsmoothed calculation was:
+- $P(rabbit|a\ white) = \frac{|a\ white\ rabbit|}{|a\ white|}$
+
+With add-one smoothing, we get
+- $P(rabbit|a\ white) = \frac{|a\ white\ rabbit| + 1}{|a\ white| + |V|}$ (??)
+
+§3.6. Add-one smoothing is generally a poor method of smoothing, in part because too much probability mass is moved to all the zeros. Adding smaller values is often better.
+
+§3.7. An alternative way of viewing a smoothing algorithm is in terms of <mark>discounting</mark> some of the non-zero counts to get the probability mass needed to assign to the zero counts. The <mark>discount</mark> is the ration of the discounted counts to the original count.
+
+### Witten-Bell discounting
+
+§3.
+
+### Good-Turing discounting
+
+
+
+
 Back up to: [Top](#)
 
 ## Backoff
