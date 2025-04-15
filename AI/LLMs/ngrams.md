@@ -186,13 +186,13 @@ Back up to: [Top](#)
 
 ## Smoothing
 
-§3.1. Assuming MLE training, the n-gram matrix for any given training corpus will be <mark>sparse</mark> – there will be many acceptable English n-grams that do not appear in the corpus, and hence will have a zero count, and hence a zero probability.
+§3.1. Assuming MLE training, the N-gram matrix for any given training corpus will be <mark>sparse</mark> – there will be many acceptable English N-grams that do not appear in the corpus, and hence will have a zero count, and hence a zero probability.
 
-§3.2. <mark>Smoothing</mark> is the task of re-evaluating some of the zero-probability and low-probability n-grams to improve language model performance.
+§3.2. <mark>Smoothing</mark> is the task of re-evaluating some of the zero-probability and low-probability N-grams to improve language model performance.
 
 ### Add-one smoothing
 
-§3.3. The simplest approach (though not commonly used any more) is just to add one to each count in the n-gram matrix for the corpus.
+§3.3. The simplest approach (though not commonly used any more) is just to add one to each count in the N-gram matrix for the corpus.
 
 §3.4. For bigrams, the unsmoothed calculation was:
 - $P(rabbit|white) = \frac{|white\ rabbit|}{|white|}$
@@ -212,7 +212,9 @@ With add-one smoothing, we get:
 
 ### Witten-Bell discounting
 
-§3.
+§3.8. The probability of seeing a zero-frequency N-gram (next) can be modelled by the probability of seeing an N-gram for the first time. In other words, we can use the count of things we have seen once to help estimate the count of things we have never seen (<mark>Things Seen Once</mark>).
+
+§3.9. 
 
 ### Good-Turing discounting
 
