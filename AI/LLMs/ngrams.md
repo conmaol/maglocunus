@@ -197,13 +197,13 @@ Back up to: [Top](#)
 §3.4. For bigrams, the unsmoothed calculation was:
 - $P(rabbit|white) = \frac{|white\ rabbit|}{|white|}$
 
-With add-one smoothing, where V is the corpus vocabulary, we get
+With add-one smoothing, where V is the corpus vocabulary, we get:
 - $P(rabbit|white) = \frac{|white\ rabbit| + 1}{|white| + |V|}$
 
 §3.5. For trigrams, the unsmoothed calculation was:
 - $P(rabbit|a\ white) = \frac{|a\ white\ rabbit|}{|a\ white|}$
 
-With add-one smoothing, we get
+With add-one smoothing, we get:
 - $P(rabbit|a\ white) = \frac{|a\ white\ rabbit| + 1}{|a\ white| + |V|}$ (??)
 
 §3.6. Add-one smoothing is generally a poor method of smoothing, in part because too much probability mass is moved to all the zeros. Adding smaller values is often better.
