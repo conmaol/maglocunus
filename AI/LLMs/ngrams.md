@@ -156,7 +156,7 @@ Return CURRENT-WORD
 
 §2.17. Elaborations of this basic model include computers (or computer programs) which predict the nth most likely next word, or the n most likely next words (in descending order of likelihood), etc.
 
-§2.18. This can then be embedded in a simple Generative LLM seeded by a prompt from the user:
+§2.18. This can then be embedded in a simple Generative language model seeded by a prompt from the user:
 
 ```
 Repeat for ever:
