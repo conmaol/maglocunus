@@ -163,6 +163,24 @@ Repeat for ever:
   Let NEXT be the most likely next word given the prior PROMPT
   Let PROMPT be PROMPT+NEXT
 ```
+### More on N-grams and their sensitivity to the training corpus
+
+§2.19. N-gram language models are increasingly accurate as we increase the value of N – the longer the context on which we train the model, the more coherent the generated sentences.
+- Quadrigrams are better than trigrams, which are better than bigrams, which are better than unigrams.
+
+§2.20. As the value of N increases, you need an increasingly larger training corpus to generate enough N-grams. N-gram language models are strongly dependent on the <mark>size</mark> of their training corpus.
+
+§2.21. N-gram language models are also strongly dependent on the <mark>genre</mark> of their training corpus. A model trained on Shakespeare will be little use for understanding articles from the Wall Street Journal.
+ 
+### Training sets and test sets
+
+§2.22. Training data for building an n-gram language model needs to be partitioned into two non-overlapping sets:
+- the <mark>training set</mark> – used to actually train the (statistical parameters of the) model
+- the <mark>test set</mark> – not used to train the model, but the evaluate it after it has been trained.
+
+§2.23. We can used <mark>perplexity</mark> as a metric for how well a given statistical model matches a test corpus.
+
+§2.24. For more complex experiments, we can set aside a second test set – the <mark>development set</mark> – to fine tune a model during training, but before final evaluation on the test set.
 
 Back up to: [Top](#)
 
