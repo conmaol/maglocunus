@@ -1,6 +1,6 @@
 # Designing Large Language Model Applications
 
-\[My notes from the book *Designing Large Language Model Applications* by Suhas Pai (2025) [link](https://www.oreilly.com/library/view/designing-large-language/9781098150495/)\]
+\[My notes from the [book](https://www.oreilly.com/library/view/designing-large-language/9781098150495/) *Designing Large Language Model Applications* by Suhas Pai (2025)\]
 
 Contents:
 - LLM ingredients
