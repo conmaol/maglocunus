@@ -2,7 +2,7 @@
 
 \[My notes from the [book](https://www.oreilly.com/library/view/designing-large-language/9781098150495/) *Designing Large Language Model Applications* by Suhas Pai (2025)\]
 
-§1. Learning how to use LLMs might be one of the most useful skills to learn this decade. They are revolutionising the world of software and making possible the development of applications previously considered impossible (solving complex mathematical equations, writing convincing essays, conducting long engaging conversations with humans, etc).
+§1. Using LLMs might be one of the most useful skills to learn this decade. They are revolutionising the world of software and making possible the development of applications previously considered impossible (solving complex mathematical equations, writing convincing essays, conducting long engaging conversations with humans, etc).
 
 §2. However, LLMs are still not a mature technology and currently have many limitations (deficiences in reasoning, lack of adherence to factuality, difficulties in steering them towards out goals, bias and fairness issues, etc).
 
