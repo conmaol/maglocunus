@@ -35,6 +35,10 @@ Back up to: [Top](#)
 
 ## A brief history of LLMs
 
+### Early years
+
+### The modern LLM era
+
 Back up to: [Top](#)
 
 ## The impact of LLMs
