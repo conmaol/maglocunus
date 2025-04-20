@@ -56,6 +56,13 @@ a corpus?
 input: a mispelled word (ie. not in spelling dictionary)
 output: a sorted list of candidate corrections (from most to least probable)
 
+assumption: correct word differs from input by a single insertion, deletion, substitution or transposition.
+
+1. Find all words in the dictionary (corpus) which differ from the input by a single insertion, deletion, substitution or transposition.
+
+eg. acress – actress, cress, caress, access, across, acres, acress
+
+
 
 ## Minimum edit distance
 
