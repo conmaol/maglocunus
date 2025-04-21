@@ -35,9 +35,17 @@ Back up to: [Top](#)
 
 ## A brief history of LLMs
 
-§2.1.
-
 ### Early years
+
+§2.1. The roots of LLMs lie in 1950s work on <mark>machine translation</mark> using symbolic, rule-based algorithms.
+
+§2.2. The first <mark>chatbot</mark> was Joseph Weizenbaum’s 1960s ELIZA, which used pattern matching and regular expressions.
+
+§2.3. Rule-based systems are brittle , hard to build, and a nightmare to maintain. As a result statistical, <mark>machine learning</mark> approaches became more popular from the 1990s.
+
+Feature engineering (selection)
+
+
 
 ### The modern LLM era
 
