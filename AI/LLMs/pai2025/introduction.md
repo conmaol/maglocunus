@@ -51,7 +51,7 @@ Back up to: [Top](#)
 
 ## LLM usage in the enterprise
 
-§4.1. They key ways in which LLMs are used in companies are:
+§4.1. The key ways in which LLMs are used in companies are:
 - employee productivity – coding assistants (eg. GitHub Copilot), 
 - report generation – summarising documents, completing paperwork, drafting contracts, minuting meetings.
 - chatbots – <mark>customer service agents</mark>, interfaces to a company’s documentation.
