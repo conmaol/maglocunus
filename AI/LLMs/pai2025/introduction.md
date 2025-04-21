@@ -11,13 +11,13 @@ Contents:
 - [Building your first chatbot prototype](#building-your-first-chatbot-prototype)
 - [From prototype to production](#from-prototype-to-production)
 
-§1. LLMs represent one of the most significant technological advances in recent times – a new epoch in the world of tech.
+§0.1. LLMs represent one of the most significant technological advances in recent times – a new epoch in the world of tech.
 
-§2. LLMs are a subclass of <mark>generative AI</mark> models – tools which generate **responses** (images, videos, music, text) to user **prompts**.
+§0.2. LLMs are a subclass of <mark>generative AI</mark> models – tools which generate **responses** (images, videos, music, text) to user **prompts**.
 
 ## Defining LLMs
 
-§3. A language model approximates human language, embodying aspects of grammar and semantics, having been trained on a large body of text to predict the next word in a known text sequence.
+§1.1. A language model approximates human language, embodying aspects of grammar and semantics, having been trained on a large body of text to predict the next word in a known text sequence.
 
 §4. A language model consists of <mark>parameters</mark>, which are iteratively updated during training such that the model gets better at its predictions.
 
@@ -35,6 +35,8 @@ Back up to: [Top](#)
 
 ## A brief history of LLMs
 
+§2.1.
+
 ### Early years
 
 ### The modern LLM era
@@ -43,13 +45,35 @@ Back up to: [Top](#)
 
 ## The impact of LLMs
 
+§3.1.
+
 Back up to: [Top](#)
 
 ## LLM usage in the enterprise
 
+§4.1. They key ways in which LLMs are used in companies are:
+- employee productivity – coding assistants (eg. GitHub Copilot), 
+- report generation – summarising documents, completing paperwork, drafting contracts, minuting meetings.
+- chatbots – <mark>customer service agents</mark>, interfaces to a company’s documentation.
+- <mark>information extraction</mark> and sequence tagging – sentiment analysis, entity and relation extraction, named entity recognition.
+- translation – inter-language translation (eg. French to Japanese), and <mark>intra-language</mark> translation (eg. informal to formal, abusive to polite)
+- workflows – Semi-autonomous, intercommunicating LLM <mark>agents</mark> can be used to facilitate and automate workflows.
+
 Back up to: [Top](#)
 
 ## Prompting
+
+§5.1.
+
+### Zero-shot prompting
+
+### Few-shot prompting
+
+### Chain-of-thought prompting
+
+### Prompt chaining
+
+### Adversarial prompting
 
 Back up to: [Top](#)
 
