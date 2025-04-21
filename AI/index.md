@@ -8,4 +8,6 @@ Miscellaneous:
 - [Neural networks](NeuralNets/index.md)
 - [Bayes](Bayes/index.md)
 
+----
 
+Back up to: [Maglocunus](../README.md)
