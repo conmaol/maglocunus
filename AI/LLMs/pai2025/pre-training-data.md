@@ -69,7 +69,6 @@ BooksCorpus / BooksCorpus2
 FineWeb
 
 
-
 Training data is disappearing
 
 Copyright issues
@@ -78,9 +77,46 @@ Back up to: [Top](#)
 
 ## Synthetic pre-training datasets
 
+§4.1.
+
 Back up to: [Top](#)
 
-## Training data preprocessing
+## Training data pre-processing
+
+§5.1. Data pre-processing is unglamorous but hugely important for downstream tasks.
+
+§5.2. Any pre-processing step should be very efficient, ideally linear time.
+
+### Data filtering and cleaning
+
+§5.3. <mark>HTML boilerplate</mark> text needs to be identified and removed – website menu text etc. One way of doing this is to only retain lines that end in sentence-ending punctuation. For example, you could run the web-extracted text (WET) version of the Common Crawl dataset through the `jusText` library. Other libraries are: `Dragnet`, `html2text`, `inscriptis`, `Newspaper`, `Trafilatura`, or (even better) a combination of all of these.
+
+§5.4. Code blocks, tables, math formulas and image `alt` attributes all need careful preprocessing.
+
+§5.5. The experimental Hypertext Language Model (HTLM) was trained on a ‘minified’ version of <mark>raw HTML</mark> (with some but not all tags removed).
+
+§5.6. Other kinds of text also need to be identified and removed:
+- <mark>non-English text</mark> – using libraries like `langdetect`, `langid`, `fasttext`, `pycld2`
+- <mark>SEO spam</mark> – eg. documents with a low proportion of closed class words, which is a common characteristic of SEO tricks like ‘keyword stuffing’
+- <mark>pornographic/abusive/toxic/hateful</mark> text – using keyword lists like the “List of dirty, naughty, obscene or otherwise bad words.” Toxic/hateful language
+
+### Selecting quality documents
+
+§5.7. 
+
+Token-distribution K-L divergence
+
+Classifier-based approaches
+
+Perplexity for quality selection
+
+### Deduplication
+
+### Removing personally identifiable information
+
+### Training set decontamination
+
+### Data mixtures
 
 Back up to: [Top](#)
 
