@@ -5,7 +5,7 @@ Contents:
 - [Pre-training data requirements](#pre-training-data-requirements)
 - [Popular pre-training datasets](#popular-pre-training-datasets)
 - [Synthetic pre-training datasets](#synthetic-pre-training-datasets)
-- [Training data preprocessing](#training-data-preprocessing)
+- [Training data preprocessing](#training-data-pre-processing)
 - [Effect of pre-training data on downstream tasks](#effect-of-pre-training-data-on-downstream-tasks)
 - [Bias and fairness issues in pre-training datasets](#bias-and-fairness-issues-in-pre-training-datasets)
 
