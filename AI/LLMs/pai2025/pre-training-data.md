@@ -34,6 +34,14 @@ Back up to: [Top](#)
 
 ## Pre-training data requirements
 
+§2.1. Today’s LLMs are very <mark>sample inefficient</mark> – they need tons of examples to learn a task.
+
+§2.2. Since supervised learning using human-annotated data is infeasible, LLMs are predominantly pre-trained using <mark>self-supervised learning</mark>, where the target labels exist within the training inputs.
+
+§1.3. Is there enough?
+
+
+
 Back up to: [Top](#)
 
 ## Popular pre-training datasets
