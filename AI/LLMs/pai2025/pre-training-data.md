@@ -54,24 +54,27 @@ Back up to: [Top](#)
 
 ## Popular pre-training datasets
 
-§3.1.
+§3.1. <mark>Common Crawl</mark> (2019) is a very coarse dataset consisting of monthly snapshots of all web-crawl data. Google created a cleaned-up version – <mark>Colossal Cleaned Crawl Corpus</mark> (C4) – a 750Gb English language corpus. This is used by many LLMs, including all from the T5 family.
 
-Common Crawl (C4)
+§3.2. <mark>The Pile</mark> (2020) is a diverse 825Gb dataset from Eleuther AI – C4, PubMed Central, arXiv, GitHub, FreeLaw Project, Stack Exchange, US Patent Office, Ubuntu IRC, HackerNews, YouTube, PhilPapers, Project Gutenberg, Wikipedia etc. Used by many LLMs, including Llama.
 
-The Pile
+§3.3. <mark>WebText</mark> consists of webpages representing outbound links from Reddit that are relatively upvoted. Other versions are **OpenWebText** and **OpenWebText2** (65Gb, 2020). Used by GPT-2 and GPT-3.
 
-WebText / OpenWebText / OpenWebText2
+§3.4. <mark>Wikipedia</mark> provides valuable, reliable factual knowledge to any LLM, but needs to be combined with other datasets to allow for more diversity of style.
 
-Wikipedia
+§3.5. <mark>BooksCorpus</mark> (74M sentences, 2015) is the most influential of pre-training datasets, used by BERT, RoBERTa, GPT-2/3, etc, and contains over 7,000 books, mostly fiction, by unpublished authors, heavily weighted towards romance. Another version is BooksCorpus2, included in The Pile.
 
-BooksCorpus / BooksCorpus2
+§3.6. <mark>FineWeb</mark>, published by Hugging Face, is the world’s largest publicly available pre-training dataset, with 15 trillion tokens, taken from 96 snapshots of Common Crawl, and heavily cleaned. See also **FineWeb-Edu**, for educational texts.
 
-FineWeb
+§3.7. Some other commonly used pre-training datasets are:
+- **RedPajama** – 1.2T tokens, 2023
+- **ROOTS** – 1.6T tokens, 2022
+- **RefinedWeb** – 5T tokens, 2023
+- **SlimPajama** – 627B tokens, 2023
 
+§3.8. Training data is disappearing from the internet
 
-Training data is disappearing
-
-Copyright issues
+§3.9. Copyright issues
 
 Back up to: [Top](#)
 
