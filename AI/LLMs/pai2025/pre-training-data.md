@@ -159,11 +159,25 @@ Back up to: [Top](#)
 
 ### Training set decontamination
 
+§5.23. A training dataset is contaminated if it contains data from <mark>benchmark test sets</mark> used to evaluate LLMs.
+
+§5.24. Training sets are generally decontaminated using n-gram methods.
+
 ### Data mixtures
+
+§5.25. LLMs need to be pre-trained on the right mixtures of data, with optimal proportions, using **upsampling** if necessary.
+
+§5.26. Meta used the following mixture for Llama 3 – 50% general knowledge; 25% maths and reasoning; 17% code; and 8% non-English tokens.
+
+§5.27. Other approaches for calculating data mixtures are `DoReMi` and `RegMix`.
+
+§5.28. The order in which data is used to train LLMs is also important – this is called <mark>curriculum learning</mark>. One approach is to start by training on shorter sequences before moving on to longer ones.
 
 Back up to: [Top](#)
 
 ## Effect of pre-training data on downstream tasks
+
+§6.1. 
 
 Back up to: [Top](#)
 
