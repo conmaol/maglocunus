@@ -132,13 +132,30 @@ Back up to: [Top](#)
 
 ### Removing personally identifiable information
 
-§5.15.
+§5.15. Even with deduplication, memorisation of PII remains a concern. Training datasets may contain PII, which will need to be detected and remediated – names, addresses, credit card numbers, government IDs, medical history, email addresses, phone numbers, identity and affinity groups, geolocation, etc.
 
-PII detection
+§5.16. However, we may want to retain <mark>public figure</mark> PII, so as to be able to answer general knowledge questions.
 
-PII remediation
+§5.17. Hackers can use membership inference or training data extraction attacks to target PII.
 
+§5.18. <mark>Training data poisoning attacks</mark> – creating malicious websites in an attempt to influence the behaviour of an LLM trained on web-crawled text.
 
+§5.19. <mark>LLM SEO</mark> – the art of creating websites that are more likely to be selected to pre-train LLMs.
+
+§5.20. PII detection is similar to the named entity recognition (NER) task of NLP.
+
+§5.21. PII remediation options are:
+- replace with a special token, eg. `<phone number>`
+- replace with a random token of the same entity type (eg. using the `Faker` library)
+- replace with a shuffled token (of the same entity type?)
+- remove the entire document (or the entire data source)
+
+§5.22. Other approaches to preventing leakage of PII from LLMs are:
+- differential privacy – introducing randomness in LLM inputs or outputs
+- adversarial training
+- model unlearning
+- retroactive censoring
+- memfree decoding.
 
 ### Training set decontamination
 
