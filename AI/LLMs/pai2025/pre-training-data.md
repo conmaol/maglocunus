@@ -177,11 +177,17 @@ Back up to: [Top](#)
 
 ## Effect of pre-training data on downstream tasks
 
-§6.1. 
+§6.1. LLMs perform better at tasks that are more frequently represented in the pre-training dataset – eg. They are better at base 10 addition than at base 9 addition. They are better at sorting alphabetically than reverse alphabetically.
 
 Back up to: [Top](#)
 
 ## Bias and fairness issues in pre-training datasets
+
+§7.1. Given the scale of the pre-training datasets, LLMs are also models of the world we inhabit. But do we want to model the worlds as it is, or as we would like it to be.
+
+§7.2. LLM suffer from <mark>bias amplification</mark> – they make biased predictions about groups of people at a higher rate than is found in their training data.
+
+§7.3. Can we ‘fix’ the training data to model a world that suits our values and principles, and that downstream tasks can inherit? Note that the vast majority of contributors to Wikipedia and Reddit are men. Or should these problems be addressed downstream?
 
 Back up to: [Top](#)
 
