@@ -102,17 +102,38 @@ Back up to: [Top](#)
 
 ### Selecting quality documents
 
-§5.7. 
+§5.7. One method for separating high-quality (eg. physics textbooks) from low-quality (eg. promotional text about a footwear brand) data is <mark>token-distribution Kullback-Liebler divergence</mark>, which identifies documents that have a lot of outlier tokens.
 
-Token-distribution K-L divergence
+§5.8. Another approach is to build a classifier using Wikipedia as an example of high-quality data. Meta used this approach for training its Llama 2 and Llama 3 LLMs using `fasttext`.
 
-Classifier-based approaches
-
-Perplexity for quality selection
+§5.9. Another approach is to use <mark>perplexity</mark> – a measure of how well a model predicts a given text – after training a 5-gram language model on Wikipedia using `KenLM`. <mark>Perplexity sampling</mark> doesn’t just filter out high-perplexity documents, but rather oversamples from the middle part of the perplexity probability distribution.
 
 ### Deduplication
 
+§5.10. <mark>Document-level duplicates</mark> (both exact and approximate) are generally removed before pre-training (unless there is an explicit need to use explicit duplicates to ensure oversampling of particular genres.).
+
+§5.11 <mark>Sequence-level duplicates</mark> involve things like terms of service text, copyright notices, website prefaces, etc.
+
+§5.12. Deduplication is usually performed using the <mark>MinHash</mark> algorithm.
+
+§5.13. Benefits of deduplication are:
+- Reduce overlap between training and test sets, allowing unbiased evaluation.
+- Reduce the size of the training data (and hence time/compute required to train) whilst preserving overall perplexity.
+- Reduce the tendency to memorise and regurgitate the training data (overfitting).
+
+§5.14. Memorisation can create <mark>security vulnerabilities</mark> in LLMs:
+- **membership inference attacks** – An attacker can determine if a particular sequence of text has been used to train the model or not.
+- **training data extraction attacks** – An attacker can prompt the model to generate memorised sensitive information (phone numbers etc).
+
 ### Removing personally identifiable information
+
+§5.15.
+
+PII detection
+
+PII remediation
+
+
 
 ### Training set decontamination
 
