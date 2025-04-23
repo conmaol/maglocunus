@@ -87,13 +87,60 @@ Back up to: [Top](#)
 
 ## Accessing LLMs through an API
 
+§6.1.
+
 Back up to: [Top](#)
 
 ## Strengths and limitations of LLMs
 
+§7.1.
+
 Back up to: [Top](#)
 
 ## Building your first chatbot prototype
+
+§8.1. The following program uses two popular libraries: `langchain` (for building LLM application pipelines) and `unstructured` (for extracting text from PDFs) –
+1. The user uploads a PDF document via the UI.
+2. The document is parsed, the text is extracted, and it is chunked into paragraphs.
+3. Each paragraph is converted into a semantic vector using the `all-MiniLM-L6-v2` embedding model.
+4. Each vector is stored in a new Chroma vector database.
+
+```
+!pip install langchain unstructured
+from langchain_community.document_loaders import UnstructuredPDFLoader
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.vectorstores import Chroma
+
+paragraphs = UnstructuredPDFLoader(input_file.name).load()
+vector_db = Chroma.from_documents(paragraphs, HuggingFaceEmbeddings(model_name="all-MiniLM-L6-V2"))
+```
+
+§8.2. The following program deals with user queries to the chatbot:
+1. The user enters a query into the chatbot UI.
+2. The query is converted into a semantic vector.
+3. This (query) semantic vector is compared against all the (paragraph) semantic vectors in the database.
+4. A new prompt is created consisting of the query, the text corresponding to the most similar paragraph vector, and some additional instructions.
+5. This prompt is submitted to the OpenAI LLM API.
+6. The LLM generates and returns a response.
+7. The response is displayed in the UI for the user.
+8. The user can then enter a new query.
+9. The entire conversation history is fed to the LLM during each conversational turn.
+
+```
+!pip install openai
+from langchain.chains import ConversationalRetrievalChain
+from langchain.chat_models import ChatOpenAI
+
+query = "How do I request a refund?"
+docs = vector_db.similarity_search(query)
+
+conversational_chain =
+  ConversationalRetrievalChain.from_llm(ChatOpenAI(temperature=0.1),retriever=pdfsearch.as_retriever(search_kwargs={"k": 3}))
+output = conversational_chain({'question': query, 'chat_history': conversational_history})
+conversational_history += [(query, output['answer'])]
+```
+
+\[Something is clearly missing here. What happens to `docs` in the code?\]
 
 Back up to: [Top](#)
 
