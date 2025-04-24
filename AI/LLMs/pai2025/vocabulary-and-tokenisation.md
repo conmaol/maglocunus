@@ -23,13 +23,39 @@ Contents:
 
 §1.7. There are often tokens for programming language strings like `]);`.
 
-How are vocabularies determined?
+§1.8. <mark>Out-of-vocabulary</mark> (OOV) tokens are generally represented with placeholder `<UNK>` in the input. All `<UNK>` tokens share the same embedding, which is undesirable.
+
+§1.9. One solution to the OOV problem is to tokenise at the **character** level, with each character having its own embedding. However, this means that more tokens are needed to represent each sentence. Models like `CANINE`, `ByT5` and `Charformer` attempt to use <mark>character-based tokens</mark>.
+
+§1.10. The middle gound is using <mark>subword tokens</mark> – the predominant way of representing vocabulary units in current LLMs.
+
+§1.11. Current LLMs vary significantly in vocabulary size – Llama 3 has 128k token types; Gemma 2 has 256k.
+
+§1.12. Scaling laws – the optimal vocabulary size increases as model size and compute increases. Therefore, most current models have suboptimal vocabulary sizes.
 
 Back up to: [Top](#)
 
 ## Tokenisers
 
-§2.1.
+§2.1. The tokeniser is a text (pre-)processing interface between humans and the LLM:
+- It is used in (pre-)pre-training to generate a vocabulary from a training corpus.
+- It is used in model training and inference to break input text into sequences of valid tokens (or OOV placeholders).
+- The token are then mapped to theoir token IDs, which are then fed into the LLM itself.
+
+using the Flan-T5 LLM tokeniser:
+
+Input: `What is 937 + 934?`
+
+Tokens: `['_what', '_is', '_9', '37', '_+', '_9', '34', '?', '</s>']`
+
+encoded text: `['125', '19', '668', '4118', '1768', '668', '3710', '58', '1']`
+
+Input: `Insuffienct adoption of corduroy pants is the reaspn this economy is in the dumps!!!`
+
+Encoded text: `['_In', 's', 'uff', 'i', 'en', 'c', 't', '_adoption', '_of', '_cord', 'u', 'roy', '_pants', '_is', '_the', '_reason', '_this', '_economy', '_is', '_in', '_the', '_dump', 's', '!!!', '</s>']`
+
+
+§2.2. 
 
 Back up to: [Top](#)
 
