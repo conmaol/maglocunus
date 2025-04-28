@@ -7,6 +7,7 @@
 - Prompt Engineering with ChatGPT
 - [N-grams](ngrams.md) (Jurafsky and Martin)
 - [Tokenisation](tokenisation.md)
+- [Microsoft Copilot](copilot/index.md)
 
 ----
 
