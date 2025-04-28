@@ -1,7 +1,7 @@
 # Microsoft 365 Copilot
 
 Lisa Crosbie:
-- [Microsoft 365 Copilot Chat Explained](https://www.youtube.com/watch?v=jFy0aR5bgZw)
+- [Microsoft 365 Copilot Chat Explained](ms365-copilot-chat-explained.md)
 
 ----
 
