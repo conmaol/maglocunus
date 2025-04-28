@@ -29,7 +29,7 @@
 - has distinct chat tabs/contexts for ‘work’ and ‘web’, allowing users to switch between knowledge sources
 - allows users to access Copilot from within their MS apps (Word, Excel, Powerpoint, Outlook etc)
 - allows users to build (limited?) custom agents grounded in work and web data sources
-- BUT: onus is on users to make sure their Sharepoint sites are well-organised and tagged!
+- BUT: **Onus is on users to make sure their Sharepoint sites are well-organised and tagged!**
 
 ----
 
