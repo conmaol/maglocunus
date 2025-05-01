@@ -10,17 +10,26 @@
 
 §2. It looks like there will be a <mark>desktop app</mark> experience for Copilot, and not just a webapp.
 
-§3. There will be a redesigned, cleaner UI – all important menu/navigation stuff on the LHS.
+§3. There will be a redesigned, <mark>cleaner UI</mark> – all important menu/navigation stuff on the LHS.
 
 §4. There will be a clear distinction between the **search** and **chat** tasks/experiences
   - Apparently users have been using Copilot as a very expensive, somewhat clunky search engine!
 
-§5. Notebooks
+§5. <mark>Notebooks</mark> (inspired by Google’s NotebookLM) will allow users to create chat-driven notebooks to manage their content on a project level. This will include a **podcast-style audio overview** of your content.
+
+§6. <mark>Create</mark> positions Copilot at the centre of your entire working life, allowing you to create all manner of content from the Copilot app – images, posters, draft documents, spreadsheets, presentations, emails, etc.
+
+§7. <mark>Memory and personalisation</mark> allows Copilot to remember a lot more about its interactions with you, and to learn how you like do do things.
 
 ## New agents
 
-## New Copilot Control systems tools
+§8. Copilot will include new kinds of model:
+- reasoning models
+- research models – like consulting an experiencd senior colleague rather than an enthusiastic intern.
 
+## New Copilot control systems tools
+
+§
 
 ----
 
