@@ -27,7 +27,7 @@ These output token identifiers stand for the following tokens:
 30     "?"
 ```
 
-Observations
+Looking closely at the output of this tokeniser, a number of observations are worth making.
 
 ## Word, character and subword tokenisation
 
