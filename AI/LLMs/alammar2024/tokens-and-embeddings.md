@@ -3,12 +3,19 @@
 [Notes from Chapter 2 of *Hands-On Large Language Models* by Jay Alammar and Maarten Grootendorst (2024)]
 
 Contents:
-- [How tokenisers prepare the inputs to the language model](#how-tokenisers-prepare-the-inputs-to-the-language-model)
-- [Downloading and running an LLM](#downloading-and-running-an-llm)
-- [How does the tokeniser break down text?](#how-does-the-tokeniser-break-down-text)
-- [Word versus subword versus character versus byte tokens](#word-versus-subword-versus-character-versus-byte-tokens)
-- [Comparing Trained LLM tokenisers](#comparing-trained-llm-tokenisers)
-- [Tokeniser properties](#tokeniser-properties)
+- [LLM tokenisation](#llm-tokenisation)
+  - [How tokenisers prepare the inputs to the language model](#how-tokenisers-prepare-the-inputs-to-the-language-model)
+  - [Downloading and running an LLM](#downloading-and-running-an-llm)
+  - [How does the tokeniser break down text?](#how-does-the-tokeniser-break-down-text)
+  - [Word versus subword versus character versus byte tokens](#word-versus-subword-versus-character-versus-byte-tokens)
+  - [Comparing Trained LLM tokenisers](#comparing-trained-llm-tokenisers)
+  - [Tokeniser properties](#tokeniser-properties)
+- Token embeddings
+- Text embeddings (for sentences and whole documents)
+- Word embeddings beyond LLMs
+- Embeddings for recommendation systems
+
+## LLM tokenisation
 
 §1. A <mark>tokeniser</mark> breaks down the input text prompt into smaller pieces/chunks – words or parts of words.
 - eg. `"Have the bards who preceded"`: `"Have", "the", "bards", "who", "preceded"`
@@ -144,6 +151,9 @@ Back up to: [Top](#)
 
 Back up to: [Top](#)
 
+## Token embeddings
+
+Back up to: [Top](#)
 
 ----
 
