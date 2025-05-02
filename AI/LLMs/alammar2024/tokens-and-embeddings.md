@@ -36,7 +36,7 @@ Back up to: [Top](#)
 
 ### Downloading and running an LLM
 
-§3. Here is an example using the Microsoft Phi-3-mini-4k LLM tokeniser:
+§1.3. Here is an example using the Microsoft Phi-3-mini-4k LLM tokeniser:
 - Prompt: `Write an email apologizing to Sarah for the tragic gardening mishap. Explain how it happened.`
 - Tokens: `"<s>", "Write", "an", "email", "apolog", "izing", "to", "Sarah", "for", "the", "trag", "ic", "garden", "ing", "m", "ish", "ap", ".", "Exp", "lain", "how", "it", "happened", ".", "<|assistant|>"`
 - Token IDs: `[1, 14350, 385, 4876, 27746, 5281, ...]`
@@ -47,27 +47,31 @@ Notes:
 - Punctuation markers are separate tokens.
 - Words are broken up inconsistently – `garden ing`, `apolog izing`, `trag ic`, `m ish ap`, `Exp lain`, `happened`.
 - Suffix tokens have a special hidden character at the beginning.
-- The tokeniser contains a <mark>table</mark> containing all the tokens it knows with their token IDs. 
+- The tokeniser contains (and consults) a <mark>table</mark> containing all the tokens it knows with their token IDs. 
 
 Back up to: [Top](#)
 
 ### How does the tokeniser break down text?
 
-§4. A tokeniser uses a specific tokenisation method, eg.
-- <mark>byte-pair encoding</mark> – BPE – used by GPT LLMs
-- <mark>Wordpiece</mark> – used by BERT
+§1.4. A tokeniser uses a specific <mark>tokenisation method</mark>, eg.
+- **byte-pair encoding** – BPE – used by GPT LLMs
+- **Wordpiece** – used by BERT
 
-§5. A tokeniser knows a finite vocabulary of tokens, some of which may be special tokens.
+§1.5. A tokeniser has two important parameters:
+- the <mark>vocabulary size</mark>
+- the <mark>special tokens</mark>.
 
-§6. A tokeniser needs to be trained on a specific dataset, eg. English text, code, multilingual text.
-- <mark>What does ‘training’ mean here?</mark>
-- <mark>Isn’t a tokeniser left-to-right deterministic?</mark>
+§1.6. A tokeniser then needs to be <mark>trained</mark> on a specific dataset, eg. English text, code, multilingual text.
+- Given a specific tokenisation method, vocabulary size and special character set, what is the most efficient vocabulary of tokens? 
+
+> Questions:
+> - Is a tokeniser not just left-to-right deterministic?
 
 Back up to: [Top](#)
 
 ### Word versus subword versus character versus byte tokens
 
-§7. An early LLM tokenisation scheme/approach involved (whole) <mark>word tokens</mark>, as used in `word2vec` for example. This approach is used less and less because:
+§1.7. An early LLM tokenisation scheme/approach involved (whole) <mark>word tokens</mark>, as used in `word2vec` for example. This approach is used less and less because:
 - It is unable to deal with new words that were not in its training set.
 - It leads to lots of tokens with minimal differences between them, eg. `apology`, `apologise`, `apologetic`, `apologist`.
 
