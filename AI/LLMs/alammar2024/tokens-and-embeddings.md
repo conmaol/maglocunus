@@ -89,72 +89,83 @@ Back up to: [Top](#)
 
 ### Comparing Trained LLM tokenisers
 
-#### BERT base model (uncased) (2018)
-
+§1.12. **BERT base model (uncased)** (2018):
 - Method: [Wordpiece](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/37842.pdf)
-- Vocab: 30,522 tokens
+- Vocabulary size: 30,522 tokens
 - Special tokens: `unk_token [UNK]`, `sep_token [SEP]`, `pad_token [PAD]`, `cls_token [CLS]` (classification), `mask_token [MASK]`
-- Vertical whitespace is omitted.
+- Vertical whitespace is omitted/lost.
 - Uppercase letters are normalised to lowercase.
 - Suffix tokens are preceded by `##`.
 - Emoji and Chinese characters are `[UNK]`.
-- `[CLS]` token at start of input, `[SEP]` at end.
+- `[CLS]` utility token at start of input, `[SEP]` at end.
 
-#### BERT base model (cased) (2018)
-
+§1.13. **BERT base model (cased)** (2018)
 - Method: Wordpiece
-- Vocab: 28,966 tokens
+- Vocabulary size: 28,966 tokens
 
-#### GPT-2 (2019)
-
+§1.14. **GPT-2** (2019)
 - Method: [BPE](https://arxiv.org/pdf/1508.07909)
-- Vocab: 50,257 tokens
+- Vocabulary size: 50,257 tokens
 - Special tokens: `<|endoftext|>`
 - Sensitive to case.
 - Subword tokens.
 - Vertical and horizontal whitespace is retained (hence good for dealing with code).
 - Emoji and non-Roman characters are represented as a sequence of byte symbols, and can be recreated in the output.
 
-#### Flan-T5 (2022)
-
+§1.15. **Flan-T5** (2022)
 - Method: [SentencePiece](https://arxiv.org/pdf/1808.06226), [supporting](https://arxiv.org/pdf/1804.10959) BPE and the unigram language model
-- Vocab: 32,100 tokens
+- Vocabulary size: 32,100 tokens
 - Special tokens: `unk_token <unk>`, `pad_token <pad>`
 - Sensitive to case.
 - Subword tokens.
-- Whitespace is collapsed.
+- Whitespace is collapsed/lost.
 - Blind to non-Roman characters.
 
-#### GPT-4 (2023)
-
+§1.16. **GPT-4** (2023)
 - Method: BPE
-- Vocab: > 100,000 tokens
+- Vocabulary size: > 100,000 tokens
 - Special tokens: `<|endoftext|>`, [fill in the middle tokens](https://arxiv.org/pdf/2207.14255): `<|fim_prefix|>`, `<|fim_middle|>`, `<|fim_suffix|>`,
 - Specific tokens for all combinations of whitespace, and for common coding keywords (eg. `elif`).
 
-#### StarCoder2 (2024)
-
+§1.17. **StarCoder2** (2024)
 - Method: BPE
-- Vocab: 49,152
-- Special tokens: `<|endoftext|>` and fill in the middle tokens. Also, special tokens for names of files and repos: `<filename>`, `<reponame>`, `<gh_stars>`
+- Vocabulary size: 49,152
+- Special tokens: `<|endoftext|>` and fill in the middle tokens. Also, special utility tokens for names of files and repos: `<filename>`, `<reponame>`, `<gh_stars>`
 - Optimised for generating [code](https://arxiv.org/pdf/2305.06161); [also](https://arxiv.org/pdf/2402.19173).
 - Each digit is assigned its own token, for better maths potential.
 
-#### Galactica
+§1.18. **Galactica**
+- Method: BPE
+- Vocabulary size: 50,000
+- Special tokens: `<s>`, `<pad>`, `</s>`, `<unk>`, `[START_REF]`, `[END_REF]`, `<work>` (used for chain-of-thought reasoning)
+- optimised for scientific knowledge and trained on scientific papers
+- optimised for code and meaningful whitespace 
 
-BPE
-
-#### Phi-3 (and Llama 2)
-
-BPE
+§1.19. **Phi-3 (and Llama 2)**
+- Method: BPE
+- Vocabulary size: 32,000
+- Special tokens: `<|endoftext|>` and chat utility tokens – `<|user|>`, `<|assistant|>`, `<|system|>`
 
 Back up to: [Top](#)
 
 ### Tokeniser properties
 
+§1.20. Design choices:
+- tokenisation methods
+  - BPE etc. 
+- tokeniser parameters
+  - vocabulary size
+  - special tokens
+  - capitalisation 
+- the domain of the dataset
+  - code
+  - monolingual or multilingual text
+
 Back up to: [Top](#)
 
 ## Token embeddings
+
+§2.1.
 
 Back up to: [Top](#)
 
