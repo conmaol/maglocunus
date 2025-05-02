@@ -81,7 +81,28 @@ Back up to: [Top](#)
 - Unicode normalisation
 Note that more recent models do not do much normalisation.
 
-§3.3. The <mark>pre-tokenisation</mark> stage involves:
+§3.3. The <mark>pre-tokenisation</mark> stage can involve:
+- performing word tokenisation (on whitespace) as a prelude to subword tokenisation
+
+§3.4. The simplest and most widely used tokenisation algorithm is <mark>byte-pair encoding</mark>. Training a BPE tokeniser involves the following steps:
+- Normalise and pre-tokenise the training dataset.
+- Convert the output into a frequency distribution of initial (word) tokens.
+- The initial vocabulary consists of the unique characters in these (word) tokens, eg. `b, a, t, c, p, s, m, f, n, ...`
+- Use <mark>merge</mark> rules to add additional two character tokens to the vocabulary, consisting of the most frequent consecutive pairs, eg. `ap, at, ba, ...`
+- Do the same for three character tokens, eg. `cap, sap, map, ...`
+- Continue merging until the desired vocabulary size is reached.
+- The tokeniser is the final set of merge rules, which can then be used to tokenise input prompts.
+
+§3.5. Another tokenisation algorithm is <mark>WordPiece</mark>. This is similar to BPE but uses maximum likelihood rather than the frequency approach. Merge rules are not used during actual tokenisation, but rather the tokeniser identifies the longest subword.
+
+§3.6. Due to this training process, LLMs can end up with weird **glitch tokens** like `SolidMagiGoldcarp`. Token etymology is a hobby for many LLM enthusiasts – finding glitch tokens and unearthing their origins.
+
+§3.7. The <mark>post-processing</mark> stage involves adding LLM-specific **special utility tokens** like `[CLS]` or `[SEP]`.
+
+§3.8.
+
+
+
 
 
 Back up to: [Top](#)
