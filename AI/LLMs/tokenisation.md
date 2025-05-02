@@ -27,6 +27,16 @@ These output token identifiers stand for the following tokens:
 30     "?"
 ```
 
+Observations
+
+Not word-level tokenisation by whitespace
+
+whitespace is preserved
+
+case sensitive
+
+
+
 
 
 
