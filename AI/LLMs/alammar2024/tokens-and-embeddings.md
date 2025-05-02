@@ -75,17 +75,15 @@ Back up to: [Top](#)
 - It is unable to deal with new words that were not in its training set.
 - It leads to lots of tokens with minimal differences between them, eg. `apology`, `apologise`, `apologetic`, `apologist`.
 
-§8. Using <mark>subword tokens</mark> can solve these problem (to an extent), with distinct tokens for stems (eg. `apolog`) and suffixes (eg. `-y`, `-ise`, `-etic`, `-ist`).
+§1.8. Using <mark>subword tokens</mark> can solve these problem (to an extent), with distinct tokens for stems (eg. `apolog`) and suffixes (eg. `-y`, `-ise`, `-etic`, `-ist`).
 
-§9. <mark>Character tokens</mark> probably take this too far – it can make modelling more difficult than subword tokens, and uses the LLM context length/window less efficiently.
+§1.9. <mark>Character tokens</mark> probably take this too far – it can make modelling more difficult than subword tokens, and uses the LLM context length/window less efficiently.
 
-§10. Using <mark>byte tokens</mark> allows for ‘tokenisation-free’ encoding, which can be useful in multilingual scenarios:
+§1.10. Using <mark>byte tokens</mark> allows for ‘tokenisation-free’ encoding, which can be useful in multilingual scenarios:
 - [CANINE: Pre-training an efficient tokenization-free encoder for language representation](https://arxiv.org/pdf/2103.06874)
 - [ByT5: Towards a token-free future with pre-trained byte-to-byte models](https://arxiv.org/pdf/2105.13626)
 
-§11. Some subword tokenisers can <mark>fall back</mark> to byte tokens when needed, eg. GPT-2 and RoBERTa.
-
-cf. Designing Large Language Model Applications
+§1.11. Some subword tokenisers can <mark>fall back</mark> to byte tokens when needed, eg. GPT-2 and RoBERTa.
 
 Back up to: [Top](#)
 
