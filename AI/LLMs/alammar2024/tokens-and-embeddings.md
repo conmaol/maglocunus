@@ -17,20 +17,20 @@ Contents:
 
 ## LLM tokenisation
 
-§1. A <mark>tokeniser</mark> breaks down the input text prompt into smaller pieces/chunks – words or parts of words.
+§1.1. A <mark>tokeniser</mark> breaks down the input text prompt into smaller pieces/chunks – words or parts of words.
 - eg. `"Have the bards who preceded"`: `"Have", "the", "bards", "who", "preceded"`
-- These tokens are then turned into ‘embeddings’ – numeric representations (ie. vectors) capturing their meaning.
+- These tokens are then converted into ‘embeddings’ – numeric representations (ie. vectors) capturing their meaning.
 
 ### How tokenisers prepare the inputs to the language model
 
-§2. The OpenAI GPT-4 tokeniser is available [here](https://platform.openai.com/tokenizer):
-- eg. `"Have the bards who preceded me left any theme unsung?"`
+§1.2. The OpenAI GPT-4 tokeniser is available [here](https://platform.openai.com/tokenizer):
+- Example input: `"Have the bards who preceded me left any theme unsung?"`
 - Tokens: `"Have", " the", " b", "ards", " who", " preceded", " me", " left", " any", " theme", " uns", "ung", "?"`
 - Token IDs: `[15334, 290, 287, 3098, 1218, 91138, 668, 3561, 1062, 9660, 3975, 988, 30]`
 
-Questions:
-- Why is leading whitespace preserved at the start of a token, rather than just being the default token separator?
-- Why is `bards` tokenised as `" b", "ards"`, and `unsung` as `" uns", "ung"`? Surely `"bard", "s"` and `"un", "sung"` would make more sense?
+> Questions:
+> - Why is leading whitespace preserved at the start of a token, rather than just being the default token separator?
+> - Why is `bards` tokenised as `" b", "ards"`, and `unsung` as `" uns", "ung"`? Surely `"bard", "s"` and `"un", "sung"` would make more sense?
 
 Back up to: [Top](#)
 
@@ -46,7 +46,8 @@ Notes:
 - Spaces appear to be token separators.
 - Punctuation markers are separate tokens.
 - Words are broken up inconsistently – `garden ing`, `apolog izing`, `trag ic`, `m ish ap`, `Exp lain`, `happened`.
-- Suffix tokens have a special hidden character at the beginning. 
+- Suffix tokens have a special hidden character at the beginning.
+- The tokeniser contains a <mark>table</mark> containing all the tokens it knows with their token IDs. 
 
 Back up to: [Top](#)
 
