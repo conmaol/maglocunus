@@ -29,11 +29,15 @@ These output token identifiers stand for the following tokens:
 
 Observations
 
+## Word, character and subword tokenisation
+
 Not word-level tokenisation by whitespace
 
 Not character-level tokenisation either
 
 subword tokenisation, but not linguistically sound
+
+## Whitespace
 
 whitespace is preserved
 
