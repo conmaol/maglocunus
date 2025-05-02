@@ -1,4 +1,4 @@
-# Tokenisation in LLMs
+# Tokens and embeddings
 
 [Notes from Chapter 2 of *Hands-On Large Language Models* by Jay Alammar and Maarten Grootendorst (2024)]
 
@@ -147,4 +147,4 @@ Back up to: [Top](#)
 
 ----
 
-Back up to: [LLMs](index.md) | [Artificial Intelligence](../index.md)
+Back up to: [Alammar & Grootendorst](index.md) | [LLMs](../index.md) | [Artificial Intelligence](../../index.md) | [Tangator](../../../index.md)
