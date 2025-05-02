@@ -69,7 +69,20 @@ Back up to: [Top](#)
 
 ## Tokenisation pipeline
 
-§3.1.
+§3.1. The tokenisation pipeline usually consists of four stages:
+- normalisation
+- pre-tokenisation
+- tokenisation
+- post-processing
+
+§3.2. The <mark>normalisation</mark> stage involves:
+- converting text to lowercase (if using an uncased tokeniser)
+- stripping off accents from letters (eg. `peña` to `pena`)
+- Unicode normalisation
+Note that more recent models do not do much normalisation.
+
+§3.3. The <mark>pre-tokenisation</mark> stage involves:
+
 
 Back up to: [Top](#)
 
