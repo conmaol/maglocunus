@@ -99,9 +99,19 @@ Note that more recent models do not do much normalisation.
 
 §3.7. The <mark>post-processing</mark> stage involves adding LLM-specific **special utility tokens** like `[CLS]` or `[SEP]`.
 
-§3.8.
+§3.8. Special tokens can be added to the vocabulary to facilitate processing by the LLM, eg.
+- `<PAD>` – padding, in case the input is less than the maximum sequence length
+- `<EOS>` – end of the sequence, signalling to the LLM to stop generating
+- `<UNK>` – an OOV item
+- `<TOOL_CALL>`, `</TOOL_CALL>` – marking input to an external took, like an API call or a database query
+- `<TOOL_RESULT>`, `</TOOL_RESULT>` – marking the result of a tool call
 
+§3.9. Domain-specific LLMs typically use domain-specific tokens, eg.
+- GALACTICA (Meta) uses `[START_REF]` and `[END_REF]`, `<WORK>` as an internal working memory, `[START_AMINO]`, `[END_AMINO]`, `[START_DNA]`, etc.
 
+13.10. Evaluating tokenisers:
+- fertility
+- parity
 
 
 
