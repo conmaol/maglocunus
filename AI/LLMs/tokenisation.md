@@ -29,7 +29,9 @@ These output token identifiers stand for the following tokens:
 
 Looking closely at the output of this tokeniser, a number of observations are worth making.
 
-## Word, character and subword tokenisation
+First of all, the GPT-4 tokeniser is clearly not a **word tokeniser**.
+
+
 
 Not word-level tokenisation by whitespace
 
