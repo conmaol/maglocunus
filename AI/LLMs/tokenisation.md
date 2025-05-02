@@ -31,6 +31,10 @@ Looking closely at the output of this tokeniser, a number of observations are wo
 
 First of all, the GPT-4 tokeniser is clearly not a **word tokeniser**.
 
+A word tokeniser divides up an input string by implementing two basic rules:
+- Spaces are token separators.
+- Punctuation characters are tokens.
+
 
 
 Not word-level tokenisation by whitespace
