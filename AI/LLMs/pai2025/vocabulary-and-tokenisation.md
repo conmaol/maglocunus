@@ -38,24 +38,32 @@ Back up to: [Top](#)
 ## Tokenisers
 
 §2.1. The tokeniser is a text (pre-)processing interface between humans and the LLM:
-- It is used in (pre-)pre-training to generate a vocabulary from a training corpus.
+- It is used in (pre-)pre-training to generate (learn?) a vocabulary from a training corpus.
 - It is used in model training and inference to break input text into sequences of valid tokens (or OOV placeholders).
-- The token are then mapped to theoir token IDs, which are then fed into the LLM itself.
+- The tokens are then mapped to their token IDs, which are then fed into the LLM itself.
 
-using the Flan-T5 LLM tokeniser:
+§2.2. Using the `Flan-T5` LLM tokeniser:
+- Example input: `What is 937 + 934?`
+- Output tokens: `['_what', '_is', '_9', '37', '_+', '_9', '34', '?', '</s>']`
+- Token IDs: `['125', '19', '668', '4118', '1768', '668', '3710', '58', '1']`
 
-Input: `What is 937 + 934?`
+§2.3. Another example (including a spelling error):
+- Input: `Insuffienct adoption of corduroy pants is the reason this economy is in the dumps!!!`
+- Output tokens: `['_In', 's', 'uff', 'i', 'en', 'c', 't', '_adoption', '_of', '_cord', 'u', 'roy', '_pants', '_is', '_the', '_reason', '_this', '_economy', '_is', '_in', '_the', '_dump', 's', '!!!', '</s>']`
+- Note that there is a distinct token for `!!!`.
 
-Tokens: `['_what', '_is', '_9', '37', '_+', '_9', '34', '?', '</s>']`
+§2.4. Very large LLMs trained on massive text corpora are more **robust to spelling errors**:
+- `insuffienct` occurs 14 times in C4, and `insufficent` occurs over 1,100 times.
+- Bert is relatively small and hence more sensitive to misspellings. 
 
-encoded text: `['125', '19', '668', '4118', '1768', '668', '3710', '58', '1']`
+§2.5. The `tiktoken` library contains the OpenAI tokeniser.
 
-Input: `Insuffienct adoption of corduroy pants is the reaspn this economy is in the dumps!!!`
+§2.6. A non-negligable number of LLM failures can be attributed to the tokeniser – especially if your target domain is different from the pre-training domain.
 
-Encoded text: `['_In', 's', 'uff', 'i', 'en', 'c', 't', '_adoption', '_of', '_cord', 'u', 'roy', '_pants', '_is', '_the', '_reason', '_this', '_economy', '_is', '_in', '_the', '_dump', 's', '!!!', '</s>']`
-
-
-§2.2. 
+§2.7. There have been a number of forays into the world of <mark>tokenisation-free</mark> language modelling, where the tokeniser is consolidated into the LLM itself, instead of being a pre-processing step:
+- **CANINE** acepts Unicode codepoints as input (using hashed embeddings to reduce the effective vocabulary size).
+- **ByT5** accepts inputs in terms of bytes (thus just 259 tokens in the vocabulary, including a few special tokens).
+- **Charformer** also accepts inputs as bytes and then uses a gradient-based subword tokeniser to construct latent subwords.
 
 Back up to: [Top](#)
 
