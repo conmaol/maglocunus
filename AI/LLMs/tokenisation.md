@@ -31,6 +31,10 @@ Observations
 
 Not word-level tokenisation by whitespace
 
+Not character-level tokenisation either
+
+subword tokenisation, but not linguistically sound
+
 whitespace is preserved
 
 case sensitive
