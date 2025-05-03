@@ -91,7 +91,8 @@ s
 
 . . .
 ```
-mm
+Note that the lank lines here indicate a single space character.
+
 
 
 ----
