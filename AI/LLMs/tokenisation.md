@@ -149,7 +149,7 @@ Essentially, the desired vocabulary size tells the BPE training algorithm when t
 
 Given corpus `C` and desired vocabulary size `N`:
 
-1. Character tokenise the corpus.
+1. Let `C2` be the list of characters resulting from character tokenising `C`.
 2. Ascertain the vocabulary size of the current tokenised corpus.
 3. While the current vocabulary size is less than the desired vocabulary size:
    a. Ascertain the most frequent adjacent pair x+y of tokens in the current corpus.
