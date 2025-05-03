@@ -132,15 +132,20 @@ Secondly, leading spaces are meaningful within tokens:
 
 ----
 
-So, how does the linguistically naive sub-word tokeniser used by GPT-4 actually work?
+So, how does the linguistically naive sub-word tokeniser used by GPT-4 actually work? How does the tokeniser decide which words to split up and how to split them up, given that ot certainly does not appear to be using any pre-programmed knowledge of their actual linguistic sub-structure?
 
 Technically, the GPT-4 tokeniser is known as a **byte-pair encoding** (BPE) tokeniser.
 
 To build a BPE tokeniser you need two things:
 - a corpus of texts to learn from
-- a maximum vocabulary size.
+- a desired vocabulary size.
 
-Examples of different tokenisers haveing diferent vocabulary sizes?
+Different BPE tokenisers have different vocabulary sizes, ie. different numbers of token types that they recognise:
+- GPT-2 (2019): c. 50k distinct tokens
+- GPT-4 (2023): c. 100k distinct tokens
+- LLaMa 2 (2023): c. 32k distinct tokens
+
+Essentially, the desired vocabulary size tells the BPE training algorithm when to stop learning – when the desired size is reached.
 
 
 
