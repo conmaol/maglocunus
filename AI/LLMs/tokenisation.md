@@ -70,6 +70,8 @@ Word tokenisation is simple and intuitive, easy to understand and implement (not
 
 Older language models, such as those based on the `word2vec` word-embedding algorithm, used word tokenisation. However, modern LLMs generally avoid using word tokenisers, because the resulting vocabulary of token types is simply too large to efficiently train an LLM on. Even the largest training corpora will have lexical gaps meaning that an LLM based on word tokenisation would have to deal with a relatively large number of out-of-vocabulary tokens in user input prompts. For similar reasons, an LLM based on word tokenisation would be less robust at handling mispellings. In addition, a language like English contains lots of related words which are treated as completely distinct by a word tokeniser, eg. `apology`, `apologise`, `apologetic`, `apologist`, which again does not allow for efficient learning of the underlying semantics, compared to a tokeniser which recognises stems (`apolog-`) and suffixes (`-y`, `-ise`, `-etic`, `-ist`).
 
+Another reason for avoiding word tokenisation in modern LLMs is that they then cannot tokenise text from languages which do not use spaces to separate words, like Japanese or Chinese.
+
 While it is clear that the GPT-4 tokeniser is not a word tokeniser, nor is it a **character tokeniser** either.
 
 A character tokeniser simply divides up a string into the individual characters that it is composed of, as in:
@@ -91,9 +93,13 @@ s
 
 . . .
 ```
-Note that the lank lines here indicate a single space character.
+Note that the blank lines here indicate a single space character.
 
+While the GPT-4 tokeniser does produce some tokens that consist of a single character, mainly punctuation characters like `?` in the example above, the vast majority of the tokens produced consist of multiple characters – the above example even contains the nine-character token ` preceded`.
 
+Like word tokenisation, character tokenisers are simple and intuitive, easy to understand and implement, do not need to be trained, and are purely left-to-right deterministic.
+
+However, current LLMs do not generally use character tokenisation either. While word tokenisers assume too large a vocabulary of token types for meaningful generalisations to be learned efficiently, character tokenisers have the exact opposite problem – they assume too small a vocabulary (ie. alphabet).
 
 ----
 
