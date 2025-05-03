@@ -66,13 +66,9 @@ Note however that the output of the GPT-4 tokeniser includes some tokens which a
 
 Note also that when a word in the input is preceded by a space, the GPT-4 tokeniser includes that space at the start of the (first) corresponding token, as in `" the"`, `" who"`, etc.
 
-Word tokenisation is easy to understand and implement efficiently (notwithstanding edge cases like the word-internal apostrophes in `don’t`, `can’t`, `Mary’s` etc).
+Word tokenisation is easy to understand and implement (notwithstanding edge cases like the word-internal apostrophes in `don’t`, `can’t`, `Mary’s` etc). Word tokenisers do not need to be trained and are purely left-to-right deterministic, meaning that they are very fast and efficient.
 
-Advantages and disadvantages of word tokenisations.
-
-easy to understand and efficient to implement (modulo edge cases like `don’t`, )
-doesn't need to be trained
-LR deterministic
+However, modern LLMs do not use word tokenisers, for the following reasons:
 
 
 too many tokens
