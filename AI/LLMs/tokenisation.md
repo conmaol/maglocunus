@@ -2,6 +2,16 @@
 
 A tokeniser is a machine that accepts a string of characters as its input and outputs a list of token identifiers (positive integers), which can then be fed into a large language model.
 
+```mermaid
+graph LR
+    human([human])
+    tokeniser[tokeniser]
+    llm[LLM]
+    human -- char[] --> tokeniser
+    tokeniser -- int[] --> llm
+    llm --> human
+```
+
 For example, OpenAI’s [GPT-4 tokeniser](https://platform.openai.com/tokenizer) accepts the following input string:
 ```
 "Have the bards who preceded me left any theme unsung?"
@@ -27,7 +37,7 @@ These output token identifiers stand for the following tokens:
 30     "?"
 ```
 
-Looking closely at the output of this tokeniser, a number of observations are worth making.
+Looking closely at the output of this tokeniser, a number of things stand out.
 
 First of all, the GPT-4 tokeniser is clearly not a **word tokeniser**.
 
@@ -35,11 +45,46 @@ A word tokeniser divides up an input string by implementing two basic rules:
 - Spaces are token separators.
 - Punctuation characters are tokens.
 
+When fed the input string above, a word tokeniser would produce token identifiers corresponding to the following tokens:
+```
+Have
+the
+bards
+who
+preceded
+me
+left
+any
+theme
+unsung
+?
+```
+
+Note however that the output of the GPT-4 tokeniser includes some tokens which are not whole words:
+- The word `bards` is tokenised as `" b", "ards"`.
+- The word `unsung` is tokenised as `" uns", "ung"`.
+
+Note also that when a word in the input is preceded by a space, the GPT-4 tokeniser includes that space at the start of the (first) corresponding token, as in `" the"`, `" who"`, etc.
+
+Word tokenisation is easy to understand and implement efficiently (notwithstanding edge cases like the word-internal apostrophes in `don’t`, `can’t`, `Mary’s` etc).
+
+Advantages and disadvantages of word tokenisations.
+
+easy to understand and efficient to implement (modulo edge cases like `don’t`, )
+doesn't need to be trained
+LR deterministic
 
 
-Not word-level tokenisation by whitespace
+too many tokens
+not general enough cf. bard, bards
+meaningful whitespace is lost
+not always clear where punctuations markers are right/left adjoining or not
 
-Not character-level tokenisation either
+
+
+Secondly, the GPT-4 tokeniser is clear not a **character tokeniser** either.
+
+
 
 subword tokenisation, but not linguistically sound
 
