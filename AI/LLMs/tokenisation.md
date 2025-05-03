@@ -147,8 +147,15 @@ Different BPE tokenisers have different vocabulary sizes, ie. different numbers 
 
 Essentially, the desired vocabulary size tells the BPE training algorithm when to stop learning – when the desired size is reached.
 
+Given corpus `C` and desired vocabulary size `N`:
 
-
+1. Character tokenise the corpus.
+2. Ascertain the vocabulary size of the current tokenised corpus.
+3. While the current vocabulary size is less than the desired vocabulary size:
+   a. Ascertain the most frequent adjacent pair x+y of tokens in the current corpus.
+   b. Merge all instances of x+y in the current corpus to xy.
+   c. Add xy to the (start of the) vocabulary list.
+4. Return the vocabulary list
 
 ----
 
