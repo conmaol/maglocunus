@@ -134,8 +134,13 @@ Secondly, leading spaces are meaningful within tokens:
 
 So, how does the linguistically naive sub-word tokeniser used by GPT-4 actually work?
 
+Technically, the GPT-4 tokeniser is known as a **byte-pair encoding** (BPE) tokeniser.
 
+To build a BPE tokeniser you need two things:
+- a corpus of texts to learn from
+- a maximum vocabulary size.
 
+Examples of different tokenisers haveing diferent vocabulary sizes?
 
 
 
