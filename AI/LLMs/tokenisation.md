@@ -103,6 +103,15 @@ However, current LLMs do not generally use character tokenisation either. While 
 
 The GPT-4 tokeniser thus occupies a middle ground between word tokenisation and character tokenisation – it is a **sub-word tokeniser**. 
 
+Some of the tokens produced by the GPT-4 tokenisers are whole words, like `Have`. Others are whole words with a leading space, like ` the` or ` preceded`.
+
+But, as noted already, there are also GPT-4 tokens that consist of parts of words, again with or without a leading space:
+- The input word `bards` is tokenised as `" b", "ards"`.
+- The input word `unsung` is tokenised as `" uns", "ung"`.
+
+Note that the sub-word tokeniser used in GPT-4 seems to have little understanding of English word morphology though.
+
+
 ----
 
 
