@@ -99,7 +99,9 @@ While the GPT-4 tokeniser does produce some tokens that consist of a single char
 
 Like word tokenisation, character tokenisers are simple and intuitive, easy to understand and implement, do not need to be trained, and are purely left-to-right deterministic.
 
-However, current LLMs do not generally use character tokenisation either. While word tokenisers assume too large a vocabulary of token types for meaningful generalisations to be learned efficiently, character tokenisers have the exact opposite problem – they assume too small a vocabulary (ie. alphabet).
+However, current LLMs do not generally use character tokenisation either. While word tokenisers assume too large a vocabulary of token types for meaningful generalisations to be learned efficiently, character tokenisers have the exact opposite problem – the vocabulary (or more accurately the *alphabet*) they assume is too small.
+
+The GPT-4 tokeniser thus occupies a middle ground between word tokenisation and character tokenisation – it is a **sub-word tokeniser**. 
 
 ----
 
