@@ -68,23 +68,15 @@ Note also that when a word in the input is preceded by a space, the GPT-4 tokeni
 
 Word tokenisation is easy to understand and implement (notwithstanding edge cases like the word-internal apostrophes in `don’t`, `can’t`, `Mary’s` etc). Word tokenisers do not need to be trained and are purely left-to-right deterministic, meaning that they are very fast and efficient.
 
-However, modern LLMs do not use word tokenisers, for the following reasons:
+Older language models based on the `word2vec` word-embedding algorithm used word tokenisation. However, modern LLMs generally avoid using word tokenisers, because the resulting vocabulary of token types is simply too large to efficiently train an LLM on. Even the largest training corpora will have lexical gaps meaning that an LLM based on word tokenisation would have to deal with a relatively large number of out-of-vocabulary tokens in user input prompts. In addition, a language like English contains lots of related words which are treated as completely distinct by a word tokeniser, eg. `apology`, `apologise`, `apologetic`, `apologist`, which again does not allow for efficient learning of the underlying semantics.
 
+Secondly, while it is clear that the GPT-4 tokeniser is not a word tokeniser, nor is it a **character tokeniser** either.
 
-too many tokens
-not general enough cf. bard, bards
-meaningful whitespace is lost
-not always clear where punctuations markers are right/left adjoining or not
-
-
-
-Secondly, the GPT-4 tokeniser is clear not a **character tokeniser** either.
+----
 
 
 
 subword tokenisation, but not linguistically sound
-
-## Whitespace
 
 whitespace is preserved
 
