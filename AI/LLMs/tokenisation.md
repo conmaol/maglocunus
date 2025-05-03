@@ -109,22 +109,32 @@ But, as noted already, there are also GPT-4 tokens that consist of parts of word
 - The input word `bards` is tokenised as `" b", "ards"`.
 - The input word `unsung` is tokenised as `" uns", "ung"`.
 
-Note that the sub-word tokeniser used in GPT-4 seems to have little understanding of English word morphology though.
+Note that the sub-word tokeniser used in GPT-4 seems to have little understanding of English word morphology though! For the two words which have been split up, this has been done in a very counterintuitive manner. It would make a lot more linguistic sense to analyse:
+- `bards` as `bard+s` rather than as `b+ards`
+- `unsung` as `un+sung` rather than as `uns+ung` 
 
+In addition, there are some words which arguably should be split up by the tokeniser but are not:
+- `preceded` could surely be analysed as `precede+d`, or perhaps even as `pre+cede+d`.
+
+To give another example, the GPT-4 tokeniser parses the word `antidisestablishmentarianism` as `ant+idis+est+ablishment+arian+ism` rather than the more sensible `anti+dis+establish+ment+arian+ism`.
+
+Thus, the GPT-4 tokeniser could more accurately be described as a *linguistically naive* sub-word tokeniser.
+
+Before looking at how the GPT-4 tokeniser works, there are two more aspects of its behaviour to consider.
+
+First of all, the GPT-4 tokeniser is case-sensitive:
+- `Have` and `have` are distinct tokens, with IDs `15334` and `35723` respectively.
+- `HAVE` is tokenised as `H+AVE`, ie. token `39` followed by token `16357`.
+
+Secondly, leading spaces are meaningful within tokens:
+- ` Have` has token ID `14465`, compared to `15334` for `Have`.
+- ` have` has token ID `679`, compared to `35723` for `have`.
 
 ----
 
+So, how does the linguistically naive sub-word tokeniser used by GPT-4 actually work?
 
 
-subword tokenisation, but not linguistically sound
-
-whitespace is preserved
-
-case sensitive
-
-numbers
-
-code
 
 
 
