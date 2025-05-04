@@ -153,14 +153,14 @@ Here is a slightly simplified version of the BPE training algorithm:
 
 > Given corpus `C` and desired vocabulary size `N`:
 > 
-> Let `cs` be the list of characters resulting from character tokenising `C`.  
-> Let `vocab` be the set of distinct tokens in `cs`.  
-> While `vocab` is smaller than `N`:  
-> > Let `(x,y)` be the most frequent adjacent pair of tokens in `cs`.  
-> > Merge all instances of `(x,y)` in `cs` to just `xy`.  
-> > Add `xy` to `vocab`.
-> 
-> Return `vocab`.  
+> > Let `cs` be the list of characters resulting from character tokenising `C`.  
+> > Let `vocab` be the set of distinct tokens in `cs`.  
+> > While `vocab` is smaller than `N`:  
+> > > Let `(x,y)` be the most frequent adjacent pair of tokens in `cs`.  
+> > > Merge all instances of `(x,y)` in `cs` to just `xy`.  
+> > > Add `xy` to `vocab`.
+> > 
+> > Return `vocab`.  
 
 Let’s run through an example of this BPE training algorithm in operation.
 
@@ -208,14 +208,16 @@ The BPE tokeniser algorithm is as follows:
 
 > Given input string `S` and vocabulary of tokens `V`:
 > 
-> Let `cs` be the list of characters resulting from character tokenising `S`.  
-> Repeat for every token `t` in `V`:  
-> > Repeat for every adjacent pair of tokens `(x,y)` in `cs` (from left to right):  
-> > > If `t` is the result of merging `x` and `y`:  
-> > > > Replace `(x,y)` in `cs` with `t`.  
->
-> Let `ids` be the list of integers resulting from replacing every token in `cs` with its location in `V`.  
-> Return `ids`.
+> > Let `cs` be the list of characters resulting from character tokenising `S`.
+> > 
+> > Repeat for every token `t` in `V`:  
+> > > Repeat for every adjacent pair of tokens `(x,y)` in `cs` (from left to right):  
+> > > > If `t` is the result of merging `x` and `y`:  
+> > > > > Replace `(x,y)` in `cs` with `t`.  
+> > 
+> > Let `ids` be the list of integers resulting from replacing every token in `cs` with its location in `V`.
+> > 
+> > Return `ids`.
 
 Let’s run through an example of a trained BPS tokeniser in operation.
 
