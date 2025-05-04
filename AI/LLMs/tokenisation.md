@@ -9,7 +9,7 @@ graph LR
     llm[LLM]
     human -- char[] --> tokeniser
     tokeniser -- int[] --> llm
-    llm --> human
+    llm -- char[] --> human
 ```
 
 For example, OpenAI’s [GPT-4 tokeniser](https://platform.openai.com/tokenizer) accepts the following input string:
@@ -162,7 +162,44 @@ Here is a slightly simplified version of the BPE training algorithm:
 
 Let’s run through an example of this BPE training algorithm in operation.
 
-BPT trainer diagram
+\[TO DO\]
+
+To summarise, the BPE training algorithm can be understand as a machine which accepts two inputs – a corpus of texts and a desired output vocabulary size – and which then outputs a vocabulary containing the right number of token types (ie. sequences of characters):
+
+```mermaid
+graph LR
+    corpus([corpus])
+    limit([size])
+    bpe[BPE trainer]
+    vocab([vocabulary])
+    corpus -- char[] --> bpe
+    limit -- int --> bpe
+    bpe -- char[][] --> vocab
+```
+
+This output vocabulary is then one of the inputs to the BPE tokeniser itself, when used to mediate between a human user and an LLM:
+
+```mermaid
+graph LR
+
+    human([human])
+    tokeniser[BPE tokeniser]
+    llm[LLM]
+    human -- char[] --> tokeniser
+    tokeniser -- int[] --> llm
+
+    llm -- char[] --> human
+
+    subgraph " "
+    corpus([corpus])
+    limit([size])
+    bpe[BPE trainer]
+    corpus -- char[] --> bpe
+    limit -- int --> bpe
+    end
+    bpe -- char[][] --> tokeniser
+```
+
 
 ----
 
