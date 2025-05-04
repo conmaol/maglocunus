@@ -200,6 +200,11 @@ graph LR
     bpe -- char[][] --> tokeniser
 ```
 
+The BPE tokeniser algorithm is as follows:
+
+> Given input prompt `P` and vocabulary `V`:
+> 
+
 
 ----
 
