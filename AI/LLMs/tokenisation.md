@@ -1,5 +1,7 @@
 # Tokenisation
 
+## What does a tokeniser do?
+
 A tokeniser is a machine that accepts a string of characters as its input and outputs a list of token identifiers (positive integers), which can then be fed into a large language model.
 
 ```mermaid
@@ -130,7 +132,7 @@ Secondly, leading spaces are meaningful within tokens:
 - ` Have` has token ID `14465`, compared to `15334` for `Have`.
 - ` have` has token ID `679`, compared to `35723` for `have`.
 
-----
+## Byte-pair encoding – How does a sub-word tokeniser work?
 
 So, how does the linguistically naive sub-word tokeniser used by GPT-4 actually work? How does the tokeniser decide which words to split up and how to split them up, given that it certainly does not appear to be using any real knowledge of their actual linguistic sub-structure?
 
