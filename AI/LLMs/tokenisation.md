@@ -68,7 +68,7 @@ Note also that when a word in the input is preceded by a space, the GPT-4 tokeni
 
 Word tokenisation is simple and intuitive, easy to understand and implement (notwithstanding edge cases like the word-internal apostrophes in `don’t`, `can’t`, `Mary’s` etc). Word tokenisers do not need to be trained and are purely left-to-right deterministic, meaning that they are very fast and efficient.
 
-Older language models, such as those based on the `word2vec` word-embedding algorithm, used word tokenisation. However, modern LLMs generally avoid using word tokenisers, because the resulting vocabulary of token types is simply too large to efficiently train an LLM on. Even the largest training corpora will have lexical gaps meaning that an LLM based on word tokenisation would have to deal with a relatively large number of out-of-vocabulary tokens in user input prompts. For similar reasons, an LLM based on word tokenisation would be less robust at handling mispellings. In addition, a language like English contains lots of related words which are treated as completely distinct by a word tokeniser, eg. `apology`, `apologise`, `apologetic`, `apologist`, which again does not allow for efficient learning of the underlying semantics, compared to a tokeniser which recognises stems (`apolog-`) and suffixes (`-y`, `-ise`, `-etic`, `-ist`).
+Older language models, such as those based on the `word2vec` word-embedding algorithm, used word tokenisation. However, modern LLMs generally avoid using word tokenisers, because the resulting vocabulary of token types is simply too large to efficiently train an LLM on. Even the largest training corpora will have lexical gaps meaning that an LLM based on word tokenisation would have to deal with a relatively large number of out-of-vocabulary tokens in user input prompts. For similar reasons, an LLM based on word tokenisation would be less robust at handling mispellings. In addition, a language like English contains lots of related words which are treated as completely distinct by a word tokeniser, eg. `apology`, `apologise`, `apologetic`, `apologist`. Again, this does not allow for efficient learning of the underlying semantics, compared to a tokeniser which separates stems (`apolog-`) from suffixes (`-y`, `-ise`, `-etic`, `-ist`).
 
 Another reason for avoiding word tokenisation in modern LLMs is that they then cannot tokenise text from languages which do not use spaces to separate words, like Japanese or Chinese.
 
@@ -109,14 +109,14 @@ But, as noted already, there are also GPT-4 tokens that consist of parts of word
 - The input word `bards` is tokenised as `" b", "ards"`.
 - The input word `unsung` is tokenised as `" uns", "ung"`.
 
-Note that the sub-word tokeniser used in GPT-4 seems to have little understanding of English word morphology though! For the two words which have been split up, this has been done in a very counterintuitive manner. It would make a lot more linguistic sense to analyse:
-- `bards` as `bard+s` rather than as `b+ards`
-- `unsung` as `un+sung` rather than as `uns+ung` 
+Note that the sub-word tokeniser used in GPT-4 seems to have little understanding of English word morphology though! For the two words which have been split up, this has been done in a very counterintuitive manner. It would have made a lot more linguistic sense to analyse:
+- `bards` as `bard + s` rather than as `b + ards`
+- `unsung` as `un + sung` rather than as `uns + ung` 
 
-In addition, there are some words which arguably should be split up by the tokeniser but are not:
-- `preceded` could surely be analysed as `precede+d`, or perhaps even as `pre+cede+d`.
+In addition, there are some words which arguably should have been split up by the tokeniser but were not:
+- `preceded` could surely be analysed as `precede + d`, or perhaps even as `pre + cede + d`.
 
-To give another example, the GPT-4 tokeniser parses the word `antidisestablishmentarianism` as `ant+idis+est+ablishment+arian+ism` rather than the more sensible `anti+dis+establish+ment+arian+ism`.
+To give another example, the GPT-4 tokeniser parses the word `antidisestablishmentarianism` as `ant + idis + est + ablishment + arian + ism` rather than the more sensible `anti + dis + establish + ment + arian + ism`.
 
 Thus, the GPT-4 tokeniser could more accurately be described as a *linguistically naive* sub-word tokeniser.
 
@@ -124,7 +124,7 @@ Before looking at how the GPT-4 tokeniser works, there are two more aspects of i
 
 First of all, the GPT-4 tokeniser is case-sensitive:
 - `Have` and `have` are distinct tokens, with IDs `15334` and `35723` respectively.
-- `HAVE` is tokenised as `H+AVE`, ie. token `39` followed by token `16357`.
+- `HAVE` is tokenised as `H + AVE`, ie. token `39` followed by token `16357`.
 
 Secondly, leading spaces are meaningful within tokens:
 - ` Have` has token ID `14465`, compared to `15334` for `Have`.
