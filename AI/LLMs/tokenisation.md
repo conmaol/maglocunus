@@ -162,6 +162,7 @@ Here is a slightly simplified version of the BPE training algorithm:
 
 Let’s run through an example of this BPE training algorithm in operation.
 
+BPT trainer diagram
 
 ----
 
