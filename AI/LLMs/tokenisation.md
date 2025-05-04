@@ -202,10 +202,22 @@ graph LR
     bpe -- char[][] --> tokeniser
 ```
 
+We now know how to build a BPE tokeniser for any size of vocabulary we want, assuming we have an appropriate corpus of texts to hand. We can now use this trained tokeniser to tokenise any string of text we want, including those that were not in the training corpus.
+
 The BPE tokeniser algorithm is as follows:
 
-> Given input prompt `P` and vocabulary of tokens `V`:
+> Given input string `S` and vocabulary of tokens `V`:
 > 
+> Let `cs` be the list of characters resulting from character tokenising `S`.  
+> Repeat for every token `t` in `V`:  
+> > Repeat for every adjacent pair of tokens `(x,y)` in `cs` (from left to right):  
+> > > If `t` is the result of merging `x` and `y`:  
+> > > > Replace `(x,y)` in `cs` with `t`.  
+>
+> Let `ids` be the list of integers resulting from replacing every token in `cs` with its location in `V`.  
+> Return `ids`.
+
+Let’s run through an example of a trained BPS tokeniser in operation.
 
 
 ----
