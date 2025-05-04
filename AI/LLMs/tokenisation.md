@@ -202,7 +202,7 @@ graph LR
 
 The BPE tokeniser algorithm is as follows:
 
-> Given input prompt `P` and vocabulary `V`:
+> Given input prompt `P` and vocabulary of tokens `V`:
 > 
 
 
