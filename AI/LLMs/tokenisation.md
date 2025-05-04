@@ -132,7 +132,7 @@ Secondly, leading spaces are meaningful within tokens:
 
 ----
 
-So, how does the linguistically naive sub-word tokeniser used by GPT-4 actually work? How does the tokeniser decide which words to split up and how to split them up, given that ot certainly does not appear to be using any pre-programmed knowledge of their actual linguistic sub-structure?
+So, how does the linguistically naive sub-word tokeniser used by GPT-4 actually work? How does the tokeniser decide which words to split up and how to split them up, given that it certainly does not appear to be using any real knowledge of their actual linguistic sub-structure?
 
 Technically, the GPT-4 tokeniser is known as a **byte-pair encoding** (BPE) tokeniser.
 
@@ -140,23 +140,28 @@ To build a BPE tokeniser you need two things:
 - a corpus of texts to learn from
 - a desired vocabulary size.
 
-Different BPE tokenisers have different vocabulary sizes, ie. different numbers of token types that they recognise:
-- GPT-2 (2019): c. 50k distinct tokens
-- GPT-4 (2023): c. 100k distinct tokens
-- LLaMa 2 (2023): c. 32k distinct tokens
+Different BPE tokenisers have different vocabulary sizes, ie. different numbers of distinct token types that they recognise:
+- The GPT-2 tokeniser (2019) recognises around 50k distinct tokens.
+- The GPT-4 tokeniser (2023) recognises around 100k distinct tokens.
+- The LLaMa 2 tokeniser (2023) recognises around 32k distinct tokens.
 
-Essentially, the desired vocabulary size tells the BPE training algorithm when to stop learning – when the desired size is reached.
+In essence, the desired vocabulary size tells the BPE training algorithm when to stop learning from the corpus – when the desired size is reached.
 
-Given corpus `C` and desired vocabulary size `N`:
+Here is a slightly simplified version of the BPE training algorithm:
 
-1. Let `C2` be the list of characters resulting from character tokenising `C`.
-2. Let `vocab` be the set of distinct tokens in `C2`, ie. `vocab = set(C2)`.
-3. Ascertain the vocabulary size of the current tokenised corpus.
-4. While the current vocabulary size is less than the desired vocabulary size:
-   a. Ascertain the most frequent adjacent pair x+y of tokens in the current corpus.
-   b. Merge all instances of x+y in the current corpus to xy.
-   c. Add xy to the (start of the) vocabulary list.
-5. Return the vocabulary list
+> Given corpus `C` and desired vocabulary size `N`:
+> 
+> Let `cs` be the list of characters resulting from character tokenising `C`.  
+> Let `vocab` be the set of distinct tokens in `cs`.  
+> While `vocab` is smaller than `N`:  
+> > Let `(x,y)` be the most frequent adjacent pair of tokens in `cs`.  
+> > Merge all instances of `(x,y)` in `cs` to just `xy`.  
+> > Add `xy` to `vocab`.
+> 
+> Return `vocab`.  
+
+Let’s run through an example of this BPE training algorithm in operation.
+
 
 ----
 
