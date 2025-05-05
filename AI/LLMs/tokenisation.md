@@ -14,11 +14,11 @@ graph LR
     llm -- char[] --> human
 ```
 
-For example, OpenAI’s [GPT-4 tokeniser](https://platform.openai.com/tokenizer) accepts the following input string:
+For example, when OpenAI’s [GPT-4 tokeniser](https://platform.openai.com/tokenizer) is fed the following input string:
 ```
 "Have the bards who preceded me left any theme unsung?"
 ```
-And outputs the following list of token identifiers:
+It outputs the following list of token identifiers:
 ```
 [15334, 290, 287, 3098, 1218, 91138, 668, 3561, 1062, 9660, 3975, 988, 30]
 ```
@@ -101,9 +101,9 @@ While the GPT-4 tokeniser does produce some tokens that consist of a single char
 
 Like word tokenisation, character tokenisers are simple and intuitive, easy to understand and implement, do not need to be trained, and are purely left-to-right deterministic.
 
-However, current LLMs do not generally use character tokenisation either. While word tokenisers assume too large a vocabulary of token types for meaningful generalisations to be learned efficiently, character tokenisers have the exact opposite problem – the vocabulary (or more accurately the *alphabet*) they assume is too small.
+However, current LLMs do not generally use character tokenisation either (aside from a handful of experimental LLMs like `CANINE`, `ByT5` and `Charformer`). While word tokenisers assume too large a vocabulary of token types for meaningful generalisations to be learned efficiently, character tokenisers have the exact opposite problem – the vocabulary (or more accurately the *alphabet*) they assume is too small.
 
-The GPT-4 tokeniser thus occupies a middle ground between word tokenisation and character tokenisation – it is a **sub-word tokeniser**. 
+The GPT-4 tokeniser thus appears to occupy a middle ground between word tokenisation and character tokenisation – it is a **sub-word tokeniser**. 
 
 Some of the tokens produced by the GPT-4 tokenisers are whole words, like `Have`. Others are whole words with a leading space, like ` the` or ` preceded`.
 
@@ -120,7 +120,7 @@ In addition, there are some words which arguably should have been split up by th
 
 To give another example, the GPT-4 tokeniser parses the word `antidisestablishmentarianism` as `ant + idis + est + ablishment + arian + ism` rather than the more sensible `anti + dis + establish + ment + arian + ism`.
 
-Thus, the GPT-4 tokeniser could more accurately be described as a *linguistically naive* sub-word tokeniser.
+In sum, the GPT-4 tokeniser could more accurately be described as a *linguistically naive* sub-word tokeniser.
 
 Before looking at how the GPT-4 tokeniser works, there are two more aspects of its behaviour to consider.
 
@@ -138,18 +138,20 @@ So, how does the linguistically naive sub-word tokeniser used by GPT-4 actually 
 
 Technically, the GPT-4 tokeniser is known as a **byte-pair encoding** (BPE) tokeniser.
 
-To build a BPE tokeniser you need two things:
+To build a BPE tokeniser you need two basic ingredients:
 - a corpus of texts to learn from
 - a desired vocabulary size.
 
-Different BPE tokenisers have different vocabulary sizes, ie. different numbers of distinct token types that they recognise:
+Different BPE tokenisers are trained on different corpora, containing different genres of text, different languages, different proportions of computer programming code etc.
+
+In addition, different BPE tokenisers have different vocabulary sizes, ie. different numbers of distinct token types that they recognise:
 - The GPT-2 tokeniser (2019) recognises around 50k distinct tokens.
 - The GPT-4 tokeniser (2023) recognises around 100k distinct tokens.
 - The LLaMa 2 tokeniser (2023) recognises around 32k distinct tokens.
 
 In essence, the desired vocabulary size tells the BPE training algorithm when to stop learning from the corpus – when the desired size is reached.
 
-Here is a slightly simplified version of the BPE training algorithm:
+Here is a simplified version of the BPE training algorithm:
 
 > Given corpus `C` and desired vocabulary size `N`:
 > 
@@ -166,7 +168,7 @@ Let’s run through an example of this BPE training algorithm in operation.
 
 \[TO DO\]
 
-To summarise, the BPE training algorithm can be understand as a machine which accepts two inputs – a corpus of texts and a desired output vocabulary size – and which then outputs a vocabulary containing the right number of token types (ie. sequences of characters):
+To summarise, the BPE training algorithm can be understood as a machine which accepts two inputs – a corpus of texts and a desired output vocabulary size – and which then outputs a vocabulary containing the desired number of token types (ie. sequences of characters):
 
 ```mermaid
 graph LR
@@ -202,7 +204,9 @@ graph LR
     bpe -- char[][] --> tokeniser
 ```
 
-We now know how to build a BPE tokeniser for any size of vocabulary we want, assuming we have an appropriate corpus of texts to hand. We can now use this trained tokeniser to tokenise any string of text we want, including those that were not in the training corpus.
+We now know how to build a BPE tokeniser for any desired size of vocabulary, assuming we have an appropriate corpus of texts to hand. 
+
+We can then use this trained tokeniser to tokenise any string of text we want, including those that were not in the training corpus.
 
 The BPE tokeniser algorithm is as follows:
 
@@ -215,11 +219,72 @@ The BPE tokeniser algorithm is as follows:
 > > > > If `t` is the result of merging `x` and `y`:  
 > > > > > Replace `(x,y)` in `cs` with `t`.  
 > > 
-> > Let `ids` be the list of integers resulting from replacing every token in `cs` with its location in `V`.
+> > Let `ids` be the list of integers resulting from replacing every token in `cs` with its position in `V`.
 > > 
 > > Return `ids`.
 
 Let’s run through an example of a trained BPS tokeniser in operation.
+
+\[TO DO\]
+
+## Notes
+
+As LLMs are getting larger, so are vocabulary sizes. Some recent LLMs recognise over 500k distinct token types.
+
+Scaling laws – the optimal vocabulary size increases as model size and compute increases. Therefore, most current models have suboptimal vocabulary sizes.
+
+
+Different tokenisers represent leading **spaces** in different ways. For example, the GPT-NeoX-20B tokeniser represents then using a `Ġ` at the start of the token, eg. `Ġoffice` for ` office`.
+
+**Cased** vocabularies are almost always better than uncased vocabularies, given enough training data to learn distinctive representations for uppercase and lowercase tokens.
+
+Some but not all **numbers** get their own tokens. 
+
+Popular **names** (including placenames) get their own tokens.
+
+There are often tokens for programming language **code** strings like ]);.
+
+A non-negligable number of LLM failures can be attributed to the tokeniser – especially if your target domain is different from the pre-training domain.
+
+There have been a number of forays into the world of tokenisation-free language modelling, where the tokeniser is consolidated into the LLM itself, instead of being a pre-processing step:
+- CANINE acepts Unicode codepoints as input (using hashed embeddings to reduce the effective vocabulary size).
+- ByT5 accepts inputs in terms of bytes (thus just 259 tokens in the vocabulary, including a few special tokens).
+- Charformer also accepts inputs as bytes and then uses a gradient-based subword tokeniser to construct latent subwords.
+
+The tokenisation pipeline usually consists of four stages:
+- normalisation
+- pre-tokenisation
+- tokenisation
+- post-processing
+
+The normalisation stage involves:
+- converting text to lowercase (if using an uncased tokeniser)
+- stripping off accents from letters (eg. peña to pena)
+- Unicode normalisation Note that more recent models do not do much normalisation.
+
+The pre-tokenisation stage can involve:
+- performing word tokenisation (on whitespace) as a prelude to subword tokenisation
+
+Another tokenisation algorithm is **WordPiece**. This is similar to BPE but uses maximum likelihood rather than the frequency approach. Merge rules are not used during actual tokenisation, but rather the tokeniser identifies the longest subword.
+
+Due to the BPE training process, LLMs can end up with weird glitch tokens like SolidMagiGoldcarp. Token etymology is a hobby for many LLM enthusiasts – finding glitch tokens and unearthing their origins.
+
+### Special (utility) tokens
+
+Out-of-vocabulary (OOV) tokens are generally represented with placeholder <UNK> in the input. All <UNK> tokens share the same embedding, which is undesirable.
+
+The post-processing stage involves adding LLM-specific special utility tokens like [CLS] or [SEP].
+
+Special tokens can be added to the vocabulary to facilitate processing by the LLM, eg.
+
+<PAD> – padding, in case the input is less than the maximum sequence length
+<EOS> – end of the sequence, signalling to the LLM to stop generating
+<UNK> – an OOV item
+<TOOL_CALL>, </TOOL_CALL> – marking input to an external took, like an API call or a database query
+<TOOL_RESULT>, </TOOL_RESULT> – marking the result of a tool call
+§3.9. Domain-specific LLMs typically use domain-specific tokens, eg.
+
+GALACTICA (Meta) uses [START_REF] and [END_REF], <WORK> as an internal working memory, [START_AMINO], [END_AMINO], [START_DNA], etc.
 
 
 ----
