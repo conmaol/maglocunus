@@ -227,29 +227,19 @@ Let’s run through an example of a trained BPS tokeniser in operation.
 
 \[TO DO\]
 
-## Notes
+## Further observations
 
-As LLMs are getting larger, so are vocabulary sizes. Some recent LLMs recognise over 500k distinct token types.
+As LLMs are getting larger, so are **vocabulary sizes**. Some recent LLMs recognise over 500k distinct token types. According to proposed scaling laws, the optimal vocabulary size increases as model size and compute increases, and hence most current models probably have suboptimal vocabulary sizes.
 
-Scaling laws – the optimal vocabulary size increases as model size and compute increases. Therefore, most current models have suboptimal vocabulary sizes.
+Tokenisers differ significantly in how they handle **whitespace** characters (spaces, tabs, newlines, carriage returns). As discussed above, the GPT-4 tokeniser has a strong tendency to include leading spaces at the start of tokens. The GPT-NeoX-20B tokeniser does the same but represents them using a `Ġ`, eg. `Ġoffice` for ` office`. Tokenisers trained on lots of computer **programming code** tend to have lots of different tokens for different combinations of whitespace, especially for languages like Python where indentation is meaningful. Such tokenisers often have distinct tokens for strings of punctuation markers like `});`
 
+**Case-sensitive** vocabularies are almost always better than uncased ones, assuming that there is enough training data to learn distinctive representations for uppercase and lowercase tokens.
 
-Different tokenisers represent leading **spaces** in different ways. For example, the GPT-NeoX-20B tokeniser represents then using a `Ġ` at the start of the token, eg. `Ġoffice` for ` office`.
+Tokenisers also differ significantly in how they deal with **numbers**. Smaller numbers like `934` tend to have their own tokens but larger ones like `93477` need to be split up.
 
-**Cased** vocabularies are almost always better than uncased vocabularies, given enough training data to learn distinctive representations for uppercase and lowercase tokens.
+Character tokenisation is often called **tokenisation-free** language modelling, meaning that the main work of the tokeniser is understood as being consolidated into the LLM itself, rather than being a pre-processing step. A more extreme version of character tokenisation is known as **byte tokenisation**, where the input is uniformly segmented into 8-bit tokens, regardless of the character encoding. 
 
-Some but not all **numbers** get their own tokens. 
-
-Popular **names** (including placenames) get their own tokens.
-
-There are often tokens for programming language **code** strings like ]);.
-
-A non-negligable number of LLM failures can be attributed to the tokeniser – especially if your target domain is different from the pre-training domain.
-
-There have been a number of forays into the world of tokenisation-free language modelling, where the tokeniser is consolidated into the LLM itself, instead of being a pre-processing step:
-- CANINE acepts Unicode codepoints as input (using hashed embeddings to reduce the effective vocabulary size).
-- ByT5 accepts inputs in terms of bytes (thus just 259 tokens in the vocabulary, including a few special tokens).
-- Charformer also accepts inputs as bytes and then uses a gradient-based subword tokeniser to construct latent subwords.
+----
 
 The tokenisation pipeline usually consists of four stages:
 - normalisation
