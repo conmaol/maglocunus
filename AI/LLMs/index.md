@@ -12,7 +12,7 @@ Sources:
 - [Microsoft Copilot](copilot/index.md)
 
 Concepts:
-- Tokenisation
+- [Tokenisation](tokenisation.md)
   - Suhas Pai (2025): [Vocabulary and tokenisation](pai2025/vocabulary-and-tokenisation.md)
   - Alammar & Grootendorst (2024): [Tokens and embeddings](alammar2024/tokens-and-embeddings.md)
   - [Huggingface](https://huggingface.co/learn/llm-course/en/chapter2/4)
