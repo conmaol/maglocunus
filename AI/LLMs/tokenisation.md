@@ -136,7 +136,7 @@ Secondly, leading spaces are meaningful within tokens:
 
 So, how does the linguistically naive sub-word tokeniser used by GPT-4 actually work? How does the tokeniser decide which words to split up and how to split them up, given that it certainly does not appear to be using any real knowledge of their actual linguistic sub-structure?
 
-Technically, the GPT-4 tokeniser is known as a **byte-pair encoding** (BPE) tokeniser.
+Technically, the GPT-4 tokeniser is known as a **byte-pair encoding** ([BPE](https://arxiv.org/pdf/1508.07909)) tokeniser.
 
 To build a BPE tokeniser you need two basic ingredients:
 - a corpus of texts to learn from
@@ -231,51 +231,39 @@ Let’s run through an example of a trained BPS tokeniser in operation.
 
 As LLMs are getting larger, so are **vocabulary sizes**. Some recent LLMs recognise over 500k distinct token types. According to proposed scaling laws, the optimal vocabulary size increases as model size and compute increases, and hence most current models probably have suboptimal vocabulary sizes.
 
-Tokenisers differ significantly in how they handle **whitespace** characters (spaces, tabs, newlines, carriage returns). As discussed above, the GPT-4 tokeniser has a strong tendency to include leading spaces at the start of tokens. The GPT-NeoX-20B tokeniser does the same but represents them using a `Ġ`, eg. `Ġoffice` for ` office`. Tokenisers trained on lots of computer **programming code** tend to have lots of different tokens for different combinations of whitespace, especially for languages like Python where indentation is meaningful. Such tokenisers often have distinct tokens for strings of punctuation markers like `});`
+Tokenisers differ significantly in how they handle **whitespace** characters (spaces, tabs, newlines, carriage returns). As discussed above, the GPT-4 tokeniser has a strong tendency to include leading spaces at the start of tokens. The GPT-NeoX-20B tokeniser does the same but represents them using a `Ġ`, eg. `Ġoffice` for ` office`. Tokenisers trained on lots of computer **programming code** tend to have lots of different tokens for different combinations of whitespace, especially for languages like Python where indentation is meaningful. Such tokenisers often have distinct tokens for strings of punctuation markers like `});`.
+
+Alternatively, some LLMs do not include leading spaces but rather add a special character on to the start of tokens representing suffixes.
 
 **Case-sensitive** vocabularies are almost always better than uncased ones, assuming that there is enough training data to learn distinctive representations for uppercase and lowercase tokens.
 
 Tokenisers also differ significantly in how they deal with **numbers**. Smaller numbers like `934` tend to have their own tokens but larger ones like `93477` need to be split up.
 
-Character tokenisation is often called **tokenisation-free** language modelling, meaning that the main work of the tokeniser is understood as being consolidated into the LLM itself, rather than being a pre-processing step. A more extreme version of character tokenisation is known as **byte tokenisation**, where the input is uniformly segmented into 8-bit tokens, regardless of the character encoding. 
+Character tokenisation is often called **tokenisation-free** language modelling, meaning that the main work of the tokeniser is understood as being consolidated into the LLM itself, rather than being a pre-processing step. A more extreme version of character tokenisation is known as **byte tokenisation**, where the input is uniformly segmented into 8-bit tokens, regardless of the character encoding. See:
+- [CANINE: Pre-training an efficient tokenization-free encoder for language representation](https://arxiv.org/pdf/2103.06874)
+- [ByT5: Towards a token-free future with pre-trained byte-to-byte models](https://arxiv.org/pdf/2105.13626)
 
-----
+Tokenisation proper may be seens as being part of a pipeline, preceded by:
+- **normalisation** – perhaps converting text to lowercase, stripping off accents from letters, etc.
+- **pre-tokenisation** – maybe performing word tokenisation as a prelude to subword tokenisation
 
-The tokenisation pipeline usually consists of four stages:
-- normalisation
-- pre-tokenisation
-- tokenisation
-- post-processing
+[Wordpiece](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/37842.pdf) is a tokenisation algorithm used by BERT, which is similar to BPE but uses maximum likelihood rather than frequencies. Merge rules are not used during actual tokenisation, but rather the tokeniser identifies the longest subword. See also: [SentencePiece](https://arxiv.org/pdf/1808.06226), [cf](https://arxiv.org/pdf/1804.10959).
 
-The normalisation stage involves:
-- converting text to lowercase (if using an uncased tokeniser)
-- stripping off accents from letters (eg. peña to pena)
-- Unicode normalisation Note that more recent models do not do much normalisation.
+An artifact of the BPE training algorithm is that LLMs can end up with weird **glitch tokens** (eg. `SolidMagiGoldcarp`). **Token etymology** is a hobby for many LLM enthusiasts – finding glitch tokens and unearthing their origins.
 
-The pre-tokenisation stage can involve:
-- performing word tokenisation (on whitespace) as a prelude to subword tokenisation
-
-Another tokenisation algorithm is **WordPiece**. This is similar to BPE but uses maximum likelihood rather than the frequency approach. Merge rules are not used during actual tokenisation, but rather the tokeniser identifies the longest subword.
-
-Due to the BPE training process, LLMs can end up with weird glitch tokens like SolidMagiGoldcarp. Token etymology is a hobby for many LLM enthusiasts – finding glitch tokens and unearthing their origins.
-
-### Special (utility) tokens
-
-Out-of-vocabulary (OOV) tokens are generally represented with placeholder <UNK> in the input. All <UNK> tokens share the same embedding, which is undesirable.
-
-The post-processing stage involves adding LLM-specific special utility tokens like [CLS] or [SEP].
-
-Special tokens can be added to the vocabulary to facilitate processing by the LLM, eg.
-
-<PAD> – padding, in case the input is less than the maximum sequence length
-<EOS> – end of the sequence, signalling to the LLM to stop generating
-<UNK> – an OOV item
-<TOOL_CALL>, </TOOL_CALL> – marking input to an external took, like an API call or a database query
-<TOOL_RESULT>, </TOOL_RESULT> – marking the result of a tool call
-§3.9. Domain-specific LLMs typically use domain-specific tokens, eg.
-
-GALACTICA (Meta) uses [START_REF] and [END_REF], <WORK> as an internal working memory, [START_AMINO], [END_AMINO], [START_DNA], etc.
-
+After tokenisation, a post-processing step involves inserting **special (utility) tokens** into the tokenised output, to help out the LLM in various ways. Some examples are:
+- `<s>`, `[CLS]`, `cls_token` – marking the start of the input (?), classification token (?)
+- `[SEP]`, `sep_token`, `<|assistant|>` – marking the end of the input and the start of the response (?)
+- `[UNK]`, `<UNK>`, `unk_token` – represents an unknown, out-of-vocabulary token
+- `[PAD]`, `<PAD>`, `pad_token` – padding, in case the input is less than the maximum sequence length
+- `[MASK]`, `mask_token`
+- `<EOS>`, `<|endoftext|>` – end of the sequence, signalling to the LLM to stop generating
+- `<|user|>`, `<|system|>`
+- [fill in the middle tokens](https://arxiv.org/pdf/2207.14255) (GPT-4): `<|fim_prefix|>`, `<|fim_middle|>`, `<|fim_suffix|>`
+- utility tokens for names of files and repos ([Starcoder2](https://arxiv.org/pdf/2305.06161), [cf](https://arxiv.org/pdf/2402.19173)): `<filename>`, `<reponame>`, `<gh_stars>`
+- `<TOOL_CALL>`, `</TOOL_CALL>` – marking input to an external took, like an API call or a database query
+- `<TOOL_RESULT>`, `</TOOL_RESULT>` – marking the result of a tool call
+- Galactica (Meta): `[START_REF`] and `[END_REF]`, `<WORK>` as an internal working memory for chain-of-thought reasoning, `[START_AMINO]`, `[END_AMINO]`, `[START_DNA]`, etc.
 
 ----
 
