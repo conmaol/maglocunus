@@ -16,6 +16,8 @@ graph LR
     llm -- char[] --> human
 ```
 
+Note that `char[]` is shorthand for ‘list of characters’ (ie. a ‘string’) and `int[]` is shorthand for ‘list of integers’. 
+
 For example, when OpenAI’s [GPT-4 tokeniser](https://platform.openai.com/tokenizer) is fed the following input string:
 ```
 "Have the bards who preceded me left any theme unsung?"
