@@ -18,7 +18,9 @@ graph LR
 
 Note here that `char[]` is shorthand for ‘list of characters’ (ie. a ‘string’), and `int[]` is shorthand for ‘list of integers’. 
 
-For example, when OpenAI’s [GPT-4 tokeniser](https://platform.openai.com/tokenizer) is fed the following input string:
+Let’s look at an example of a tokeniser in operation.
+
+When OpenAI’s [GPT-4 tokeniser](https://platform.openai.com/tokenizer) is fed the following input string:
 ```
 "Have the bards who preceded me left any theme unsung?"
 ```
