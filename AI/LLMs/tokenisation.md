@@ -53,7 +53,7 @@ A word tokeniser divides up an input string by implementing two basic rules:
 - Spaces are token separators.
 - Punctuation characters are tokens.
 
-When fed the input string above, a word tokeniser would produce token identifiers corresponding to the following tokens:
+When fed the input string `Have the bards who preceded me left any theme unsung?`, a word tokeniser would produce token identifiers corresponding to the following tokens:
 ```
 Have
 the
