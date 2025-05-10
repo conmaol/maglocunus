@@ -2,7 +2,9 @@
 
 ## What does a tokeniser do?
 
-A tokeniser is a machine that accepts a string of characters as its input and outputs a list of token identifiers (positive integers), which can then be fed into a large language model.
+A tokeniser is a machine that accepts a string of characters as its input and then outputs a list of token identifiers (positive integers). This output can then be fed into a large language model (LLM).
+
+Here is a diagramatic representation of how a tokeniser fits into the LLM pipeline:
 
 ```mermaid
 graph LR
