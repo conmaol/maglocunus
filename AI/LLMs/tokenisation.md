@@ -69,8 +69,8 @@ unsung
 ```
 
 Note however that the output of the GPT-4 tokeniser includes some tokens which are not whole words. Specifically:
-- The word `bards` is tokenised as ` b + ards`.
-- The word `unsung` is tokenised as ` uns + ung`.
+- The word `bards` is tokenised as ` b` followed by `ards`.
+- The word `unsung` is tokenised as ` uns` followed by `ung`.
 
 Note also that when a word in the input is preceded by a space, the GPT-4 tokeniser includes that space at the start of the (first) corresponding token, as in ` the`, ` who`, etc.
 
