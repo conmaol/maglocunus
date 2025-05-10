@@ -68,11 +68,11 @@ unsung
 ?
 ```
 
-Note however that the output of the GPT-4 tokeniser includes some tokens which are not whole words:
-- The word `bards` is tokenised as `" b", "ards"`.
-- The word `unsung` is tokenised as `" uns", "ung"`.
+Note however that the output of the GPT-4 tokeniser includes some tokens which are not whole words. Specifically:
+- The word `bards` is tokenised as ` b + ards`.
+- The word `unsung` is tokenised as ` uns + ung`.
 
-Note also that when a word in the input is preceded by a space, the GPT-4 tokeniser includes that space at the start of the (first) corresponding token, as in `" the"`, `" who"`, etc.
+Note also that when a word in the input is preceded by a space, the GPT-4 tokeniser includes that space at the start of the (first) corresponding token, as in ` the`, ` who`, etc.
 
 Word tokenisation is simple and intuitive, easy to understand and implement (notwithstanding edge cases like the word-internal apostrophes in `don’t`, `can’t`, `Mary’s` etc). Word tokenisers do not need to be trained and are purely left-to-right deterministic, meaning that they are very fast and efficient.
 
