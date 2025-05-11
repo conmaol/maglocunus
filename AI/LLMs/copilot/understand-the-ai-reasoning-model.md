@@ -54,9 +54,25 @@ The end result is a thorough, properly researched report, with references.
 
 The output, even with such a generic prompt, is a detailed, high-quality, step-by-step, referenced roadmap.
 
-§7. Prompting
+§7. The suggested anatomy for a good reasoning model prompt is as follows:
+1. goal
+2. return format
+3. warnings
+4. context dump
 
+§8. For example:
 
+> I need to plan a training session about AI. Where should I start?
+>
+> The training session should run for 2 hours and I need to deliver it online to an audience of 10 senior leaders in the non-profit industry. They are not technical people, and need to understand the value to their organisation and mission as well as ethical considerations for using AI.
+>
+> Please provide me with training objectives, content, and timing.
+>
+> Be careful to make sure everything is up-to-date and accurate. Only include things that are ready for production use right now, not forthcoming features or ideas.
+>
+> For context, I am an experienced trainer and a specialist in non-profit technology. I know that most business leaders want practical strategies that will bring value. They don’t have money to waste. I know that there are also concerns about security, data privacy (particularly around sensitive supporter data) and change. The last time I ran a training session I did a great job explaining the tech and breaking it down but the feedback was I needed to address more around the security, privacy and responsible AI. I don’t want the session to be entirely dominated by that. I need to make sure the key concepts and capabilities and value for their industry is also well covered.
+
+§9. These reasoning models underpin the <mark>Researcher</mark> and <mark>Analyst</mark> models in MS365 Copilot.
 
 ----
 
