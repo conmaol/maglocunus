@@ -12,7 +12,7 @@
 
 > I am looking at hospital data that shows that Victoria has noticably higher admissions for iron deficiency than other states in Australia. Can you help me understand why?
 
-§4. When fed to the Chat GPT-4 chat model, the system immediately outputs a simple, shallow response. However, the GPT-o3 reasoning model spends over two minutes thinking and researching, as follows:
+§4. When fed to the Chat GPT-4o chat model, the system immediately outputs a simple, shallow response. However, the GPT-o3 reasoning model spends over two minutes thinking and researching, as follows:
 
 > Thinking ...
 > Researching iron deficiency patterns ...
@@ -38,7 +38,23 @@
 
 The end result is a thorough, properly researched report, with references.
 
-§5. 
+§5. Consider now the following prompt:
+
+> I need to plan a training session about AI. Where should I start?
+
+§6. When fed into the GPT-4o model, the immediate output consists of generic suggestions. However, when fed into the GPT-o3 reasoning model, it spend around a minute searching and thinking:
+
+> Thinking ...
+> Planning an AI training session ...
+> Looking up AI training resources ...
+> Searching the web ...
+> Looking for current AI resources ...
+> Searching the web ...
+> Searching for AI training resources ...
+
+The output, even with such a generic prompt, is a detailed, high-quality, step-by-step, referenced roadmap.
+
+§7. Prompting
 
 
 
