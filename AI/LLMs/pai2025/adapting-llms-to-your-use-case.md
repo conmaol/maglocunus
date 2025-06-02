@@ -81,7 +81,7 @@ FLAN: “Negative”
 
 §2.11. <mark>Human-feedback-aligned LLMs</mark> are aligned LLMs which are also human-feedback-reinforced LLMs.
 
-§2.12. <mark>reinforcement learning from AI feedback</mark> (RLAIF) is an alternative to RLHF introduced by Anthropic. A desired set of principls and values are included in the (system) prompt (aka. ‘constitutional AI’ – *Don’t be racist! Don’t be rude!*) and the LLM generates its outputs accordingly. 
+§2.12. <mark>Reinforcement learning from AI feedback</mark> (RLAIF) is an alternative to RLHF introduced by Anthropic. A desired set of principls and values are included in the (system) prompt (aka. ‘constitutional AI’ – *Don’t be racist! Don’t be rude!*) and the LLM generates its outputs accordingly. 
 
 §2.13. Fining-tuning inevitably causes regressions, because the base model loses some capabilities. For example, instruction-tuning using FLAN typically worsens chain-of-thought (CoT) capabilities.
 
