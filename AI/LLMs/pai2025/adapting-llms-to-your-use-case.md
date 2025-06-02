@@ -15,9 +15,9 @@ Contents:
 
 Types of LLM provider:
 - companies providing proprietary LLMs
-  - OpenAI (GPT), Google (Gemini), Anthropic (Claude), Cohere, AI2l etc.
+  - OpenAI (GPT), Google (Gemini), Anthropic (Claude), Cohere, AI21 etc.
   - API endpoints – LLM-as-a-service
-  - often parner with cloud providers to provide fullt-managed services: Amazon Bedrock and SageMaker JumpStart, Google’s Vertex AI, Microsoft’s Azure OPenAI. 
+  - often parner with cloud providers to provide fullt-managed services: Amazon Bedrock and SageMaker JumpStart, Google’s Vertex AI, Microsoft’s Azure OpenAI. 
 - companies providing open source LLMs
   - companies that make LLM weights public and monetise by providing deployment services (TogetherAI)
   - companies whose primary business depends on AI adoption (Cerebras)
@@ -25,7 +25,39 @@ Types of LLM provider:
 - self-organising open source collectives and community research organisations
   - Eleuther AI, Big Science
 - academia and government
-  - Abu Dhabi’s Technology Innovation Institute (Falcon model), Tsinghua University (GLM model)
+  - Abu Dhabi’s Technology Innovation Institute, Tsinghua University
+
+Major players:
+- Google
+  - BERT, MobileBERT, T5, FLAN-T5, ByT5, Canine, UL2, Flan-UL2, Pegasus PaLM, PaLMV2, ELECTRA, Tapas, Switch
+- Microsoft
+  - DeBERTa, DialoGPT, BioGPT, MPNet
+- OpenAI
+  - GPT-2, GPT-3, GPT-3.5, GPT-4
+- Anthropic
+  - Claude, Claude-2
+- Meta
+  - RoBERTa, Llama, Llama 2, BART, OPT, Galactica
+- Amazon
+  - Titan
+- X.AI
+  - Grok
+- Cohere
+- Salesforce
+- MosaicML
+- Cerebras
+- Databricks
+- Stability AI
+- Together AI
+- Ontocord AI
+- Eleuther AI
+- Big Science
+- Tsinghua University (GLM)
+- Technology Innovation Institute (Falcon)
+- UC Berkeley (OpenLLaMA)
+- Adept AI
+- Mistral AI
+- AI21 Labs (Jurassic)
 
 ### Model flavours
 
