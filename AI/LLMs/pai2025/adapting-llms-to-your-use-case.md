@@ -13,8 +13,13 @@ Contents:
 
 ### Who are the LLM providers?
 
-Types of LLM provider:
-- companies providing proprietary LLMs, either via API endpoints (LLM-as-a-service), or in partnership with a cloud provider (Amazon Bedrock and SageMaker JumpStart, Google’s Vertex AI, Microsoft’s Azure OpenAI):
+§1.1. There are four main kinds of LLM provider:
+- companies providing proprietary LLMs
+- companies providing open-source LLMs
+- self-organising open source collectives and community research organisations (non-profits)
+- academia and government.
+
+§1.2. Some companies provide proprietary LLMs via API endpoints (LLM-as-a-service), and/or in partnership with a cloud provider (Amazon Bedrock and SageMaker JumpStart, Google’s Vertex AI, Microsoft’s Azure OpenAI). Some examples are:
   - OpenAI – GPT-2, GPT-3, GPT-3.5, GPT-4
   - Google – Gemini
   - Anthropic – Claude, Claude-2
@@ -26,37 +31,50 @@ Types of LLM provider:
   - Stability AI – StableLM
   - Adept AI – Persimmon
   - MistralAI – Mistral
-- companies providing open source LLMs
-  - companies that make LLM weights public and monetise by providing deployment services
-    - TogetherAI – RedPajama
-  - companies whose primary business depends on AI adoption:
-    - Cerebras – Cerebras-GPT, BTLM
-  - commercial research labs –
+
+§1.3. Some companies provide open-source LLMs, sometimes in addition to their proprietary offerings. For example: 
+  - Some companies make their LLM weights public and monetise by providing deployment services, eg. TogetherAI – RedPajama.
+  - Some companies have a primary business which depends on AI adoption, eg. Cerebras – Cerebras-GPT, BTLM.
+  - Some companies have their own research labs, eg.
     - Microsoft – DeBERTa, DialoGPT, BioGPT, MPNet
     - Google – BERT, MobileBERT, T5, FLAN-T5, ByT5, Canine, UL2, Flan-UL2, Pegasus PaLM, PaLMV2, ELECTRA, Tapas, Switch
     - Meta – RoBERTa, Llama, Llama 2, BART, OPT, Galactica
-    - Salesforce – CTRL, XGen, EinsteinGPT
-- self-organising open source collectives and community research organisations
+    - Salesforce – CTRL, XGen, EinsteinGPT.
+
+§1.4. Some LLMs are provided by self-organising open-source collectives and community research organisations, eg.
   - Eleuther AI – Pyythia, GPT Neo, GPT-NeoX, GPT-J
   - Big Science – BLOOM
-  - Ontocord AI – MDEL
-- academia and government
+  - Ontocord AI – MDEL.
+
+§1.5. Some LLMs are provided by academia and government, eg.
   - Abu Dhabi’s Technology Innovation Institute – Falcon
   - Tsinghua University – GLM
-  - UC Berkeley – OpenLLaMA
+  - UC Berkeley – OpenLLaMA.
 
 ### Model flavours
 
-It is customary for companies to release different-sized variants of the same pre-trained model, measured by number of parameters eg.
-- Llama 2 – 7B, 13B, 70B
+§2.1. Some LLMs are made available in different-sized variants, measured by number of parameters. For example, the Llama 2 LLM comes in 7B, 13B and 70B variants.
 
-In many cases, the pre-trained ‘base model’ has been <mark>augmented</mark> to make it more amenable to user tasks, via fine-tuning and/or human supervision.
+§2.2. Some LLMs are <mark>base LLMs</mark> – they are solely pre-trained as next-word prediction models or denoising models. Base models are generally unhelpful and uncooperative, and sometimes ‘harmful’ or inappropriate. They are like ‘rebellious teenagers’ which need tedious, trial-and-error prompt-engineering to get the right outputs.
+
+§2.3. <mark>Augmented LLMs</mark> are base LLMs which have been optimised to be more helpful to users, or to be more in line with the values and principles of the organisation responsible for them.
+
+§2.4. Some augmented LLMs are <mark>fine-tuned LLMs</mark>, which have been post-trained via supervised learning on a <mark>fine-tuning dataset</mark> – a set of desired input-output pairs.
+
+§2.5. Some augmented LLMs are <mark>human-feedback-reinforced LLMs</mark>, whose outputs are ranked by a reward model which has been trained via reinforcement learning from human feedback (RLHF) on human judgments about the base LLM outputs.
 
 #### Instruct models
 
-<mark>Instruction-tuned models</mark> are augmented models which are specialised in following instructions written in natural language. They are more helpful than base models, which are like a ‘rebellious teenager’ which needs tedious, trial-and-error prompt engineering to get the right results.
+§2.6. <mark>Instruct LLMs</mark> are augmented LLMs which have been optimised to be helpful, ie. to follow user instructions. 
 
-FLAN is a popular supervised instruction-tuning dataset, consisting of a diverse set of tasks expressed as input-output pairs.
+§2.7. <mark>FLAN</mark> is a popular instruction-tuning dataset, and is used to create instruction-tuned LLMs (ie. fine-tuned, instruct LLMs).
+
+§2.8. Here is an example of an input-output pair in the FLAN instruction-tuning dataset:
+```
+Prompt: “What is the sentiment of the following review? The pizza was ok but the service was terrible. I stopped in for a quick lunch and got the slice special but it ended up taking an hour after waiting several minutes for someone at the front counter and then again for the slices. The place was empty other than myself, yet I couldn’t get any help/service. OPTIONS: – negative – positive”
+FLAN: “Negative” 
+```
+
 
 Supervised fine-tuning can also be used to make an LLM less ‘harmful’ by training it on <mark>safety datasets</mark> that help align model outputs with the values and preferences of the organisation (eg. by refusing to answer inappropriate requests from users). This is called <mark>alignment-tuning</mark>.
 
