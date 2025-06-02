@@ -13,6 +13,20 @@ Contents:
 
 ### Who are the LLM providers?
 
+Types of LLM provider:
+- companies providing proprietary LLMs
+  - OpenAI (GPT), Google (Gemini), Anthropic (Claude), Cohere, AI2l etc.
+  - API endpoints – LLM-as-a-service
+  - often parner with cloud providers to provide fullt-managed services: Amazon Bedrock and SageMaker JumpStart, Google’s Vertex AI, Microsoft’s Azure OPenAI. 
+- companies providing open source LLMs
+  - companies that make LLM weights public and monetise by providing deployment services (TogetherAI)
+  - companies whose primary business depends on AI adoption (Cerebras)
+  - commercial research labs – Microsoft, Google, Meta, Salesforce etc.
+- self-organising open source collectives and community research organisations
+  - Eleuther AI, Big Science
+- academia and government
+  - Abu Dhabi’s Technology Innovation Institute (Falcon model), Tsinghua University (GLM model)
+
 ### Model flavours
 
 ### Open source LLMs
