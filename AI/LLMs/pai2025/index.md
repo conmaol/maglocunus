@@ -15,8 +15,8 @@ Contents:
   - [Vocabulary and tokenisation](vocabulary-and-tokenisation.md)
   - [Architectures and learning objectives](architectures-and-learning-objectives.md)
 - Utilising LLMs
-  - Adapting LLMs to your use case
-  - Fine-tuning
+  - [Adapting LLMs to your use case](adapting-llms-to-your-use-case.md)
+  - [Fine-tuning](fine-tuning.md)
   - Advanced fine-tuning techniques
   - Alignment training and reasoning
   - Inference optimisation 
