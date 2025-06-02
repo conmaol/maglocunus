@@ -67,7 +67,7 @@ Contents:
 
 §2.6. <mark>Instruct LLMs</mark> are augmented LLMs which have been optimised to be helpful, ie. to follow user instructions. 
 
-§2.7. <mark>FLAN</mark> is a popular instruction-tuning dataset, and is used to create instruction-tuned LLMs (ie. fine-tuned, instruct LLMs).
+§2.7. <mark>FLAN</mark> is a popular instruction-tuning dataset, and is used to create <mark>instruction-tuned LLMs</mark> (ie. fine-tuned, instruct LLMs).
 
 §2.8. Here is an example of an input-output pair in the FLAN instruction-tuning dataset:
 ```
@@ -75,20 +75,21 @@ Prompt: “What is the sentiment of the following review? The pizza was ok but t
 FLAN: “Negative” 
 ```
 
+§2.9. <mark>Aligned LLMs</mark> are augmented LLMs which have been optimised to be ‘safe’, ie. whose outputs are aligned with the values and preferences of the organisation, or which refuse to answer inappropriate requests from users.
 
-Supervised fine-tuning can also be used to make an LLM less ‘harmful’ by training it on <mark>safety datasets</mark> that help align model outputs with the values and preferences of the organisation (eg. by refusing to answer inappropriate requests from users). This is called <mark>alignment-tuning</mark>.
+§2.10. <mark>Alignment-tuned LLMs</mark> are aligned LLMs which have been fine-tuned on a <mark>safety dataset</mark>.
 
-A more advanced technique is <mark>reinforcement learning from human feedback</mark> (RLHF), where human beings rank candidate outputs based on helpfulness and harmlessness. These ranked outputs are then used to iteratively train a reward model for the LLM.
+§2.11. <mark>Human-feedback-aligned LLMs</mark> are aligned LLMs which are also human-feedback-reinforced LLMs.
 
-Anthropic introduced an alternative method called <mark>reinforcement learning from AI feedback</mark> (RLAIF). Humans provide an LLM with a desired set of principles and values (‘constitutional AI’ – *Don’t be racist! Don’t be rude!*) and the model then decided whether its outputs adhere to these principles.
+§2.12. <mark>reinforcement learning from AI feedback</mark> (RLAIF) is an alternative to RLHF introduced by Anthropic. A desired set of principls and values are included in the (system) prompt (aka. ‘constitutional AI’ – *Don’t be racist! Don’t be rude!*) and the LLM generates its outputs accordingly. 
 
-Instruction-tuning can have side effects – fine-tuning inevitably causes regressions, meaning that the base model loses some capabilities. For example, instruction-tuning using FLAN worsens chain-of-thought capabilities (unless CoT data is explicitly added to the fine-tuning dataset).
+§2.13. Fining-tuning inevitably causes regressions, because the base model loses some capabilities. For example, instruction-tuning using FLAN typically worsens chain-of-thought (CoT) capabilities.
 
-Alignment-tuning can also have the side effect that a pre-tuned model may be aligned to values that are not held by your own organisation.
+§2.14. One issue in using an aligned LLM is that it may not be aligned to your own values and principles.
 
 #### Chat models
 
-<mark>Chat models</mark> are instruction-tuned models that are optimised for multi-turn dialogue – Chat-GPT, Llama 2-Chat, MPT-Chat, OpenAssistant, etc. 
+§2.15. <mark>Chat LLMs</mark> are instruct LLMs that have been optimised for multi-turn dialogue with users, eg. Chat-GPT, Llama 2-Chat, MPT-Chat, OpenAssistant, etc. 
 
 #### Long-context models
 
