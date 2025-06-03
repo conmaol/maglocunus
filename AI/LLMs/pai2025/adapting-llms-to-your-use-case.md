@@ -107,25 +107,25 @@ FLAN: “Negative”
 
 ### Open source LLMs
 
-§2.21. A fully open-source LLM has all of the following published:
+§3.1. A fully open-source LLM has all of the following published:
 - model weights – all of the parameters of the LLM and its configuration, and possible model checkpoints at various stages of training
 - model code – model training code and hyperparameter settings, as well as code for pre-processing the training data
 - training data – including information or code on how it was sourced, preferably at different stages of the pre-processing pipeline, with info about the order in which the data was fed into the model
 
-§2.22. Open-source LLMs are distributed under a range of different licences:
+§3.2. Open-source LLMs are distributed under a range of different licences:
 - non-commercial
 - copy-left – can be used commercially but any derivative products must be released under the same licence
 - permissive (eg. Apache 2.0, MIT) – can be used commercially, including in proprietary applications
 
-§2.23. The Open-RAIL-M licence prohibits use of the LLM for things like medical advice, law enforcement, immigration and asylum processes.
+§3.3. The Open-RAIL-M licence prohibits use of the LLM for things like medical advice, law enforcement, immigration and asylum processes.
 
-§2.24. Creative Commons licences use the following parameters:
+§3.4. Creative Commons licences use the following parameters:
 - BY – attribution is needed
 - SA – redistribution should occur under the same terms as this licence (ie. copy-left)
 - NC – non-commercial (only for research or personal use cases)
 - ND – no derivative LLMs may be distributed
 
-§2.25. Some examples:
+§3.5. Some examples:
 - proprietary models – GPT-4, GPT-3.5 Turbo, Claude Instant, Claude 2
 - Apache 2.0 – MPT, CerebrasGPT, RedPajama, GPT-Neo X, Zephyr
 - CC-BY-SA – Stability LM
@@ -136,6 +136,8 @@ FLAN: “Negative”
 Back up to: [Top](#)
 
 ## How to choose an LLM for your task
+
+§4.1. mm
 
 ### Open source versus proprietary LLMs
 
