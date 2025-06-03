@@ -16,7 +16,7 @@ Contents:
 §1.1. There are four main kinds of LLM provider:
 - companies providing proprietary LLMs
 - companies providing open-source LLMs
-- self-organising open source collectives and community research organisations (non-profits)
+- self-organising open-source collectives and community research organisations (non-profits)
 - academia and government.
 
 §1.2. Some companies provide proprietary LLMs via API endpoints (LLM-as-a-service), and/or in partnership with a cloud provider (Amazon Bedrock and SageMaker JumpStart, Google’s Vertex AI, Microsoft’s Azure OpenAI). Some examples are:
@@ -42,7 +42,7 @@ Contents:
     - Salesforce – CTRL, XGen, EinsteinGPT.
 
 §1.4. Some LLMs are provided by self-organising open-source collectives and community research organisations, eg.
-  - Eleuther AI – Pyythia, GPT Neo, GPT-NeoX, GPT-J
+  - Eleuther AI – Pythia, GPT Neo, GPT-NeoX, GPT-J
   - Big Science – BLOOM
   - Ontocord AI – MDEL.
 
@@ -81,7 +81,7 @@ FLAN: “Negative”
 
 §2.11. <mark>Human-feedback-aligned LLMs</mark> are aligned LLMs which are also human-feedback-reinforced LLMs.
 
-§2.12. <mark>Reinforcement learning from AI feedback</mark> (RLAIF) is an alternative to RLHF introduced by Anthropic. A desired set of principls and values are included in the (system) prompt (aka. ‘constitutional AI’ – *Don’t be racist! Don’t be rude!*) and the LLM generates its outputs accordingly. 
+§2.12. <mark>Reinforcement learning from AI feedback</mark> (RLAIF) is an alternative to RLHF introduced by Anthropic. A desired set of principles and values are included in the (system) prompt (aka. ‘constitutional AI’ – *Don’t be racist! Don’t be rude!*) and the LLM generates its outputs accordingly. 
 
 §2.13. Fining-tuning inevitably causes regressions, because the base model loses some capabilities. For example, instruction-tuning using FLAN typically worsens chain-of-thought (CoT) capabilities.
 
@@ -93,11 +93,45 @@ FLAN: “Negative”
 
 #### Long-context models
 
+§2.16. Some LLMs are made available with a <mark>long-context variant</mark>, measured by the size of the context window – the sum of the number of input and output tokens processed by the LLM per invocation. For example, GPT 3.5 has a default context window of 4K tokens but also has a 16K variant. 
+
+§2.17. Unfortunately, performance is not maintained as context size increases – LLMs tend to forget things in the middle of the context window. 8K tokens appears to be the tipping point beyond which performance starts to degrade. However, things might be rapidly improving here, as seen in recent long-context Gemini and Claude LLMs.
+
+§2.18. Performance of long-context models can be measured by ‘needle-in-a-haystack’ tests. 
+
 #### Domain-adapted or task-adapted models
 
+§2.19. Some LLMs have been fine-tuned for specific tasks like summarisation or financial sentiment analysis (eg. FinBERT).
 
+§2.20. Some LLMs come in <mark>distilled</mark> versions where a smaller model is fine-tuned on outputs fro a larger model for a particular task (eg. UniversalNER is a distilled model for named entity recognition).
 
 ### Open source LLMs
+
+§2.21. A fully open-source LLM has all of the following published:
+- model weights – all of the parameters of the LLM and its configuration, and possible model checkpoints at various stages of training
+- model code – model training code and hyperparameter settings, as well as code for pre-processing the training data
+- training data – including information or code on how it was sourced, preferably at different stages of the pre-processing pipeline, with info about the order in which the data was fed into the model
+
+§2.22. Open-source LLMs are distributed under a range of different licences:
+- non-commercial
+- copy-left – can be used commercially but any derivative products must be released under the same licence
+- permissive (eg. Apache 2.0, MIT) – can be used commercially, including in proprietary applications
+
+§2.23. The Open-RAIL-M licence prohibits use of the LLM for things like medical advice, law enforcement, immigration and asylum processes.
+
+§2.24. Creative Commons licences use the following parameters:
+- BY – attribution is needed
+- SA – redistribution should occur under the same terms as this licence (ie. copy-left)
+- NC – non-commercial (only for research or personal use cases)
+- ND – no derivative LLMs may be distributed
+
+§2.25. Some examples:
+- proprietary models – GPT-4, GPT-3.5 Turbo, Claude Instant, Claude 2
+- Apache 2.0 – MPT, CerebrasGPT, RedPajama, GPT-Neo X, Zephyr
+- CC-BY-SA – Stability LM
+- open restricted – BLOOM, Gemma
+- open non-commercial – Llama
+- open commercial – Llama 2
 
 Back up to: [Top](#)
 
