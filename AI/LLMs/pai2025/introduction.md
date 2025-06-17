@@ -57,8 +57,18 @@ Back up to: [Top](#)
 
 ### The modern LLM era
 
-§2.7. The **transformer architecture** was introduced in 2017, removing the need for constructing complex task-specific architectures.
+§2.7. The **transformer architecture** was introduced in 2017, removing the need for constructing complex task-specific architectures. This was followed by the invenstion of efficient **transfer-learning** techniques and by transformer-based language models like BERT.
 
+§2.8. This new paradigm divides training into two stages:
+- **pre-training** – initialises the transformer model with general language capabilities
+- **fine-tuning** – trains the pre-trained model on more concrete tasks, like information extraction or sentiment detection.
+
+§2.9. Large tech companies have taken the lead in training progressively larger LLMs – Google, Anthropic, Meta, and especially OpenAI:
+- `GPT-1` – unsupervised pre-training on large-scale data, followed by task-specific supervised fine-tuning
+- `GPT-2` – one of the first LLMs trained on large-scale web data, and allowing natural language prompting; **zero shot prompting** means that the model can solve a variety of tasks without the need for task-specific fine-tuning.
+- `GPT-3` – 100 times larger than `GPT-2`; popularised **in-context learning** (ie. **few shot learning**), where the LLM is given some examples in the prompt on how to solve the task.
+- `GPT-4` – introduced **alignment training** to make the model more controllable and adhere to the principles and values of the model trainer. 
+- `o1` – introduces a family of models with improved reasoning capabilities, scaling **inference-time computation**.
 
 Back up to: [Top](#)
 
