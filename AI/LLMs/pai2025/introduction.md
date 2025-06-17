@@ -43,17 +43,22 @@ Back up to: [Top](#)
 
 ### Early years
 
-§2.1. The roots of LLMs lie in 1950s work on <mark>machine translation</mark> using symbolic, rule-based algorithms.
+§2.1. The roots of LLMs lie in 1950s work on **machine translation** using symbolic, rule-based algorithms.
 
-§2.2. The first <mark>chatbot</mark> was Joseph Weizenbaum’s 1960s ELIZA, which used pattern matching and regular expressions.
+§2.2. The first **chatbot** (conversational agent) was Joseph Weizenbaum’s 1960s ELIZA, which used pattern matching and regular expressions.
 
-§2.3. Rule-based systems are brittle , hard to build, and a nightmare to maintain. As a result statistical, <mark>machine learning</mark> approaches became more popular from the 1990s.
+§2.3. Rule-based systems are brittle , hard to build, and a nightmare to maintain. As a result statistical, **machine learning** approaches became more popular from the 1990s onwards.
 
-Feature engineering (selection)
+§2.4. Traditional statistical NLP relied on human-driven **feature engineering** and feature selection – the aim is to identify features (ie. characteristics of the input) that are predictive in solving a task.
 
+§2.5. Post-2010, **deep learning** became the dominant paradigm in NLP – multi-layer neural network models that learn informative features by themselves from the raw input.
 
+§2.6. Initially, deep learning relied on **task-specific architectures** – multi-layer perceptrons, convolutional neural networks, recurrent neural networks, recursiove neural networks.
 
 ### The modern LLM era
+
+§2.7. The **transformer architecture** was introduced in 2017, removing the need for constructing complex task-specific architectures.
+
 
 Back up to: [Top](#)
 
