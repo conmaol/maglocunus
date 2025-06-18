@@ -131,7 +131,29 @@ Sentiment:
 
 ### Few-shot prompting
 
+§5.11. When zero-shot prompting doesn’t work because the task is too complex or ill-defined, you can give the LLM some example input-output pairs in the prompt, to demonstrate how the problem might be solved – few-shot prompting.
+
+§5.12. It is incorrect to call this few-shot ‘learning’, since the parameters in the LLM are not updated in any way.
+
+§5.13. Here is an example of few-shot prompting:
+
+```
+Prompt: A palindrome is a word that has the same letters when spelled left to right or right to left.
+
+Examples of words that are palindromes: kayak, civic, madam, radar.
+
+Examples of words that are not palindromes: kayla, civil, merge, moment.
+
+Answer the question with either Yes or No.
+
+Is the word rominmor a palindrome?
+
+Answer:
+```
+
 ### Chain-of-thought prompting
+
+§5.14.
 
 ### Prompt chaining
 
