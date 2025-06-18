@@ -108,6 +108,27 @@ Back up to: [Top](#)
 
 ### Zero-shot prompting
 
+§5.6. Zero-shot prompting is the standard approach to prompting – you provide the LLM with an instruction and (optionally) some input text. No examples of demonstrations are provided to the LLM on how to solve the task.
+
+§5.7. Here is an example of a good zero-shot prompt:
+
+```
+Prompt: Classify the given passage accordng to its sentiment. The output can be one of Positive, Negative, Neutral.
+
+Passage: “The mashed potatoes took me back to my childhood school meals. I was so looking forward to having them again. NOT!”
+
+Sentiment:
+```
+
+§5.8. A good zero-shot prompt:
+- provides the **instruction** in a precise and explicit manner
+- describes the **output space** or the range of acceptable outputs and output format
+- **primes** the LLM to generate the correct text.
+
+§5.9. In real-world settings the output needs to be highly **controllable** to fit in automated systems.
+
+§5.10. Prompts are sensitive to model changes – <mark>prompt drift</mark>. It is a good idea to version control prompts. 
+
 ### Few-shot prompting
 
 ### Chain-of-thought prompting
