@@ -104,7 +104,7 @@ Back up to: [Top](#)
 
 §5.4. Prompting is like programming – the best prompts state instructions that are **explicit, detailed and structured**, leaving little room for ambiguity.
 
-§5.5. LLMs appears to be insensitive to word order. You can prompt ChatGPT with either ‘How do I tie my shoelaces?’ or ‘shoe tie my I how do laces?’ and get the same output!
+§5.5. LLMs appear to be insensitive to word order. You can prompt ChatGPT with either ‘How do I tie my shoelaces?’ or ‘shoe tie my I how do laces?’ and get the same output!
 
 ### Zero-shot prompting
 
