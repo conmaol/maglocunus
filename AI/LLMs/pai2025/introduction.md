@@ -96,7 +96,15 @@ Back up to: [Top](#)
 
 ## Prompting
 
-§5.1.
+§5.1. The process by which a user interacts with an LLM is called **prompting**. The prompt plus the output generated so far is known as the **context**.
+
+§5.2. Prompting an LLM is not the same as chatting to a human, and hence effective prompting is a skill that needs to be learned – this is inaccurately termed **prompt engineering**. However, as LLMs get better, the user experience will also become more intuitive.
+
+§5.3. There have been attempts to automatically optimise prompts – automatic prompt optimisation (APO), AutoPrompt.
+
+§5.4. Prompting is like programming – the best prompts state instructions that are **explicit, detailed and structured**, leaving little room for ambiguity.
+
+§5.5. LLMs appears to be insensitive to word order. You can prompt ChatGPT with either ‘How do I tie my shoelaces?’ or ‘shoe tie my I how do laces?’ and get the same output!
 
 ### Zero-shot prompting
 
