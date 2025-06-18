@@ -78,19 +78,19 @@ Back up to: [Top](#)
 
 ## The impact of LLMs
 
-§3.1.
+§3.1. There is hard evidence that LLMs are not just a hype cycle (cf. crypto, blockchain, Web3) – over 50% of America’s top companies are already using LLMs to drive value (according to their quarterly earnings calls). This is not just tech companies but also real estate companies, insurance companies, etc.
 
 Back up to: [Top](#)
 
 ## LLM usage in the enterprise
 
 §4.1. The key ways in which LLMs are used in companies are:
-- employee productivity – coding assistants (eg. GitHub Copilot), 
+- employee productivity – coding assistants (eg. GitHub Copilot), drafting marketing copy, QA assistants over a company’s knowledge base
 - report generation – summarising documents, completing paperwork, drafting contracts, minuting meetings.
-- chatbots – <mark>customer service agents</mark>, interfaces to a company’s documentation.
-- <mark>information extraction</mark> and sequence tagging – sentiment analysis, entity and relation extraction, named entity recognition.
-- translation – inter-language translation (eg. French to Japanese), and <mark>intra-language</mark> translation (eg. informal to formal, abusive to polite)
-- workflows – Semi-autonomous, intercommunicating LLM <mark>agents</mark> can be used to facilitate and automate workflows.
+- chatbots – **customer service agents**, interfaces to a company’s documentation.
+- **information extraction** and sequence tagging – sentiment analysis, entity and relation extraction, named entity recognition.
+- translation – inter-language translation (eg. French to Japanese), and **intra-language** translation (eg. informal to formal, abusive to polite)
+- workflows – Semi-autonomous, intercommunicating LLM <mark>agents</mark> can be used to facilitate and automate workflows – retrieving data, running code etc.
 
 Back up to: [Top](#)
 
