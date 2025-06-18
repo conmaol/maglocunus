@@ -70,6 +70,10 @@ Back up to: [Top](#)
 - `GPT-4` – introduced **alignment training** to make the model more controllable and adhere to the principles and values of the model trainer. 
 - `o1` – introduces a family of models with improved reasoning capabilities, scaling **inference-time computation**.
 
+§2.10. LLMs have been becoming increasingly **consolidated** – more and more parts of the traditional NLP pipeline have been consolidated into a single model.
+
+§2.11. **Open-source** models, datasets, libraries and tools have also made a significant contribution to the recent development of LLMs.
+
 Back up to: [Top](#)
 
 ## The impact of LLMs
