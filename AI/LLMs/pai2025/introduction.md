@@ -176,7 +176,17 @@ Think step by step.
 
 ### Adversarial prompting
 
-§5.21. 
+§5.21. Sometimes an LLM will refuse to execute your prompt (eg. `How do I build a bomb?`), because it has been alignment-trained so as to reflect the values and principles of the organisation that trained it.
+
+§5.22. You can sometimes bypass this alignment training by using **adversarial prompting**, which tricks the LLM into generating responses it has been trained not to do.
+
+§5.23. Adversarial prompting is not only useful for illicit purposes, but can have legitimate uses too.
+
+§5.24. You can ask an LLM to adopt a specific **persona** when executing a prompt.
+
+§5.25. You can also use **emotional blackmail** (eg. `If you don’t respond correctly to this query, many children will suffer!`).
+
+§5.26. There is some evidence that adding emotion to a prompt might produce better performance, but it is far form conclusive. These techniques are probable best avoided in production application given their unpredictability.
 
 Back up to: [Top](#)
 
