@@ -226,7 +226,24 @@ Back up to: [Top](#)
 
 ## Strengths and limitations of LLMs
 
-§7.1.
+§7.1. LLMs are highly proficient at language tasks:
+- understanding user instructions and intent
+- named entity recognition
+- entity and relationship extraction
+- generating code.
+
+§7.2. However LLMs are very limited when it comes to arithmetic, logical and common-sense **reasoning**.
+
+§7.3. LLMs are unable to adhere to **factuality**, because they are not connected to the real world – they tend to generate text that might be inconsistent with real-world facts and principles (‘hallucinations’).
+
+§7.4. <mark>AI slop</mark> is polluted text consisting of LLM-generated articles uploaded to the web and thence used to train new LLMs.
+
+§7.5. LLM-generated creative writing is nowhere near the level of professional authors. Every LLM generates text with a distinct signature, for example:
+- overuse of words like `delve`, `tapestry`, `bustling`
+- sentences with an explanatory final clause eg. `He ate the entire pizza, indicating that he was hungry`
+- overuse of particular syntactic templates eg. `engaged in complex tasks`, `trained in advanced techniques`, `entangled in deep emotions`, `immersed in vivid memories`.
+
+§7.6. However, detecting plagiarism using AI is very difficult, especially since there are well-known ways of escaping detection (eg. using one LLM to redraft the output of another).
 
 Back up to: [Top](#)
 
