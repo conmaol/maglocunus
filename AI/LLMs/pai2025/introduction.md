@@ -192,7 +192,35 @@ Back up to: [Top](#)
 
 ## Accessing LLMs through an API
 
-§6.1.
+§6.1. You can access OpenAI LLMs using the Chat Completion API:
+
+```
+import os
+import openai
+openai.api_key = ...
+output = openai.ChatCompletion.create(
+  model = "gpt-4o-mini",
+  messages = [
+    {"role": "system", "content": "You are an expert storywriter."},
+    {"role": "user", "content": "Write me a short children’s story about a dog and an elephant stopping being friends with each other."}
+  ]
+)
+print(output.choices[0].message)
+```
+
+§6.2. The API **roles** can be:
+- system – used to specify an overarching prompt
+- user – user inputs
+- assistant – model responses
+- tool – used to interact with external software tools
+
+§6.3. The OpenAI API makes available the following **parameters**:
+- `n` – the number of different completions you want the model to generate (eg. `n=5`). For tasks with high reliability requirements, it s best to generate multiple completions and then use a post-processing function to choose the best one.
+- `stop`, `max_completion_tokens` – used to limit the length of the generated output, for example by stopping when a particular token is generated.
+- `presence_penalty`, `frequency_penalty` – used to limit the repetitiveness of of the generated output, for example by penalising the probability for tokens that have already appeared in the output.
+- `logit_bias` – specify the tokens whose generation probability you want to increase or decrease.
+- `top_p`, `temperature` – specify a strategy to choose the next token to generate given the token probability distribution. A higher temperature setting results in more creatve and diverse outputs.
+- `logprobs` – provides the most probably tokens for each output token along with their log probabilities.
 
 Back up to: [Top](#)
 
