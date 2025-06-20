@@ -253,7 +253,7 @@ Back up to: [Top](#)
 1. The user uploads a PDF document via the UI.
 2. The document is parsed, the text is extracted, and it is chunked into paragraphs.
 3. Each paragraph is converted into a semantic vector using the `all-MiniLM-L6-v2` embedding model.
-4. Each vector is stored in a new Chroma vector database.
+4. Each vector is stored in a Chroma vector database.
 
 ```
 !pip install langchain unstructured
