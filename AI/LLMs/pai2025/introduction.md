@@ -47,17 +47,17 @@ Back up to: [Top](#)
 
 §2.2. The first **chatbot** (conversational agent) was Joseph Weizenbaum’s 1960s ELIZA, which used pattern matching and regular expressions.
 
-§2.3. Rule-based systems are brittle , hard to build, and a nightmare to maintain. As a result statistical, **machine learning** approaches became more popular from the 1990s onwards.
+§2.3. Rule-based systems are brittle , hard to build, and a nightmare to maintain. As a result, statistical **machine learning** approaches became more popular from the 1990s onwards.
 
 §2.4. Traditional statistical NLP relied on human-driven **feature engineering** and feature selection – the aim is to identify features (ie. characteristics of the input) that are predictive in solving a task.
 
 §2.5. Post-2010, **deep learning** became the dominant paradigm in NLP – multi-layer neural network models that learn informative features by themselves from the raw input.
 
-§2.6. Initially, deep learning relied on **task-specific architectures** – multi-layer perceptrons, convolutional neural networks, recurrent neural networks, recursiove neural networks.
+§2.6. Initially, deep learning relied on **task-specific architectures** – multi-layer perceptrons, convolutional neural networks, recurrent neural networks, recursive neural networks.
 
 ### The modern LLM era
 
-§2.7. The **transformer architecture** was introduced in 2017, removing the need for constructing complex task-specific architectures. This was followed by the invenstion of efficient **transfer-learning** techniques and by transformer-based language models like BERT.
+§2.7. The **transformer architecture** was introduced in 2017, removing the need for constructing complex task-specific architectures. This was followed by the invention of efficient **transfer-learning** techniques and by transformer-based language models like BERT.
 
 §2.8. This new paradigm divides training into two stages:
 - **pre-training** – initialises the transformer model with general language capabilities
@@ -113,7 +113,7 @@ Back up to: [Top](#)
 §5.7. Here is an example of a good zero-shot prompt:
 
 ```
-Prompt: Classify the given passage accordng to its sentiment. The output can be one of Positive, Negative, Neutral.
+Prompt: Classify the given passage according to its sentiment. The output can be one of Positive, Negative, Neutral.
 
 Passage: “The mashed potatoes took me back to my childhood school meals. I was so looking forward to having them again. NOT!”
 
@@ -162,7 +162,7 @@ Prompt: Solve the equation: 34 + 44 + 3 * 23 / 3 * 2.
 Think step by step.
 ```
 
-§5.16. Many LLM have been **instruction-tuned** to solve problems step-by-step without being explicitly prompted to do so. LLMs with a user interface, the instruction to think step-by-step may be hidden in the **system prompt**.
+§5.16. Many LLMs have been **instruction-tuned** to solve problems step-by-step without being explicitly prompted to do so. For LLMs with a user interface, the instruction to think step-by-step may be hidden in the **system prompt**.
 
 §5.17. For tasks involving common-sense reasoning (rather than mathematical or logical reasoning), gains from CoT prompting are limited. For knowledge-based tasks, CoT prompting might even hurt!
 
@@ -186,7 +186,7 @@ Think step by step.
 
 §5.25. You can also use **emotional blackmail** (eg. `If you don’t respond correctly to this query, many children will suffer!`).
 
-§5.26. There is some evidence that adding emotion to a prompt might produce better performance, but it is far form conclusive. These techniques are probable best avoided in production application given their unpredictability.
+§5.26. There is some evidence that adding emotion to a prompt might produce better performance, but it is far from conclusive. These techniques are probably best avoided in production applications given their unpredictability.
 
 Back up to: [Top](#)
 
@@ -219,8 +219,8 @@ print(output.choices[0].message)
 - `stop`, `max_completion_tokens` – used to limit the length of the generated output, for example by stopping when a particular token is generated.
 - `presence_penalty`, `frequency_penalty` – used to limit the repetitiveness of of the generated output, for example by penalising the probability for tokens that have already appeared in the output.
 - `logit_bias` – specify the tokens whose generation probability you want to increase or decrease.
-- `top_p`, `temperature` – specify a strategy to choose the next token to generate given the token probability distribution. A higher temperature setting results in more creatve and diverse outputs.
-- `logprobs` – provides the most probably tokens for each output token along with their log probabilities.
+- `top_p`, `temperature` – specify a strategy to choose the next token to generate given the token probability distribution. A higher temperature setting results in more creative and diverse outputs.
+- `logprobs` – provides the most probable tokens for each output token along with their log probabilities.
 
 Back up to: [Top](#)
 
