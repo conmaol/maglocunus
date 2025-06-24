@@ -296,7 +296,13 @@ Back up to: [Top](#)
 
 ## From prototype to production
 
-§9.1.
+§9.1. To put a prototype of an LLM-based system into production, a lot of work needs to be done to ensure accuracy and reliability.
+
+§9.2. You need to understand how LLMs work under the hood – how are LLMs built and trained.
+
+§9.3. You need to know how to compare and evaluate different LLMs.
+
+§9.4. You need to know how to 
 
 Back up to: [Top](#)
 
