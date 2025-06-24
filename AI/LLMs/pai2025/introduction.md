@@ -47,7 +47,7 @@ Back up to: [Top](#)
 
 §2.2. The first **chatbot** (conversational agent) was Joseph Weizenbaum’s 1960s ELIZA, which used pattern matching and regular expressions.
 
-§2.3. Rule-based systems are brittle , hard to build, and a nightmare to maintain. As a result, statistical **machine learning** approaches became more popular from the 1990s onwards.
+§2.3. Rule-based systems are brittle, hard to build, and a nightmare to maintain. As a result, statistical **machine learning** approaches became more popular from the 1990s onwards.
 
 §2.4. Traditional statistical NLP relied on human-driven **feature engineering** and feature selection – the aim is to identify features (ie. characteristics of the input) that are predictive in solving a task.
 
@@ -295,6 +295,8 @@ conversational_history += [(query, output['answer'])]
 Back up to: [Top](#)
 
 ## From prototype to production
+
+§9.1.
 
 Back up to: [Top](#)
 
