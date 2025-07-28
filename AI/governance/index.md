@@ -23,6 +23,10 @@ UKGov (DSIT) [AI Opportunities Action Plan](https://www.gov.uk/government/public
   - [The real winners from Trump’s ‘AI action plan’? Tech companies](https://www.theguardian.com/technology/2025/jul/25/trump-ai-action-plan) (2025-07-25)
   - [China calls for global AI cooperation days after Trump administration unveils low-regulation strategy](https://www.theguardian.com/technology/2025/jul/26/china-calls-for-global-ai-cooperation-days-after-trump-administration-unveils-low-regulation-strategy) (2025-07-25)
 
+Biden Executive Order 14110 (2023-10-30):
+- [Wikipedia](https://en.wikipedia.org/wiki/Executive_Order_14110)
+- The Guardian [Biden hails ‘bold action’ of US government with order on safe use of AI](https://www.theguardian.com/technology/2023/oct/30/biden-orders-tech-firms-to-share-ai-safety-test-results-with-us-government) (2023-10-30)
+
 ## Courses
 
 - University of Edinburgh [AI and Generative AI for Leaders: Empowering Digital Transformation and Strategic Decision Making](https://www.business-school.ed.ac.uk/executive-education/ai-and-generative-ai-for-leaders)
