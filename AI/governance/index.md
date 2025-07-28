@@ -15,7 +15,13 @@ UKGov (DSIT) [AI Opportunities Action Plan](https://www.gov.uk/government/public
 
 ## US
 
+[Winning the Race: America’s AI Action Plan](https://www.whitehouse.gov/wp-content/uploads/2025/07/Americas-AI-Action-Plan.pdf) (July 2025):
 - AI Daily Brief [America’s AI Action Plan](https://www.youtube.com/watch?v=UeX3YY7XbxE) (2025-07-24)
+- The Guardian:
+  - [Climate advocates outraged at Trump administration plans to fast-track AI sector](https://www.theguardian.com/us-news/2025/jul/23/trump-ai-climate-change) (2025-07-23)
+  - [Trump signs executive orders targeting ‘woke’ AI models and regulation](https://www.theguardian.com/us-news/2025/jul/23/trump-executive-orders-woke-ai) (2025-07-24)
+  - [The real winners from Trump’s ‘AI action plan’? Tech companies](https://www.theguardian.com/technology/2025/jul/25/trump-ai-action-plan) (2025-07-25)
+  - [China calls for global AI cooperation days after Trump administration unveils low-regulation strategy](https://www.theguardian.com/technology/2025/jul/26/china-calls-for-global-ai-cooperation-days-after-trump-administration-unveils-low-regulation-strategy) (2025-07-25)
 
 ## Courses
 
