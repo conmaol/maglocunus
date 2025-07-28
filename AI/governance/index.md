@@ -17,6 +17,12 @@ UKGov (DSIT) [AI Opportunities Action Plan](https://www.gov.uk/government/public
 
 - AI Daily Brief [America’s AI Action Plan](https://www.youtube.com/watch?v=UeX3YY7XbxE) (2025-07-24)
 
+## Courses
+
+- University of Edinburgh [AI and Generative AI for Leaders: Empowering Digital Transformation and Strategic Decision Making](https://www.business-school.ed.ac.uk/executive-education/ai-and-generative-ai-for-leaders)
+- LSE [AI Law, Policy, and Governance](https://info.lse-online.getsmarter.com/presentations/lp/lse-ai-law-policy-and-governance-online-certificate-course)
+  - [more info](https://lse-online.getsmarter.com/presentations/info/lse-ai-law-policy-and-governance-online-certificate-course)
+
 ----
 
 Bac up to: [AI](../index.md)
