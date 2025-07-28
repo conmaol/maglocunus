@@ -1,7 +1,7 @@
 # Artificial intelligence
 
 - [LLMs](LLMs/index.md)
-- 
+- [AI governance](governance/index.md)
 
 Miscellaneous:
 - Notes from LinkedIn Learning course [*Generative AI vs. Traditional AI*](misc/GenAI-TradAI.md) by Doug Rose (2023)
