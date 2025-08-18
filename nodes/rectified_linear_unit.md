@@ -25,6 +25,7 @@ For example:
 
 See also:
 - Wikipedia page on [ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks))
+- ReLU is also known as the [ramp function](https://en.wikipedia.org/wiki/Ramp_function)
 
 ----
 
