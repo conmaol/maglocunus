@@ -8,7 +8,7 @@ Note that:
 
 Examples of activation functions are:
 - [ReLU](ReLU.md) – the rectified linear unit function
-- sigmoid / logistic something
+- the [standard logistic function](standard_logistic_function.md)
 
 See also:
 - [Wikipedia page](https://en.wikipedia.org/wiki/Activation_function)
