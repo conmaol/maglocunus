@@ -12,6 +12,9 @@ The blue line in the following graph represents the ReLU function:
 
 Note that the output of ReLU is never negative and there is no maximum value. ReLU is essentially just the identify function for non-negative inputs.
 
+See also:
+- [Wikipedia page](https://en.wikipedia.org/wiki/Rectifier_(neural_networks))
+
 ----
 
 Back to: [Index](index.md)
