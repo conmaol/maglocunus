@@ -1,10 +1,15 @@
 # Artificial neurons
 
-An artificial neuron is a function from vectors of real numbers to real numbers, loosely resembling the way a biological neuron works.
+An artificial neuron is a very simple computational model of how a biological neuron works.
 
-The input to an artificial neuron is a vector of real numbers.
+Mathematically, an artificial neuron can be seen as a function from vectors of real numbers to real numbers.
 
-[diagram]
+For example:
+
+```mermaid
+graph LR
+    A(( )) -- "[1.2, -7.3, 0.8]" --> B(neuron) -- "4.6" --> C(( ))
+```
 
 And the output from an artificial neron is a real number.
 
