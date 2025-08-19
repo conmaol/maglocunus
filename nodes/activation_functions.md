@@ -10,7 +10,7 @@ Examples of commonly used activation functions are:
 - the [standard logistic function](standard_logistic_function.md) (sigmoid)
 - the [rectified linear unit](rectified_linear_unit.md) function (ReLU)
 - the [softplus](softplus.md) function (a smoothed version of ReLU)
-- the hyperbolic tangent function
+- the [hyperbolic tangent function](hyperbolic_tangent_function.md)
 
 See also:
 - Wikipedia page on [activation functions](https://en.wikipedia.org/wiki/Activation_function)
