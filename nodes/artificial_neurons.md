@@ -34,7 +34,7 @@ Here is a diagram representing this artificial neuron:
 ```mermaid
 
 graph LR
-    A(( )) -- "0.4" --> D[+3.1]
+    A(( )) -- "0.4" --> D([+3.1])
     B(( )) -- "-5.7" --> D
     C(( )) -- "6.0" --> D
     D -- "tanh" --> E(( ))
