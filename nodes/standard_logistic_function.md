@@ -1,6 +1,6 @@
 # The standard logistic function
 
-The standard logistic function is a sigmoid function, commonly used as an [activation function](activation_functions.md) in artificial neurons. 
+The standard logistic function is a sigmoid function, commonly used as an [activation function](activation_functions.md) inside an artificial neuron. 
 
 The standard logistic function is defined as the function $f$ such that:
 - $f(x)=\frac{1}{1+e^{-x}}=\frac{e^x}{e^x+1}$
