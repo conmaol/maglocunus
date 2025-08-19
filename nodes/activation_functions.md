@@ -1,6 +1,6 @@
 # Activation functions
 
-Every artificial neuron has a characteristic activation function, which determines what the neuron’s output should be, based on the sum of its weighted inputs.
+Every [artificial neuron](artificial_neurons.md) has a characteristic activation function, which determines what the neuron’s output should be, based on the sum of its weighted inputs.
 
 Note that:
 - The input to an activation function is a real number (positive or negative).
