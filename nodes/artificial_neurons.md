@@ -22,6 +22,7 @@ The artificial neuron:
 
 Here is an example of an artificial neuron:
 - $f(x_1,x_2,x_3) = \tanh((x_1,x_2,x_3) \cdot (0.4,-5.7,6.0) + 3.1) = \tanh(0.4x_1 - 5.7x_2 + 6x_3 + 3.1)$
+- ie. $f = \lambda(x_1,x_2,x_3).\tanh(0.4x_1 - 5.7x_2 + 6x_3 + 3.1)$
 
 In this artificial neuron:
 - the weights are $(0.4,-5.7,6.0)$
