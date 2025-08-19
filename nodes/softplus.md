@@ -1,6 +1,6 @@
 # Softplus
 
-The softplus function is a commonly used [activation function](activation_functions.md) in artificial neurons. 
+The softplus function is a commonly used [activation function](activation_functions.md) inside an artificial neuron. 
 
 The softplus function is defined as the function $f$ such that:
 - $f(x)=\ln(1+e^x)$
