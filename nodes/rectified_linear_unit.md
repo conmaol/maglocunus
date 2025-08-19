@@ -1,6 +1,6 @@
 # Rectified linear unit
 
-The rectified linear unit (ReLU) function is a commonly used [activation function](activation_functions.md) in artificial neurons. 
+The rectified linear unit (ReLU) function is a commonly used [activation function](activation_functions.md) inside an artificial neuron. 
 
 ReLU is defined as the function $f$ such that:
 - If $x<0$, then $f(x)=0$.
