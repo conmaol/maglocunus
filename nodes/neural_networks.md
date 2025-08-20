@@ -15,7 +15,7 @@ graph LR
     F -- "softplus" --> G(( ))
 ```
 
-This neural network has one input and one output. 
+This neural network has one input and one output. In other words, its ‘type’ is $\mathbb{R}\to\mathbb{R}$. 
 
 ### The perceptrons
 
@@ -33,6 +33,7 @@ graph LR
 
 Note that:
 - $p_1 = \lambda x.\mathbf{softplus}(2.14 - 34.4x)$
+- $p_1 \vdash \mathbb{R}\to\mathbb{R}$
 
 #### Perceptron *p<sub>2</sub>*
 
@@ -46,6 +47,7 @@ graph LR
 
 Note that:
 - $p_2 = \lambda x.\mathbf{softplus}(1.29 - 2.52x)$
+- $p_2 \vdash \mathbb{R}\to\mathbb{R}$
 
 #### Perceptron *p<sub>3</sub>*
 
@@ -60,6 +62,7 @@ graph LR
 
 Note that:
 - $p_3 = \lambda(x,y).\mathbf{softplus}(2.28y - 1.3x -0.58)$
+- $p_3 \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
 
 ### The first layer *l<sub>1</sub>*
 
