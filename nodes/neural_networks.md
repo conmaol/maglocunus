@@ -32,8 +32,7 @@ graph LR
 ```
 
 Note that:
-- $p_1 = \lambda x.\mathbf{softplus}(2.14 - 34.4x)$
-- $p_1 \vdash \mathbb{R}\to\mathbb{R}$
+- $p_1 = \lambda x(\mathbf{softplus}(2.14 - 34.4x)) \vdash \mathbb{R}\to\mathbb{R}$
 
 #### Perceptron *p<sub>2</sub>*
 
@@ -46,8 +45,7 @@ graph LR
 ```
 
 Note that:
-- $p_2 = \lambda x.\mathbf{softplus}(1.29 - 2.52x)$
-- $p_2 \vdash \mathbb{R}\to\mathbb{R}$
+- $p_2 = \lambda x(\mathbf{softplus}(1.29 - 2.52x)) \vdash \mathbb{R}\to\mathbb{R}$
 
 #### Perceptron *p<sub>3</sub>*
 
@@ -61,8 +59,7 @@ graph LR
 ```
 
 Note that:
-- $p_3 = \lambda(x,y).\mathbf{softplus}(2.28y - 1.3x -0.58)$
-- $p_3 \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
+- $p_3 = \lambda(x,y)(\mathbf{softplus}(2.28y - 1.3x -0.58)) \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
 
 ### The first layer *l<sub>1</sub>*
 
@@ -80,17 +77,18 @@ graph LR
 
 The first layer is itself a neural network, with one input and two outputs. It consists of two perceptrons, $p_1$ and $p_2$.
 
-The function underlying this layer is:
-- $l_1 = \lambda x.(p_1(x),p_2(x)) = \lambda x.(\mathbf{softplus}(2.14 - 34.4x),\mathbf{softplus}(1.29 - 2.52x)))$
-
-We can define the $|$ perceptron combinator as follows, where both $p$ and $q$ are one-input perceptrons:
-- $p|q = \lambda x.(p(x),q(x))$
-
-Thus:
-- $l_1 = p_1 | p_2$
+Note that:
+- $p_1 = \lambda x(\mathbf{softplus}(2.14 - 34.4x)) \vdash \mathbb{R}\to\mathbb{R}$
+- $p_2 = \lambda x(\mathbf{softplus}(1.29 - 2.52x)) \vdash \mathbb{R}\to\mathbb{R}$
+- $| = \lambda(p,q)\lambda x(p(x),q(x)) \vdash (\mathbb{R}\to\mathbb{R}) \times (\mathbb{R}\to\mathbb{R}) \to (\mathbb{R}\to\mathbb{R}\times\mathbb{R})$
+- $l_1 = p_1|p_2$
+- $l_1 = (\lambda(p,q)\lambda x(p(x),q(x))) (p_1,p_2)$
+- $l_1 = \lambda x(p_1(x),p_2(x))$
+- $l_1 = \lambda x(\lambda y(\mathbf{softplus}(2.14 - 34.4y))(x),\lambda y(\mathbf{softplus}(1.29 - 2.52y))(x))$
+- $l_1 =  \lambda x(\mathbf{softplus}(2.14 - 34.4x), \mathbf{softplus}(1.29 - 2.52x)) \vdash \mathbb{R}\to\mathbb{R}\times\mathbb{R}$
 
 Note that another combinator is thus also possible, where both $p$ and $q$ are one-input perceptrons:
-- $p\\|q = \lambda(x,y)(p(x),q(y))$
+- $p\\|q = \lambda(x,y)(p(x),q(y)) \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}\times\mathbb{R}$
 
 
 
