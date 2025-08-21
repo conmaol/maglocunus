@@ -23,7 +23,7 @@ Note that:
 - $\mathbf{P_1} = \lambda x(\mathbf{softplus}(2.14 - 34.4x)) \vdash \mathbb{R}\to\mathbb{R}$
 - $\mathbf{P_2} = \lambda x(\mathbf{softplus}(1.29 - 2.52x)) \vdash \mathbb{R}\to\mathbb{R}$
 
-Since these two perceptrons have the same arity they can be combined into a perceptron stack:
+Since these two perceptrons have the same arity they can be combined into the perceptron stack $\mathbf{S_1}$:
 
 ```mermaid
 graph LR
