@@ -134,12 +134,42 @@ This neural network has two inputs and three outputs. In other words, its type i
 ### The perceptrons
 
 The five perceptrons in this network are:
-- $p_1 = ... \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
-- $p_2 = ... \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
-- $p_3 = ... \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
-- $p_4 = ... \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
-- $p_5 = ... \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
+- $p_1 = \lambda(x,y)(\mathbf{ReLU}(0.6y - 2.5x + 1.6)) \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
+- $p_2 = \lambda(x,y)(\mathbf{ReLU}(0.4y - 1.5x + 0.7)) \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
+- $p_3 = \lambda(x,y)(\mathbf{ReLU}(1.5y - 0.1x)) \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
+- $p_4 = \lambda(x,y)(\mathbf{ReLU}(2.4x - 5.2y)) \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
+- $p_5 = \lambda(x,y)(\mathbf{ReLU}(3.7y - 2.2x + 1)) \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
 
+### The first layer
+
+Here is the first layer in this network:
+
+```mermaid
+graph LR
+    A(( )) -- "-2.5" --> C(["p1: 1.6"])
+    B(( )) -- "0.6" --> C
+    A -- "-2.5" --> D(["p2: 0.7"])
+    B -- "0.4" --> D
+    C -- "ReLU" --> E(( ))
+    D -- "ReLU" --> F(( ))
+```
+
+### The second layer
+
+Here is the second layer in the network:
+
+```mermaid
+graph LR
+    E(( )) -- "-0.1" --> G(["p3: 0"])
+    E -- "2.4" --> H(["p4: 0"])
+    E -- "-2.2" --> J(["p5: 1"])
+    F(( )) -- "1.5" --> G
+    F -- "-5.2" --> H
+    F -- "3.7" --> J
+    G -- "ReLU" --> L(( ))
+    H -- "ReLU" --> M(( ))
+    J -- "ReLU" --> N(( ))
+```
 
 
 ----
