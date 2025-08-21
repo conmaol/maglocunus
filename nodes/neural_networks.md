@@ -154,6 +154,19 @@ graph LR
     D -- "ReLU" --> F(( ))
 ```
 
+Here are the two perceptrons:
+- $p_1 = \lambda(x,y)(\mathbf{ReLU}(0.6y - 2.5x + 1.6)) \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
+- $p_2 = \lambda(x,y)(\mathbf{ReLU}(0.4y - 1.5x + 0.7)) \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
+
+And these are the combinators we know about so far:
+- $| = \lambda(p,q)\lambda x(p(x),q(x)) \vdash (\mathbb{R}\to\mathbb{R}) \times (\mathbb{R}\to\mathbb{R}) \to (\mathbb{R}\to\mathbb{R}\times\mathbb{R})$
+- $\\| = \lambda(p,q)\lambda(x,y)(p(x),q(y)) \vdash (\mathbb{R}\to\mathbb{R}) \times (\mathbb{R}\to\mathbb{R}) \to (\mathbb{R}\times\mathbb{R}\to\mathbb{R}\times\mathbb{R})$
+- $\circ = \lambda(n,m)\lambda x(m(n(x))) \vdash (\mathbb{R}\to\mathbb{R}\times\mathbb{R}) \times (\mathbb{R}\times\mathbb{R}\to\mathbb{R}) \to \mathbb{R}\to\mathbb{R}$
+
+So we are going to need a new combinator here, to combine two $\mathbb{R}\times\mathbb{R}\to\mathbb{R}$:
+
+
+
 ### The second layer
 
 Here is the second layer in the network:
