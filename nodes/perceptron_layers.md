@@ -4,6 +4,8 @@
 
 ### Unary perceptron layers
 
+Two or more unary perceptrons can be combined into a unary perceptron layer.
+
 Here is perceptron $\mathbf{P_1}$, with one input:
 
 ```mermaid
