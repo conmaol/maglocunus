@@ -222,8 +222,8 @@ This is where we are:
 - $l_2 = p_3\otimes p_4\otimes p_4 = \lambda(x,y)(\mathbf{ReLU}(1.5y - 0.1x),\mathbf{ReLU}(2.4x - 5.2y),\mathbf{ReLU}(3.7x - 2.2y + 1)) \vdash (\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R},\mathbb{R})$
 - $\circ = \lambda(n,m)\lambda x(m(n(x))) \vdash (\mathbb{R}\to(\mathbb{R},\mathbb{R}),(\mathbb{R},\mathbb{R})\to\mathbb{R}) \to (\mathbb{R}\to\mathbb{R})$
 
-To compose $l_1$ and $l_2$ in series, we are going to have to overload the combinator $\circ$:
-- $\circ = \lambda(n,m)\lambda(x,y)(m(n(x,y))) \vdash ((\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R}),(\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R},\mathbb{R})) \to ((\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R},\mathbb{R}))$
+To compose $l_1$ and $l_2$ in series, we are going to have to generalise the combinator $\circ$:
+- $\circ = \lambda(n,m)\lambda(x_1,x_2,\ldots,x_n)(m(n(x_1,x_2,\ldots,x_n))) \vdash (X\to Y,Y\to Z) \to(X\to Z)$
 
 Does this work out?
 - $N_2 = l_1\circ l_2$
