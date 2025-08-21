@@ -106,6 +106,42 @@ So:
 - $N_1 = \lambda x(\mathbf{softplus}(2.28(\mathbf{softplus}(1.29 - 2.52x)) - 1.3(\mathbf{softplus}(2.14 - 34.4x)) - 0.58))$
 - $N_1 = (p_1|p_2)\circ p_3 \vdash \mathbb{R}\to\mathbb{R}$  
 
+## A more complex neural network
+
+Here is a diagram of a slightly more complex neural network, taken from another StatQuest tutorial [Multiple inputs and outputs](https://www.youtube.com/watch?v=83LYR-1IcjA):
+
+```mermaid
+graph LR
+    A(( )) -- "-2.5" --> C(["p1: 1.6"])
+    B(( )) -- "0.6" --> C
+    A -- "-2.5" --> D(["p2: 0.7"])
+    B -- "0.4" --> D
+    C -- "ReLU" --> E(( ))
+    D -- "ReLU" --> F(( ))
+    E -- "-0.1" --> G(["p3: 0"])
+    E -- "2.4" --> H(["p4: 0"])
+    E -- "-2.2" --> J(["p5: 1"])
+    F -- "1.5" --> G
+    F -- "-5.2" --> H
+    F -- "3.7" --> J
+    G -- "ReLU" --> L(( ))
+    H -- "ReLU" --> M(( ))
+    J -- "ReLU" --> N(( ))
+```
+
+This neural network has two inputs and three outputs. In other words, its type is $\mathbb{R}\times\mathbb{R}\to\mathbb{R}\times\mathbb{R}\times\mathbb{R}$. 
+
+### The perceptrons
+
+The five perceptrons in this network are:
+- $p_1 = ... \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
+- $p_2 = ... \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
+- $p_3 = ... \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
+- $p_4 = ... \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
+- $p_5 = ... \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
+
+
+
 ----
 
 Back to: [Index](index.md)
