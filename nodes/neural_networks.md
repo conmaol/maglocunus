@@ -59,7 +59,7 @@ graph LR
 ```
 
 Note that:
-- $p_3 = \lambda(x,y)(\mathbf{softplus}(2.28y - 1.3x -0.58)) \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
+- $p_3 = \lambda(x,y)(\mathbf{softplus}(2.28y - 1.3x -0.58)) \vdash (\mathbb{R},\mathbb{R})\to\mathbb{R}$
 
 ### The first layer *l<sub>1</sub>*
 
@@ -80,24 +80,30 @@ The first layer is itself a neural network, with one input and two outputs. It c
 Note that:
 - $p_1 = \lambda x(\mathbf{softplus}(2.14 - 34.4x)) \vdash \mathbb{R}\to\mathbb{R}$
 - $p_2 = \lambda x(\mathbf{softplus}(1.29 - 2.52x)) \vdash \mathbb{R}\to\mathbb{R}$
-- $| = \lambda(p,q)\lambda x(p(x),q(x)) \vdash (\mathbb{R}\to\mathbb{R}) \times (\mathbb{R}\to\mathbb{R}) \to (\mathbb{R}\to\mathbb{R}\times\mathbb{R})$
+- $| = \lambda(p,q)\lambda x(p(x),q(x)) \vdash (\mathbb{R}\to\mathbb{R},\mathbb{R}\to\mathbb{R}) \to (\mathbb{R}\to(\mathbb{R},\mathbb{R}))$
 - $l_1 = p_1|p_2$
 - $l_1 = (\lambda(p,q)\lambda x(p(x),q(x))) (p_1,p_2)$
 - $l_1 = \lambda x(p_1(x),p_2(x))$
 - $l_1 = \lambda x(\lambda y(\mathbf{softplus}(2.14 - 34.4y))(x),\lambda y(\mathbf{softplus}(1.29 - 2.52y))(x))$
-- $l_1 = \lambda x(\mathbf{softplus}(2.14 - 34.4x), \mathbf{softplus}(1.29 - 2.52x)) \vdash \mathbb{R}\to\mathbb{R}\times\mathbb{R}$
+- $l_1 = \lambda x(\mathbf{softplus}(2.14 - 34.4x), \mathbf{softplus}(1.29 - 2.52x)) \vdash \mathbb{R}\to(\mathbb{R},\mathbb{R})$
 
-Note that another combinator is thus also possible, where both $p$ and $q$ are one-input perceptrons:
-- $p\\|q = \lambda(x,y)(p(x),q(y)) \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}\times\mathbb{R}$
+Note the following combinator used here:
+- $| = \lambda(p,q)\lambda x(p(x),q(x)) \vdash (\mathbb{R}\to\mathbb{R},\mathbb{R}\to\mathbb{R}) \to (\mathbb{R}\to(\mathbb{R},\mathbb{R}))$
+
+The $|$ combinator combines two $\mathbb{R}\to\mathbb{R}$ perceptrons (or networks), in parallel, into a single $\mathbb{R}\to(\mathbb{R},\mathbb{R})$ layer.
+
+Note that another combinator is thus also possible, to combine two $\mathbb{R}\to\mathbb{R}$ perceptrons/networks in parallel, but this time into a $(\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R})$ layer:
+- $\\| = \lambda(p,q)\lambda(x,y)(p(x),q(y)) \vdash (\mathbb{R}\to\mathbb{R},\mathbb{R}\to\mathbb{R}) \to ((\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R}))$
+- $p\\|q = \lambda(x,y)(p(x),q(y)) \vdash (\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R})$
 
 ### The second layer
 
 The second layer in the neural network above is just the perceptron $p_3$.
 
 So: 
-- $l_1 = p_1|p_2 = \lambda x(\mathbf{softplus}(2.14 - 34.4x), \mathbf{softplus}(1.29 - 2.52x)) \vdash \mathbb{R}\to\mathbb{R}\times\mathbb{R}$
-- $p_3 = \lambda(x,y)(\mathbf{softplus}(2.28y - 1.3x -0.58)) \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
-- $\circ = \lambda(n,m)\lambda x(m(n(x))) \vdash (\mathbb{R}\to\mathbb{R}\times\mathbb{R}) \times (\mathbb{R}\times\mathbb{R}\to\mathbb{R}) \to \mathbb{R}\to\mathbb{R}$
+- $l_1 = p_1|p_2 = \lambda x(\mathbf{softplus}(2.14 - 34.4x), \mathbf{softplus}(1.29 - 2.52x)) \vdash \mathbb{R}\to(\mathbb{R},\mathbb{R})$
+- $p_3 = \lambda(x,y)(\mathbf{softplus}(2.28y - 1.3x -0.58)) \vdash (\mathbb{R},\mathbb{R})\to\mathbb{R}$
+- $\circ = \lambda(n,m)\lambda x(m(n(x))) \vdash (\mathbb{R}\to(\mathbb{R},\mathbb{R})), ((\mathbb{R},\mathbb{R})\to\mathbb{R}) \to (\mathbb{R}\to\mathbb{R})$
 - $N_1 = l_1\circ p_3$
 - $N_1 = (\lambda(n,m)\lambda x(m(n(x))))(l_1,p_3)$
 - $N_1 = \lambda x(p_3(l_1(x)))$
@@ -105,6 +111,9 @@ So:
 - $N_1 = \lambda x(\lambda(y,z)(\mathbf{softplus}(2.28z - 1.3y -0.58))(\mathbf{softplus}(2.14 - 34.4x),\mathbf{softplus}(1.29 - 2.52x)))$
 - $N_1 = \lambda x(\mathbf{softplus}(2.28(\mathbf{softplus}(1.29 - 2.52x)) - 1.3(\mathbf{softplus}(2.14 - 34.4x)) - 0.58))$
 - $N_1 = (p_1|p_2)\circ p_3 \vdash \mathbb{R}\to\mathbb{R}$  
+
+Note that this introduced a new combinator $\circ$ which composes two compatible network layers in series:
+- $\circ = \lambda(n,m)\lambda x(m(n(x))) \vdash (\mathbb{R}\to(\mathbb{R},\mathbb{R})), ((\mathbb{R},\mathbb{R})\to\mathbb{R}) \to (\mathbb{R}\to\mathbb{R})$
 
 ## A more complex neural network
 
