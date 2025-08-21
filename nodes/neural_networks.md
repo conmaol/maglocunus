@@ -177,7 +177,12 @@ So we are going to need a new combinator here, to combine two $(\mathbb{R},\math
 
 So:
 - $l_1 = p_1\otimes p_2 \vdash (\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R})$
-- ...
+- $l_1 = (\lambda(p,q)\lambda(x,y)(p(x,y),q(x,y)))(p_1,p_2)$
+- $l_1 = \lambda(x,y)(p_1(x,y),p_2(x,y)))$
+- $l_1 = \lambda(x,y)(\lambda(z,w)(\mathbf{ReLU}(0.6w - 2.5z + 1.6))(x,y),\lambda(z,w)(\mathbf{ReLU}(0.4w - 1.5z + 0.7))(x,y)))$
+- $l_1 = \lambda(x,y)(\mathbf{ReLU}(0.6y - 2.5x + 1.6),\mathbf{ReLU}(0.4y - 1.5x + 0.7)))$
+
+
 
 
 
