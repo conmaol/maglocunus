@@ -1,6 +1,6 @@
 # Perceptron stacks
 
-Perceptrons of the same arity can be combined into perceptron stacks.
+[Perceptrons](perceptrons.md) of the same arity can be combined into perceptron stacks.
 
 ### Unary perceptron stacks
 
