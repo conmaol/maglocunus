@@ -32,11 +32,13 @@ graph LR
     B -- "softplus" --> D(( ))
     C -- "softplus" --> E(( ))
 ```
-mmm
-- $p_1 = \lambda x(\mathbf{softplus}(2.14 - 34.4x)) \vdash \mathbb{R}\to\mathbb{R}$
-- $p_2 = \lambda x(\mathbf{softplus}(1.29 - 2.52x)) \vdash \mathbb{R}\to\mathbb{R}$
-- $| = \lambda(p,q)\lambda x(p(x),q(x)) \vdash (\mathbb{R}\to\mathbb{R},\mathbb{R}\to\mathbb{R}) \to (\mathbb{R}\to(\mathbb{R},\mathbb{R}))$
-- $l_1 = p_1|p_2$
+
+The following perceptron combinator is used to create these parallel stacks:
+- $\otimes = \lambda(P_1,P_2,\ldots, P_n)\lambda(x_1,x_2,\ldots,x_m)(P_1(x_1,x_2,\ldots,x_m),P_2(x_1,x_2,\ldots,x_m),\ldots, P_n(x_1,x_2,\ldots,x_m)) \vdash (\mathbb{R}^m\to\mathbb{R})^n \to (\mathbb{R}^m\to\mathbb{R}^n)$
+
+So:
+- $\mathbf{S_1} = \mathbf{P_1}\otimes\mathbf{P_2}$
+- 
 - $l_1 = (\lambda(p,q)\lambda x(p(x),q(x))) (p_1,p_2)$
 - $l_1 = \lambda x(p_1(x),p_2(x))$
 - $l_1 = \lambda x(\lambda y(\mathbf{softplus}(2.14 - 34.4y))(x),\lambda y(\mathbf{softplus}(1.29 - 2.52y))(x))$
