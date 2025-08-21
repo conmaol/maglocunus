@@ -2,7 +2,7 @@
 
 [Perceptrons](perceptrons.md) of the same arity can be combined into a perceptron layer.
 
-### Unary perceptron stacks
+### Unary perceptron layers
 
 Here is perceptron $\mathbf{P_1}$, with one input:
 
