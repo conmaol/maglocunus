@@ -182,10 +182,6 @@ So:
 - $l_1 = \lambda(x,y)(\lambda(z,w)(\mathbf{ReLU}(0.6w - 2.5z + 1.6))(x,y),\lambda(z,w)(\mathbf{ReLU}(0.4w - 1.5z + 0.7))(x,y)))$
 - $l_1 = \lambda(x,y)(\mathbf{ReLU}(0.6y - 2.5x + 1.6),\mathbf{ReLU}(0.4y - 1.5x + 0.7)))$
 
-
-
-
-
 ### The second layer
 
 Here is the second layer in the network:
@@ -203,6 +199,33 @@ graph LR
     J -- "ReLU" --> N(( ))
 ```
 
+Here are the three perceptrons:
+- $p_3 = \lambda(x,y)(\mathbf{ReLU}(1.5y - 0.1x)) \vdash (\mathbb{R},\mathbb{R})\to\mathbb{R}$
+- $p_4 = \lambda(x,y)(\mathbf{ReLU}(2.4x - 5.2y)) \vdash (\mathbb{R},\mathbb{R})\to\mathbb{R}$
+- $p_5 = \lambda(x,y)(\mathbf{ReLU}(3.7y - 2.2x + 1)) \vdash (\mathbb{R},\mathbb{R})\to\mathbb{R}$
+
+To combine these in parallel we need to generalise the $\otimes$ combinator to cover three perceptrons:
+- $\otimes\otimes = \lambda(p,q,r)\lambda(x,y)(p(x,y),q(x,y),r(x,y)) \vdash ((\mathbb{R},\mathbb{R})\to\mathbb{R},(\mathbb{R},\mathbb{R})\to\mathbb{R},(\mathbb{R},\mathbb{R})\to\mathbb{R}) \to ((\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R},\mathbb{R}))$
+
+So:
+- $l_2 = p_3\otimes p_4\otimes p_4 \vdash (\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R},\mathbb{R})$
+- $l_2 = (\lambda(p,q,r)\lambda(x,y)(p(x,y),q(x,y),r(x,y)))(p_3,p_4,p_5)$
+- $l_2 = \lambda(x,y)(p_3(x,y),p_4(x,y),p_5(x,y))$
+- $l_2 = \lambda(x,y)((\lambda(z,w)(\mathbf{ReLU}(1.5w - 0.1z)))(x,y),(\lambda(z,w)(\mathbf{ReLU}(2.4z - 5.2w)))(x,y),(\lambda(z,w)(\mathbf{ReLU}(3.7z - 2.2w + 1)))(x,y))$
+- $l_2 = \lambda(x,y)(\mathbf{ReLU}(1.5y - 0.1x),\mathbf{ReLU}(2.4x - 5.2y),\mathbf{ReLU}(3.7x - 2.2y + 1))$
+
+### Composing the two layers
+
+
+This is where we are:
+- $l_1 = p_1\otimes p_2 = \lambda(x,y)(\mathbf{ReLU}(0.6y - 2.5x + 1.6),\mathbf{ReLU}(0.4y - 1.5x + 0.7))) \vdash (\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R})$
+- $l_2 = p_3\otimes p_4\otimes p_4 = \lambda(x,y)(\mathbf{ReLU}(1.5y - 0.1x),\mathbf{ReLU}(2.4x - 5.2y),\mathbf{ReLU}(3.7x - 2.2y + 1)) \vdash (\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R},\mathbb{R})$
+- $\circ = \lambda(n,m)\lambda x(m(n(x))) \vdash (\mathbb{R}\to(\mathbb{R},\mathbb{R}),(\mathbb{R},\mathbb{R})\to\mathbb{R}) \to (\mathbb{R}\to\mathbb{R})$
+
+To compose $l_1$ and $l_2$ in series, we are going to have to overload the combinator $\circ$:
+- $\circ = \lambda(n,m)\lambda(x,y)(m(n(x,y))) \vdash ((\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R}),(\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R},\mathbb{R})) \to ((\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R},\mathbb{R}))$
+
+Does this work out?
 
 ----
 
