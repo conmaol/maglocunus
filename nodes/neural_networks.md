@@ -226,6 +226,14 @@ To compose $l_1$ and $l_2$ in series, we are going to have to overload the combi
 - $\circ = \lambda(n,m)\lambda(x,y)(m(n(x,y))) \vdash ((\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R}),(\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R},\mathbb{R})) \to ((\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R},\mathbb{R}))$
 
 Does this work out?
+- $N_2 = l_1\circ l_2$
+- $N_2 = (\lambda(n,m)\lambda x(m(n(x))))(l_1,l_2)$
+- $N_2 = \lambda x(l_2(l_1(x)))$
+- $N_2 = \lambda x(l_2((\lambda(z,w)(\mathbf{ReLU}(0.6w - 2.5z + 1.6),\mathbf{ReLU}(0.4w - 1.5z + 0.7))))(x)))$
+- $N_2 = \lambda(z,w)(l_2(\mathbf{ReLU}(0.6w - 2.5z + 1.6),\mathbf{ReLU}(0.4w - 1.5z + 0.7)))$
+- $N_2 = \lambda(z,w)([\lambda(x,y)(\mathbf{ReLU}(1.5y - 0.1x),\mathbf{ReLU}(2.4x - 5.2y),\mathbf{ReLU}(3.7x - 2.2y + 1))](\mathbf{ReLU}(0.6w - 2.5z + 1.6),\mathbf{ReLU}(0.4w - 1.5z + 0.7)))$
+- $N_2 = \lambda(z,w)(\mathbf{ReLU}(1.5(\mathbf{ReLU}(0.4w - 1.5z + 0.7)) - 0.1(\mathbf{ReLU}(0.6w - 2.5z + 1.6))),\mathbf{ReLU}(2.4(\mathbf{ReLU}(0.6w - 2.5z + 1.6)) - 5.2(\mathbf{ReLU}(0.4w - 1.5z + 0.7))),\mathbf{ReLU}(3.7(\mathbf{ReLU}(0.6w - 2.5z + 1.6)) - 2.2(\mathbf{ReLU}(0.4w - 1.5z + 0.7)) + 1))$
+- $N_2 = (p_1\otimes p_2)\circ (p_3\otimes p_4\otimes p_4) \vdash (\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R},\mathbb{R})$
 
 ----
 
