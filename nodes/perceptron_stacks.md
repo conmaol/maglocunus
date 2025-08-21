@@ -38,7 +38,7 @@ The following perceptron combinator is used to create these parallel stacks:
 
 So:
 - $\mathbf{S_1} = \mathbf{P_1}\otimes\mathbf{P_2}$
-- 
+- $\mathbf{S_1} = \lambda(P,Q)\lambda(x)(P(x),Q(x))(\mathbf{P_1},\mathbf{P_2})$
 - $l_1 = (\lambda(p,q)\lambda x(p(x),q(x))) (p_1,p_2)$
 - $l_1 = \lambda x(p_1(x),p_2(x))$
 - $l_1 = \lambda x(\lambda y(\mathbf{softplus}(2.14 - 34.4y))(x),\lambda y(\mathbf{softplus}(1.29 - 2.52y))(x))$
