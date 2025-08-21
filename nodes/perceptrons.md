@@ -71,4 +71,6 @@ Perceptrons of the same arity can be combined in parallel into [perceptron stack
 See also:
 - Wikipedia page on [artificial neurons](https://en.wikipedia.org/wiki/Artificial_neuron)
 
+----
+
 Back to: [Index](index.md)
