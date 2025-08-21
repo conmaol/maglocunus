@@ -143,11 +143,11 @@ This neural network has two inputs and three outputs. In other words, its type i
 ### The perceptrons
 
 The five perceptrons in this network are:
-- $p_1 = \lambda(x,y)(\mathbf{ReLU}(0.6y - 2.5x + 1.6)) \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
-- $p_2 = \lambda(x,y)(\mathbf{ReLU}(0.4y - 1.5x + 0.7)) \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
-- $p_3 = \lambda(x,y)(\mathbf{ReLU}(1.5y - 0.1x)) \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
-- $p_4 = \lambda(x,y)(\mathbf{ReLU}(2.4x - 5.2y)) \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
-- $p_5 = \lambda(x,y)(\mathbf{ReLU}(3.7y - 2.2x + 1)) \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
+- $p_1 = \lambda(x,y)(\mathbf{ReLU}(0.6y - 2.5x + 1.6)) \vdash (\mathbb{R},\mathbb{R})\to\mathbb{R}$
+- $p_2 = \lambda(x,y)(\mathbf{ReLU}(0.4y - 1.5x + 0.7)) \vdash (\mathbb{R},\mathbb{R})\to\mathbb{R}$
+- $p_3 = \lambda(x,y)(\mathbf{ReLU}(1.5y - 0.1x)) \vdash (\mathbb{R},\mathbb{R})\to\mathbb{R}$
+- $p_4 = \lambda(x,y)(\mathbf{ReLU}(2.4x - 5.2y)) \vdash (\mathbb{R},\mathbb{R})\to\mathbb{R}$
+- $p_5 = \lambda(x,y)(\mathbf{ReLU}(3.7y - 2.2x + 1)) \vdash (\mathbb{R},\mathbb{R})\to\mathbb{R}$
 
 ### The first layer
 
@@ -164,15 +164,20 @@ graph LR
 ```
 
 Here are the two perceptrons:
-- $p_1 = \lambda(x,y)(\mathbf{ReLU}(0.6y - 2.5x + 1.6)) \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
-- $p_2 = \lambda(x,y)(\mathbf{ReLU}(0.4y - 1.5x + 0.7)) \vdash \mathbb{R}\times\mathbb{R}\to\mathbb{R}$
+- $p_1 = \lambda(x,y)(\mathbf{ReLU}(0.6y - 2.5x + 1.6)) \vdash (\mathbb{R},\mathbb{R})\to\mathbb{R}$
+- $p_2 = \lambda(x,y)(\mathbf{ReLU}(0.4y - 1.5x + 0.7)) \vdash (\mathbb{R},\mathbb{R})\to\mathbb{R}$
 
 And these are the combinators we know about so far:
-- $| = \lambda(p,q)\lambda x(p(x),q(x)) \vdash (\mathbb{R}\to\mathbb{R}) \times (\mathbb{R}\to\mathbb{R}) \to (\mathbb{R}\to\mathbb{R}\times\mathbb{R})$
-- $\\| = \lambda(p,q)\lambda(x,y)(p(x),q(y)) \vdash (\mathbb{R}\to\mathbb{R}) \times (\mathbb{R}\to\mathbb{R}) \to (\mathbb{R}\times\mathbb{R}\to\mathbb{R}\times\mathbb{R})$
-- $\circ = \lambda(n,m)\lambda x(m(n(x))) \vdash (\mathbb{R}\to\mathbb{R}\times\mathbb{R}) \times (\mathbb{R}\times\mathbb{R}\to\mathbb{R}) \to \mathbb{R}\to\mathbb{R}$
+- $| = \lambda(p,q)\lambda x(p(x),q(x)) \vdash (\mathbb{R}\to\mathbb{R},\mathbb{R}\to\mathbb{R}) \to (\mathbb{R}\to(\mathbb{R},\mathbb{R}))$
+- $\\| = \lambda(p,q)\lambda(x,y)(p(x),q(y)) \vdash (\mathbb{R}\to\mathbb{R},\mathbb{R}\to\mathbb{R}) \to ((\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R}))$
+- $\circ = \lambda(n,m)\lambda x(m(n(x))) \vdash (\mathbb{R}\to(\mathbb{R},\mathbb{R}),(\mathbb{R},\mathbb{R})\to\mathbb{R}) \to (\mathbb{R}\to\mathbb{R})$
 
-So we are going to need a new combinator here, to combine two $\mathbb{R}\times\mathbb{R}\to\mathbb{R}$:
+So we are going to need a new combinator here, to combine two $(\mathbb{R},\mathbb{R})\to\mathbb{R}$ in parallel, with full connectivity:
+- $\otimes = \lambda(p,q)\lambda(x,y)(p(x,y),q(x,y)) \vdash ((\mathbb{R},\mathbb{R})\to\mathbb{R},(\mathbb{R},\mathbb{R})\to\mathbb{R}) \to ((\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R}))$
+
+So:
+- $l_1 = p_1\otimes p_2 \vdash (\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R})$
+- ...
 
 
 
