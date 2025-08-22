@@ -47,10 +47,45 @@ So:
 
 You can also create a unary perceptron stack with three or more perceptrons.
 
+```mermaid
+graph LR
+    A(( )) -- "0.7" --> C(["P3: -4.95"])
+    C -- "ReLU" --> E(( ))
+```
+
+So:
+
+$p_3 = \lambda(x,y)(\mathbf{softplus}(2.28y - 1.3x -0.58)) \vdash (\mathbb{R},\mathbb{R})\to\mathbb{R}$
+
+So:
+
+```mermaid
+graph LR
+    A(( )) -- "-34.4" --> B(["P1: 2.14"])
+    A -- "-2.52" --> C(["P2: 1.29"])
+    A -- "0.7" --> D(["P3: -4.95"])
+    B -- "softplus" --> E(( ))
+    C -- "softplus" --> F(( ))
+    D -- "ReLU" --> G(( ))
+```
+
+So:
+- $\mathbf{L_2} = \mathbf{P_1}\otimes\mathbf{P_2}\otimes\mathbf{P_3}$
+- $\mathbf{L_2} = \lambda(P,Q,R)\lambda x(Px,Qx,Rx)(\mathbf{P_1},\mathbf{P_2},\mathbf{P_3})$
+
+
 
 ### Binary perceptron layers
 
 Two or more unary perceptrons can be combined into a unary perceptron layer.
+
+```mermaid
+graph LR
+    D(( )) -- "-1.3" --> F(["p3: -0.58"])
+    E(( )) -- "2.28" --> F
+    F -- "softplus" --> G(( ))
+```
+
 
 ### Ternary perceptron layers
 
