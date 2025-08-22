@@ -45,7 +45,7 @@ So:
 - $\mathbf{L_1} = \lambda x(\lambda y(\mathbf{softplus}(2.14 - 34.4y))x,\lambda y(\mathbf{softplus}(1.29 - 2.52y))x)$
 - $\mathbf{L_1} = \lambda x(\mathbf{softplus}(2.14 - 34.4x),\mathbf{softplus}(1.29 - 2.52x)) \vdash \mathbb{R}\to(\mathbb{R},\mathbb{R})$
 
-You can also create a unary perceptron stack with three or more perceptrons.
+You can also create a unary perceptron layer with three or more perceptrons.
 
 Here is a third unary perceptron $\mathbf{P_3} = \lambda x(\mathbf{ReLU}(0.7x - 4.23)) \vdash \mathbb{R}\to\mathbb{R}$:
 
@@ -118,12 +118,37 @@ So:
 - $\mathbf{L_3} = \lambda(x,y)(\mathbf{softplus}(2.28y - 1.3x -0.58),\mathbf{ReLU}(6.17x + 0.11y + 3.14)) \vdash (\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R})$
 
 
-You can also create a binary perceptron stack with three or more binary perceptrons.
+You can also create a binary perceptron layer with three or more binary perceptrons.
 
-Here is a third binary perceptron $\mathbf{P_6} = $:
+Here is a third binary perceptron $\mathbf{P_6} = \lambda(x,y)(\mathbf{tanh}(1.43x - 3.02y - 0.09)) \vdash (\mathbb{R},\mathbb{R})\to\mathbb{R}$:
 
+```mermaid
+graph LR
+    A(( )) -- "1.43" --> G(["P6: -0.09"])
+    B(( )) -- "-3.02" --> G
+    G -- "tanh" --> H(( ))
+```
 
+And here is a three perceptron layer $\mathbf{L_4}$, formed out of $\mathbf{P_4}$, $\mathbf{P_5}$ and $\mathbf{P_6}$:
 
+```mermaid
+graph LR
+    A(( )) -- "-1.3" --> C(["P4: -0.58"])
+    B(( )) -- "2.28" --> C
+    C -- "softplus" --> E(( ))
+    A -- "6.17" --> D(["P5: 3.14"])
+    B -- "0.11" --> D
+    D -- "ReLU" --> F(( ))
+    A -- "1.43" --> G(["P6: -0.09"])
+    B -- "-3.02" --> G
+    G -- "tanh" --> H(( ))
+```
+
+So:
+- $\mathbf{L_4} = \mathbf{P_4}\otimes\mathbf{P_5}\otimes\mathbf{P_6}$
+- $\mathbf{L_4} = \lambda(P,Q,R)\lambda(x,y)(P(x,y),Q(x,y),R(x,y))(\mathbf{P_4},\mathbf{P_5},\mathbf{P_6})$
+- $\mathbf{L_4} = \lambda(x,y)(\mathbf{P_4}(x,y),\mathbf{P_5}(x,y),\mathbf{P_6}(x,y))$
+- $\mathbf{L_4} = \lambda(x,y)(\mathbf{softplus}(2.28y - 1.3x -0.58), \mathbf{ReLU}(6.17x + 0.11y + 3.14), \mathbf{tanh}(1.43x - 3.02y - 0.09)) \vdash (\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R},\mathbb{R})$
 
 Note that a binary perceptron layer has two inputs and $n$ outputs, where $n$ is the number of layered perceptrons. 
 
