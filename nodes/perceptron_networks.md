@@ -57,8 +57,11 @@ So:
 - $\mathbf{N_1} = \mathbf{L_1}\circ\mathbf{L_2}$
 - $\mathbf{N_1} = \lambda(l,m)\lambda x(m(l(x))) (\mathbf{L_1},\mathbf{L_2})$
 - $\mathbf{N_1} = \lambda x(\mathbf{L_2}(\mathbf{L_1}(x)))$
-- 
-
+- $\mathbf{N_1} = \lambda x(\mathbf{L_2}(\lambda y(\mathbf{softplus}(2.14 - 34.4y), \mathbf{softplus}(1.29 - 2.52y))(x)))$
+- $\mathbf{N_1} = \lambda x(\mathbf{L_2}(\mathbf{softplus}(2.14 - 34.4x), \mathbf{softplus}(1.29 - 2.52x)))$
+- $\mathbf{N_1} = \lambda x((\lambda(y,z)(\mathbf{ReLU}(1.5z - 0.1y),\mathbf{ReLU}(2.4y - 5.2z),\mathbf{ReLU}(3.7z - 2.2y + 1)))(\mathbf{softplus}(2.14 - 34.4x), \mathbf{softplus}(1.29 - 2.52x)))$
+- $\mathbf{N_1} = \lambda x(\mathbf{ReLU}(1.5(\mathbf{softplus}(1.29 - 2.52x)) - 0.1(\mathbf{softplus}(2.14 - 34.4x))),\mathbf{ReLU}(2.4(\mathbf{softplus}(2.14 - 34.4x)) - 5.2(\mathbf{softplus}(1.29 - 2.52x))),\mathbf{ReLU}(3.7(\mathbf{softplus}(1.29 - 2.52x)) - 2.2(\mathbf{softplus}(2.14 - 34.4x)) + 1))$
+- $\mathbf{N_1} \vdash \mathbb{R}\to(\mathbb{R},\mathbb{R},\mathbb{R})$
 
 ----
 
