@@ -42,14 +42,15 @@ So:
 - $\mathbf{L_1} = \mathbf{P_1}\otimes\mathbf{P_2}$
 - $\mathbf{L_1} = \lambda(P,Q)\lambda x(Px,Qx)(\mathbf{P_1},\mathbf{P_2})$
 - $\mathbf{L_1} = \lambda x(\mathbf{P_1}x,\mathbf{P_2}x)$
-- 
-- $l_1 = (\lambda(p,q)\lambda x(p(x),q(x))) (p_1,p_2)$
-- $l_1 = \lambda x(p_1(x),p_2(x))$
-- $l_1 = \lambda x(\lambda y(\mathbf{softplus}(2.14 - 34.4y))(x),\lambda y(\mathbf{softplus}(1.29 - 2.52y))(x))$
-- $l_1 = \lambda x(\mathbf{softplus}(2.14 - 34.4x), \mathbf{softplus}(1.29 - 2.52x)) \vdash \mathbb{R}\to(\mathbb{R},\mathbb{R})$
+- $\mathbf{L_1} = \lambda x(\lambda y(\mathbf{softplus}(2.14 - 34.4y))x,\lambda y(\mathbf{softplus}(1.29 - 2.52y))x)$
+- $\mathbf{L_1} = \lambda x(\mathbf{softplus}(2.14 - 34.4x),\mathbf{softplus}(1.29 - 2.52x)) \vdash \mathbb{R}\to(\mathbb{R},\mathbb{R})$
+
+You can also create a unary perceptron stack with three or more perceptrons.
 
 
 ### Binary perceptron layers
+
+Two or more unary perceptrons can be combined into a unary perceptron layer.
 
 ### Ternary perceptron layers
 
