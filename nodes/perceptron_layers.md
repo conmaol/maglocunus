@@ -80,12 +80,18 @@ Note that a unary perceptron layer has one input and $n$ outputs, where $n$ is t
 
 Two or more binary perceptrons can be combined into a binary perceptron layer.
 
+Here is binary perceptron $\mathbf{P_4} = $:
+
 ```mermaid
 graph LR
-    D(( )) -- "-1.3" --> F(["p3: -0.58"])
+    D(( )) -- "-1.3" --> F(["P4: -0.58"])
     E(( )) -- "2.28" --> F
     F -- "softplus" --> G(( ))
 ```
+
+And a second binary perceptron $\mathbf{P_5} = $
+
+
 
 Note that a binary perceptron layer has two inputs and $n$ outputs, where $n$ is the number of layered perceptrons. 
 
