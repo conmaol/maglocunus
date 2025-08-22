@@ -154,6 +154,31 @@ Note that a binary perceptron layer has two inputs and $n$ outputs, where $n$ is
 
 ### Ternary perceptron layers
 
+Two or more ternary perceptrons can be combined into a ternary perceptron layer.
+
+For example:
+
+```mermaid
+graph LR
+    A(( )) -- "1.2" --> D(["P7: -6.7"])
+    B(( )) -- "-3.0" --> D
+    C(( )) -- "5.8" --> D
+    D -- "ReLU" --> Z(( ))
+    A -- "2.1" --> E(["P8: 3.4"])
+    B -- "-0.3" --> E
+    C -- "0.0" --> E
+    E -- "ReLU" --> Y(( ))
+```
+
+So:
+- $\mathbf{P_7} = \lambda(x,y,z)(\mathbf{ReLU}(1.2x - 3y + 5.2z - 6.7)) \vdash (\mathbb{R},\mathbb{R},\mathbb{R})\to\mathbb{R}$
+- $\mathbf{P_8} = \lambda(x,y,z)(\mathbf{ReLU}(2.1x - 0.3y + 0z + 3.4)) \vdash (\mathbb{R},\mathbb{R},\mathbb{R})\to\mathbb{R}$
+- $\mathbf{L_5} = \mathbf{P_7}\otimes\mathbf{P_8}$
+
+
+
+
+Note that a ternary perceptron layer has three inputs and $n$ outputs, where $n$ is the number of layered perceptrons. 
 
 
 ----
