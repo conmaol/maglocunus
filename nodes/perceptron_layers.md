@@ -1,6 +1,6 @@
 # Perceptron layers
 
-[Perceptrons](perceptrons.md) of the same input arity can be combined into a perceptron layer.
+Multiple [perceptrons](perceptrons.md) of the same input arity can be combined, in parallel, into a perceptron layer.
 
 ### Unary perceptron layers
 
@@ -175,11 +175,11 @@ So:
 - $\mathbf{P_8} = \lambda(x,y,z)(\mathbf{ReLU}(2.1x - 0.3y + 0z + 3.4)) \vdash (\mathbb{R},\mathbb{R},\mathbb{R})\to\mathbb{R}$
 - $\mathbf{L_5} = \mathbf{P_7}\otimes\mathbf{P_8} \vdash (\mathbb{R},\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R})$
 
-
-
-
 Note that a ternary perceptron layer has three inputs and $n$ outputs, where $n$ is the number of layered perceptrons. 
 
+----
+
+Two perceptron layers can be combined, in series, into a [perceptron network](perceptron_networks.md), as long as the output arity of the first layer is identical to the input arity of the second layer. 
 
 ----
 
