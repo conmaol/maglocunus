@@ -1,6 +1,6 @@
 # Perceptron layers
 
-[Perceptrons](perceptrons.md) of the same arity can be combined into a perceptron layer.
+[Perceptrons](perceptrons.md) of the same input arity can be combined into a perceptron layer.
 
 ### Unary perceptron layers
 
