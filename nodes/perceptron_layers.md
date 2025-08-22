@@ -47,7 +47,7 @@ So:
 
 You can also create a unary perceptron stack with three or more perceptrons.
 
-Here is a third unary perceptron $\mathbf{P_3} = \lambda x(\mathbf{softplus}(0.7x - 4.23)) \vdash \mathbb{R}\to\mathbb{R}$:
+Here is a third unary perceptron $\mathbf{P_3} = \lambda x(\mathbf{ReLU}(0.7x - 4.23)) \vdash \mathbb{R}\to\mathbb{R}$:
 
 ```mermaid
 graph LR
@@ -55,7 +55,7 @@ graph LR
     C -- "ReLU" --> E(( ))
 ```
 
-And here is a three perceptron stack, formed out of $\mathbf{P_1}$, $\mathbf{P_2}$ and $\mathbf{P_3}$:
+And here is a three perceptron layer $\mathbf{L_2}$, formed out of $\mathbf{P_1}$, $\mathbf{P_2}$ and $\mathbf{P_3}$:
 
 ```mermaid
 graph LR
@@ -70,12 +70,15 @@ graph LR
 So:
 - $\mathbf{L_2} = \mathbf{P_1}\otimes\mathbf{P_2}\otimes\mathbf{P_3}$
 - $\mathbf{L_2} = \lambda(P,Q,R)\lambda x(Px,Qx,Rx)(\mathbf{P_1},\mathbf{P_2},\mathbf{P_3})$
+- $\mathbf{L_2} = \lambda x(\mathbf{P_1}x,\mathbf{P_2}x,\mathbf{P_3}x)$
+- $\mathbf{L_2} = \lambda x(\lambda y(\mathbf{softplus}(2.14 - 34.4y))x,\lambda y(\mathbf{softplus}(1.29 - 2.52y))x,\lambda y(\mathbf{ReLU}(0.7y - 4.23))x)$
+- $\mathbf{L_2} = \lambda x(\mathbf{softplus}(2.14 - 34.4x),\mathbf{softplus}(1.29 - 2.52x),\mathbf{ReLU}(0.7x - 4.23)) \vdash \mathbb{R}\to(\mathbb{R},\mathbb{R},\mathbb{R})$
 
-
+Note that a unary perceptron layer has one input and $n$ outputs, where $n$ is the number of layered perceptrons. 
 
 ### Binary perceptron layers
 
-Two or more unary perceptrons can be combined into a unary perceptron layer.
+Two or more binary perceptrons can be combined into a binary perceptron layer.
 
 ```mermaid
 graph LR
@@ -84,6 +87,7 @@ graph LR
     F -- "softplus" --> G(( ))
 ```
 
+Note that a binary perceptron layer has two inputs and $n$ outputs, where $n$ is the number of layered perceptrons. 
 
 ### Ternary perceptron layers
 
