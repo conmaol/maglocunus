@@ -47,23 +47,21 @@ So:
 
 You can also create a unary perceptron stack with three or more perceptrons.
 
+Here is a third unary perceptron $\mathbf{P_3} = \lambda x(\mathbf{softplus}(0.7x - 4.23)) \vdash \mathbb{R}\to\mathbb{R}$:
+
 ```mermaid
 graph LR
-    A(( )) -- "0.7" --> C(["P3: -4.95"])
+    A(( )) -- "0.7" --> C(["P3: -4.23"])
     C -- "ReLU" --> E(( ))
 ```
 
-So:
-
-$p_3 = \lambda(x,y)(\mathbf{softplus}(2.28y - 1.3x -0.58)) \vdash (\mathbb{R},\mathbb{R})\to\mathbb{R}$
-
-So:
+And here is a three perceptron stack, formed out of $\mathbf{P_1}$, $\mathbf{P_2}$ and $\mathbf{P_3}$:
 
 ```mermaid
 graph LR
     A(( )) -- "-34.4" --> B(["P1: 2.14"])
     A -- "-2.52" --> C(["P2: 1.29"])
-    A -- "0.7" --> D(["P3: -4.95"])
+    A -- "0.7" --> D(["P3: -4.23"])
     B -- "softplus" --> E(( ))
     C -- "softplus" --> F(( ))
     D -- "ReLU" --> G(( ))
