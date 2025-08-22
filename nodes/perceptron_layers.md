@@ -115,7 +115,7 @@ So:
 - $\mathbf{L_3} = \lambda(P,Q)\lambda(x,y)(P(x,y),Q(x,y))(\mathbf{P_4},\mathbf{P_5})$
 - $\mathbf{L_3} = \lambda(x,y)(\mathbf{P_4}(x,y),\mathbf{P_5}(x,y))$
 - $\mathbf{L_3} = \lambda(x,y)(\lambda(z,w)(\mathbf{softplus}(2.28w - 1.3z -0.58))(x,y),\lambda(z,w)(\mathbf{ReLU}(6.17z + 0.11w + 3.14))(x,y))$
-- $\mathbf{L_3} = \lambda(x,y)(\mathbf{softplus}(2.28y - 1.3x -0.58),\mathbf{ReLU}(6.17x + 0.11y + 3.14)) \vdash (\mathbb{R},\mathbb{R})\to(\mathbb{R}\times\mathbb{R})$
+- $\mathbf{L_3} = \lambda(x,y)(\mathbf{softplus}(2.28y - 1.3x -0.58),\mathbf{ReLU}(6.17x + 0.11y + 3.14)) \vdash (\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R})$
 
 
 You can also create a binary perceptron stack with three or more binary perceptrons.
