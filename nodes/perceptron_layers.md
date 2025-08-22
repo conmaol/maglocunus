@@ -80,7 +80,7 @@ Note that a unary perceptron layer has one input and $n$ outputs, where $n$ is t
 
 Two or more binary perceptrons can be combined into a binary perceptron layer.
 
-Here is binary perceptron $\mathbf{P_4} = $:
+Here is binary perceptron $\mathbf{P_4} = \lambda(x,y)(\mathbf{softplus}(2.28y - 1.3x -0.58)) \vdash (\mathbb{R},\mathbb{R})\to\mathbb{R}$:
 
 ```mermaid
 graph LR
@@ -89,7 +89,39 @@ graph LR
     F -- "softplus" --> G(( ))
 ```
 
-And a second binary perceptron $\mathbf{P_5} = $
+And a second binary perceptron $\mathbf{P_5} = \lambda(x,y)(\mathbf{ReLU}(6.17x + 0.11y + 3.14)) \vdash (\mathbb{R},\mathbb{R})\to\mathbb{R}$
+
+```mermaid
+graph LR
+    D(( )) -- "6.17" --> F(["P5: 3.14"])
+    E(( )) -- "0.11" --> F
+    F -- "ReLU" --> G(( ))
+```
+
+Since these two perceptrons have the same arity they can be combined into the perceptron layer $\mathbf{L_3}$:
+
+```mermaid
+graph LR
+    A(( )) -- "-1.3" --> C(["P4: -0.58"])
+    B(( )) -- "2.28" --> C
+    C -- "softplus" --> E(( ))
+    A -- "6.17" --> D(["P5: 3.14"])
+    B -- "0.11" --> D
+    D -- "ReLU" --> F(( ))
+```
+
+So:
+- $\mathbf{L_3} = \mathbf{P_4}\otimes\mathbf{P_5}$
+- $\mathbf{L_3} = \lambda(P,Q)\lambda(x,y)(P(x,y),Q(x,y))(\mathbf{P_4},\mathbf{P_5})$
+- $\mathbf{L_3} = \lambda(x,y)(\mathbf{P_4}(x,y),\mathbf{P_5}(x,y))$
+- $\mathbf{L_3} = \lambda(x,y)(\lambda(z,w)(\mathbf{softplus}(2.28w - 1.3z -0.58))(x,y),\lambda(z,w)(\mathbf{ReLU}(6.17z + 0.11w + 3.14))(x,y))$
+- $\mathbf{L_3} = \lambda(x,y)(\mathbf{softplus}(2.28y - 1.3x -0.58),\mathbf{ReLU}(6.17x + 0.11y + 3.14)) \vdash (\mathbb{R},\mathbb{R})\to(\mathbb{R}\times\mathbb{R})$
+
+
+You can also create a binary perceptron stack with three or more binary perceptrons.
+
+Here is a third binary perceptron $\mathbf{P_6} = $:
+
 
 
 
