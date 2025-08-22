@@ -64,7 +64,9 @@ Note that:
 - $\mathbf{P_2} = \lambda x(\mathbf{softplus}(2.14 - 34.4x)) \vdash \mathbb{R}\to\mathbb{R}$
 - $\mathbf{P_3} = \lambda(x,y)(\mathbf{ReLU}(2.28y - 1.3x -0.58)) \vdash (\mathbb{R},\mathbb{R})\to\mathbb{R}$
 
-Perceptrons of the same arity can be combined in parallel into [perceptron layers](perceptron_layers.md).
+----
+
+Multiple perceptrons of the same arity can be combined, in parallel, into a [perceptron layer](perceptron_layers.md).
 
 ----
 
