@@ -173,7 +173,7 @@ graph LR
 So:
 - $\mathbf{P_7} = \lambda(x,y,z)(\mathbf{ReLU}(1.2x - 3y + 5.2z - 6.7)) \vdash (\mathbb{R},\mathbb{R},\mathbb{R})\to\mathbb{R}$
 - $\mathbf{P_8} = \lambda(x,y,z)(\mathbf{ReLU}(2.1x - 0.3y + 0z + 3.4)) \vdash (\mathbb{R},\mathbb{R},\mathbb{R})\to\mathbb{R}$
-- $\mathbf{L_5} = \mathbf{P_7}\otimes\mathbf{P_8}$
+- $\mathbf{L_5} = \mathbf{P_7}\otimes\mathbf{P_8} \vdash (\mathbb{R},\mathbb{R},\mathbb{R})\to(\mathbb{R},\mathbb{R})$
 
 
 
