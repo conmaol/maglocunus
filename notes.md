@@ -6,7 +6,17 @@ Last week the BBC podcast *Radical with Amol Rajan* published an [interview](htt
 
 Rough sections:
 - 1.30: Is AI over-hyped?
+  - AI development since 2015 has vastly exceeded expectations
+  - gold medals at Math Olympiad
+  - 90% of production code at Anthropic
+  - PhD level scientist
+  - biomedical discoveries
+  - clinical study reports
 - 6.00: ‘Machines of Love and Grace’
+  - huge opportunities!
+  - find cures for diseases with complex origins (cancer, Alzheimers, ageing ie. not just viruses)
+  - AI can absorb and connect new information much much faster than humans – much faster medical diagnosis
+  - economic development in Subsaharan Africa
 - 13.20: ‘bloodbath’ of entry-level white collar jobs
 - 18.30: Are policymakers really aware of this?
 - 19.50: Risks of AI misuse?
