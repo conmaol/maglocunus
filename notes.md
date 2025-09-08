@@ -17,8 +17,14 @@ Rough sections:
   - find cures for diseases with complex origins (cancer, Alzheimers, ageing ie. not just viruses)
   - AI can absorb and connect new information much much faster than humans – much faster medical diagnosis
   - economic development in Subsaharan Africa
-- 13.20: ‘bloodbath’ of entry-level white collar jobs
-- 18.30: Are policymakers really aware of this?
+  - AI will lead to ‘enormous economic growth’
+ 
+13:20
+
+§1. AI will probably lead to a ‘bloodbath’ of entry-level white-collar jobs, within one to five years. AI can already do much of the work typically done by first-year associates at law, consulting and finance firms – repetitive document review and routine financial analysis; basic administrative tasks like coordination, scheduling and note-taking. CEOs are already investing heavily in AI-tools precisely in order to cut costs in this way. Policymakers in government will need to accept that this is coming and ‘handle it well’. \[[Axios interview](https://www.axios.com/2025/05/28/ai-jobs-white-collar-unemployment-anthropic)\]
+
+
+
 - 19.50: Risks of AI misuse?
 - 23.55: specific example?
 - 25.20: Conscience?
