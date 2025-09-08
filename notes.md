@@ -21,11 +21,24 @@ Rough sections:
  
 13:20
 
-§1. AI will probably lead to a ‘bloodbath’ of entry-level white-collar jobs, within one to five years. AI can already do much of the work typically done by first-year associates at law, consulting and finance firms – repetitive document review and routine financial analysis; basic administrative tasks like coordination, scheduling and note-taking. CEOs are already investing heavily in AI-tools precisely in order to cut costs in this way. Policymakers in government will need to accept that this is coming and ‘handle it well’. \[[Axios interview](https://www.axios.com/2025/05/28/ai-jobs-white-collar-unemployment-anthropic)\]
+§1. AI will probably lead to a ‘bloodbath’ of entry-level white-collar jobs, within one to five years. AI can already do much of the work typically done by first-year associates at law, consulting and finance firms – repetitive document review and routine financial analysis; basic administrative tasks like coordination, scheduling and note-taking. CEOs are already investing heavily in AI-tools precisely in order to cut costs in this way. Policymakers in government will need to accept that this is coming and ‘handle it well’. The public will need to be informed. \[[Axios interview](https://www.axios.com/2025/05/28/ai-jobs-white-collar-unemployment-anthropic)\]
+
+19:50
+
+§2. Recent company-internal testing shows that AI models are getting ever harder to control. They have shown signs of writing special code to avoid being shut down, helping to carry out cyber attacks, and having the skills needed to create biological and other weapons.
+
+This is why explicit, extreme lab-testing is necessary and why the results need to be disclosed to the public, as with car manufacturing. If we don’t know what the prblems are, we can’t fix them.
+
+Policy-makers need to pay attention to this and help to regulate the technolgy across all AI companies.
+
+rral world: Claude was being used to write malicious code to carry out ransomware attacks against schools and government agencies (by jailbreaking the built-in guardrails); North Koreans were using Claude to sign up for fake jobs and avoid economic sanctions.
+
+We shut it down, and now defend against it, train it to be more resistant.
+
+We can’t prevent this tech being developed, and we can’t 100% prevent it from being abused.
+Best case: identify the abuse ASAP, and shut ot down, and share lessons with other companies, and then inform the public.
 
 
-
-- 19.50: Risks of AI misuse?
 - 23.55: specific example?
 - 25.20: Conscience?
 - 26.40: lessons learned on asymmetry of power and wealth?
