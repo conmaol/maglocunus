@@ -25,21 +25,8 @@ Rough sections:
 
 19:50
 
-§2. Recent company-internal testing shows that AI models are getting ever harder to control. They have shown signs of writing special code to avoid being shut down, helping to carry out cyber attacks, and having the skills needed to create biological and other weapons.
+§2. Recent company-internal stress-testing shows that AI models are becoming ever harder to control. They can write special code to avoid being shut down, help to carry out ransomware attacks, and are close to having the skills needed to design biological and other weapons. AI companies need to do thorough, systematic lab-testing of their models, including extreme scenarios. The results need to be shared with rival companies, and with the public (as with car manufacturing). AI companies need to aggressively monitor how the models are being used, and look out for malicious users trying to ‘jailbreak’ their way around the ‘guardrails’. Policymakers need to pay attention to these dangers, and to work closely with all the AI companies to regulate the technology.
 
-This is why explicit, extreme lab-testing is necessary and why the results need to be disclosed to the public, as with car manufacturing. If we don’t know what the prblems are, we can’t fix them.
-
-Policy-makers need to pay attention to this and help to regulate the technolgy across all AI companies.
-
-rral world: Claude was being used to write malicious code to carry out ransomware attacks against schools and government agencies (by jailbreaking the built-in guardrails); North Koreans were using Claude to sign up for fake jobs and avoid economic sanctions.
-
-We shut it down, and now defend against it, train it to be more resistant.
-
-We can’t prevent this tech being developed, and we can’t 100% prevent it from being abused.
-Best case: identify the abuse ASAP, and shut ot down, and share lessons with other companies, and then inform the public.
-
-
-- 23.55: specific example?
 - 25.20: Conscience?
 - 26.40: lessons learned on asymmetry of power and wealth?
 - 29.30: last remarks
