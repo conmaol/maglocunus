@@ -1,5 +1,20 @@
 # Notes
 
+## 2025-09-08
+
+Last week the BBC podcast *Radical with Amol Rajan* published an [interview](https://www.bbc.co.uk/sounds/play/m002ht32) with Dario Amadei. This is also available on [BBC iPlayer](https://www.bbc.co.uk/iplayer/episodes/m002f1d0/radical-with-amol-rajan).
+
+Rough sections:
+- 1.30: Is AI over-hyped?
+- 6.00: ‘Machines of Love and Grace’
+- 13.20: ‘bloodbath’ of entry-level white collar jobs
+- 18.30: Are policymakers really aware of this?
+- 19.50: Risks of AI misuse?
+- 23.55: specific example?
+- 25.20: Conscience?
+- 26.40: lessons learned on asymmetry of power and wealth?
+- 29.30: last remarks
+
 ## 2025-08-20
 
 Editorial in yesterday’s Guardian: [The Guardian view on Britain’s AI strategy](https://www.theguardian.com/commentisfree/2025/aug/18/the-guardian-view-on-britains-ai-strategy-the-risk-is-that-it-is-dependency-dressed-up-in-digital-hype)
