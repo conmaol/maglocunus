@@ -20,21 +20,17 @@ Last week the BBC podcast *Radical with Amol Rajan* published an [interview](htt
  
 13:20
 
-§4. AI will probably lead to a ‘bloodbath’ of entry-level white-collar jobs, within one to five years. AI can already do much of the work typically done by first-year associates at law, consulting and finance firms – repetitive document review and routine financial analysis; basic administrative tasks like coordination, scheduling and note-taking. CEOs are already investing heavily in AI-tools precisely in order to cut costs in this way. Policymakers in government will need to accept that this is coming and ‘handle it well’. The public will need to be informed. \[[Axios interview](https://www.axios.com/2025/05/28/ai-jobs-white-collar-unemployment-anthropic)\]
+§4. AI will probably lead to a ‘bloodbath’ of entry-level white-collar jobs, within one to five years. AI can already do much of the work typically done by first-year associates at law, consulting and finance firms – repetitive document review and routine financial analysis; basic administrative tasks like coordination, scheduling and note-taking. CEOs are already investing heavily in AI-tools precisely in order to cut costs in this way. Policymakers in government will need to accept that this is coming and ‘handle it well’. The public will need to be kept informed. 
+
+\[[Axios interview](https://www.axios.com/2025/05/28/ai-jobs-white-collar-unemployment-anthropic)\]
 
 19:50
 
-§5. Recent company-internal stress-testing shows that AI models are becoming ever harder to control. They can write special code to avoid being shut down, help to carry out ransomware attacks, and are close to having the skills needed to design biological and other weapons. AI companies need to do thorough, systematic lab-testing of their models, including extreme scenarios. The results need to be shared with rival companies, and with the public (as with car manufacturing). AI companies need to aggressively monitor how the models are being used, and look out for malicious users trying to ‘jailbreak’ their way around the ‘guardrails’. Policymakers need to pay attention to these dangers, and to work closely with all the AI companies to regulate the technology.
+§5. Recent company-internal stress-testing shows that AI models are becoming ever harder to control. They can write special code to avoid being shut down, help to carry out ransomware attacks, and are close to having the skills needed to design biological and other weapons. AI companies need to do thorough, systematic lab-testing of their models, including extreme scenarios. The results need to be shared with rival companies, and with the public (as with car manufacturing). AI companies need to aggressively monitor how the models are being used, and look out for malicious users trying to ‘jailbreak’ their way around the ‘guardrails’. Policymakers need to pay attention to these dangers, and to work closely with all the AI companies to ‘sensibly’ regulate the technology.
 
 26:40
 
-§6. AI technologies need to be managed responsibly by both the AI companies and by the government. It is ‘baffling’ (given the recent history of social media technologies) that other AI companies and investors are (‘frankly corruptly’) lobbying governments hard to deregulate AI technology. We need ‘sensible, responsible oversight’. Some proposals are too rigid and too aggressive and would slow down reaping the benefits.
-
-m
-
-
-
-- 29.30: last remarks
+§6. It is ‘baffling’ and ‘disturbing’ and ‘insane’ (given the well-known negative impacts of social media technology) that other AI companies and (‘financially conflicted’) investors are (‘frankly corruptly’) lobbying governments aggressively to deregulate AI technology (eg. a 10-year moratorium on state-level AI regulation). We need ‘sensible, responsible oversight’, that is not too ‘rigid and aggressive’ and that doesn’t prevent us reaping the benefits.
 
 ## 2025-08-20
 
