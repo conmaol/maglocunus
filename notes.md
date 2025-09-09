@@ -1,5 +1,10 @@
 # Notes
 
+## 2025-09-09
+
+- The Economist [Faith in God-like large language models is waning](https://www.economist.com/business/2025/09/08/faith-in-god-like-large-language-models-is-waning): That may be good news for AI laggards like Apple.
+- 
+
 ## 2025-09-08 – Dario Amodei
 
 Last week the BBC podcast *Radical with Amol Rajan* published an [interview](https://www.bbc.co.uk/sounds/play/m002ht32) with Dario Amodei. This is also available on [BBC iPlayer](https://www.bbc.co.uk/iplayer/episodes/m002f1d0/radical-with-amol-rajan).
