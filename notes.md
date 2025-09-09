@@ -2,7 +2,7 @@
 
 ## 2025-09-09
 
-- The Economist [Faith in God-like large language models is waning](https://www.economist.com/business/2025/09/08/faith-in-god-like-large-language-models-is-waning): That may be good news for AI laggards like Apple.
+- The Economist: [Faith in God-like large language models is waning](https://www.economist.com/business/2025/09/08/faith-in-god-like-large-language-models-is-waning): That may be good news for AI laggards like Apple.
 - 
 
 ## 2025-09-08 – Dario Amodei
