@@ -1,8 +1,8 @@
 # Notes
 
-## 2025-09-08
+## 2025-09-08 – Dario Amodei
 
-Last week the BBC podcast *Radical with Amol Rajan* published an [interview](https://www.bbc.co.uk/sounds/play/m002ht32) with Dario Amadei. This is also available on [BBC iPlayer](https://www.bbc.co.uk/iplayer/episodes/m002f1d0/radical-with-amol-rajan).
+Last week the BBC podcast *Radical with Amol Rajan* published an [interview](https://www.bbc.co.uk/sounds/play/m002ht32) with Dario Amodei. This is also available on [BBC iPlayer](https://www.bbc.co.uk/iplayer/episodes/m002f1d0/radical-with-amol-rajan).
 
 01:30
 
