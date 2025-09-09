@@ -27,8 +27,14 @@ Rough sections:
 
 §2. Recent company-internal stress-testing shows that AI models are becoming ever harder to control. They can write special code to avoid being shut down, help to carry out ransomware attacks, and are close to having the skills needed to design biological and other weapons. AI companies need to do thorough, systematic lab-testing of their models, including extreme scenarios. The results need to be shared with rival companies, and with the public (as with car manufacturing). AI companies need to aggressively monitor how the models are being used, and look out for malicious users trying to ‘jailbreak’ their way around the ‘guardrails’. Policymakers need to pay attention to these dangers, and to work closely with all the AI companies to regulate the technology.
 
-- 25.20: Conscience?
-- 26.40: lessons learned on asymmetry of power and wealth?
+26:40
+
+§3. AI technologies need to be managed responsibly by both the AI companies and by the government. It is ‘baffling’ (given the recent history of social media technologies) that other AI companies and investors are (‘frankly corruptly’) lobbying governments hard to deregulate AI technology. We need ‘sensible, responsible oversight’. Some proposals are too rigid and too aggressive and would slow down reaping the benefits.
+
+m
+
+
+
 - 29.30: last remarks
 
 ## 2025-08-20
