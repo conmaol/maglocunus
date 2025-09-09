@@ -4,32 +4,31 @@
 
 Last week the BBC podcast *Radical with Amol Rajan* published an [interview](https://www.bbc.co.uk/sounds/play/m002ht32) with Dario Amadei. This is also available on [BBC iPlayer](https://www.bbc.co.uk/iplayer/episodes/m002f1d0/radical-with-amol-rajan).
 
-Rough sections:
-- 1.30: Is AI over-hyped?
-  - AI development since 2015 has vastly exceeded expectations
-  - gold medals at Math Olympiad
-  - 90% of production code at Anthropic
-  - PhD level scientist
-  - biomedical discoveries
-  - clinical study reports
-- 6.00: ‘Machines of Love and Grace’
-  - huge opportunities!
-  - find cures for diseases with complex origins (cancer, Alzheimers, ageing ie. not just viruses)
-  - AI can absorb and connect new information much much faster than humans – much faster medical diagnosis
-  - economic development in Subsaharan Africa
-  - AI will lead to ‘enormous economic growth’
+01:30
+
+§1. AI progress is arguably under-hyped. Since 2015, the development of AI technology has vastly exceeded expectations. LLMs have gone from being barely able to produce a coherent grammatical sentence to winning gold medals at the International Maths Olympiad, or writing 90% of Anthropic’s code. Current LLMs can solve PhD-level science problems, helping to make biomedical discoveries like proposing a new molecular structure for a drug (cf. Alphafold). Anthropic’s LLMs are being used by pharmaceutical companies to speed up the approval of clinical trials, from 10 weeks to less than one week.
+
+\[Using AI to diagnose strokes faster: [BBC](https://www.bbc.co.uk/news/articles/cm21d32p9k8o), [Guardian](https://www.theguardian.com/society/2025/sep/01/stroke-centres-in-england-given-ai-tool-that-will-help-50-of-patients-recover)\]
+
+06:00
+
+§2. AI technology brings huge opportunities, especially in biomedicine. It will help us discover cures for diseases with complex origins and evolutions, like cancer, Alzheimers, and the ageing process. AI can absorb and connect far more information far faster than humans can. AI can also speed up routine medical diagnosis, finding things that whole teams of (overwhelmed) doctors have missed.
+
+§3. AI technology can bring economic development and prosperity to places like sub-Saharan Africa, where specialist expertise is currently lacking. AI is likely to generate ‘enormous economic growth’, taking us back to the era of 5–10% a year. 
+
+\[[Machines of Loving Grace](https://www.darioamodei.com/essay/machines-of-loving-grace), Charlotte Blease: [Why we should embrace AI doctors](https://www.theguardian.com/books/2025/aug/31/the-big-idea-why-we-should-embrace-ai-doctors)\]
  
 13:20
 
-§1. AI will probably lead to a ‘bloodbath’ of entry-level white-collar jobs, within one to five years. AI can already do much of the work typically done by first-year associates at law, consulting and finance firms – repetitive document review and routine financial analysis; basic administrative tasks like coordination, scheduling and note-taking. CEOs are already investing heavily in AI-tools precisely in order to cut costs in this way. Policymakers in government will need to accept that this is coming and ‘handle it well’. The public will need to be informed. \[[Axios interview](https://www.axios.com/2025/05/28/ai-jobs-white-collar-unemployment-anthropic)\]
+§4. AI will probably lead to a ‘bloodbath’ of entry-level white-collar jobs, within one to five years. AI can already do much of the work typically done by first-year associates at law, consulting and finance firms – repetitive document review and routine financial analysis; basic administrative tasks like coordination, scheduling and note-taking. CEOs are already investing heavily in AI-tools precisely in order to cut costs in this way. Policymakers in government will need to accept that this is coming and ‘handle it well’. The public will need to be informed. \[[Axios interview](https://www.axios.com/2025/05/28/ai-jobs-white-collar-unemployment-anthropic)\]
 
 19:50
 
-§2. Recent company-internal stress-testing shows that AI models are becoming ever harder to control. They can write special code to avoid being shut down, help to carry out ransomware attacks, and are close to having the skills needed to design biological and other weapons. AI companies need to do thorough, systematic lab-testing of their models, including extreme scenarios. The results need to be shared with rival companies, and with the public (as with car manufacturing). AI companies need to aggressively monitor how the models are being used, and look out for malicious users trying to ‘jailbreak’ their way around the ‘guardrails’. Policymakers need to pay attention to these dangers, and to work closely with all the AI companies to regulate the technology.
+§5. Recent company-internal stress-testing shows that AI models are becoming ever harder to control. They can write special code to avoid being shut down, help to carry out ransomware attacks, and are close to having the skills needed to design biological and other weapons. AI companies need to do thorough, systematic lab-testing of their models, including extreme scenarios. The results need to be shared with rival companies, and with the public (as with car manufacturing). AI companies need to aggressively monitor how the models are being used, and look out for malicious users trying to ‘jailbreak’ their way around the ‘guardrails’. Policymakers need to pay attention to these dangers, and to work closely with all the AI companies to regulate the technology.
 
 26:40
 
-§3. AI technologies need to be managed responsibly by both the AI companies and by the government. It is ‘baffling’ (given the recent history of social media technologies) that other AI companies and investors are (‘frankly corruptly’) lobbying governments hard to deregulate AI technology. We need ‘sensible, responsible oversight’. Some proposals are too rigid and too aggressive and would slow down reaping the benefits.
+§6. AI technologies need to be managed responsibly by both the AI companies and by the government. It is ‘baffling’ (given the recent history of social media technologies) that other AI companies and investors are (‘frankly corruptly’) lobbying governments hard to deregulate AI technology. We need ‘sensible, responsible oversight’. Some proposals are too rigid and too aggressive and would slow down reaping the benefits.
 
 m
 
