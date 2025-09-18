@@ -1,5 +1,31 @@
 # Notes
 
+## 2025-09-18
+
+### Lisa Crosbie: Copilot Studio - Lite Experience vs Full Experience Explained
+
+Youtube [link](https://www.youtube.com/watch?v=DEmuqilwdn4)
+
+#### The 'lite' experience
+
+Anyone with a MS365 Copilot licence can create a 'lite agent' from within MS365 Copilot Chat. 
+- Lite agents are specialist chat assistants to boost personal productivity.
+- They can be shared for use by your team (using a link), but you are the sole owner.
+- They cannot be published externally.
+- They have access to your MS Graph, and also to the wider internet.
+- Lite agents are built using no-code methods:
+  - You click 'Create agent' in the Copilot Chat sidebar to launch the agent-creating chat assistant.
+  - You prompt something like **"Help me communicate with my customers about our range of Contoso Tea products"**.
+  - You answer the questions that this agent-creating assistant asks you to set up your lite agent, eg. specifying knowledge sources, tone, name (eg. **'My Contoso Tea assistant'**), etc.
+  - You can use the 'Configure' tab to fine-tune these things, eg. specific Sharepoint document libraries, particular websites, your emails, a specific Teams channel or chat, etc.
+  - You can include other data sources (eg. Confluence), but only if your IT Admin has set this up in advance.
+ - You don't need a Copilot Studio licence to create your own lite agents.
+ - Lite agents can only chat with you. They can't **do** anything, eg. send emails or notifications, schedule meetings, etc.
+
+## 2025-09-17
+
+- Guardian: [‘I have to do it’: Why one of the world’s most brilliant AI scientists left the US for China](https://www.theguardian.com/news/ng-interactive/2025/sep/16/song-chun-zhu-why-one-of-the-worlds-most-brilliant-ai-scientists-left-the-us-for-china) - Song-Chun Zhu
+
 ## 2025-09-09
 
 - The Economist: [Faith in God-like large language models is waning](https://www.economist.com/business/2025/09/08/faith-in-god-like-large-language-models-is-waning): That may be good news for AI laggards like Apple.
