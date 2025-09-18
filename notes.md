@@ -10,7 +10,7 @@ Youtube [link](https://www.youtube.com/watch?v=DEmuqilwdn4)
 
 Anyone with a MS365 Copilot licence can create a 'lite agent' from within MS365 Copilot Chat. 
 - Lite agents are specialist chat assistants to boost personal productivity.
-- They can be shared for use by your team (using a link), but you are the sole owner.
+- They can be shared for use within your organisation (using a link), but you are the sole owner.
 - They cannot be published externally.
 - They have access to your MS Graph, and also to the wider internet.
 - Lite agents are built using no-code methods:
