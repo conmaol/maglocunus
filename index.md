@@ -38,11 +38,29 @@ A common kind of index consists of an in-memory <mark>hash map</mark> (or hash t
 - To look up a key, first get the byte offset from the index, and then go straight to that location in the file on disk.
 - To add or update a value, first append the new key-value pair, and then update the index.
 
-segmentation
+How can we avoid running out of disk space if we keep appending to a log file?
+1. **segmentation** – When a log file reaches a certain size (eg. 1024 records), we close it and start a new one.
+2. **compaction** – When a log file has been segmented, (in the background) we throw away duplicate keys, retaining just the last update for each key.
+3. **merging** – When a segmented log file has been compacted, we can merge it with the previous segment.
 
-compaction
+Every segment has its own in-memory hash map index. To look up a value, we start with the most recent segment’s index, and work backwards if needed.
 
-merging
+Some important issues:
+- file format – CSV is not the best format for a log; binary formats are faster.
+- deleting records – To delete a key, add a ‘tombstone’ record to the log file. This tells the merging process to discard all previous values.
+- crash recovery – When the database server is restarted, all in-memory indexes are lost and need to be rebuilt. Some implementations store a snapshot of each segment’s hash map on disk to speed up this process.
+- partially written records – The database program may crash halfway through appending a record to the log file. You can use checksums to identify and ignore such records.
+- concurrency control – It is common to have just one writer thread in an implementation, but multiple reader threads.
+
+Advantages of an append-only approach:
+- mm
+- mm
+- mm
+
+Limitations of hash tables indexes:
+- mm
+- mm
+
 
 
 
