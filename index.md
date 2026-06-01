@@ -6,7 +6,34 @@
 
 ### Data structures that power your database
 
+There are two main kinds of storage engine underlying databases:
+- log-structured storage engines
+- page-oriented storage engines (eg. B-trees).
+
+The simplest kind of database is a <mark>key-value store</mark>:
+- every record consists of a key (eg. an integer) followed by a value (eg. a JSON document), perhaps separated by a comma
+- adding a new record appends the new key-value pair to the end of a text file
+- updating a key also just appends a new key-value pair to the text file – only the last occurence of a key counts
+
+For example:
+```
+1234, {"name": "London", "attractions": ["Big Ben", "London Eye"]}
+42, {"name": "San Francisco", "attractions": ["Golden Gate Bridge"]}
+42, {"name": "San Francisco", "attractions": ["Exploratorium"]}
+```
+
+An append-only data file is known as a <mark>log</mark>:
+- appending to a file is generally very efficient.
+
+However, looking up a key in this kind of (unindexed) log-based key-value store has terrible performance – you need to scan the entire log from start to finish.
+
+An index is an additional structure that is derived from the primary data – metadata.
+- An index incurs overheads on writes – the index needs to be updated with every write.
+- But a well-chosen index can significantly speed up reads.
+
 #### Hash indexes
+
+
 
 #### SSTables and LSM-trees
 
