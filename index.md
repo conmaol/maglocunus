@@ -27,11 +27,22 @@ An append-only data file is known as a <mark>log</mark>:
 
 However, looking up a key in this kind of (unindexed) log-based key-value store has terrible performance – you need to scan the entire log from start to finish.
 
-An index is an additional structure that is derived from the primary data – metadata.
+An <mark>index</mark> is an additional structure that is derived from the primary data – metadata.
 - An index incurs overheads on writes – the index needs to be updated with every write.
 - But a well-chosen index can significantly speed up reads.
 
 #### Hash indexes
+
+A common kind of index consists of an in-memory <mark>hash map</mark> (or hash table):
+- Every key is mapped to a byte offset in the text file – the location at which the value can be found, eg. `1234: 0, 42: 64`.
+- To look up a key, first get the byte offset from the index, and then go straight to that location in the file on disk.
+- To add or update a value, first append the new key-value pair, and then update the index.
+
+segmentation
+
+compaction
+
+merging
 
 
 
