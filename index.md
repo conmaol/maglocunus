@@ -1,8 +1,36 @@
 # Maglocunus
 
-## Scratchpad
 
-The Mayfair Set ep. 1
+
+## Storage and retrieval
+
+### Data structures that power your database
+
+#### Hash indexes
+
+#### SSTables and LSM-trees
+
+#### Other indexing structures
+
+### Transaction processing or analytics?
+
+#### Data warehousing
+
+#### Stars and snowflakes: schemas for analytics
+
+### Column-oriented storage
+
+#### Column compression
+
+#### Sort order in column storage
+
+#### Writing to column-oriented storage
+
+#### Aggregation: data cubes and materialised views
+
+-----
+
+### The Mayfair Set ep. 1
 
 Colonel David Stirling was a Scottish aristocrat and WWII hero, founder of the SAS (a new way of fighting war, risky/reckless and pirate-like).
 
