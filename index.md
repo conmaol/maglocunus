@@ -53,18 +53,44 @@ Some important issues:
 - concurrency control – It is common to have just one writer thread in an implementation, but multiple reader threads.
 
 Advantages of an append-only approach:
-- mm
-- mm
-- mm
+- Appending and merging are *sequential* write operations, which are much faster than random writes, especially on magnetic spinning hard drives.
+- Concurrency and crash recovery are much simpler if files are append-only.
+- Merging old segments avoids the problem of data files getting fragmented over time.
 
 Limitations of hash tables indexes:
-- mm
-- mm
-
-
-
+- The hash table must fit in memory, so the number of keys is limited.
+- Range queries are not efficient, eg. scanning all keys between `kitty00000` and `kitty99999`.
 
 #### SSTables and LSM-trees
+
+A Sorted String Table (SSTable) is a data file where the key-value pairs are sorted by key. 
+
+Advantages of SSTables over log segments with hash indexes:
+- Merging segments is simple and efficient, essentially just *mergesort*.
+- You only need a sparse index in memory, since you can jump to the nearest key you hae in the index.
+- You can split the records into blocks and compress them before writing to disk, indexing just the start of each block, and thus saving disk space.
+
+##### Constructing and maintaining SSTables
+
+Memtables.
+
+##### Making an LSM-tree out of SSTables
+
+##### Performance optimisations
+
+#### B-Trees
+
+##### Making B-trees reliable
+
+##### B-tree optimisations
+
+#### Comparing B-trees and LSM-trees
+
+##### Advantages of LSM-trees
+
+##### Downsides of LSM-trees
+
+
 
 #### Other indexing structures
 
