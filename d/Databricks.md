@@ -18,7 +18,7 @@ Some data processing history:
 - However, Spark was designed to be used by specialist data engineers, using Scala and Java.
   - The new army of **data scientists** being churned out by the universities only wanted to use **Python** libraries like Pandas, Numpy, SciKit-learn.
 - The solution to this accessibility problem was <mark>PySpark</mark>:
-  - PySpark allowed data scientists to interact with Spark using Python, using dataframes etc.
+  - PySpark allowed data scientists to interact with Spark using Python (Pandas dataframes etc).
 
 But operationalising this data processing stack in real projects was a nightmare.
 
