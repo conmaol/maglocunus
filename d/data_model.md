@@ -41,7 +41,7 @@ classDiagram
     student --> course : took
 ```
 
-mmm
+class inheritance diagram vs. class association diagram
 
 ----
 
