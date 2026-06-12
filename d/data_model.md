@@ -1,6 +1,6 @@
-# Data model
+# Data models
 
-A data model is a list of generic statements describing some aspect of the world (its ‘domain’).
+A `data model` is a list of generic statements describing some aspect of the world.
 
 
 
