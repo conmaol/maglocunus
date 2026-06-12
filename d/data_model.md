@@ -3,11 +3,14 @@
 A `data model` is a set of generic statements describing some aspect of the world.
 
 For example, here is a simple data model describing some aspects of the academic world:
-- There are students and there are courses.
-- Every student has exactly one surname.
-- Every student has exactly one date-of-birth.
-- Some students have taken courses.
-- Every course takes place in a specific year.
+- There are students, there are teachers, and there are completed courses.
+- Every student has one surname and one date-of-birth.
+- Every teacher has one surname and one title.
+- Every completed course happened in a specific year.
+- Some students have completed courses.
+- Every completed course was completed by at least one student.
+
+Titles: Dr, Professor, Mr, Ms
 
 
 - a vocabulary of entity types and relationships
