@@ -18,6 +18,13 @@ This data model contains a few distinct types of `entity`:
 
 Every course has a subject and a level.
 
+Student John Smith got an A in course 'Informatics 1' in 2005.
+
+`got_grade(s9764747,INF1-2005,A)`
+
+`taught(05145533,INF1-2005)`
+
+
 Types of entity: student, teacher: people; course: event; year, title, surname
 
 ```mermaid
