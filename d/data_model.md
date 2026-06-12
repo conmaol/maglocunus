@@ -1,9 +1,14 @@
 # Data model
 
-A data model (or ontology) is a set of generalisations about (a part of) the world (ie. about a ‘domain’).
+A data model is a list of generic statements describing some aspect of the world (its ‘domain’).
+
+
+
 
 - a vocabulary of entity types and relationships
 - a set of pure relational statements, each of which makes a generalisation about the entity types and relationships.
+
+Also known as an ontology (or schema?)
 
 
 ----
