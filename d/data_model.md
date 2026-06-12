@@ -3,14 +3,62 @@
 A `data model` is a set of generic statements describing some aspect of the world.
 
 For example, here is a simple data model describing some aspects of the academic world:
-- There are students, there are teachers, and there are completed courses.
-- Every student has one surname and one date-of-birth.
-- Every teacher has one surname and one title.
-- Every completed course happened in a specific year.
-- Some students have completed courses.
-- Every completed course was completed by at least one student.
+> There are people, each of whom is either a student or a teacher.
+>
+> Every person has a surname. 
+>
+> Every student has a year of birth.
+>
+> Every teacher is either a lecturer or a professor.
+>
+> There are completed courses, each of which had a name and a teacher, and each of which was completed during a single calendar year, by at least one student.
 
-Titles: Dr, Professor, Mr, Ms
+This data model contains a few distinct types of `entity`:
+- *student* and *teacher* are different kinds of *person*
+
+Every course has a subject and a level.
+
+Types of entity: student, teacher: people; course: event; year, title, surname
+
+```mermaid
+classDiagram
+    person <|-- student
+    person <|-- teacher
+    person --> surname : called
+    teacher <|-- lecturer
+    teacher <|-- professor
+    student --> year : born in
+    course --> year : taught in
+    teacher --> course : taught
+    student --> course : took
+```
+
+mmm
+
+----
+
+```mermaid
+erDiagram
+    person ||--|| student : isa
+    person ||--|{ teacher : isa
+    teacher }|..|{ lecturer : isa
+    teacher ||--o{ professor : isa
+```
+
+
+----
+mmmm
+
+```mermaid
+---
+title: Order example
+---
+erDiagram
+    CUSTOMER ||--o{ ORDER : places
+    ORDER ||--|{ LINE-ITEM : contains
+    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
+```
+
 
 
 - a vocabulary of entity types and relationships
