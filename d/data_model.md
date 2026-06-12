@@ -24,6 +24,7 @@ Student John Smith got an A in course 'Informatics 1' in 2005.
 
 `taught(05145533,INF1-2005)`
 
+undergraduate, postgraduate
 
 Types of entity: student, teacher: people; course: event; year, title, surname
 
