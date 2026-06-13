@@ -104,33 +104,55 @@ However, the way relations are encoded in ER diagrams is *more expressive* than 
 - Every course is taken by one or more students.
 - Every student takes one or more courses.
 - Every course is taught by exactly one teacher.
-- Every yeacher teaches one or more courses.
+- Every teacher teaches one or more courses.
 
+### Document Type Definitions
 
+```
+<!ELEMENT student EMPTY>
+<!ELEMENT teacher EMPTY>
+<!ELEMENT course (teacher, student+)>
 
+<!ATTLIST student
+  name CDATA #REQUIRED
+  dateOfBirth Date #REQUIRED >
 
+<!ATTLIST teacher
+  name CDATA #REQUIRED >
 
-----
-mmmm
+<!ATTLIST course
+  title CDATA #REQUIRED >
+```
 
-```mermaid
----
-title: Order example
----
-erDiagram
-    CUSTOMER ||--o{ ORDER : places
-    ORDER ||--|{ LINE-ITEM : contains
-    CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
+XML:
+
+```
+<course title="Informatics 1">
+  <teacher name="Dr Mark McConville"/>
+  <student name="Kate Alexandra Ranson" dateOfBirth="1992-11-03"/>
+  <student name="Julie Sharon Port" dateOfBirth="1983-06-20"/>
+  <student name="Jayne Shaw" dateOfBirth="1969-02-14"/>
+</course>
 ```
 
 
 
+inheritance via parameter entities?
+
+```
+<!ENTITY % person.common "name, age">
+
+<!-- 'Inheriting' the common elements into an Employee -->
+<!ELEMENT employee (%person.common;, employee_id)>
+
+<!-- 'Inheriting' the common elements into a Customer -->
+<!ELEMENT customer (%person.common;, loyalty_tier)>
+```
+
 ### Formal data models – logics
 
 
----
 
-Also known as an ontology (or schema?)
 
 
 ----
