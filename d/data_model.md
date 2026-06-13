@@ -19,7 +19,9 @@ These entities are associated with particular `attributes`:
 - events occur during *academic years*
 - courses have *titles*
 
-relations?
+Finally, this data model assumes two different `relations` between entities:
+- teachers *teach* courses
+- students *take* courses
 
 
 ### Formal data models
