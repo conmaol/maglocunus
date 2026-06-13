@@ -23,10 +23,7 @@ Finally, this data model assumes two different `relations` between entities:
 - teachers *teach* courses
 - students *take* courses
 
-
-### Formal data models
-
-FOL?
+### Formal data models – diagrams
 
 Some aspects of this data model can be formalised as a class diagram:
 
@@ -96,8 +93,10 @@ erDiagram
 
 
 
-- a vocabulary of entity types and relationships
-- a set of pure relational statements, each of which makes a generalisation about the entity types and relationships.
+### Formal data models – logics
+
+
+---
 
 Also known as an ontology (or schema?)
 
