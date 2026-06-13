@@ -2,19 +2,47 @@
 
 A `data model` is a set of generic statements describing some aspect of the world.
 
-For example, here is a simple data model describing some aspects of the academic world:
-> There are people, each of whom is either a student or a teacher.
+For example, here is a simple informal data model describing some aspects of the academic world:
+> There are students and teachers, each of whom has a name.
 >
-> Every person has a surname. 
+> Every student has a date of birth.
 >
-> Every student has a year of birth.
->
-> Every teacher is either a lecturer or a professor.
->
-> There are completed courses, each of which had a name and a teacher, and each of which was completed during a single calendar year, by at least one student.
+> Students take courses, run by a teacher during a particular academic year, and each of which has a title.
 
 This data model contains a few distinct types of `entity`:
-- *student* and *teacher* are different kinds of *person*
+- *students* and *teachers* are different kinds of *person*
+- *courses* are a kind of *event*
+
+These entities are associated with particular `attributes`:
+- people have *names*
+- students have *dates of birth*
+- events occur during *academic years*
+- courses have *titles*
+
+relations?
+
+
+Some aspects of this data model can be formalised as a class diagram:
+
+```mermaid
+classDiagram
+    person <|-- student
+    person <|-- teacher
+    class person { name }
+    class student { date of birth }
+    event <|-- course
+    class event {
+        academic year
+    }
+    class course {
+        title
+    }
+    teacher --> course : teaches
+    student --> course : takes
+```
+
+
+
 
 Every course has a subject and a level.
 
@@ -30,13 +58,6 @@ Types of entity: student, teacher: people; course: event; year, title, surname
 
 ```mermaid
 classDiagram
-    person <|-- student
-    person <|-- teacher
-    person --> surname : called
-    teacher <|-- lecturer
-    teacher <|-- professor
-    student --> year : born in
-    course --> year : taught in
     teacher --> course : taught
     student --> course : took
 ```
