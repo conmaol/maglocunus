@@ -34,10 +34,10 @@ classDiagram
     person <|-- student
     person <|-- teacher
     class person { name }
-    class student { date of birth }
+    class student { dateOfBirth }
     event <|-- course
     class event {
-        academic year
+        academicYear
     }
     class course {
         title
