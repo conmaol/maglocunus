@@ -33,14 +33,14 @@ There are many different ways of formalising a data model. For example, we could
 classDiagram
     person <|-- student
     person <|-- teacher
-    class person { name }
-    class student { dateOfBirth }
+    class person { String name }
+    class student { YYYY-MM-DD dateOfBirth }
     event <|-- course
     class event {
-        academicYear
+        YYYY academicYear
     }
     class course {
-        title
+        String title
     }
     teacher --> course : teaches
     student --> course : takes
@@ -68,29 +68,46 @@ The labelled arrows between entity types represent relations, so:
 
 ### Entity-relationship diagrams
 
-Another way of formalising a data model is by drawing an `entity-relationship diagram`:
+Another way of formalising a data model is by drawing an `entity-relationship diagram` (or `ER diagram`):
 
 ```mermaid
 erDiagram
-    course }|--|{ student : takes
-    course }|--|| teacher : teaches
-    course { YYYY academicYear }
-    student {
+    COURSE }|--|{ STUDENT : takes
+    COURSE }|--|| TEACHER : teaches
+    COURSE {
+      YYYY academicYear
+      String title
+    }
+    STUDENT {
         String name
         YYYY-MM-DD dateOfBirth
     }
-    teacher {
+    TEACHER {
         String name
     }
 ```
 
-As with class diagrams, in an entity-relationship diagram every entity type is represented by a box.
+As with class diagrams, in an ER diagram every entity type is represented by a box, again with the name of the entity type in the top part of the box. The ER diagram contains three boxes ‘student’, ‘teacher’, and ‘course’
+
+Note that, unlike the class diagram above, this ER diagram does not contain entity types for ‘person’ or ‘event’. This is because ER diagrams cannot represent inheritance or subtypes relations between entity types – there is no way of saying ‘every student is a person’. This is one way in which ER diagrams are *less expressive* than class diagrams.
+
+As with class diagrams, the lower part of the boxes lists the attributes associated with the entity type, so:
+- Every teacher has a name.
+- Every student has a name and a date of birth.
+- Every course has a title and happens within an academic year.
+
+As with class diagrams, the labelled arrows between entity types represent relations, so as before:
+- Teachers teach courses.
+- Students take courses.
+
+However, the way relations are encoded in ER diagrams is *more expressive* than class diagrams since they include information about `cardinality`. So from the ER diagram we can read off the following cardinality information:
+- Every course is taken by one or more students.
+- Every student takes one or more courses.
+- Every course is taught by exactly one teacher.
+- Every yeacher teaches one or more courses.
 
 
 
-no subtypes
-
-but cardinality
 
 
 ----
