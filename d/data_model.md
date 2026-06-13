@@ -12,20 +12,20 @@ For example, here is a simple informal data model describing some aspects of the
 > Every course has a title, and runs within an academic year.
 
 This data model contains a few distinct types of `entity`:
-- *students* and *teachers* are different kinds of *person*
-- *courses* are a kind of *event*
+- *Students* and *teachers* are different kinds of *person*.
+- *Courses* are a kind of *event*.
 
 These entities are associated with particular `attributes`:
-- people have *names*
-- students have *dates of birth*
-- events occur within *academic years*
-- courses have *titles*
+- People have *names*.
+- Students have *dates of birth*.
+- Events occur within *academic years*.
+- Courses have *titles*.
 
 Finally, this data model assumes two different `relations` between entities:
-- teachers *teach* courses
-- students *take* courses
+- Teachers *teach* courses.
+- Students *take* courses.
 
-### Formal data models – class diagrams
+### Class diagrams
 
 There are many different ways of formalising a data model. For example, we could draw a `class diagram`:
 
@@ -66,20 +66,31 @@ The labelled arrows between entity types represent relations, so:
 - Teachers teach courses.
 - Students take courses.
 
-### Formal data models – entity-relation diagrams
+### Entity-relationship diagrams
 
-Another way of formalising a data model is by drawing an `entity-relation diagram`:
-
-
-----
+Another way of formalising a data model is by drawing an `entity-relationship diagram`:
 
 ```mermaid
 erDiagram
-    person ||--|| student : isa
-    person ||--|{ teacher : isa
-    teacher }|..|{ lecturer : isa
-    teacher ||--o{ professor : isa
+    course }|--|{ student : takes
+    course }|--|| teacher : teaches
+    course { YYYY academicYear }
+    student {
+        String name
+        YYYY-MM-DD dateOfBirth
+    }
+    teacher {
+        String name
+    }
 ```
+
+As with class diagrams, in an entity-relationship diagram every entity type is represented by a box.
+
+
+
+no subtypes
+
+but cardinality
 
 
 ----
