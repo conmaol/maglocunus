@@ -154,7 +154,19 @@ DTDs are only good for **physical** data models (as XML documents).
 
 ### Formal data models – logics
 
+```
+∀x.student(x) → person(x)
+∀x.teacher(x) → person(x)
+```
 
+
+Closing the world:
+
+```
+∀x.person(x) → (student(x) ∨ teacher(x))
+∀x.student(x) → ¬teacher(x)
+∀x.teacher(x) → ¬student(x)
+```
 
 
 
