@@ -149,6 +149,9 @@ inheritance via parameter entities?
 <!ELEMENT customer (%person.common;, loyalty_tier)>
 ```
 
+DTDs are only good for **physical** data models (as XML documents).
+
+
 ### Formal data models – logics
 
 
