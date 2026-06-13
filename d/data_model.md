@@ -22,6 +22,10 @@ These entities are associated with particular `attributes`:
 relations?
 
 
+### Formal data models
+
+FOL?
+
 Some aspects of this data model can be formalised as a class diagram:
 
 ```mermaid
