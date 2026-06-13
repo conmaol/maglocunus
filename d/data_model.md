@@ -157,8 +157,17 @@ DTDs are only good for **physical** data models (as XML documents).
 ```
 ∀x.student(x) → person(x)
 ∀x.teacher(x) → person(x)
+∀x.course(x) → event(x)
+
+∀x.person(x) → ∃y.name(x,y)
+∀x.student(x) → ∃y.dateOfBirth(x,y)
+∀x.event(x) → ∃y.academicYear(x,y)
+∀x.course(x) → ∃y.title(x,y)
+∀x.course(x) → ∃y.teacher(y) ∧ teaches(y,x)
+∀x.course(x) → ∃y.student(y) ∧ takes(y,x)
 ```
 
+cardinality?
 
 Closing the world:
 
@@ -167,7 +176,13 @@ Closing the world:
 ∀x.student(x) → ¬teacher(x)
 ∀x.teacher(x) → ¬student(x)
 ```
+everything is an event or a person
 
+every event is a course
+
+a person is not an event, and vice versa
+
+every teacher teaches a course
 
 
 ----
