@@ -123,7 +123,7 @@ RDFS Schema can capture entity types and subtypes (ie ‘classes’ and ‘subcl
 This can be read as follows:
 - People, students, teachers, events and courses are all types of entity.
 - Students and teachers are types of person.
-- Courses are types of eent.
+- Courses are types of event.
 
 Diagram?
 
