@@ -128,6 +128,15 @@ Properties:
 
 Attributes:
 
+```
+:hasName, :hasDoB, :hasTitle, :inAcademicYear a rdf:Property .
+:hasName rdfs:domain :Person ; rdfs:range xsd:String .
+:hasDoB rdfs:Domain :Student ; rdfs:range xsd:Date .
+:hasTitle rdfs:domain :Course ; rdfs:range xsd:String .
+:inAcademicYear rdfs:Domain :Event ; rdfs:range xsd:Year .
+```
+
+Cardinality in OWL?
 
 ### Formal data models – logics
 
