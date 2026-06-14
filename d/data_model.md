@@ -216,9 +216,108 @@ every teacher teaches a course
 
 ### Tabularisation
 
-Turning relations into attributes.
+Tabularisation is the process of taking a ‘conceptual’ data model, usually in the form of an ER diagram, and converting it into a ‘physical’ data model suitable for implementing as a standard relational, SQL-style database.
 
-No many-to-many relationships!
+Let’s start with the ER diagram from before:
+
+```mermaid
+erDiagram
+    COURSE }|--|{ STUDENT : takes
+    COURSE }|--|| TEACHER : teaches
+    COURSE {
+      YYYY academicYear
+      String title
+    }
+    STUDENT {
+        String name
+        YYYY-MM-DD dateOfBirth
+    }
+    TEACHER {
+        String name
+    }
+```
+
+The first stage in tabularisation involves identifying any many-to-many relations in the data model and turning them into two one-to-many relations with an intervening ‘join’ entity type.
+
+The data model here contains one many-to-many relation – the ‘takes’ relation between courses and students. Remember that one student can take multiple courses and one course can be taken by multiple students. 
+
+In order to eliminate this many-to-many relation, a new entity type called ‘COURSExSTUDENT’ is introduced into the data model, with many-to-one relations to both COURSE and STUDENT:
+
+```mermaid
+erDiagram
+    COURSE }|--|| TEACHER : teaches
+    COURSE ||--|{ COURSExSTUDENT : ""
+    STUDENT ||--|{ COURSExSTUDENT : ""
+    COURSE {
+      YYYY academicYear
+      String title
+    }
+    STUDENT {
+        String name
+        YYYY-MM-DD dateOfBirth
+    }
+    TEACHER {
+        String name
+    }
+    COURSExSTUDENT {
+    }
+```
+
+The next step involves converting all the one-to-many relations into attributes on the two related entity types.
+
+For example, there is a one-to-many relation between TEACHER and COURSE — one teacher can teach multiple courses (but each course only has one teacher).
+- We add a unique identifier attribute (ie. a ‘primary key’) to the TEACHER entity type.
+- We add a ‘teacher’ attribute to the COURSE entity type, whose value must be an identifier reference (ie. a ‘foreign key’) to the TEACHER entity type.
+- We can then remove the one-to-many ‘teaches’ relation link itself. 
+
+So we get:
+
+```mermaid
+erDiagram
+    COURSE ||--|{ COURSExSTUDENT : ""
+    STUDENT ||--|{ COURSExSTUDENT : ""
+    COURSE {
+      YYYY academicYear
+      String title
+      IDREF teacher 
+    }
+    STUDENT {
+        String name
+        YYYY-MM-DD dateOfBirth
+    }
+    TEACHER {
+        ID id
+        String name
+    }
+    COURSExSTUDENT {
+    }
+```
+
+Next:
+
+```mermaid
+erDiagram
+    STUDENT ||--|{ COURSExSTUDENT : ""
+    COURSE {
+      ID id
+      YYYY academicYear
+      String title
+      IDREF teacher 
+    }
+    STUDENT {
+      String name
+      YYYY-MM-DD dateOfBirth
+    }
+    TEACHER {
+      ID id
+      String name
+    }
+    COURSExSTUDENT {
+      IDREF course
+    }
+```
+
+Next:
 
 ```mermaid
 erDiagram
@@ -244,27 +343,8 @@ erDiagram
     }
 ```
 
-Or:
+Now we have a fully tabularised, relation-free ‘physical’ data model that can be implemented straightforwardly in a relational database management system (RDBMS) like MySQL or PostgreSQL.
 
-```mermaid
-erDiagram
-    COURSE }|--|| TEACHER : teaches
-    COURSE ||--|{ COURSExSTUDENT : takes
-    STUDENT ||--|{ COURSExSTUDENT : takes
-    COURSE {
-      YYYY academicYear
-      String title
-    }
-    STUDENT {
-        String name
-        YYYY-MM-DD dateOfBirth
-    }
-    TEACHER {
-        String name
-    }
-    COURSExSTUDENT {
-    }
-```
 
 
 
