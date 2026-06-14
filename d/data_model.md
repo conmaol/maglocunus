@@ -25,6 +25,8 @@ Finally, this data model assumes two different `relations` between entities:
 - Teachers *teach* courses.
 - Students *take* courses.
 
+A `data base` consists of a `data model` and a `data set`.
+
 ### Class diagrams
 
 There are many different ways of formalising a data model. For example, we could draw a `class diagram`:
