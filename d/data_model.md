@@ -218,6 +218,8 @@ every teacher teaches a course
 
 Turning relations into attributes.
 
+No many-to-many relationships!
+
 ```mermaid
 erDiagram
     COURSE {
@@ -239,6 +241,28 @@ erDiagram
     COURSExSTUDENT {
       IDREF course
       IDREF student
+    }
+```
+
+Or:
+
+```mermaid
+erDiagram
+    COURSE }|--|| TEACHER : teaches
+    COURSE ||--|{ COURSExSTUDENT : takes
+    STUDENT ||--|{ COURSExSTUDENT : takes
+    COURSE {
+      YYYY academicYear
+      String title
+    }
+    STUDENT {
+        String name
+        YYYY-MM-DD dateOfBirth
+    }
+    TEACHER {
+        String name
+    }
+    COURSExSTUDENT {
     }
 ```
 
