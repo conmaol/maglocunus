@@ -138,6 +138,21 @@ Attributes:
 
 Cardinality in OWL?
 
+owl:cardinality (Exactly): Constrains a property to have exactly N distinct values (e.g., a Person must have exactly 2 parents).
+
+owl:minCardinality (At Least): Constrains a property to have at least N values (e.g., a Car must have at least 3 wheels).
+
+owl:maxCardinality (At Most): Constrains a property to have at most N values (e.g., an Academic Paper can have at most 5 authors
+
+```
+_:courseTeacherRestriction a owl:Restriction ;
+                           owl:onProperty :teaches ;
+                           owl:minCardinality "1"^^xsd:nonNegativeInteger .
+```
+
+??
+
+
 ### Formal data models – logics
 
 ```
