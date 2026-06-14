@@ -345,7 +345,7 @@ erDiagram
 
 Now we have a fully tabularised, relation-free ‘physical’ data model that can be implemented straightforwardly in a relational database management system (RDBMS) like MySQL or PostgreSQL.
 
-
+SQL code to describe this data model?
 
 
 
