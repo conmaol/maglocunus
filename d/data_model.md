@@ -25,8 +25,6 @@ Finally, this data model assumes two different `relations` between entities:
 - Teachers *teach* courses.
 - Students *take* courses.
 
-A `data base` consists of a `data model` and a `data set`.
-
 ### Class diagrams
 
 There are many different ways of formalising a data model. For example, we could draw a `class diagram`:
@@ -98,11 +96,11 @@ As with class diagrams, the lower part of the boxes lists the attributes associa
 - Every student has a name and a date of birth.
 - Every course has a title and happens within an academic year.
 
-As with class diagrams, the labelled arrows between entity types represent relations, so as before:
+Again, as with class diagrams, the labelled arrows between entity types represent relations, so as before:
 - Teachers teach courses.
 - Students take courses.
 
-However, the way relations are encoded in ER diagrams is *more expressive* than class diagrams since they include information about `cardinality`. So from the ER diagram we can read off the following cardinality information:
+However, the way relations are encoded in ER diagrams is *more expressive* than class diagrams since they include information about `cardinality`. So from the ER diagram we can read off the following cardinality information (from the little decorations at the ends of each of the lines connecting entity types):
 - Every course is taken by one or more students.
 - Every student takes one or more courses.
 - Every course is taught by exactly one teacher.
@@ -110,7 +108,7 @@ However, the way relations are encoded in ER diagrams is *more expressive* than 
 
 ### RDF Schema
 
-Data models are also known as `ontologies`, and RDF Schema is a W3C standard ontology language that can be used to formalise a data model.
+Data models are more generally known as `ontologies` (at least by peopple working in the fields of Informatics and AI). RDF Schema is a W3C standard ontology language that can be used to formalise a data model.
 
 RDF Schema (RDFS) can capture entity types and subtypes (ie ‘classes’ and ‘subclasses’):
 
@@ -125,9 +123,7 @@ This can be read as follows:
 - Students and teachers are types of person.
 - Courses are types of event.
 
-Diagram?
-
-Properties:
+Relations are known as ‘properties’ in RDFS: 
 
 ```
 :teaches, :takes a rdf:Property .
@@ -135,15 +131,35 @@ Properties:
 :takes rdfs:domain :Student ; rdfs:range :Course .
 ```
 
-Attributes:
+In other words:
+- ‘teaches’ and ‘takes’ are both relations between entity types.
+- Teachers teach courses.
+- Students take courses.
+
+Attributes are just treated as special kinds of property in RDFS:
 
 ```
-:hasName, :hasDoB, :hasTitle, :inAcademicYear a rdf:Property .
-:hasName rdfs:domain :Person ; rdfs:range xsd:String .
-:hasDoB rdfs:Domain :Student ; rdfs:range xsd:Date .
-:hasTitle rdfs:domain :Course ; rdfs:range xsd:String .
-:inAcademicYear rdfs:Domain :Event ; rdfs:range xsd:Year .
+:name, :dateOfBirth, :title, :academicYear a rdf:Property .
+:name rdfs:domain :Person ; rdfs:range xsd:String .
+:dateOfBirth rdfs:Domain :Student ; rdfs:range xsd:Date .
+:title rdfs:domain :Course ; rdfs:range xsd:String .
+:academicYear rdfs:Domain :Event ; rdfs:range xsd:Year .
 ```
+
+In other words:
+- People have names.
+- Students have dates of birth.
+- Courses have titles.
+- Events happen within an academic year.
+
+The RDFS statements listed here together say pretty much the same thing as the class diagram above - they can express inheritance and other kinds of relations but not cardinality.
+
+### OWL (Web Ontology Language)
+
+We can use the W3C standard Web Ontology Language (OWL) to add cardinality statement to an RDFS data model.
+
+For example:
+
 
 Cardinality in OWL?
 
@@ -159,7 +175,7 @@ _:courseTeacherRestriction a owl:Restriction ;
                            owl:minCardinality "1"^^xsd:nonNegativeInteger .
 ```
 
-??
+Exclusive subclasses?
 
 
 ### Formal data models – logics
@@ -238,6 +254,8 @@ inheritance via parameter entities?
 ```
 
 DTDs are only good for **physical** data models (as XML documents).
+
+A `data base` consists of a `data model` and a `data set`.
 
 ----
 
