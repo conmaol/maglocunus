@@ -212,7 +212,40 @@ a person is not an event, and vice versa
 
 every teacher teaches a course
 
+----
 
+### Tabularisation
+
+Turning relations into attributes.
+
+```mermaid
+erDiagram
+    COURSE {
+      ID id
+      YYYY academicYear
+      String title
+      IDREF teacher
+    }
+    STUDENT {
+        ID id
+        String name
+        YYYY-MM-DD dateOfBirth
+    }
+    TEACHER {
+        ID id
+        String name
+    }
+
+    COURSExSTUDENT {
+      IDREF course
+      IDREF student
+    }
+```
+
+
+
+
+----
 
 ### Document Type Definitions
 
