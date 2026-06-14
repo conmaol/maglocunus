@@ -106,50 +106,25 @@ However, the way relations are encoded in ER diagrams is *more expressive* than 
 - Every course is taught by exactly one teacher.
 - Every teacher teaches one or more courses.
 
-### Document Type Definitions
+### RDF Schema
+
+Classes:
 
 ```
-<!ELEMENT student EMPTY>
-<!ELEMENT teacher EMPTY>
-<!ELEMENT course (teacher, student+)>
-
-<!ATTLIST student
-  name CDATA #REQUIRED
-  dateOfBirth Date #REQUIRED >
-
-<!ATTLIST teacher
-  name CDATA #REQUIRED >
-
-<!ATTLIST course
-  title CDATA #REQUIRED >
+:Person, :Student, :Teacher, :Event, :Course a rdfs:Class .
+:Student, :Teacher rdfs:subClassOf :Person .
+:Course rdfs:subClassOf :Event .
 ```
 
-XML:
+Properties:
 
 ```
-<course title="Informatics 1">
-  <teacher name="Dr Mark McConville"/>
-  <student name="Kate Alexandra Ranson" dateOfBirth="1992-11-03"/>
-  <student name="Julie Sharon Port" dateOfBirth="1983-06-20"/>
-  <student name="Jayne Shaw" dateOfBirth="1969-02-14"/>
-</course>
+:teaches, :takes a rdf:Property .
+:teaches rdfs:domain :Teacher ; rdfs:range :Course .
+:takes rdfs:domain :Student ; rdfs:range :Course .
 ```
 
-
-
-inheritance via parameter entities?
-
-```
-<!ENTITY % person.common "name, age">
-
-<!-- 'Inheriting' the common elements into an Employee -->
-<!ELEMENT employee (%person.common;, employee_id)>
-
-<!-- 'Inheriting' the common elements into a Customer -->
-<!ELEMENT customer (%person.common;, loyalty_tier)>
-```
-
-DTDs are only good for **physical** data models (as XML documents).
+Attributes:
 
 
 ### Formal data models – logics
@@ -184,6 +159,50 @@ a person is not an event, and vice versa
 
 every teacher teaches a course
 
+
+
+### Document Type Definitions
+
+```
+<!ELEMENT student EMPTY>
+<!ELEMENT teacher EMPTY>
+<!ELEMENT course (teacher, student+)>
+
+<!ATTLIST student
+  name CDATA #REQUIRED
+  dateOfBirth Date #REQUIRED >
+
+<!ATTLIST teacher
+  name CDATA #REQUIRED >
+
+<!ATTLIST course
+  title CDATA #REQUIRED >
+```
+
+XML:
+
+```
+<course title="Informatics 1">
+  <teacher name="Dr Mark McConville"/>
+  <student name="Kate Alexandra Ranson" dateOfBirth="1992-11-03"/>
+  <student name="Julie Sharon Port" dateOfBirth="1983-06-20"/>
+  <student name="Jayne Shaw" dateOfBirth="1969-02-14"/>
+</course>
+```
+
+inheritance via parameter entities?
+
+```
+<!ENTITY % person.common "name, age">
+
+<!-- 'Inheriting' the common elements into an Employee -->
+<!ELEMENT employee (%person.common;, employee_id)>
+
+<!-- 'Inheriting' the common elements into a Customer -->
+<!ELEMENT customer (%person.common;, loyalty_tier)>
+```
+
+DTDs are only good for **physical** data models (as XML documents).
 
 ----
 
