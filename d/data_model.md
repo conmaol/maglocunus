@@ -25,6 +25,8 @@ Finally, this data model assumes two different `relations` between entities:
 - Teachers *teach* courses.
 - Students *take* courses.
 
+## Formal data models
+
 ### Class diagrams
 
 There are many different ways of formalising a data model. For example, we could draw a `class diagram`:
@@ -180,7 +182,7 @@ Exclusive subclasses?
 Manchester syntax?
 
 
-### Formal data models – logics
+### Formal logic
 
 ```
 ∀x.student(x) → person(x)
@@ -212,7 +214,9 @@ a person is not an event, and vice versa
 
 every teacher teaches a course
 
-----
+
+
+## Physical data models
 
 ### Tabularisation
 
