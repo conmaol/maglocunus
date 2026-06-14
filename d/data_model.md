@@ -349,8 +349,23 @@ erDiagram
 
 Now we have a fully tabularised, relation-free ‘physical’ data model that can be implemented straightforwardly in a relational database management system (RDBMS) like MySQL or PostgreSQL.
 
-SQL code to describe this data model?
+SQL-DDL database definition language:
 
+```
+CREATE TABLE student (
+    id  INTEGER  PRIMARY KEY,
+    name  VARCHAR(100)  not null,
+    dateOfBirth  DATE  not null
+);
+
+CREATE TABLE teacher (
+    id  INTEGER  PRIMARY KEY,
+    name  VARCHAR(100)  not null,
+);
+
+
+
+```
 
 
 ----
