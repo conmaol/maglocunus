@@ -177,6 +177,8 @@ _:courseTeacherRestriction a owl:Restriction ;
 
 Exclusive subclasses?
 
+Manchester syntax?
+
 
 ### Formal data models – logics
 
