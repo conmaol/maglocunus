@@ -110,13 +110,22 @@ However, the way relations are encoded in ER diagrams is *more expressive* than 
 
 ### RDF Schema
 
-Classes:
+Data models are also known as `ontologies`, and RDF Schema is a W3C standard ontology language that can be used to formalise a data model.
+
+RDFS Schema can capture entity types and subtypes (ie ‘classes’ and ‘subclasses’):
 
 ```
 :Person, :Student, :Teacher, :Event, :Course a rdfs:Class .
 :Student, :Teacher rdfs:subClassOf :Person .
 :Course rdfs:subClassOf :Event .
 ```
+
+This can be read as follows:
+- People, students, teachers, events and courses are all types of entity.
+- Students and teachers are types of person.
+- Courses are types of eent.
+
+Diagram?
 
 Properties:
 
