@@ -155,14 +155,9 @@ And finally we can add the additional cardinality constraint on teachers:
 ∀x∀y∀z.teaches(x,z) ∧ teaches(y,z) → x=y  -- every course has no more than one teacher who teaches it
 ```
 
-
-
-
-
-
 ### RDF Schema
 
-Data models are more generally known as `ontologies` (at least by peopple working in the fields of Informatics and AI). RDF Schema is a W3C standard ontology language that can be used to formalise a data model.
+Outside the world of databases, data models are generally known as `ontologies`. RDF Schema is a W3C standard ontology language that serves to formalise a data model.
 
 RDF Schema (RDFS) can capture entity types and subtypes (ie ‘classes’ and ‘subclasses’):
 
