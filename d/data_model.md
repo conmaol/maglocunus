@@ -32,10 +32,11 @@ Fundamentally, data modelling is all about identifying and cataloguing these thr
 
 ## Formalising data models
 
-There are lots of different systems for formalising a data model. Here we will discuss three:
+There are lots of different systems for formalising a data model. Here we will discuss four:
 - class diagrams
 - entity-relationship diagrams
 - first order logic
+- RDF Schema
 
 ### Class diagrams
 
