@@ -128,31 +128,31 @@ In constrast, first order logic (FOL) is an extremely powerful mathematical tool
 Entity types and subtypes can be captured in FOL as follows: 
 
 ```
-∀x.student(x) → person(x)  -- every student is also a person
-∀x.teacher(x) → person(x)  -- every teacher is also a person
-∀x.course(x) → event(x)  -- every course is also an event
+∀x.student(x) → person(x)     -- every student is also a person
+∀x.teacher(x) → person(x)     -- every teacher is also a person
+∀x.course(x) → event(x)       -- every course is also an event
 ```
 
 Adding attributes:
 
 ```
-∀x.person(x) → ∃y.name(x,y)  -- every person has a name
-∀x.student(x) → ∃y.dateOfBirth(x,y)  -- every student has a date of birth
-∀x.event(x) → ∃y.academicYear(x,y)  -- every event is associated with an academic year
-∀x.course(x) → ∃y.title(x,y)  -- every course has a title
+∀x.person(x) → ∃y.name(x,y)           -- every person has a name
+∀x.student(x) → ∃y.dateOfBirth(x,y)   -- every student has a date of birth
+∀x.event(x) → ∃y.academicYear(x,y)    -- every event is associated with an academic year
+∀x.course(x) → ∃y.title(x,y)          -- every course has a title
 ```
 
 Expressing relations:
 
 ```
-∀x.course(x) → ∃y.teacher(y) ∧ teaches(y,x)  -- every course has at least one teacher who teaches it
-∀x.course(x) → ∃y.student(y) ∧ takes(y,x)  -- every course has at least one students who takes it
+∀x.course(x) → ∃y.teacher(y) ∧ teaches(y,x)   -- every course has at least one teacher who teaches it
+∀x.course(x) → ∃y.student(y) ∧ takes(y,x)     -- every course has at least one students who takes it
 ```
 
 And finally we can add the additional cardinality constraint on teachers:
 
 ```
-∀x∀y∀z.teaches(x,z) ∧ teaches(y,z) → x=y  -- every course has no more than one teacher who teaches it
+∀x∀y∀z.teaches(x,z) ∧ teaches(y,z) → x=y    -- every course has no more than one teacher who teaches it
 ```
 
 ### RDF Schema
@@ -162,24 +162,24 @@ Outside the world of databases, data models are generally known as `ontologies`.
 Like first order logic, RDF Schema (RDFS) can capture entity types and subtypes (ie ‘classes’ and ‘subclasses’):
 
 ```
-:Student, :Teacher rdfs:subClassOf :Person .  -- every student and every teacher is also a person
-:Course rdfs:subClassOf :Event .  -- every course is also an event
+:Student, :Teacher rdfs:subClassOf :Person .    -- every student and every teacher is also a person
+:Course rdfs:subClassOf :Event .                -- every course is also an event
 ```
 
 Relations are known as ‘properties’ in RDFS: 
 
 ```
-:teaches rdfs:domain :Teacher ; rdfs:range :Course .  -- teachers teach courses
-:takes rdfs:domain :Student ; rdfs:range :Course .  -- students take courses
+:teaches rdfs:domain :Teacher ; rdfs:range :Course .    -- teachers teach courses
+:takes rdfs:domain :Student ; rdfs:range :Course .      -- students take courses
 ```
 
 Attributes are just treated as special kinds of property in RDFS:
 
 ```
-:name rdfs:domain :Person .  -- people have names
-:dateOfBirth rdfs:domain :Student .  -- students have dates of birth
-:title rdfs:domain :Course .  -- courses have titles
-:academicYear rdfs:Domain :Event . -- events are associated with academic years
+:name rdfs:domain :Person .            -- people have names
+:dateOfBirth rdfs:domain :Student .    -- students have dates of birth
+:title rdfs:domain :Course .           -- courses have titles
+:academicYear rdfs:Domain :Event .     -- events are associated with academic years
 ```
 
 Like class diagrams, RDFS statements can express inheritance and other kinds of relations but not cardinality. 
