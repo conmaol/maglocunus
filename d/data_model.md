@@ -28,13 +28,18 @@ Finally, this data model assumes two different `relations` between entities:
 - Teachers *teach* courses.
 - Students *take* courses.
 
-Fundamentally, data modelling is all about identifying and cataloguing these things things – `entity types`, `attributes`, and `relations`.
+Fundamentally, data modelling is all about identifying and cataloguing these three things – `entity types`, `attributes`, and `relations`.
 
-## Formal data models
+## Formalising data models
+
+There are lots of different systems for formalising a data model. Here we will discuss three:
+- class diagrams
+- entity-relationship diagrams
+- first order logic
 
 ### Class diagrams
 
-There are many different ways of formalising a data model. For example, we could draw a `class diagram`:
+The following class diagram formalises some importants aspects of our informal data model:
 
 ```mermaid
 classDiagram
@@ -75,7 +80,7 @@ The labelled arrows between entity types represent relations, so:
 
 ### Entity-relationship diagrams
 
-Another way of formalising a data model is by drawing an `entity-relationship diagram` (or `ER diagram`):
+The following entity-relationship (ER) diagram also formalises some key aspects of our informal data model:
 
 ```mermaid
 erDiagram
@@ -96,9 +101,9 @@ erDiagram
 
 As with class diagrams, in an ER diagram every entity type is represented by a box, again with the name of the entity type in the top part of the box. The ER diagram contains three boxes ‘student’, ‘teacher’, and ‘course’
 
-Note that, unlike the class diagram above, this ER diagram does not contain entity types for ‘person’ or ‘event’. This is because ER diagrams cannot represent inheritance or subtypes relations between entity types – there is no way of saying ‘every student is a person’. This is one way in which ER diagrams are *less expressive* than class diagrams.
+Note that, unlike the class diagram above, this ER diagram does not contain entity types for ‘person’ or ‘event’. This is because ER diagrams cannot represent inheritance or subtypes relations between entity types – there is no way of saying ‘every student is a person’. In this respect at least, ER diagrams are *less expressive* than class diagrams.
 
-As with class diagrams, the lower part of the boxes lists the attributes associated with the entity type, so:
+The lower part of the boxes lists the attributes associated with the entity type, so:
 - Every teacher has a name.
 - Every student has a name and a date of birth.
 - Every course has a title and happens within an academic year.
@@ -112,6 +117,47 @@ However, the way relations are encoded in ER diagrams is *more expressive* than 
 - Every student takes one or more courses.
 - Every course is taught by exactly one teacher.
 - Every teacher teaches one or more courses.
+
+### First order logic
+
+We have seen that class diagrams and entity-relationship diagrams can each formalise important aspects of a data model but thy each have important gaps too – class diagrams cannot express cardinatlity constraints, and ER diagrams cannot express inheritance.
+
+In constrast, first order logic (FOL) is an extremely powerful mathematical tool that can say almost anything you would ever want to say about a data model.
+
+Entity types and subtypes can be captured in FOL as follows: 
+
+```
+∀x.student(x) → person(x)  -- every student is also a person
+∀x.teacher(x) → person(x)  -- every teacher is also a person
+∀x.course(x) → event(x)  -- every course is also an event
+```
+
+Adding attributes:
+
+```
+∀x.person(x) → ∃y.name(x,y)  -- every person has a name
+∀x.student(x) → ∃y.dateOfBirth(x,y)  -- every student has a date of birth
+∀x.event(x) → ∃y.academicYear(x,y)  -- every event is associated with an academic year
+∀x.course(x) → ∃y.title(x,y)  -- every course has a title
+```
+
+Expressing relations:
+
+```
+∀x.course(x) → ∃y.teacher(y) ∧ teaches(y,x)  -- every course has at least one teacher who teaches it
+∀x.course(x) → ∃y.student(y) ∧ takes(y,x)  -- every course has at least one students who takes it
+```
+
+And finally we can add the additional cardinality constraint on teachers:
+
+```
+∀x∀y∀z.teaches(x,z) ∧ teaches(y,z) → x=y  -- every course has no more than one teacher who teaches it
+```
+
+
+
+
+
 
 ### RDF Schema
 
@@ -187,37 +233,6 @@ Exclusive subclasses?
 Manchester syntax?
 
 
-### Formal logic
-
-```
-∀x.student(x) → person(x)
-∀x.teacher(x) → person(x)
-∀x.course(x) → event(x)
-
-∀x.person(x) → ∃y.name(x,y)
-∀x.student(x) → ∃y.dateOfBirth(x,y)
-∀x.event(x) → ∃y.academicYear(x,y)
-∀x.course(x) → ∃y.title(x,y)
-∀x.course(x) → ∃y.teacher(y) ∧ teaches(y,x)
-∀x.course(x) → ∃y.student(y) ∧ takes(y,x)
-```
-
-cardinality?
-
-Closing the world:
-
-```
-∀x.person(x) → (student(x) ∨ teacher(x))
-∀x.student(x) → ¬teacher(x)
-∀x.teacher(x) → ¬student(x)
-```
-everything is an event or a person
-
-every event is a course
-
-a person is not an event, and vice versa
-
-every teacher teaches a course
 
 
 
