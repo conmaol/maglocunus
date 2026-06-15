@@ -157,7 +157,7 @@ And finally we can add the additional cardinality constraint on teachers:
 
 ### RDF Schema
 
-Outside the world of databases, data models are generally known as `ontologies`. RDF Schema is a W3C standard ontology language that serves to formalise a data model.
+Outside the world of databases, data models are generally known as `ontologies`. RDF Schema (RDFS) is a W3C standard ontology language that serves to formalise a data model.
 
 RDF Schema (RDFS) can capture entity types and subtypes (ie ‘classes’ and ‘subclasses’):
 
