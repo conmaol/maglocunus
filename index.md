@@ -2,7 +2,7 @@
 
 Contents:
 - [Databricks](d/Databricks.md)
-- [data model](d/data_model.md)
+- [data models](d/data_models.md)
 
 ----
 
