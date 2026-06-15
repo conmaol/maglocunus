@@ -159,78 +159,31 @@ And finally we can add the additional cardinality constraint on teachers:
 
 Outside the world of databases, data models are generally known as `ontologies`. RDF Schema (RDFS) is a W3C standard ontology language that serves to formalise a data model.
 
-RDF Schema (RDFS) can capture entity types and subtypes (ie ‘classes’ and ‘subclasses’):
+Like first order logic, RDF Schema (RDFS) can capture entity types and subtypes (ie ‘classes’ and ‘subclasses’):
 
 ```
-:Person, :Student, :Teacher, :Event, :Course a rdfs:Class .
-:Student, :Teacher rdfs:subClassOf :Person .
-:Course rdfs:subClassOf :Event .
+:Student, :Teacher rdfs:subClassOf :Person .  -- every student and every teacher is also a person
+:Course rdfs:subClassOf :Event .  -- every course is also an event
 ```
-
-This can be read as follows:
-- People, students, teachers, events and courses are all types of entity.
-- Students and teachers are types of person.
-- Courses are types of event.
 
 Relations are known as ‘properties’ in RDFS: 
 
 ```
-:teaches, :takes a rdf:Property .
-:teaches rdfs:domain :Teacher ; rdfs:range :Course .
-:takes rdfs:domain :Student ; rdfs:range :Course .
+:teaches rdfs:domain :Teacher ; rdfs:range :Course .  -- teachers teach courses
+:takes rdfs:domain :Student ; rdfs:range :Course .  -- students take courses
 ```
-
-In other words:
-- ‘teaches’ and ‘takes’ are both relations between entity types.
-- Teachers teach courses.
-- Students take courses.
 
 Attributes are just treated as special kinds of property in RDFS:
 
 ```
-:name, :dateOfBirth, :title, :academicYear a rdf:Property .
-:name rdfs:domain :Person ; rdfs:range xsd:String .
-:dateOfBirth rdfs:Domain :Student ; rdfs:range xsd:Date .
-:title rdfs:domain :Course ; rdfs:range xsd:String .
-:academicYear rdfs:Domain :Event ; rdfs:range xsd:Year .
+:name rdfs:domain :Person .  -- people have names
+:dateOfBirth rdfs:domain :Student .  -- students have dates of birth
+:title rdfs:domain :Course .  -- courses have titles
+:academicYear rdfs:Domain :Event . -- events are associated with academic years
 ```
 
-In other words:
-- People have names.
-- Students have dates of birth.
-- Courses have titles.
-- Events happen within an academic year.
-
-The RDFS statements listed here together say pretty much the same thing as the class diagram above - they can express inheritance and other kinds of relations but not cardinality.
-
-### OWL (Web Ontology Language)
-
-We can use the W3C standard Web Ontology Language (OWL) to add cardinality statement to an RDFS data model.
-
-For example:
-
-
-Cardinality in OWL?
-
-owl:cardinality (Exactly): Constrains a property to have exactly N distinct values (e.g., a Person must have exactly 2 parents).
-
-owl:minCardinality (At Least): Constrains a property to have at least N values (e.g., a Car must have at least 3 wheels).
-
-owl:maxCardinality (At Most): Constrains a property to have at most N values (e.g., an Academic Paper can have at most 5 authors
-
-```
-_:courseTeacherRestriction a owl:Restriction ;
-                           owl:onProperty :teaches ;
-                           owl:minCardinality "1"^^xsd:nonNegativeInteger .
-```
-
-Exclusive subclasses?
-
-Manchester syntax?
-
-
-
-
+Like class diagrams, RDFS statements can express inheritance and other kinds of relations but not cardinality. 
+However, the W3C standard Web Ontology Language (OWL) allows precise cardinality statements to be added to RDFS properties.
 
 ## Physical data models
 
