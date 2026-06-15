@@ -234,7 +234,7 @@ Manchester syntax?
 
 ## Physical data models
 
-### Tabularisation
+### Tabularisation (reification?)
 
 Tabularisation is the process of taking a ‘conceptual’ data model, usually in the form of an ER diagram, and converting it into a ‘physical’ data model suitable for implementing as a standard relational, SQL-style database.
 
@@ -266,8 +266,8 @@ In order to eliminate this many-to-many relation, a new entity type called ‘CO
 ```mermaid
 erDiagram
     COURSE }|--|| TEACHER : teaches
-    COURSE ||--|{ COURSExSTUDENT : ""
-    STUDENT ||--|{ COURSExSTUDENT : ""
+    COURSE ||--|{ TAKES : ""
+    STUDENT ||--|{ TAKES : ""
     COURSE {
       YYYY academicYear
       String title
