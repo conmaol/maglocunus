@@ -325,25 +325,37 @@ erDiagram
 Now we have a fully materialised, relation-free ‘physical’ data model that can be implemented straightforwardly in a relational database management system (RDBMS) like MySQL or PostgreSQL, using the following commands in Database Definition Language (DDL):
 
 ```
+CREATE TABLE course (
+    id INTEGER PRIMARY KEY,
+    academicYear DATE NOT NULL,
+    title VARCHAR(100) NOT NULL,
+    teacher INTEGER NOT NULL,
+    FOREIGN KEY (teacher) REFERENCES teacher(id)
+);
+
 CREATE TABLE student (
-    id  INTEGER  PRIMARY KEY,
-    name  VARCHAR(100)  not null,
-    dateOfBirth  DATE  not null
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    dateOfBirth  DATE NOT NULL
 );
 
 CREATE TABLE teacher (
-    id  INTEGER  PRIMARY KEY,
-    name  VARCHAR(100)  not null,
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
 );
 
-
+CREATE TABLE takes (
+    student INTEGER NOT NULL,
+    course INTEGER NOT NULL,
+    FOREIGN KEY (student) REFERENCES student(id),
+    FOREIGN KEY (course) REFERENCES course(id)
+);
 
 ```
 
+As a DTD?
 
-----
 
-### Document Type Definitions
 
 ```
 <!ELEMENT student EMPTY>
