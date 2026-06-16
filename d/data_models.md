@@ -1,6 +1,6 @@
 # Data models
 
-A `data model` is a set of generic statements describing some (small and finite) aspect of the world.
+A `data model` is a set of generic statements describing some (small, finite) aspect of the world.
 
 For example, here is a simple informal data model describing some features of the academic world:
 > Every person has a name and is either a student or a teacher.
@@ -12,7 +12,7 @@ For example, here is a simple informal data model describing some features of th
 > Every course has a title, and runs within an academic year.
 
 Obviously, this data model is incomplete. For example, we can be sure that teachers also have dates of birth. 
-The important point is that a teacher’s date of birth is not particularly relevant in the academic world.
+The important point is that a teacher’s date of birth is not relevant enough in the academic world to be worth modelling.
 
 This informal data model implies at least five distinct types of `entity`:
 - *Students* and *teachers* are different kinds of *person*.
@@ -33,10 +33,10 @@ Fundamentally, data modelling is all about identifying and cataloguing these thr
 ## Formalising data models
 
 There are lots of different systems for formalising a data model. Here we will discuss four:
-- class diagrams
-- entity-relationship diagrams
-- first order logic
-- RDF Schema
+- [class diagrams](#class-diagrams)
+- [entity-relationship diagrams](#entity-relationship-diagrams)
+- [first order logic](#first-order-logic)
+- [RDF Schema](#rdf-schema)
 
 ### Class diagrams
 
