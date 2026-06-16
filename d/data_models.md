@@ -198,9 +198,9 @@ Back up to: [Top](#)
 
 ## Materialising a data model
 
-Tabularisation is the process of taking a ‘conceptual’ data model, usually in the form of an ER diagram, and converting it into a ‘physical’ data model suitable for implementing as a standard relational, SQL-style database.
+Before it can be implemented in a real-world database management system, a ‘conceptual’ data model like the one discussed above will need to be materialised as a ‘physical’ data model.
 
-Let’s start with the ER diagram from before:
+We can explify the materialisation process by starting from the ER diagram from before:
 
 ```mermaid
 erDiagram
@@ -219,11 +219,13 @@ erDiagram
     }
 ```
 
-The first stage in tabularisation involves identifying any many-to-many relations in the data model and turning them into two one-to-many relations with an intervening ‘join’ entity type.
+The first stage in materialisation involves:
+1. identifying any *many-to-many* relations in the data model, and then
+2. turning each one into two *one-to-many* relations with an intervening ‘join’ entity type.
 
-The data model here contains one many-to-many relation – the ‘takes’ relation between courses and students. Remember that one student can take multiple courses and one course can be taken by multiple students. 
+Note that the data model above contains the one many-to-many relation – the ‘takes’ relation between courses and students. Remember that one student can take multiple courses and one course can be taken by multiple students. 
 
-In order to eliminate this many-to-many relation, a new entity type called ‘COURSExSTUDENT’ is introduced into the data model, with many-to-one relations to both COURSE and STUDENT:
+In order to eliminate this many-to-many relation, a new entity type called ‘TAKES’ is introduced into the data model, with one-to-many relations from both COURSE and STUDENT:
 
 ```mermaid
 erDiagram
@@ -241,23 +243,21 @@ erDiagram
     TEACHER {
         String name
     }
-    COURSExSTUDENT {
-    }
 ```
 
-The next step involves converting all the one-to-many relations into attributes on the two related entity types.
+The second step in materialisation involves converting each of the one-to-many relations into ID and IDREF attributes on the two linked entity types.
 
-For example, there is a one-to-many relation between TEACHER and COURSE — one teacher can teach multiple courses (but each course only has one teacher).
-- We add a unique identifier attribute (ie. a ‘primary key’) to the TEACHER entity type.
-- We add a ‘teacher’ attribute to the COURSE entity type, whose value must be an identifier reference (ie. a ‘foreign key’) to the TEACHER entity type.
-- We can then remove the one-to-many ‘teaches’ relation link itself. 
+For example, there is a one-to-many relation ‘teaches’ between TEACHER and COURSE — one teacher can teach multiple courses, but each course only has one teacher. So:
+1. We add a unique identifier attribute (ie. a ‘primary key’) to the TEACHER entity type.
+2. We add a ‘teacher’ attribute to the COURSE entity type, whose value must be an identifier reference (ie. a ‘foreign key’) to the TEACHER entity type.
+3. We can then remove the one-to-many ‘teaches’ relation link itself. 
 
-So we get:
+So we get the following semi-materialised data model:
 
 ```mermaid
 erDiagram
-    COURSE ||--|{ COURSExSTUDENT : ""
-    STUDENT ||--|{ COURSExSTUDENT : ""
+    COURSE ||--|{ TAKES : ""
+    STUDENT ||--|{ TAKES : ""
     COURSE {
       YYYY academicYear
       String title
@@ -271,15 +271,13 @@ erDiagram
         ID id
         String name
     }
-    COURSExSTUDENT {
-    }
 ```
 
-Next:
+Next, we do the same for the one-to-many relation between COURSE and TAKES:
 
 ```mermaid
 erDiagram
-    STUDENT ||--|{ COURSExSTUDENT : ""
+    STUDENT ||--|{ TAKES : ""
     COURSE {
       ID id
       YYYY academicYear
@@ -294,12 +292,12 @@ erDiagram
       ID id
       String name
     }
-    COURSExSTUDENT {
+    TAKES {
       IDREF course
     }
 ```
 
-Next:
+And finally, we materialise the one-to-many relation between STUDENT and TAKES:
 
 ```mermaid
 erDiagram
@@ -318,16 +316,13 @@ erDiagram
         ID id
         String name
     }
-
-    COURSExSTUDENT {
-      IDREF course
+    TAKES {
       IDREF student
+      IDREF teacher
     }
 ```
 
-Now we have a fully tabularised, relation-free ‘physical’ data model that can be implemented straightforwardly in a relational database management system (RDBMS) like MySQL or PostgreSQL.
-
-SQL-DDL database definition language:
+Now we have a fully materialised, relation-free ‘physical’ data model that can be implemented straightforwardly in a relational database management system (RDBMS) like MySQL or PostgreSQL, using the following commands in Database Definition Language (DDL):
 
 ```
 CREATE TABLE student (
