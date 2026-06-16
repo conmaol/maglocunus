@@ -5,7 +5,7 @@ A `data model` is a set of generic statements describing some (small, finite) as
 Contents:
 - [Entities, attributes, relations](#entities-attributes-relations)
 - [Formalising a data model](#formalising-a-data-model)
-- Materialising a data model
+- [Materialising a data model](#materialising-a-data-model)
 
 ## Entities, attributes, relations
 
