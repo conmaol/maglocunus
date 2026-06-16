@@ -194,9 +194,9 @@ Attributes are just treated as special kinds of property in RDFS:
 Like class diagrams, RDFS statements can express inheritance and other kinds of relations but not cardinality. 
 However, the W3C standard Web Ontology Language (OWL) allows precise cardinality statements to be added to RDFS properties.
 
-## Physical data models
+Back up to: [Top](#)
 
-### Tabularisation (reification?)
+## Materialising a data model
 
 Tabularisation is the process of taking a ‘conceptual’ data model, usually in the form of an ER diagram, and converting it into a ‘physical’ data model suitable for implementing as a standard relational, SQL-style database.
 
