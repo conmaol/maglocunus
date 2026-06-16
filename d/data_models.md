@@ -350,7 +350,6 @@ CREATE TABLE takes (
     FOREIGN KEY (student) REFERENCES student(id),
     FOREIGN KEY (course) REFERENCES course(id)
 );
-
 ```
 
 As a DTD?
@@ -376,12 +375,27 @@ As a DTD?
 XML:
 
 ```
-<course title="Informatics 1">
-  <teacher name="Dr Mark McConville"/>
-  <student name="Kate Alexandra Ranson" dateOfBirth="1992-11-03"/>
-  <student name="Julie Sharon Port" dateOfBirth="1983-06-20"/>
-  <student name="Jayne Shaw" dateOfBirth="1969-02-14"/>
-</course>
+<university>
+
+<courses>
+  <course title="Informatics 1" academicYear="2005" teacher="t1">
+    <student idref="s1"/>
+    <student idref="s2"/>
+  </course>
+</courses>
+
+<students>
+  <student id="s1" name="Kate Alexandra Ranson" dateOfBirth="1992-11-03"/>
+  <student id="s2" name="Julie Sharon Port" dateOfBirth="1983-06-20"/>
+  <student id="s3" name="Jayne Shaw" dateOfBirth="1969-02-14"/>
+</students>
+
+<teachers>
+  <teacher id="t1" name="Dr Mark McConville"/>
+</teachers>
+
+</university>
+
 ```
 
 inheritance via parameter entities?
