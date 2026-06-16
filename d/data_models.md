@@ -37,6 +37,8 @@ Finally, this data model assumes two different `relations` between entities:
 
 Fundamentally, data modelling is all about identifying and cataloguing these three things – `entity types`, `attributes`, and `relations`.
 
+Back up to: [Top](#)
+
 ## Formalising a data model
 
 There are lots of different systems for formalising a data model. Here we will discuss four:
