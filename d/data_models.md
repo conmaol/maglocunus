@@ -6,6 +6,7 @@ Contents:
 - [Entities, attributes, relations](#entities-attributes-relations)
 - [Formalising a data model](#formalising-a-data-model)
 - [Materialising a data model](#materialising-a-data-model)
+- Reverse-engineering a data model
 
 ## Entities, attributes, relations
 
@@ -359,6 +360,24 @@ CREATE TABLE takes (
 ### Materialisation for XML (or JSON)
 
 Straight from conceptual data model.
+
+```mermaid
+erDiagram
+    COURSE }|--|{ STUDENT : takes
+    COURSE }|--|| TEACHER : teaches
+    COURSE {
+      YYYY academicYear
+      String title
+    }
+    STUDENT {
+        String name
+        YYYY-MM-DD dateOfBirth
+    }
+    TEACHER {
+        String name
+    }
+```
+
 
 As a DTD?
 
