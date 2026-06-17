@@ -200,7 +200,11 @@ Back up to: [Top](#)
 
 Before it can be implemented in a real-world database management system, a ‘conceptual’ data model like the one discussed above will need to be materialised as a ‘physical’ data model.
 
-We can explify the materialisation process by starting from the ER diagram from before:
+### Tabularisation for SQL
+
+A conceptual data model can be materialised for implementation in a SQL (relational, table-driven) database.
+
+We can explify this tabularisation process by starting from the ER diagram from before:
 
 ```mermaid
 erDiagram
@@ -219,7 +223,7 @@ erDiagram
     }
 ```
 
-The first stage in materialisation involves:
+The first stage in tabularisation involves:
 1. identifying any *many-to-many* relations in the data model, and then
 2. turning each one into two *one-to-many* relations with an intervening ‘join’ entity type.
 
@@ -245,14 +249,14 @@ erDiagram
     }
 ```
 
-The second step in materialisation involves converting each of the one-to-many relations into ID and IDREF attributes on the two linked entity types.
+The second step in tabularisation involves converting each of the one-to-many relations into ID and IDREF attributes on the two linked entity types.
 
 For example, there is a one-to-many relation ‘teaches’ between TEACHER and COURSE — one teacher can teach multiple courses, but each course only has one teacher. So:
 1. We add a unique identifier attribute (ie. a ‘primary key’) to the TEACHER entity type.
 2. We add a ‘teacher’ attribute to the COURSE entity type, whose value must be an identifier reference (ie. a ‘foreign key’) to the TEACHER entity type.
 3. We can then remove the one-to-many ‘teaches’ relation link itself. 
 
-So we get the following semi-materialised data model:
+So we get the following semi-tabularised data model:
 
 ```mermaid
 erDiagram
@@ -297,7 +301,7 @@ erDiagram
     }
 ```
 
-And finally, we materialise the one-to-many relation between STUDENT and TAKES:
+And finally, we tabularise the one-to-many relation between STUDENT and TAKES:
 
 ```mermaid
 erDiagram
@@ -322,7 +326,7 @@ erDiagram
     }
 ```
 
-Now we have a fully materialised, relation-free ‘physical’ data model that can be implemented straightforwardly in a relational database management system (RDBMS) like MySQL or PostgreSQL, using the following commands in Database Definition Language (DDL):
+Now we have a fully tabularised, relation-free ‘physical’ data model that can be implemented straightforwardly in a relational database management system (RDBMS) like MySQL or PostgreSQL, using the following commands in SQL Database Definition Language (DDL):
 
 ```
 CREATE TABLE course (
@@ -351,6 +355,10 @@ CREATE TABLE takes (
     FOREIGN KEY (course) REFERENCES course(id)
 );
 ```
+
+### Materialisation for XML (or JSON)
+
+Straight from conceptual data model.
 
 As a DTD?
 
