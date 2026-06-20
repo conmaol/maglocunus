@@ -214,9 +214,11 @@ However, if we want to implement a data model in an actual database management s
 
 ### Tabularisation for SQL
 
-A conceptual data model can be materialised for implementation in a SQL (relational, table-driven) database.
+Database management systems like Oracle, MySQL and PostgreSQL are known as `relational` database systems, and they are interrogated by data analysts using the Structured Query Language (SQL). 
 
-We can explify this tabularisation process by starting from the ER diagram from before:
+Relational databases are based around tables of data and thus the process of materialising a conceptual data model for implementation in a SQL database can be termed ‘tabularisation’.
+
+We can explify the tabularisation process by starting from the previous ER diagram representing the conceptual data model:
 
 ```mermaid
 erDiagram
