@@ -176,7 +176,7 @@ And finally we can also use FOL to formalise cardinality constraints on both rel
 
 ### RDF Schema
 
-Outside the world of databases, data models are generally known as `ontologies`. RDF Schema (RDFS) is a W3C standard ontology language that serves to formalise a data model.
+Outside the world of data analysis and engineering, data models are generally known as `ontologies`, and as such are familiar to philosophers, information scientists, knowledge engineers, Semantic Web developers and AI researchers. Thus, we can also use standard ontology languages to formalise a data model, like the W3C’s RDF Schema (RDFS).
 
 Like first order logic, RDF Schema (RDFS) can capture entity types and subtypes (ie ‘classes’ and ‘subclasses’):
 
