@@ -208,7 +208,9 @@ Back up to: [Top](#)
 
 ## Materialising a data model
 
-Before it can be implemented in a real-world database management system, a ‘conceptual’ data model like the one discussed above will need to be materialised as a ‘physical’ data model.
+We have seen that data model is a set of generic statements describing an aspect of the world, and that we can express a data model informally in natural language. We can then formalise the data model in a standard diagramatic notation like class diagrams or entity-relationship diagrams, or perhaps in a more technical notation like first order logic or RDFS.
+
+However, if we want to implement a data model in an actual database management system like Oracle, MySQL, MongoDB or eXist-db, then we need to do more than just formalise it. We will need to `materialise` the data model into a form than can be implemented in our database management system of choice – converting our initial `conceptual` data model into the right kind of `physical` data model.
 
 ### Tabularisation for SQL
 
