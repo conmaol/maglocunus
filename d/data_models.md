@@ -5,6 +5,10 @@ A `data model` is a set of generic statements describing some (small, finite) as
 Contents:
 - [Entities, attributes, relations](#entities-attributes-relations)
 - [Formalising a data model](#formalising-a-data-model)
+  - [Class diagrams](#class-diagrams)
+  - [Entity-relationship diagrams](#entity-relationship-diagrams)
+  - [First order logic](#first-order-logic)
+  - [RDF Schema](#rdf-schema)
 - [Materialising a data model](#materialising-a-data-model)
 - Reverse-engineering a data model
 
@@ -19,8 +23,8 @@ Here is a simple informal data model describing some features of the academic wo
 >
 > Every course has a title, and runs within an academic year.
 
-Obviously, this data model is incomplete. For example, we can be sure that teachers also have dates of birth. 
-The important point is that a teacher’s date of birth is not relevant enough in the academic world to be worth modelling.
+This data model is clearly incomplete. For example, we can be sure that teachers also have dates of birth. 
+However, we are assuming that a teacher’s date of birth is not relevant enough in the academic world to be worth including in our model.
 
 This informal data model implies at least five distinct types of `entity`:
 - *Students* and *teachers* are different kinds of *person*.
@@ -36,21 +40,21 @@ Finally, this data model assumes two different `relations` between entities:
 - Teachers *teach* courses.
 - Students *take* courses.
 
-Fundamentally, data modelling is all about identifying and cataloguing these three things – `entity types`, `attributes`, and `relations`.
+Fundamentally, data modelling is all about identifying and cataloguing these three things – types of `entity`, their `attributes`, and `relations` between them.
 
 Back up to: [Top](#)
 
 ## Formalising a data model
 
-There are lots of different systems for formalising a data model. Here we will discuss four:
-- [class diagrams](#class-diagrams)
-- [entity-relationship diagrams](#entity-relationship-diagrams)
-- [first order logic](#first-order-logic)
+There are lots of different ways of formalising a data model. Here we will discuss four:
+- [Class diagrams](#class-diagrams)
+- [Entity-relationship diagrams](#entity-relationship-diagrams)
+- [First order logic](#first-order-logic)
 - [RDF Schema](#rdf-schema)
 
 ### Class diagrams
 
-The following class diagram formalises some importants aspects of our informal data model:
+The following class diagram formalises some importants aspects of our informal data model from above:
 
 ```mermaid
 classDiagram
@@ -91,7 +95,9 @@ The labelled arrows between entity types represent relations, so:
 
 ### Entity-relationship diagrams
 
-The following entity-relationship (ER) diagram also formalises some key aspects of our informal data model:
+Another way of formalising a data model is via an entity-relationship (ER) diagram.
+
+The following ER diagram also formalises some key aspects of our informal data model:
 
 ```mermaid
 erDiagram
@@ -110,9 +116,10 @@ erDiagram
     }
 ```
 
-As with class diagrams, in an ER diagram every entity type is represented by a box, again with the name of the entity type in the top part of the box. The ER diagram contains three boxes ‘student’, ‘teacher’, and ‘course’
+As with class diagrams, in an ER diagram every entity type is represented by a box, again with the name of the entity type in the top part of the box. 
+This ER diagram formalises three entity types ‘student’, ‘teacher’, and ‘course’
 
-Note that, unlike the class diagram above, this ER diagram does not contain entity types for ‘person’ or ‘event’. This is because ER diagrams cannot represent inheritance or subtypes relations between entity types – there is no way of saying ‘every student is a person’. In this respect at least, ER diagrams are *less expressive* than class diagrams.
+Note that, unlike the class diagram above, this ER diagram does not contain entity types for ‘person’ or ‘event’. This is because ER diagrams cannot represent inheritance or subtype relations between entity types – there is no way of saying ‘every student is a person’. In this respect at least, ER diagrams are *less expressive* than class diagrams.
 
 The lower part of the boxes lists the attributes associated with the entity type, so:
 - Every teacher has a name.
@@ -123,17 +130,18 @@ Again, as with class diagrams, the labelled arrows between entity types represen
 - Teachers teach courses.
 - Students take courses.
 
-However, the way relations are encoded in ER diagrams is *more expressive* than class diagrams since they include information about `cardinality`. So from the ER diagram we can read off the following cardinality information (from the little decorations at the ends of each of the lines connecting entity types):
-- Every course is taken by one or more students.
-- Every student takes one or more courses.
-- Every course is taught by exactly one teacher.
-- Every teacher teaches one or more courses.
+However, the way relations are encoded in ER diagrams is *more expressive* than class diagrams since they include information about `cardinality` – the number of entities than can participate in the relation. 
+So, from the ER diagram we can read off the following cardinality information (from the little decorations at the ends of each of the lines connecting entity types):
+- Every course is taken by *one or more* students.
+- Every student takes *one or more* courses.
+- Every course is taught by *exactly one* teacher.
+- Every teacher teaches *one or more* courses.
 
 ### First order logic
 
-We have seen that class diagrams and entity-relationship diagrams can each formalise important aspects of a data model but thy each have important gaps too – class diagrams cannot express cardinatlity constraints, and ER diagrams cannot express inheritance.
+We have seen that class diagrams and entity-relationship diagrams can each formalise important aspects of a data model. However, they each have significant gaps too – class diagrams cannot express cardinatlity constraints, and ER diagrams cannot express inheritance.
 
-In constrast, first order logic (FOL) is an extremely powerful mathematical tool that can say almost anything you would ever want to say about a data model.
+First order logic (FOL) is an extremely powerful mathematical tool that can express almost anything you would ever want to say about a data model.
 
 Entity types and subtypes can be captured in FOL as follows: 
 
@@ -143,7 +151,7 @@ Entity types and subtypes can be captured in FOL as follows:
 ∀x.course(x) → event(x)       -- every course is also an event
 ```
 
-Adding attributes:
+FOL can encode attributes on entity types like this:
 
 ```
 ∀x.person(x) → ∃y.name(x,y)           -- every person has a name
@@ -152,17 +160,18 @@ Adding attributes:
 ∀x.course(x) → ∃y.title(x,y)          -- every course has a title
 ```
 
-Expressing relations:
+FOL can also express relations between entities:
 
 ```
 ∀x.course(x) → ∃y.teacher(y) ∧ teaches(y,x)   -- every course has at least one teacher who teaches it
 ∀x.course(x) → ∃y.student(y) ∧ takes(y,x)     -- every course has at least one students who takes it
 ```
 
-And finally we can add the additional cardinality constraint on teachers:
+And finally we can also use FOL to formalise cardinality constraints on both relations and attributes:
 
 ```
 ∀x∀y∀z.teaches(x,z) ∧ teaches(y,z) → x=y    -- every course has no more than one teacher who teaches it
+∀x∀y∀z.name(x,y) ∧ name(x,z) → y=z          -- a person can have no more than one name
 ```
 
 ### RDF Schema
