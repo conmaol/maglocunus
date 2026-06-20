@@ -370,6 +370,9 @@ CREATE TABLE takes (
 );
 ```
 
+ID constraint in FOL?
+
+
 ### Materialisation for XML (or JSON)
 
 Straight from conceptual data model.
