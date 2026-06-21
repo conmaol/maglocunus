@@ -238,12 +238,12 @@ erDiagram
 ```
 
 The first stage in tabularisation involves:
-1. identifying any *many-to-many* relations in the data model, and then
-2. turning each one into two *one-to-many* relations with an intervening ‘join’ entity type.
+1. Identifying the *many-to-many* relations in the data model
+2. Turning each of these into two *one-to-many* relations with an ‘intermediate’ entity type.
 
-Note that the data model above contains the one many-to-many relation – the ‘takes’ relation between courses and students. Remember that one student can take multiple courses and one course can be taken by multiple students. 
+Note that the data model above contains just one many-to-many relation – the ‘takes’ relation between courses and students. Remember that one student can take multiple courses and one course can be taken by multiple students. 
 
-In order to eliminate this many-to-many relation, a new entity type called ‘TAKES’ is introduced into the data model, with one-to-many relations from both COURSE and STUDENT:
+In order to eliminate this many-to-many relation, a new intermediate entity type called ‘TAKES’ is introduced into the data model, with one-to-many relations from both COURSE and STUDENT:
 
 ```mermaid
 erDiagram
@@ -263,7 +263,7 @@ erDiagram
     }
 ```
 
-The second step in tabularisation involves converting each of the one-to-many relations into ID and IDREF attributes on the two linked entity types.
+The second step in tabularisation involves converting each of the one-to-many relations into ID (identifier) and IDREF (identifier reference) attributes on the two linked entity types.
 
 For example, there is a one-to-many relation ‘teaches’ between TEACHER and COURSE — one teacher can teach multiple courses, but each course only has one teacher. So:
 1. We add a unique identifier attribute (ie. a ‘primary key’) to the TEACHER entity type.
@@ -371,6 +371,15 @@ CREATE TABLE takes (
 ```
 
 ID constraint in FOL?
+
+primary key: `∀x∀y∀z.id(x,z) and id(y,z) → z=y`
+
+foreign key?
+
+attributes as functions?
+
+
+`∀x.student(x) → ∃y.dateOfBirth(x,y)`
 
 example of a join?
 
