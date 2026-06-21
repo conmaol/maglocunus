@@ -372,6 +372,8 @@ CREATE TABLE takes (
 
 ID constraint in FOL?
 
+example of a join?
+
 
 ### Materialisation for XML (or JSON)
 
