@@ -370,9 +370,13 @@ CREATE TABLE takes (
 );
 ```
 
-ID constraint in FOL?
+Recall from above there is a one-to-one relationship between an entity type and its attributes, for example:
+- `∀x∀y∀z.person(x) ∧ name(x,y) ∧ name(x,z) → y=z` ie. a person can have no more than one name
 
-primary key: `∀x∀y∀z.id(x,z) and id(y,z) → z=y`
+With an ID attribute the reverse implication is also true – every entity of a given type needs to have a distinct identifier (ie. a ‘primary key’):
+- `∀x∀y∀z. student(x) ∧ id(x,z) ∧ id(y,z) → x=y`
+
+
 
 foreign key?
 
