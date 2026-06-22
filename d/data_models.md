@@ -374,9 +374,9 @@ Recall from above there is a one-to-one relationship between an entity type and 
 - `∀x∀y∀z.person(x) ∧ name(x,y) ∧ name(x,z) → y=z` ie. a person can have no more than one name
 
 With an ID attribute the reverse implication is also true – every entity of a given type needs to have a distinct identifier (ie. a ‘primary key’):
-- `∀x∀y∀z. student(x) ∧ id(x,z) ∧ id(y,z) → x=y`
+- `∀x∀y∀z.student(x) ∧ id(x,z) ∧ id(y,z) → x=y`
 
-
+`course(x) and teacher(x,y) → some y teacher(y) and id(y,x)`
 
 foreign key?
 
