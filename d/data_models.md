@@ -218,7 +218,7 @@ Database management systems like Oracle, MySQL and PostgreSQL are known as `rela
 
 Relational databases are based around tables of data and thus the process of materialising a conceptual data model for implementation in a SQL database can be termed ‘tabularisation’.
 
-We can explify the tabularisation process by starting from the previous ER diagram representing the conceptual data model:
+We can exemplify the tabularisation process by starting from the previous ER diagram representing the conceptual data model:
 
 ```mermaid
 erDiagram
@@ -263,7 +263,7 @@ erDiagram
     }
 ```
 
-The second step in tabularisation involves converting each of the one-to-many relations into ID (identifier) and IDREF (identifier reference) attributes on the two linked entity types.
+The second step in tabularisation involves converting each of the one-to-many relations into identifier (ID) and identifier reference (IDREF) attributes on the two linked entity types.
 
 For example, there is a one-to-many relation ‘teaches’ between TEACHER and COURSE — one teacher can teach multiple courses, but each course only has one teacher. So:
 1. We add a unique identifier attribute (ie. a ‘primary key’) to the TEACHER entity type.
@@ -279,25 +279,25 @@ erDiagram
     COURSE {
       YYYY academicYear
       String title
-      IDREF teacher 
+      **IDREF** **teacher**
     }
     STUDENT {
         String name
         YYYY-MM-DD dateOfBirth
     }
     TEACHER {
-        ID id
+        **ID** **id**
         String name
     }
 ```
 
-Next, we do the same for the one-to-many relation between COURSE and TAKES:
+Next, we do the same for the one-to-many relation between COURSE and TAKES, adding an ID attribute to the first entity type and a corresponding IDREF to the second:
 
 ```mermaid
 erDiagram
     STUDENT ||--|{ TAKES : ""
     COURSE {
-      ID id
+      **ID** **id**
       YYYY academicYear
       String title
       IDREF teacher 
@@ -311,7 +311,7 @@ erDiagram
       String name
     }
     TAKES {
-      IDREF course
+      **IDREF** **course**
     }
 ```
 
@@ -326,7 +326,7 @@ erDiagram
       IDREF teacher
     }
     STUDENT {
-        ID id
+        **ID** **id**
         String name
         YYYY-MM-DD dateOfBirth
     }
@@ -335,12 +335,12 @@ erDiagram
         String name
     }
     TAKES {
-      IDREF student
+      **IDREF** **student**
       IDREF teacher
     }
 ```
 
-Now we have a fully tabularised, relation-free ‘physical’ data model that can be implemented straightforwardly in a relational database management system (RDBMS) like MySQL or PostgreSQL, using the following commands in SQL Database Definition Language (DDL):
+Now we have a fully tabularised, relation-free ‘physical’ data model that can be implemented straightforwardly in a relational database management system (RDBMS), using the following commands in SQL Database Definition Language (DDL):
 
 ```
 CREATE TABLE course (
