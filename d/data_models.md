@@ -383,7 +383,16 @@ Foreign keys can be understood as follows:
 example of a join?
 
 
-### Materialisation for XML (or JSON)
+### Documentisation for XML (or JSON)
+
+Document DBMS
+
+Database management systems like MongoDB and eXist-db are known as `document` database systems, and they are interrogated by data analysts using the Structured Query Language (SQL). 
+
+MQL, XQuery
+
+
+
 
 Straight from conceptual data model.
 
