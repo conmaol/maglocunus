@@ -151,13 +151,13 @@ Entity types and subtypes can be captured in FOL as follows:
 ∀x.course(x) → event(x)       -- every course is also an event
 ```
 
-FOL can encode attributes on entity types like this:
+FOL can encode attributes on entity types as functions:
 
 ```
-∀x.person(x) → ∃y.name(x,y)           -- every person has a name
-∀x.student(x) → ∃y.dateOfBirth(x,y)   -- every student has a date of birth
-∀x.event(x) → ∃y.academicYear(x,y)    -- every event is associated with an academic year
-∀x.course(x) → ∃y.title(x,y)          -- every course has a title
+∀x.person(x) → ∃y.name(x)=y           -- every person has exactly one name
+∀x.student(x) → ∃y.dateOfBirth(x)=y   -- every student has exactly one date of birth
+∀x.event(x) → ∃y.academicYear(x)=y    -- every event is associated with exactly one academic year
+∀x.course(x) → ∃y.title(x)=y          -- every course has exactly one title
 ```
 
 FOL can also express relations between entities:
@@ -167,11 +167,10 @@ FOL can also express relations between entities:
 ∀x.course(x) → ∃y.student(y) ∧ takes(y,x)     -- every course has at least one students who takes it
 ```
 
-And finally we can also use FOL to formalise cardinality constraints on both relations and attributes:
+And finally we can also use FOL to formalise cardinality constraints on relations:
 
 ```
 ∀x∀y∀z.teaches(x,z) ∧ teaches(y,z) → x=y    -- every course has no more than one teacher who teaches it
-∀x∀y∀z.name(x,y) ∧ name(x,z) → y=z          -- a person can have no more than one name
 ```
 
 ### RDF Schema
@@ -372,21 +371,14 @@ CREATE TABLE takes (
 );
 ```
 
-Recall from above there is a one-to-one relationship between an entity type and its attributes, for instance:
-- `∀x∀y∀z.person(x) ∧ name(x,y) ∧ name(x,z) → y=z` – a person can have no more than one name
+Recall from above there is a one-to-one relationship between an entity type and its attributes. For instance, a person can have no more than one name.
 
 With an ID attribute the reverse implication is also true – every entity of a given type needs to have a distinct identifier (ie. a ‘primary key’):
-- `∀x∀y∀z.student(x) ∧ id(x,z) ∧ id(y,z) → x=y` – every student must have a different identifier to all the others
+- `∀x∀y∀z.student(x) ∧ id(x)=z ∧ id(y)=z → x=y` – every student must have a different identifier to all the others
 
+Foreign keys can be understood as follows:
+- `∀x∀y.course(x) ∧ teacher(x)=y → ∃z.teacher(z) and id(z)=y`
 
-`course(x) and teacher(x,y) → some y teacher(y) and id(y,x)`
-
-foreign key?
-
-attributes as functions?
-
-
-`∀x.student(x) → ∃y.dateOfBirth(x,y)`
 
 example of a join?
 
