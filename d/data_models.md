@@ -208,9 +208,11 @@ Back up to: [Top](#)
 
 ## Materialising a data model
 
-We have seen that data model is a set of generic statements describing an aspect of the world, and that we can express a data model informally in natural language. We can then formalise the data model in a standard diagrammatic notation like class diagrams or entity-relationship diagrams, or perhaps in a more technical notation like first order logic or RDFS.
+We have seen that a data model is a set of generic statements describing an aspect of the world, and that we can express a data model informally in natural language. We can then formalise the data model in a standard diagrammatic notation like class diagrams or entity-relationship diagrams, or perhaps in a more technical notation like first order logic or RDFS.
 
 However, if we want to implement a data model in an actual database management system like Oracle, MySQL, MongoDB or eXist-db, then we need to do more than just formalise it. We will need to `materialise` the data model into a form than can be implemented in our database management system of choice – converting our initial `conceptual` data model into the right kind of `physical` data model.
+
+Contents?
 
 ### Tabularisation for SQL
 
@@ -340,7 +342,7 @@ erDiagram
     }
 ```
 
-Now we have a fully tabularised, relation-free ‘physical’ data model that can be implemented straightforwardly in a relational database management system (RDBMS), using the following commands in SQL Database Definition Language (DDL):
+Now we have a fully tabularised, relation-free ‘physical’ data model that can be implemented straightforwardly in a relational database management system (RDbMS), using the following commands in SQL’s `Database Definition Language` (DDL):
 
 ```
 CREATE TABLE course (
@@ -370,11 +372,12 @@ CREATE TABLE takes (
 );
 ```
 
-Recall from above there is a one-to-one relationship between an entity type and its attributes, for example:
-- `∀x∀y∀z.person(x) ∧ name(x,y) ∧ name(x,z) → y=z` ie. a person can have no more than one name
+Recall from above there is a one-to-one relationship between an entity type and its attributes, for instance:
+- `∀x∀y∀z.person(x) ∧ name(x,y) ∧ name(x,z) → y=z` – a person can have no more than one name
 
 With an ID attribute the reverse implication is also true – every entity of a given type needs to have a distinct identifier (ie. a ‘primary key’):
-- `∀x∀y∀z.student(x) ∧ id(x,z) ∧ id(y,z) → x=y`
+- `∀x∀y∀z.student(x) ∧ id(x,z) ∧ id(y,z) → x=y` – every student must have a different identifier to all the others
+
 
 `course(x) and teacher(x,y) → some y teacher(y) and id(y,x)`
 
