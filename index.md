@@ -1,6 +1,7 @@
 # Maglocunus
 
 Contents:
+- [data](d/data.md)
 - [Databricks](d/Databricks.md)
 - [data models](d/data_models.md)
 
