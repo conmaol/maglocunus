@@ -21,14 +21,14 @@ flowchart LR
 
 Here is another instance of a datum:
 
-> Kate is (currently) 33 years old.
+> Kate was 33 years old on the twentieth of June 2006.
 
 ```mermaid
 flowchart LR
     s1([age])
     p1([Kate])
     v1([33 years])
-    d1([2026-06-26])
+    d1([2026-06-20])
     s1 -- subject --> p1
     s1 -- date --> d1
     s1 -- value --> v1
