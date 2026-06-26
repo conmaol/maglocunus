@@ -1,13 +1,38 @@
 # Data
 
-The word *data* is the plural form of the noun *(a) datum*. Data is essentially an aggregate of objects each of which is an individual datum. A datum can be thought of as an item of information, a data point, a fact, a measurement, or an observation.
+The word *data* is the plural form of the singular noun *datum*. 
 
-Here is an example of a datum:
+Data is essentially an aggregate of objects each of which is an individual datum. A datum can be thought of as an item of information, a data point, a fact, a measurement, or an observation.
+
+The following sentence encodes two data:
 
 > Kate was born on the second of November 1992.
 
-Event, transactional data? Ordinal data?
+This is an *event* datum, capturing the event of someone being born (and this birth’s location in time), presumably as observed and recorded by a medical professional. The event has a type (*birth*), a subject (*Kate*), and a date (1992-11-02). 
 
+```mermaid
+flowchart LR
+    e1([birth])
+    p1([Kate])
+    d1([1992-11-02])
+    e1 -- subject --> p1
+    e1 -- date --> d1
+```
+
+Here is another instance of a datum:
+
+> Kate is (currently) 33 years old.
+
+```mermaid
+flowchart LR
+    p1([Kate])
+    n1([33])
+    p1 -- age --> n1
+```
+
+stative datum?
+
+This is a *derived* datum, derived formulaically from the event datum in the previous example. This is also a *quantitative* datum, involving a *count* of the number of birthdays the person has celebrated since birth.
 
 Derived datum:
 
