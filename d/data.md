@@ -1,10 +1,20 @@
 # Data
 
-The word ‘data’ is the plural form of the noun ‘(a) datum’. Data is thus an aggregate of objects each of which is a datum – an item of information, a data ‘point’, a fact, a measurement, or an observation.
+The word *data* is the plural form of the noun *(a) datum*. Data is essentially an aggregate of objects each of which is an individual datum. A datum can be thought of as an item of information, a data point, a fact, a measurement, or an observation.
 
 Here is an example of a datum:
 
-> Kate was born on 1992-11-02.
+> Kate was born on the second of November 1992.
+
+Event, transactional data? Ordinal data?
+
+
+Derived datum:
+
+> Kate is (currently) 33 years old.
+
+qualitative data, counting - the number of years that have passed since Kate was born. The number of birthdays she has celebrated.
+
 
 Here is another example:
 
