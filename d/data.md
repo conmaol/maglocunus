@@ -25,9 +25,13 @@ Here is another instance of a datum:
 
 ```mermaid
 flowchart LR
+    s1([age])
     p1([Kate])
-    n1([33])
-    p1 -- age --> n1
+    v1([33 years])
+    d1([2026-06-26])
+    s1 -- subject --> p1
+    s1 -- date --> d1
+    s1 -- value --> v1
 ```
 
 stative datum?
