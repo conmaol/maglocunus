@@ -70,6 +70,68 @@ types:
 - ordinal data (events?)
 - derived datum - Kate is 33 years old. (ie. a formula)
 
+----
+
+## Shipman dataset
+
+Shipman killed person X of age Y and gender Z in year W. 
+
+```mermaid
+flowchart LR
+    p1([Hilda S.])
+    e1([birth])
+    d1([1917-06-15])
+    e1 -- subject --> p1
+    e1 -- date --> d1
+    e2([death])
+    d2([1985-02-03])
+    e2 -- subject --> p1
+    e2 -- date --> d2
+    pp1[female]
+    p1 -- isa --> pp1
+```
+
+mmm
+
+```mermaid
+flowchart LR
+    p1([Hilda S.])
+    y1([1985])
+    p1 -- year of death --> y1
+    a1([67])
+    p1 -- age at death --> a1
+    g1([female])
+    p1 -- gender --> g1
+```
+
+mmm
+
+```mermaid
+flowchart LR
+    p1([Hilda S.])
+    y1([1985])
+    p1 -- year --> y1
+    a1([67])
+    p1 -- age --> a1
+    g1([female])
+    p1 -- sex --> g1
+
+    p2([Rebecca P.])
+    y2([1988])
+    p2 -- year --> y2
+    a2([72])
+    p2 -- age --> a2
+    p2 -- sex --> g1
+
+    p3([Robert M.])
+    p3 -- year --> y1
+    p3 -- age --> a2
+    g2([male])
+    p3 -- sex --> g2
+
+```
+
+
 
 
 ----
