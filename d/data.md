@@ -94,6 +94,45 @@ flowchart LR
 mmm
 
 ```mermaid
+flowchart TD
+
+    ee3[event]
+    ee1[birth]
+    ee2[death]
+    ee1 -.-> ee3
+    ee2 -.-> ee3
+    pp1[female]
+    pp2[male]
+    pp3[person]
+    pp2 -.-> pp3
+    pp1 -.-> pp3
+    dd1[date]
+
+    e1([ ])
+    p1([Hilda S.])
+    e1 -.-> ee1
+    d1([1917-06-15])
+    d1 -.-> dd1
+    e1 --> p1
+    e1 --> d1
+
+    e2([ ])
+    e2 -.-> ee2
+    d2([1985-02-03])
+    d2 -.-> dd1
+    e2 --> p1
+    e2 --> d2
+    
+    p1 -.-> pp1
+
+
+
+```
+
+
+mmm
+
+```mermaid
 flowchart LR
     p1([Hilda S.])
     y1([1985])
