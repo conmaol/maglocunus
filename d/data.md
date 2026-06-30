@@ -1,23 +1,80 @@
 # Data
 
-The word *data* is the plural form of the singular noun *datum*. 
+Data is, in its essence, a web of relationships between entities – an aggregate of individual items of information, where each such ‘datum’ is a connection between two entities, representing some fact, measurement or observation (ie. a ‘data point’).  
 
-Data is essentially an aggregate of objects each of which is an individual datum. A datum can be thought of as an item of information, a data point, a fact, a measurement, or an observation.
+The following sentence encodes some simple data:
 
-The following sentence encodes two data:
+> Kate was born in Dunfermline on the second of November 1992.
 
-> Kate was born on the second of November 1992.
-
-This is an *event* datum, capturing the event of someone being born (and this birth’s location in time), presumably as observed and recorded by a medical professional. The event has a type (*birth*), a subject (*Kate*), and a date (1992-11-02). 
+This data can be represented in the following graph:
 
 ```mermaid
-flowchart LR
-    e1([birth])
-    p1([Kate])
-    d1([1992-11-02])
-    e1 -- subject --> p1
-    e1 -- date --> d1
+flowchart TD
+    a([ ])
+    b([Kate])
+    c([1992-11-02])
+    d([Dunfermline])
+    a -- who --> b
+    a -- when --> c
+    a -- where --> d
 ```
+
+The unlabelled root entity is an instance of a ‘birth event’, and this observation can be represented by extending the graph like this:
+
+```mermaid
+flowchart TD
+    e[event]
+    f[birth]
+    f -.-> e
+    a -.-> f
+    a([ ])
+    b([Kate])
+    c([1992-11-02])
+    d([Dunfermline])
+    a -- who --> b
+    a -- when --> c
+    a -- where --> d
+```
+
+Let’s read this through:
+- There is (or rather there was) an observed entity which is an instance of a ‘birth event’.
+- In other words, this entity is an *instance* of a *birth*, which is itself a *subtype* of *event*.
+- Note that:
+  - Entities are represented by oblongs.
+  - Entity types are represented by rectangles.
+  - The connection between an entity and the type it is an instance of is dotted.
+  - The connection between two types is also dotted, with the source being a subtype of the goal.
+
+```mermaid
+flowchart TD
+    e[event]
+    f[birth]
+    f -.-> e
+    a -.-> f
+    a([ ])
+    b([Kate])
+    c([1992-11-02])
+    d([Dunfermline])
+    a -- who --> b
+    a -- when --> c
+    a -- where --> d
+    g[female]
+    h[person]
+    b -.-> g
+    g -.-> h
+    i[date]
+    j[time]
+    c -.-> i
+    i -.-> j
+    k[town]
+    d -.-> k
+    l[place]
+    k -.-> l
+```
+
+Add Mark.
+
+----
 
 Here is another instance of a datum:
 
