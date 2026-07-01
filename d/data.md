@@ -11,134 +11,90 @@ This data can be represented as a graph, consisting of entities and connections:
 ```mermaid
 flowchart TD
     a([birth])
-    b(["`**Kate**: person`"])
-    c(["`**1992-11-02**: date`"])
-    d(["`**Dunfermline**: town`"])
-    a -- who --> b
-    a -- when --> c
-    a -- where --> d
+    b(["`**Kate** person`"])
+    c(["`**1992-11-02** date`"])
+    d(["`**Dunfermline** town`"])
+    a --> b
+    a -- on --> c
+    a -- in --> d
 ```
 
-The unlabelled root entity here represents a specific *birth event*, which took place on the date (the *when*) and in the town (the *where*) specified, and which involved a new person named ‘Kate’ (the *who*) entering the world. 
+The root entity here represents a specific *birth event*, which took place *on* the date and *in* the town specified, and which involved a new person named ‘Kate’ entering the world. 
 
-Note that Kate’s birth can be viewed as an entity in our world, much like Kate herself is an entity in our world. A birth is a special kind of entity known as an *event* – something that has happened. We can represent this in our data graph by adding *entity types*:
-
-```mermaid
-flowchart TD
-    e[event]:::type
-    f[birth]:::type
-    f -.-> e
-    a -.-> f
-    a([ ])
-    b([Kate])
-    c([1992-11-02])
-    d([Dunfermline])
-    a -- who --> b
-    a -- when --> c
-    a -- where --> d
-    classDef type fill:#f9f;
-```
-
-Entity types are represented as rectangles, but entities themselves are represented as oblongs. The connection between an entity and its type is a dotted line. The connection between two types is also a dotted line, with one being a subtype of the other, eg. births are a subtype of event.
-
-We can read the data graph above as saying that what happened to Kate in Dunfermline in 1992 was an instance of a *birth*, and that births are a kind of *event*.
-
-We can add other relevant entity types to the data graph as well:
-
-```mermaid
-flowchart TD
-    e[event]:::type
-    f[birth]:::type
-    f -.-> e
-    a -.-> f
-    a([ ])
-    b([Kate])
-    c([1992-11-02])
-    d([Dunfermline])
-    a -- who --> b
-    a -- when --> c
-    a -- where --> d
-    g[female]:::type
-    h[person]:::type
-    b -.-> g
-    g -.-> h
-    i[date]:::type
-    c -.-> i
-    k[town]:::type
-    d -.-> k
-    classDef type fill:#f9f;
-```
+Note that Kate’s birth can be viewed as an entity in our world, much like Kate herself is an entity in our world. A birth is a special kind of entity known as an *event* – something that has happened. Other *entity types* represented in the data graph are *person*, *date* and *town*.
 
 Let’s add another birth event to the data graph:
 
 ```mermaid
-flowchart LR
-    e[event]:::type
-    f[birth]:::type
-    f -.-> e
-    a -.-> f
-    a([ ])
-    b([Kate])
-    c([1992-11-02])
-    d([Dunfermline])
-    a -- who --> b
-    a -- when --> c
-    a -- where --> d
-    g[female]:::type
-    h[person]:::type
-    b -.-> g
-    g -.-> h
-    i[date]:::type
-    c -.-> i
-    k[town]:::type
-    d -.-> k
-    classDef type fill:#f9f;
-    aa -.-> f
-    aa([ ])
-    bb([Mark])
-    cc([1977-01-23])
-    dd([Kirkcaldy])
-    aa -- who --> bb
-    aa -- when --> cc
-    aa -- where --> dd
-    gg[male]:::type
-    bb -.-> gg
-    gg -.-> h
-    dd -.-> k
-    cc -.-> i
+flowchart TD
+    a([birth])
+    b(["`**Kate** person`"])
+    c(["`**1992-11-02** date`"])
+    d(["`**Dunfermline** town`"])
+    a --> b
+    a -- on --> c
+    a -- in --> d
+    aa([birth])
+    bb(["`**Mark** person`"])
+    cc(["`**1977-01-23** date`"])
+    dd(["`**Kirkcaldy** town`"])
+    aa --> bb
+    aa -- on --> cc
+    aa -- in --> dd
 ```
 
-Dunfermline and Kdy are both in Fife, in Scotland.
+Note that, while there are two entities in this data graph labelled ‘birth’, these are not the same entity. Kate’s birth and Mark’s birth were two distinct events, happening at different times and in different places! But they were distinct events of the same type, as in both were *births*. 
+
+Let’s add some additional geographical information to the data graph now:
 
 ```mermaid
 flowchart TD
-    f[birth]:::type
-    a -.-> f
-    a([ ])
-    b([Kate])
-    d([Dunfermline])
-    a -- who --> b
-    a -- where --> d
-    k[town]:::type
-    d -.-> k
-    classDef type fill:#f9f;
-    aa -.-> f
-    aa([ ])
-    bb([Mark])
-    dd([Kirkcaldy])
-    aa -- who --> bb
-    aa -- where --> dd
-    dd -.-> k
-    ddd([Fife])
-    d -- in --> ddd
-    dd -- in --> ddd
-    kk[county]:::type
-    ddd -.-> kk
+    a([birth])
+    b(["`**Kate** person`"])
+    c(["`**1992-11-02** date`"])
+    d(["`**Dunfermline** town`"])
+    a --> b
+    a -- on --> c
+    a -- in --> d
+    aa([birth])
+    bb(["`**Mark** person`"])
+    cc(["`**1977-01-23** date`"])
+    dd(["`**Kirkcaldy** town`"])
+    aa --> bb
+    aa -- on --> cc
+    aa -- in --> dd
+    e(["`**Fife** county`"])
+    d -- in --> e
+    dd -- in --> e
 ```
 
-
+Since Dunfermline and Kirkcaldy are both towns in Fife, Kate and Mark were both born in the same county.
 
 The dates are ordered to each other.
+
+```mermaid
+flowchart TD
+    a([birth])
+    b(["`**Kate** person`"])
+    c(["`**1992-11-02** date`"])
+    d(["`**Dunfermline** town`"])
+    a --> b
+    a -- on --> c
+    a -- in --> d
+    aa([birth])
+    bb(["`**Mark** person`"])
+    cc(["`**1977-01-23** date`"])
+    dd(["`**Kirkcaldy** town`"])
+    aa --> bb
+    aa -- on --> cc
+    aa -- in --> dd
+    e(["`**Fife** county`"])
+    d -- in --> e
+    dd -- in --> e
+    cc --> c
+
+
+```
 
 The dates are in years?
 
