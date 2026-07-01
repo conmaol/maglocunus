@@ -10,10 +10,10 @@ This data can be represented as a graph, consisting of entities and connections:
 
 ```mermaid
 flowchart TD
-    a([ ])
-    b([Kate])
-    c([1992-11-02])
-    d([Dunfermline])
+    a([birth])
+    b(["`**Kate**: person`"])
+    c(["`**1992-11-02**: date`"])
+    d(["`**Dunfermline**: town`"])
     a -- who --> b
     a -- when --> c
     a -- where --> d
@@ -110,11 +110,45 @@ flowchart LR
 
 Dunfermline and Kdy are both in Fife, in Scotland.
 
+```mermaid
+flowchart TD
+    f[birth]:::type
+    a -.-> f
+    a([ ])
+    b([Kate])
+    d([Dunfermline])
+    a -- who --> b
+    a -- where --> d
+    k[town]:::type
+    d -.-> k
+    classDef type fill:#f9f;
+    aa -.-> f
+    aa([ ])
+    bb([Mark])
+    dd([Kirkcaldy])
+    aa -- who --> bb
+    aa -- where --> dd
+    dd -.-> k
+    ddd([Fife])
+    d -- in --> ddd
+    dd -- in --> ddd
+    kk[county]:::type
+    ddd -.-> kk
+```
+
+
+
 The dates are ordered to each other.
 
 The dates are in years?
 
 kissed?
+
+name and entity type together in lozenge?
+
+entity relations separate diagram?
+
+
 
 
 ----
