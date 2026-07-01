@@ -21,12 +21,12 @@ flowchart TD
 
 The unlabelled root entity here represents a specific *birth event*, which took place on the date (the *when*) and in the town (the *where*) specified, and which involved a new person named ‘Kate’ (the *who*) entering the world. 
 
-Note that Kate’s birth can be viewed as an entity in our world, much like Kate herself is an entity in our world. A birth is a special kind of entity known as an *event* – something that has happened. We can represent this in our graph by adding *entity types*:
+Note that Kate’s birth can be viewed as an entity in our world, much like Kate herself is an entity in our world. A birth is a special kind of entity known as an *event* – something that has happened. We can represent this in our data graph by adding *entity types*:
 
 ```mermaid
 flowchart TD
-    e[event]
-    f[birth]
+    e[event]:::type
+    f[birth]:::type
     f -.-> e
     a -.-> f
     a([ ])
@@ -36,22 +36,19 @@ flowchart TD
     a -- who --> b
     a -- when --> c
     a -- where --> d
+    classDef type fill:#f9f;
 ```
 
-We can read this graph as saying that there is an observed entity which is an instance of a ‘birth’, and that births are a kind of ‘event’.
+Entity types are represented as rectangles, but entities themselves are represented as oblongs. The connection between an entity and its type is a dotted line. The connection between two types is also a dotted line, with one being a subtype of the other, eg. births are a subtype of event.
 
-Note that:
-- Entities are represented by oblongs.
-- Entity types are represented by rectangles.
-- The connection between an entity and its type is a dotted line.
-- The connection between two types is also a dotted line, with the source type being a subtype of the goal type, eg. births are a subtype of event.
+We can read the data graph above as saying that what happened to Kate in Dunfermline in 1992 was an instance of a *birth*, and that births are a kind of *event*.
 
-\[start here\]
+We can add other relevant entity types to the data graph as well:
 
 ```mermaid
 flowchart TD
-    e[event]
-    f[birth]
+    e[event]:::type
+    f[birth]:::type
     f -.-> e
     a -.-> f
     a([ ])
@@ -61,21 +58,62 @@ flowchart TD
     a -- who --> b
     a -- when --> c
     a -- where --> d
-    g[female]
-    h[person]
+    g[female]:::type
+    h[person]:::type
     b -.-> g
     g -.-> h
-    i[date]
-    j[time]
+    i[date]:::type
     c -.-> i
-    i -.-> j
-    k[town]
+    k[town]:::type
     d -.-> k
-    l[place]
-    k -.-> l
+    classDef type fill:#f9f;
 ```
 
-Add Mark.
+Let’s add another birth event to the data graph:
+
+```mermaid
+flowchart LR
+    e[event]:::type
+    f[birth]:::type
+    f -.-> e
+    a -.-> f
+    a([ ])
+    b([Kate])
+    c([1992-11-02])
+    d([Dunfermline])
+    a -- who --> b
+    a -- when --> c
+    a -- where --> d
+    g[female]:::type
+    h[person]:::type
+    b -.-> g
+    g -.-> h
+    i[date]:::type
+    c -.-> i
+    k[town]:::type
+    d -.-> k
+    classDef type fill:#f9f;
+    aa -.-> f
+    aa([ ])
+    bb([Mark])
+    cc([1977-01-23])
+    dd([Kirkcaldy])
+    aa -- who --> bb
+    aa -- when --> cc
+    aa -- where --> dd
+    gg[male]:::type
+    bb -.-> gg
+    gg -.-> h
+    dd -.-> k
+    cc -.-> i
+```
+
+Dunfermline and Kdy are both in Fife, in Scotland.
+
+The dates are ordered to each other.
+
+The dates are in years?
+
 
 ----
 
