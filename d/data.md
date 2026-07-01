@@ -35,7 +35,7 @@ flowchart TD
     a -- on --> c
     a -- in --> d
     aa([birth])
-    bb(["`**Mark** person`"])
+    bb(["`**Marek** person`"])
     cc(["`**1977-01-23** date`"])
     dd(["`**Kirkcaldy** town`"])
     aa --> bb
@@ -43,7 +43,7 @@ flowchart TD
     aa -- in --> dd
 ```
 
-Note that, while there are two entities in this data graph labelled ‘birth’, these are not the same entity. Kate’s birth and Mark’s birth were two distinct events, happening at different times and in different places! But they were distinct events of the same type, as in both were *births*. 
+Note that, while there are two entities in this data graph labelled ‘birth’, these are not the same entity. Kate’s birth and Marek’s birth were two distinct events, happening at different times and in different places! But they were distinct events of the same type, as in both were *births*. 
 
 Let’s add some additional geographical information to the data graph now:
 
@@ -57,7 +57,7 @@ flowchart TD
     a -- on --> c
     a -- in --> d
     aa([birth])
-    bb(["`**Mark** person`"])
+    bb(["`**Marek** person`"])
     cc(["`**1977-01-23** date`"])
     dd(["`**Kirkcaldy** town`"])
     aa --> bb
@@ -68,9 +68,9 @@ flowchart TD
     dd -- in --> e
 ```
 
-Since Dunfermline and Kirkcaldy are both towns in Fife, Kate and Mark were both born in the same county.
+Since Dunfermline and Kirkcaldy are both towns in Fife, Kate and Marek were both born in the same county.
 
-The dates are ordered to each other.
+We can use a ‘next’ relationship to line the dates up in order, making it clear that Marek was born before Kate. 
 
 ```mermaid
 flowchart TD
@@ -82,7 +82,7 @@ flowchart TD
     a -- on --> c
     a -- in --> d
     aa([birth])
-    bb(["`**Mark** person`"])
+    bb(["`**Marek** person`"])
     cc(["`**1977-01-23** date`"])
     dd(["`**Kirkcaldy** town`"])
     aa --> bb
@@ -91,21 +91,47 @@ flowchart TD
     e(["`**Fife** county`"])
     d -- in --> e
     dd -- in --> e
-    cc --> c
-
-
+    ccc(["`**1977-01-24** date`"])
+    cc -- next --> ccc
+    cccc(["`**1992-11-01** date`"])
+    cccc -- next --> c
+    ccc -.-> cccc
 ```
 
-The dates are in years?
+Finally, we add a new event, representing Kate and Marek’s first kiss:
 
-kissed?
+```mermaid
+flowchart LR
+    a([birth])
+    b(["`**Kate** person`"])
+    c(["`**1992-11-02** date`"])
+    d(["`**Dunfermline** town`"])
+    a --> b
+    a -- on --> c
+    a -- in --> d
+    aa([birth])
+    bb(["`**Marek** person`"])
+    cc(["`**1977-01-23** date`"])
+    dd(["`**Kirkcaldy** town`"])
+    aa --> bb
+    aa -- on --> cc
+    aa -- in --> dd
+    e(["`**Fife** county`"])
+    d -- in --> e
+    dd -- in --> e
+    cc -.-> c
+    aaa([kiss])
+    style aaa fill:#f9f
+    aaa --> b
+    aaa --> bb
+    ddd(["`**Edinburgh** town`"])
+    aaa -- in --> ddd
+    aaa -- on --> ccccccc
+    c -.-> ccccccc
+    ccccccc(["`**2026-06-24** date`"])
+```
 
-name and entity type together in lozenge?
-
-entity relations separate diagram?
-
-
-
+This graph encodes quite a bit of data now, with around a dozen entities – people, events, dates and towns – connected into a web of information.
 
 ----
 
