@@ -1,6 +1,6 @@
 # Data
 
-Data is, in its essence, a web of relationships between entities in the world. Zooming in a bit, data can be seen as an aggregate of individual pieces of information, where each such ‘datum’ is a connection between two entities, and this connection represents some fact, measurement or observation about the world (ie. some ‘data point’).  
+Data is, essentially, a web of relationships between entities in the world. Zooming in a bit, data can be seen as an aggregate of individual pieces of information, where each such ‘datum’ is a connection between two entities, and this connection represents some fact, measurement or observation about the world (ie. some ‘data point’).  
 
 The following sentence encodes some simple data:
 
