@@ -1,6 +1,6 @@
 # Data
 
-Data is, in its essence, a web of relationships between entities – an aggregate of individual items of information, where each such ‘datum’ is a connection between two entities, representing some fact, measurement or observation (ie. a ‘data point’).  
+Data is, in its essence, a web of relationships between entities in the world. Zooming in a bit, data can be seen as an aggregate of individual pieces of information, where each such ‘datum’ is a connection between two entities, and this connection represents some fact, measurement or observation about the world (ie. some ‘data point’).  
 
 The following sentence encodes some simple data:
 
@@ -19,7 +19,9 @@ flowchart TD
     a -- where --> d
 ```
 
-The unlabelled root entity is an instance of a ‘birth event’, and this observation can be represented by extending the graph like this:
+The unlabelled root entity here represents a specific ‘birth event’, which took place on the date and in the town specified, and which involved a new person named ‘Kate’ entering the world. 
+
+The idea that Kate’s birth is an ‘entity’, just like Kate herself is an entity, but that it is a special kind of entity known as an ‘event’ (ie. something that has happened), can be teased out by adding a couple of entity types to the graph:
 
 ```mermaid
 flowchart TD
@@ -36,14 +38,15 @@ flowchart TD
     a -- where --> d
 ```
 
-Let’s read this through:
-- There is (or rather there was) an observed entity which is an instance of a ‘birth event’.
-- In other words, this entity is an *instance* of a *birth*, which is itself a *subtype* of *event*.
-- Note that:
-  - Entities are represented by oblongs.
-  - Entity types are represented by rectangles.
-  - The connection between an entity and the type it is an instance of is dotted.
-  - The connection between two types is also dotted, with the source being a subtype of the goal.
+We can read this graph as saying that there is an observed entity which is an instance of a ‘birth’, and that births are a kind of ‘event’.
+
+Note that:
+- Entities are represented by oblongs.
+- Entity types are represented by rectangles.
+- The connection between an entity and its type is a dotted line.
+- The connection between two types is also a dotted line, with the source type being a subtype of the goal type, eg. births are a subtype of event.
+
+\[start here\]
 
 ```mermaid
 flowchart TD
