@@ -6,7 +6,7 @@ The following sentence encodes some simple data:
 
 > Kate was born in Dunfermline on the second of November 1992.
 
-This data can be represented as a graph, consisting of entities and connections:
+This data can be represented as a graph, consisting of entities and relationships:
 
 ```mermaid
 flowchart TD
@@ -23,54 +23,12 @@ The root entity here represents a specific *birth event*, which took place *on* 
 
 Note that Kate’s birth can be viewed as an entity in our world, much like Kate herself is an entity in our world. A birth is a special kind of entity known as an *event* – something that has happened. Other *entity types* represented in the data graph are *person*, *date* and *town*.
 
-Let’s add another birth event to the data graph:
+We can expand this simple data graph by adding more entities and more relationships:
 
-```mermaid
-flowchart TD
-    a([birth])
-    b(["`**Kate** person`"])
-    c(["`**1992-11-02** date`"])
-    d(["`**Dunfermline** town`"])
-    a --> b
-    a -- on --> c
-    a -- in --> d
-    aa([birth])
-    bb(["`**Marek** person`"])
-    cc(["`**1977-01-23** date`"])
-    dd(["`**Kirkcaldy** town`"])
-    aa --> bb
-    aa -- on --> cc
-    aa -- in --> dd
-```
 
-Note that, while there are two entities in this data graph labelled ‘birth’, these are not the same entity. Kate’s birth and Marek’s birth were two distinct events, happening at different times and in different places! But they were distinct events of the same type, as in both were *births*. 
 
-Let’s add some additional geographical information to the data graph now:
 
-```mermaid
-flowchart TD
-    a([birth])
-    b(["`**Kate** person`"])
-    c(["`**1992-11-02** date`"])
-    d(["`**Dunfermline** town`"])
-    a --> b
-    a -- on --> c
-    a -- in --> d
-    aa([birth])
-    bb(["`**Marek** person`"])
-    cc(["`**1977-01-23** date`"])
-    dd(["`**Kirkcaldy** town`"])
-    aa --> bb
-    aa -- on --> cc
-    aa -- in --> dd
-    e(["`**Fife** county`"])
-    d -- in --> e
-    dd -- in --> e
-```
 
-Since Dunfermline and Kirkcaldy are both towns in Fife, Kate and Marek were both born in the same county.
-
-We can use a ‘next’ relationship to line the dates up in order, making it clear that Marek was born before Kate. 
 
 ```mermaid
 flowchart TD
@@ -98,40 +56,62 @@ flowchart TD
     ccc -.-> cccc
 ```
 
-Finally, we add a new event, representing Kate and Marek’s first kiss:
+Note that, while there are two entities in this data graph labelled ‘birth’, these are not the same entity. Kate’s birth and Marek’s birth were two distinct events, happening at different times and in different places! But they were distinct events of the same type, as in both were *births*. 
+
+We can see from this data graph that Kate and Marek may have been born in different years and in different town, but they were both born in the same county. It is also clear that Marek was born before Kate, now that dates are ordered by the ‘next’ relationship.
+
+Fundamentally, this is all there is to data. It consists of entities of different types, connected by relationships of different kinds, all linked up in a web of information about the world. 
+
+## A simple numerical dataset
+
 
 ```mermaid
 flowchart LR
-    a([birth])
-    b(["`**Kate** person`"])
-    c(["`**1992-11-02** date`"])
-    d(["`**Dunfermline** town`"])
-    a --> b
-    a -- on --> c
-    a -- in --> d
-    aa([birth])
-    bb(["`**Marek** person`"])
-    cc(["`**1977-01-23** date`"])
-    dd(["`**Kirkcaldy** town`"])
-    aa --> bb
-    aa -- on --> cc
-    aa -- in --> dd
-    e(["`**Fife** county`"])
-    d -- in --> e
-    dd -- in --> e
-    cc -.-> c
-    aaa([kiss])
-    style aaa fill:#f9f
-    aaa --> b
-    aaa --> bb
-    ddd(["`**Edinburgh** town`"])
-    aaa -- in --> ddd
-    aaa -- on --> ccccccc
-    c -.-> ccccccc
-    ccccccc(["`**2026-06-24** date`"])
+    subgraph people
+        a(["`**Alex**`"])
+        k(["`**Kate**`"])
+        l(["`**Lee**`"])
+        m(["`**Marek**`"])
+    end
+    subgraph ages
+        x24(["`**24**`"])
+        x25(["`**25**`"])
+        x26(["`**26**`"])
+        x27(["`**27**`"])
+        x28(["`**28**`"])
+        x29(["`**29**`"])
+        x30(["`**30**`"])
+        x31(["`**31**`"])
+        x32(["`**32**`"])
+        x33(["`**33**`"])
+        x34(["`**34**`"])
+        x35(["`**35**`"])
+        x54(["`**54**`"])
+        x55(["`**55**`"])
+        x56(["`**56**`"])
+    end
+    x24 --> x25
+    x25 --> x26
+    x26 --> x27
+    x27 --> x28
+    x28 --> x29
+    x29 --> x30
+    x30 --> x31
+    x31 --> x32
+    x32 --> x33
+    x33 --> x34
+    x34 --> x35
+    x35 -.-> x54
+    x54 --> x55
+    x55 --> x56
+    a -- age --> x25
+    k -- age --> x33
+    l -- age --> x34
+    m -- age --> x55
 ```
 
-This graph encodes quite a bit of data now, with around a dozen entities – people, events, dates and towns – connected into a web of information.
+
+
 
 ----
 
