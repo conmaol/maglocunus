@@ -1,12 +1,12 @@
 # Data
 
-Data is, essentially, a web of relationships between entities in the world. Zooming in a bit, data can be seen as an aggregate of individual pieces of information, where each such ‘datum’ is a connection between two entities, and this connection represents some fact, measurement or observation about the world (ie. some ‘data point’).  
+Data is, essentially, a web of relationships between entities in the world. Zooming in a bit, data can be seen as an aggregate of individual pieces of information. Each such *datum* (or data *point*) is a connection between two entities, and this connection represents some fact, measurement or observation about the world.  
 
 The following sentence encodes some simple data:
 
 > Kate was born in Dunfermline on the second of November 1992.
 
-This data can be represented in the following graph:
+This data can be represented as a graph, consisting of entities and connections:
 
 ```mermaid
 flowchart TD
@@ -19,9 +19,9 @@ flowchart TD
     a -- where --> d
 ```
 
-The unlabelled root entity here represents a specific ‘birth event’, which took place on the date and in the town specified, and which involved a new person named ‘Kate’ entering the world. 
+The unlabelled root entity here represents a specific *birth event*, which took place on the date (the *when*) and in the town (the *where*) specified, and which involved a new person named ‘Kate’ (the *who*) entering the world. 
 
-The idea that Kate’s birth is an ‘entity’, just like Kate herself is an entity, but that it is a special kind of entity known as an ‘event’ (ie. something that has happened), can be teased out by adding a couple of entity types to the graph:
+Note that Kate’s birth can be viewed as an entity in our world, much like Kate herself is an entity in our world. A birth is a special kind of entity known as an *event* – something that has happened. We can represent this in our graph by adding *entity types*:
 
 ```mermaid
 flowchart TD
