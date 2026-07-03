@@ -63,7 +63,7 @@ Fundamentally, this is all there is to data. It consists of entities of differen
 
 ## Distilled data
 
-Here is a *distilled* version of the data graph from above, where many of the entities and relationships have been excised or relabelled, to focus on just a few aspects:
+Here is a *distilled* version of the data graph from above, where many of the entities and relationships have been excised or relabelled, allowing us to focus on just a few aspects:
 
 ```mermaid
 flowchart TD
@@ -97,7 +97,7 @@ flowchart TD
     c -- precedes --> cccc
 ```
 
-This data graph is equivalent to the following data table:
+This graph is equivalent to the following data table:
 
 | name  | date of birth |
 | ----- | ------------- |
@@ -106,11 +106,11 @@ This data graph is equivalent to the following data table:
 | Kate  | 1992-11-02    |
 | Alex  | 2001-03-25    |
 
-Ordinal data
-
-DOB relates an entity (a person) to values which can be ordered with respect to each other.
+give diagrams names
 
 ## Derived data
+
+We can take the data above and *derive* a new data graph from it. 
 
 ```mermaid
 flowchart TD
