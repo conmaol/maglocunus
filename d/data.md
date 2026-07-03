@@ -1,6 +1,6 @@
 # Data
 
-Data is, essentially, a web of relationships between entities in the world. Zooming in a bit, data can be seen as an aggregate of individual pieces of information. Each such *datum* (or data *point*) is a connection between two entities, and this connection represents some fact, measurement or observation about the world.  
+Data is, from the outside, a web of relationships between entities in the world. Zooming in a bit, data can be seen as an aggregate of individual pieces of information. Each such *datum* (or data *point*) is a connection between two entities, and this connection represents some fact, measurement or observation about the world.  
 
 The following sentence encodes some simple data:
 
@@ -14,7 +14,7 @@ flowchart TD
     b(["`**Kate** person`"])
     c(["`**1992-11-02** date`"])
     d(["`**Dunfermline** town`"])
-    a --> b
+    a -- who --> b
     a -- on --> c
     a -- in --> d
 ```
@@ -23,12 +23,11 @@ The root entity here represents a specific *birth event*, which took place *on* 
 
 Note that Kate’s birth can be viewed as an entity in our world, much like Kate herself is an entity in our world. A birth is a special kind of entity known as an *event* – something that has happened. Other *entity types* represented in the data graph are *person*, *date* and *town*.
 
+To summarise:
+
+> Data consists of relationships between events, people, places, times, and other types of entity.
+
 We can expand this simple data graph by adding more entities and more relationships:
-
-
-
-
-
 
 ```mermaid
 flowchart TD
@@ -36,14 +35,14 @@ flowchart TD
     b(["`**Kate** person`"])
     c(["`**1992-11-02** date`"])
     d(["`**Dunfermline** town`"])
-    a --> b
+    a -- who --> b
     a -- on --> c
     a -- in --> d
     aa([birth])
     bb(["`**Marek** person`"])
     cc(["`**1977-01-23** date`"])
     dd(["`**Kirkcaldy** town`"])
-    aa --> bb
+    aa -- who --> bb
     aa -- on --> cc
     aa -- in --> dd
     e(["`**Fife** county`"])
@@ -56,11 +55,93 @@ flowchart TD
     ccc -.-> cccc
 ```
 
-Note that, while there are two entities in this data graph labelled ‘birth’, these are not the same entity. Kate’s birth and Marek’s birth were two distinct events, happening at different times and in different places! But they were distinct events of the same type, as in both were *births*. 
+Note that, while there are two entities in this data graph labelled ‘birth’, these are not the same entity. Kate’s birth and Marek’s birth were two distinct events, happening at different times and in different places. But they were distinct events of the same type, as both were *births*. 
 
-We can see from this data graph that Kate and Marek may have been born in different years and in different town, but they were both born in the same county. It is also clear that Marek was born before Kate, now that dates are ordered by the ‘next’ relationship.
+We can see from this data graph that Kate and Marek may have been born in different years and in different town, but they were both born in the same county. It is also clear that Marek was born before Kate, with dates being ordered by the ‘next’ relationship. The dotted line between certain pairs of dates indicates that there are lots of intervening dates and links between the two.
 
 Fundamentally, this is all there is to data. It consists of entities of different types, connected by relationships of different kinds, all linked up in a web of information about the world. 
+
+## Distilled data
+
+Here is a *distilled* version of the data graph from above, where many of the entities and relationships have been excised or relabelled, to focus on just a few aspects:
+
+```mermaid
+flowchart TD
+    bb(["`**Marek** person`"])
+    cc(["`**1977-01-23** date`"])
+    bb -- date of birth --> cc
+    b(["`**Kate** person`"])
+    c(["`**1992-11-02** date`"])
+    b -- date of birth --> c
+    cc -- precedes --> c
+```
+
+This data graph zooms in on just the people and their dates of birth. We can add more instances as needed:
+
+```mermaid
+flowchart TD
+    bb(["`**Marek** person`"])
+    cc(["`**1977-01-23** date`"])
+    bb -- date of birth --> cc
+    bbb(["`**Lee** person`"])
+    ccc(["`**1992-06-26** date`"])
+    bbb -- date of birth --> ccc
+    b(["`**Kate** person`"])
+    c(["`**1992-11-02** date`"])
+    b -- date of birth --> c
+    bbbb(["`**Alex** person`"])
+    cccc(["`**2001-03-25** date`"])
+    bbbb -- date of birth --> cccc
+    cc -- precedes --> ccc
+    ccc -- precedes --> c
+    c -- precedes --> cccc
+```
+
+This data graph is equivalent to the following data table:
+
+| name  | date of birth |
+| ----- | ------------- |
+| Marek | 1977-01-23    |
+| Lee   | 1992-06-26    |
+| Kate  | 1992-11-02    |
+| Alex  | 2001-03-25    |
+
+Ordinal data
+
+DOB relates an entity (a person) to values which can be ordered with respect to each other.
+
+## Derived data
+
+```mermaid
+flowchart TD
+    bb(["`**Marek** person`"])
+    cc(["`**49** date`"])
+    bb -- age --> cc
+    bbb(["`**Lee** person`"])
+    ccc(["`**34** date`"])
+    bbb -- age --> ccc
+    b(["`**Kate** person`"])
+    c(["`**33** date`"])
+    b -- age --> c
+    bbbb(["`**Alex** person`"])
+    cccc(["`**25** date`"])
+    bbbb -- age --> cccc
+    cc -- precedes --> ccc
+    ccc -- precedes --> c
+    c -- precedes --> cccc
+```
+
+
+| name  | age |
+| ----- | --- |
+| Marek | 49  |
+| Lee   | 34  |
+| Kate  | 33  |
+| Alex  | 25  |
+
+numerical / quantitative data
+
+
 
 ## A simple numerical dataset
 
