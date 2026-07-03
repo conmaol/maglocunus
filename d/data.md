@@ -115,16 +115,16 @@ We can take the data above and *derive* a new data graph from it.
 ```mermaid
 flowchart TD
     bb(["`**Marek** person`"])
-    cc(["`**49** date`"])
+    cc(["`**49** number`"])
     bb -- age --> cc
     bbb(["`**Lee** person`"])
-    ccc(["`**34** date`"])
+    ccc(["`**34** number`"])
     bbb -- age --> ccc
     b(["`**Kate** person`"])
-    c(["`**33** date`"])
+    c(["`**33** number`"])
     b -- age --> c
     bbbb(["`**Alex** person`"])
-    cccc(["`**25** date`"])
+    cccc(["`**25** number`"])
     bbbb -- age --> cccc
     cc -- precedes --> ccc
     ccc -- precedes --> c
