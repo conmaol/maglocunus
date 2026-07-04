@@ -142,25 +142,94 @@ Note that we have introduced a new entity type here – *numbers*. In the world 
 
 A relationship like *age*, which maps people to numbers, is known as *quantitative* data.
 
-For all x if x is a person then there is some y such that x age y and this is today - x’s date of birth.
+We can define the new derived relationship as follows:
+
+> age = λx.today – date-of-birth(x)
+
+In other words, to calculate the age of a person, you subtract their date of birth from today’s date (and round to the nearest year).
+
+There are lots of things you can do with a quantitative relationship like `age` in this example:
+
+> mean(age) = 35.25
+> 
+> maximum(age) = 49
+>
+> range(age) = 24
+> 
+> etc.
+
+This kind of derived quantitative data is a kind of *metadata* – data about data. To represent metadata in a graph, the relationships need to be *reified* as entities:
+
+```mermaid
+flowchart TD
+    age(["`**age** relationship`"])
+    mean(["`**35.25** number`"])
+    max(["`**49** number`"])
+    range(["`**24** number`"])
+    age -- mean --> mean
+    age -- max --> max
+    age -- range --> range
+```
+
+## Categorical data
+
+The following graph includes observations about sex:
+
+```mermaid
+flowchart TD
+    marek(["`**Marek** person`"])
+    male(["`**male**`"])
+    marek -- sex --> male
+    lee(["`**Lee** person`"])
+    lee -- sex --> male
+    kate(["`**Kate** person`"])
+    female(["`**female**`"])
+    kate -- sex --> female
+    alex(["`**Alex** person`"])
+    alex -- sex --> female
+```
+
+This graph is equivalent to the following data table:
+
+| name  | sex    |
+| ----- | ------ |
+| Marek | male   |
+| Lee   | male   |
+| Kate  | female |
+| Alex  | female |
+
+Sex is an example of a *categorical* data relationship. Categorical data is *qualitative* rather than quantitative – there are no numbers involved.
+
+Although categorical data cannot be summed or averaged or whatever, it can be converted into a different kind of derived quantitative metadata – a *frequency distribution*. 
+
+The frequency distribution derived from the sex relationship is represented in the following table:
+
+| sex    | frequency |
+| ------ | --------- |
+| male   | 2         |
+| female | 2         |
+
+This frequency distribution involves reifying the categorical relationship:
+
+```mermaid
+flowchart TD
+    sex(["`**sex** relationship`"])
+    male(["`**male**`"])
+    female(["`**female**`"])
+    sex -- category --> male
+    sex -- category --> female
+    two(["`**2** number`"])
+    male -- freq --> two
+    female -- freq --> two
+```
+
+Conditional frequency distributions
+
+Quantitative to qualitative? banding?
 
 
 
-Things you can do with quantitatve data? average etc.
 
-Qualitative data? clustered? frquency distributions.
-
-Quantitative to qualitative?
-
-----
-
-Here is another example:
-
-> Kate is 175cm tall.
-
-Also:
-
-> Kate is female.
 
 
 ## Shipman dataset
