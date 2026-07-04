@@ -57,7 +57,7 @@ flowchart TD
 
 Note that, while there are two entities in this data graph labelled ‘birth’, these are not the same entity. Kate’s birth and Marek’s birth were two distinct events, happening at different times and in different places. But they were distinct events of the same type, as both were *births*. 
 
-We can see from this data graph that Kate and Marek may have been born in different years and in different town, but they were both born in the same county. It is also clear that Marek was born before Kate, with dates being ordered by the ‘next’ relationship. The dotted line between certain pairs of dates indicates that there are lots of intervening dates and links between the two.
+We can see from this data graph that Kate and Marek may have been born in different years and in different towns, but they were both born in the same county. It is also clear that Marek was born before Kate, with dates being ordered by the ‘next’ relationship. The dotted line between certain pairs of dates indicates that there are lots of intervening dates and links between the two.
 
 Fundamentally, this is all there is to data. It consists of entities of different types, connected by relationships of different kinds, all linked up in a web of information about the world. 
 
@@ -106,6 +106,8 @@ This graph is equivalent to the following data table:
 | Kate  | 1992-11-02    |
 | Alex  | 2001-03-25    |
 
+So, one thing you can do with data is distill it, which is one way of converting it from one format to another, not adding any new information, but losing irrelevant information to focus ony on what is significant.
+
 ## Derived, quantitative data
 
 We can now take the distilled data from the previous section, and *derive* a new data graph from it. In this case we are mapping each person not to their date of birth, but to a value derived from that – the number of full years that have passed from that data to the current time, ie. their age.
@@ -148,21 +150,17 @@ We can define the new derived relationship as follows:
 
 In other words, to calculate the age of a person, you subtract their date of birth from today’s date (and round to the nearest year).
 
-There are lots of things you can do with a quantitative relationship like `age` in this example:
+There are lots of things you can do with quantitative data, like the `age` relationship here:
+- You can find the average value – `mean(age) = 35.25`
+- Or the maximum value – `maximum(age) = 49`
+- Or the range of values – `range(age) = 24`
+- etc.
 
-> mean(age) = 35.25
-> 
-> maximum(age) = 49
->
-> range(age) = 24
-> 
-> etc.
-
-This kind of derived quantitative data is a kind of *metadata* – data about data. To represent metadata in a graph, the relationships need to be *reified* as entities:
+This kind of summary quantitative data is one kind of *metadata* – data about data. To represent metadata in a graph, the relationships need to be *reified* as entities:
 
 ```mermaid
 flowchart TD
-    age(["`**age** relationship`"])
+    age[["`**age**`"]]
     mean(["`**35.25** number`"])
     max(["`**49** number`"])
     range(["`**24** number`"])
@@ -173,7 +171,7 @@ flowchart TD
 
 ## Categorical data
 
-The following graph includes observations about sex:
+We have looked at quantitative data but let’s turn now to one kind of qualitative data. The following graph includes some observations about sex:
 
 ```mermaid
 flowchart TD
@@ -198,9 +196,9 @@ This graph is equivalent to the following data table:
 | Kate  | female |
 | Alex  | female |
 
-Sex is an example of a *categorical* data relationship. Categorical data is *qualitative* rather than quantitative – there are no numbers involved.
+Sex is an example of a *categorical* data relationship – there is a small, finite number of values (ie. two). 
 
-Although categorical data cannot be summed or averaged or whatever, it can be converted into a different kind of derived quantitative metadata – a *frequency distribution*. 
+Categorical data is non-quantitative and hence cannot be summed or averaged or whatever. However, it can be converted into a different kind of derived quantitative metadata – a *frequency distribution*. 
 
 The frequency distribution derived from the sex relationship is represented in the following table:
 
@@ -213,7 +211,7 @@ This frequency distribution involves reifying the categorical relationship:
 
 ```mermaid
 flowchart TD
-    sex(["`**sex** relationship`"])
+    sex[["`**sex**`"]]
     male(["`**male**`"])
     female(["`**female**`"])
     sex -- category --> male
