@@ -225,108 +225,22 @@ Conditional frequency distributions
 
 Quantitative to qualitative? banding?
 
+| name  | sex    | age |
+| ----- | ------ | --- |
+| Marek | male   | 40s |
+| Lee   | male   | 30s |
+| Kate  | female | 30s |
+| Alex  | female | 20s |
+
+mm
+
+|        | 20s | 30s | 40s | 50s |
+| ------ | --- | --- | --- | --- |
+| male   | 0   | 1   | 1   | 0   |
+| female | 1   | 1   | 0   | 0   |
 
 
 
-
-
-## Shipman dataset
-
-Shipman killed person X of age Y and gender Z in year W. 
-
-```mermaid
-flowchart LR
-    p1([Hilda S.])
-    e1([birth])
-    d1([1917-06-15])
-    e1 -- subject --> p1
-    e1 -- date --> d1
-    e2([death])
-    d2([1985-02-03])
-    e2 -- subject --> p1
-    e2 -- date --> d2
-    pp1[female]
-    p1 -- isa --> pp1
-```
-
-mmm
-
-```mermaid
-flowchart TD
-
-    ee3[event]
-    ee1[birth]
-    ee2[death]
-    ee1 -.-> ee3
-    ee2 -.-> ee3
-    pp1[female]
-    pp2[male]
-    pp3[person]
-    pp2 -.-> pp3
-    pp1 -.-> pp3
-    dd1[date]
-
-    e1([ ])
-    p1([Hilda S.])
-    e1 -.-> ee1
-    d1([1917-06-15])
-    d1 -.-> dd1
-    e1 --> p1
-    e1 --> d1
-
-    e2([ ])
-    e2 -.-> ee2
-    d2([1985-02-03])
-    d2 -.-> dd1
-    e2 --> p1
-    e2 --> d2
-    
-    p1 -.-> pp1
-
-
-
-```
-
-
-mmm
-
-```mermaid
-flowchart LR
-    p1([Hilda S.])
-    y1([1985])
-    p1 -- year of death --> y1
-    a1([67])
-    p1 -- age at death --> a1
-    g1([female])
-    p1 -- gender --> g1
-```
-
-mmm
-
-```mermaid
-flowchart LR
-    p1([Hilda S.])
-    y1([1985])
-    p1 -- year --> y1
-    a1([67])
-    p1 -- age --> a1
-    g1([female])
-    p1 -- sex --> g1
-
-    p2([Rebecca P.])
-    y2([1988])
-    p2 -- year --> y2
-    a2([72])
-    p2 -- age --> a2
-    p2 -- sex --> g1
-
-    p3([Robert M.])
-    p3 -- year --> y1
-    p3 -- age --> a2
-    g2([male])
-    p3 -- sex --> g2
-
-```
 
 
 
