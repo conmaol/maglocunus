@@ -7,6 +7,25 @@ Contents:
 
 ----
 
+```mermaid
+
+erDiagram
+
+    FACTORY ||--|{ METER : contains
+    ENERGY-SUPPLIER |o--|{ METER : supplies
+    FACTORY { string postcode }
+    METER { string MPAN }
+    COMPANY }|--|{ MACHINE : operates
+    COMPANY { string CRN }
+    METER ||--|{ MACHINE : powers
+    MACHINE }|--|{ PRODUCT : makes
+    PRODUCT { string HS-code}
+
+```
+
+
+----
+
 ## Storage and retrieval
 
 ### Data structures that power your database
