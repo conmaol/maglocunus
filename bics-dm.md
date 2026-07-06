@@ -1,6 +1,6 @@
 # BICS data model
 
-## Applicaions, businesses and users
+## Applications, businesses and users
 
 ```mermaid
     erDiagram
