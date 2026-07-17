@@ -1,10 +1,10 @@
 # Maglocunus
 
 Contents:
+- [Continuous Integration / Continuous Delivery](ci-cd.md) (CI/CD)
 - [data](d/data.md)
 - [Databricks](d/Databricks.md)
 - [data models](d/data_models.md)
-- [BICS data model](bics-dm.md)
 
 ----
 
