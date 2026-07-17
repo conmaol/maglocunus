@@ -1,7 +1,7 @@
 # Maglocunus
 
 Contents:
-- [Continuous Integration / Continuous Delivery](ci-cd.md) (CI/CD)
+- [Continuous Integration / Continuous Delivery](c/ci-cd.md) (CI/CD)
 - [data](d/data.md)
 - [Databricks](d/Databricks.md)
 - [data models](d/data_models.md)
