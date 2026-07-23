@@ -8,6 +8,11 @@ Contents:
 - [Databricks](d/Databricks.md)
 - [data models](d/data_models.md)
 - [Gherkin](g/Gherkin.md)
+- [Online Analytical Processing (OLAP)](o/OLAP.md)
+- [Online Transaction Processing (OLTP)](o/OLTP.md)
+- [(data) warehouses](w/warehouses.md)
+
+
 
 ----
 
