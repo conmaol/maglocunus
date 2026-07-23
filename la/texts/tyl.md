@@ -4,7 +4,7 @@
 
 ### 1.1. Grammar
 
-> Brūtus Portiam amat. *‘Brutus loves Portia.’*
+> Brūtus Portiam [amat](../verbs/a/am/amo.md). *‘Brutus loves Portia.’*
 >
 > Brūtus Portiam minus amat. *‘Brutus loves Portia less.’*
 >
