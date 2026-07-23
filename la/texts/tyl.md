@@ -1,6 +1,6 @@
 # Teach Yourself Latin
 
-Brūtus in hortō cum Portiā est ‘Brutus is in the garden with Portia’
+- Brūtus in [hortō](../nouns/h/ho/hortus.md) cum Portiā est ‘Brutus is in the garden with Portia’
 
 
 
