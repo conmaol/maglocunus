@@ -4,7 +4,7 @@
 
 Present indicative
 
-> Brūtus Portiam <mark>amat</mark>. *([Teach Yourself Latin](../../../text/tyl.md)) ‘Brutus loves Portia.’*
+> Brūtus Portiam <mark>amat</mark>. *([Teach Yourself Latin](../../../texts/tyl.md)) ‘Brutus loves Portia.’*
 
 
 ----
