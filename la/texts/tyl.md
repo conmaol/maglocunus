@@ -6,7 +6,7 @@
 
 > [Brūtus](../nouns/b/br/Brutus.md) [Portiam](../nouns/p/po/Portia.md) [amat](../verbs/a/am/amo.md). *‘Brutus loves Portia.’*
 >
-> Brūtus Portiam minus amat. *‘Brutus loves Portia less.’*
+> Brūtus Portiam [minus](../adverbs/m/mi/minus.md) amat. *‘Brutus loves Portia less.’*
 >
 > Brūtus Portiam nōn amat. *‘Brutus does not love Portia.’*
 >
