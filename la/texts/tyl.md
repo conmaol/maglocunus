@@ -8,7 +8,7 @@
 >
 > Brūtus Portiam [minus](../adverbs/m/mi/minus.md) amat. *‘Brutus loves Portia less.’*
 >
-> Brūtus Portiam nōn amat. *‘Brutus does not love Portia.’*
+> Brūtus Portiam [nōn](../adverbs/n/no/non.md) amat. *‘Brutus does not love Portia.’*
 >
 > Brūtus nōbilis *‘noble Brutus’*
 >
