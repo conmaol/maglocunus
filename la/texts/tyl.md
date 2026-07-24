@@ -14,7 +14,7 @@
 >
 > [fīlia](../nouns/f/fi/filia.md) [Brūtī](../nouns/b/br/Brutus.md) *‘Brutus’ daughter’*
 >
-> pulchra Brūtī fīlia *‘Brutus’ beautiful daughter’*
+> [pulchra](../adjectives/p/pu/pulcher.md) Brūtī fīlia *‘Brutus’ beautiful daughter’*
 >
 > Brūtus in [hortō](../nouns/h/ho/hortus.md) cum Portiā est. *‘Brutus is in the garden with Portia.’*
 
