@@ -11,7 +11,7 @@ Contents:
 - [Online Analytical Processing (OLAP)](o/OLAP.md)
 - [Online Transaction Processing (OLTP)](o/OLTP.md)
 - [(data) warehouses](w/warehouses.md)
-- [webhook](w/webhook.md)
+- [webhooks](w/webhooks.md)
 
 
 
