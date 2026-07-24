@@ -5,4 +5,5 @@
 - [verbs](verbs/index.md)
 - [adjectives](adjectives/index.md)
 - [prepositions](prepositions/index.md)
+- [adverbs](adverbs/index.md)
 
