@@ -10,7 +10,7 @@
 
 ### Genitive
 
-> [fīlia](../..//f/fi/filia.md) <mark>Brūtī</mark> *([Teach Yourself Latin](../../../texts/tyl.md)) ‘Brutus’ daughter’*
+> [fīlia](../../f/fi/filia.md) <mark>Brūtī</mark> *([Teach Yourself Latin](../../../texts/tyl.md)) ‘Brutus’ daughter’*
 
 ----
 
