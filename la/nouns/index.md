@@ -1,6 +1,7 @@
 # Nouns
 
 Common nouns:
+- [fīlia](f/fi/filia.md) *fem.* ‘a daughter’
 - [hortus](h/ho/hortus.md) *masc.* ‘a garden’
 
 Proper nouns:
