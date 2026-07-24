@@ -10,7 +10,7 @@
 >
 > Brūtus Portiam [nōn](../adverbs/n/no/non.md) amat. *‘Brutus does not love Portia.’*
 >
-> Brūtus nōbilis *‘noble Brutus’*
+> Brūtus [nōbilis](../adjectives/n/no/nobilis.md) *‘the noble Brutus’*
 >
 > fīlia Brūtī *‘Brutus’ daughter’*
 >
