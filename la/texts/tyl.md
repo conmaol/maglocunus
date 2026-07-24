@@ -12,7 +12,7 @@
 >
 > Brūtus [nōbilis](../adjectives/n/no/nobilis.md) *‘the noble Brutus’*
 >
-> fīlia Brūtī *‘Brutus’ daughter’*
+> [fīlia](../nouns/f/fi/filia.md) [Brūtī](../nouns/b/br/Brutus.md) *‘Brutus’ daughter’*
 >
 > pulchra Brūtī fīlia *‘Brutus’ beautiful daughter’*
 >
