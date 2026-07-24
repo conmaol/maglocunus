@@ -11,6 +11,8 @@
 ### Genitive
 
 > [fīlia](../../f/fi/filia.md) <mark>Brūtī</mark> *([Teach Yourself Latin](../../../texts/tyl.md)) ‘Brutus’ daughter’*
+>
+> pulchra <mark>Brūtī</mark> fīlia *([Teach Yourself Latin](../../../texts/tyl.md)) ‘Brutus’ beautiful daughter’*
 
 ----
 
