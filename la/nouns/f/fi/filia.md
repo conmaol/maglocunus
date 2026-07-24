@@ -5,6 +5,8 @@
 ### Nominative
 
 > <mark>fīlia</mark> [Brūtī](../../b/br/Brutus.md) *([Teach Yourself Latin](../../../texts/tyl.md)) ‘Brutus’ daughter’*
+>
+> [pulchra](../../../adjectives/p/pu/pulcher.md) Brūtī <mark>fīlia</mark> *([Teach Yourself Latin](../../../texts/tyl.md)) ‘Brutus’ beautiful daughter’*
 
 ----
 
