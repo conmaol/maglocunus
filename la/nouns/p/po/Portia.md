@@ -8,7 +8,7 @@
 
 ### Ablative
 
-> Brūtus in hortō [cum](../../../prepositions/c/cu/cum.md) <mark>Portiā</mark> est. *([Teach Yourself Latin](../../../texts/tyl.md)) ‘Brutus is in the garden with Portia’*
+> Brūtus in hortō [cum](../../../prepositions/cum.md) <mark>Portiā</mark> est. *([Teach Yourself Latin](../../../texts/tyl.md)) ‘Brutus is in the garden with Portia’*
 
 
 
