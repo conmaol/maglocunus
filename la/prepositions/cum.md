@@ -1,6 +1,6 @@
 # cum
 
-cum ‘with’ is a [preposition](index.md).
+`cum` ‘with’ is a [preposition](index.md).
 
 Examples:
 
