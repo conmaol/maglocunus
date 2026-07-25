@@ -16,7 +16,7 @@
 >
 > [pulchra](../adjectives/p/pu/pulcher.md) Brūtī fīlia *‘Brutus’ beautiful daughter’*
 >
-> Brūtus in [hortō](../nouns/h/ho/hortus.md) cum Portiā est. *‘Brutus is in the garden with Portia.’*
+> [Brūtus](../nouns/b/br/Brutus.md) in [hortō](../nouns/h/ho/hortus.md) cum [Portiā](../nouns/p/po/Portia.md) est. *‘Brutus is in the garden with Portia.’*
 
 ### 1.2. Reading
 
