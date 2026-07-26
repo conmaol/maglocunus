@@ -4,7 +4,7 @@
 
 ### Ablative singular
 
-> Brūtus in <mark>hortō</mark> cum Portiā est. *([Teach Yourself Latin](../../../texts/tyl.md)) ‘Brutus is in the garden with Portia’*
+> Brūtus [in](../../../prepositions/in.md) <mark>hortō</mark> cum Portiā est. *([Teach Yourself Latin](../../../texts/tyl.md)) ‘Brutus is in the garden with Portia’*
 
 ----
 
