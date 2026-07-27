@@ -11,6 +11,7 @@ Contents:
 - [Gherkin](g/Gherkin.md)
 - [Online Analytical Processing (OLAP)](o/OLAP.md)
 - [Online Transaction Processing (OLTP)](o/OLTP.md)
+- [relational algebra](r/relational_algebra.md)
 - [(data) warehouses](w/warehouses.md)
 - [webhooks](w/webhooks.md)
 
