@@ -3,32 +3,77 @@
 `Relational algebra` is the mathematical foundation of relational (ie. tabular) databases.
 
 Relational algebra consists of the following operations:
-- [project](#project)
-- [restrict](#restrict)
-- [union](#union)
-- [join](#join)
+- [projections](#projections)
+- [restrictions](#restrictions)
+- [unions](#unions)
+- [joins](#joins)
 - mm
 
-## Project
+## Projections
 
 The `project` operation copies selected columns from an existing input table into a new output table.
 
+For example, given the following input table called `members`:
+
+| id | first | last | year |
+| -- | ----- | ---- | ---- |
+| 1 | Kate | Random | 1992 |
+| 2 | Alex | Smith | 2001 |
+| 3 | Kate | Apple | 1983 |
+| 4 | Mark | Cunus | 1978 |
+| 5 | Tom  | Young | 1992 |
+
+The following projection:
+
 ```
-PROJECT member_number, last_name
-FROM member
+PROJECT id, last
+FROM members
 ```
 
-## Restrict
+Results in the following output table:
+
+| id | last |
+| -- | ---- |
+| 1 | Random |
+| 2 | Smith |
+| 3 | Apple |
+| 4 | Cunus |
+| 5 | Young |
+
+Back to: [Top](#)
+
+## Restrictions
 
 The `restrict` operation uses a condition to filter rows from an existing input table into a new output table.
 
+For example, given the following input table called `members`:
+
+| id | first | last | year |
+| -- | ----- | ---- | ---- |
+| 1 | Kate | Random | 1992 |
+| 2 | Alex | Smith | 2001 |
+| 3 | Kate | Apple | 1983 |
+| 4 | Mark | Cunus | 1978 |
+| 5 | Tom  | Young | 1992 |
+
+The following projection:
+
 ```
 RESTRICT
-FROM member
-WHERE first_name = 'Kate'
+FROM members
+WHERE first = 'Kate'
 ```
 
-## Union
+Results in the following output table:
+
+| id | first | last | year |
+| -- | ----- | ---- | ---- |
+| 1 | Kate | Random | 1992 |
+| 3 | Kate | Apple | 1983 |
+
+Back to: [Top](#)
+
+## Unions
 
 The `union` operation takes all the rows from two existing input tables and combines them into a new output table.
 
@@ -38,12 +83,12 @@ UNION
 new_member
 ```
 
+Back to: [Top](#)
 
+## Joins
 
-## Join
-
-
+Back to: [Top](#)
 
 ----
 
-Back up to: [Top](../index.md)
+Back up to: [Maglocunus](../index.md)
