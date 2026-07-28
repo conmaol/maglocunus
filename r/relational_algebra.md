@@ -138,6 +138,57 @@ Note that the two input tables need to be *union compatible* – their columns m
 
 Back to: [Top](#)
 
+## Products
+
+The `product` operation combines every row of one input table with every row of another.
+
+For example, given the following 3x4 input table called `members`:
+
+| id | first | last | year |
+| -- | ----- | ---- | ---- |
+| 1 | Kate | Random | 1992 |
+| 2 | Alex | Smith | 2001 |
+| 3 | Kate | Apple | 1983 |
+
+And a second 3x3 input table called `games`:
+
+| id | player | score |
+| -- | ------ | ----- |
+| 1 | 1 | 11 |
+| 2 | 1 | 7 |
+| 3 | 2 | 3 |
+| 4 | 3 | 11 |
+| 5 | 2 | 9 |
+
+The following product:
+
+```
+members
+PRODUCT
+games
+```
+Results in the following 15x7 output table:
+
+| members.id | members.first | members.last | members.year | games.id | games.player | games.score |
+| -- | ----- | ---- | ---- | -- | ----- | --- |
+| 1 | Kate | Random | 1992 | 1 | 1 | 11 |
+| 1 | Kate | Random | 1992 | 2 | 1 | 7 |
+| 1 | Kate | Random | 1992 | 3 | 2 | 3 |
+| 1 | Kate | Random | 1992 | 4 | 3 | 11 |
+| 1 | Kate | Random | 1992 | 5 | 2 | 9 |
+| 2 | Alex | Smith | 2001 | 1 | 1 | 11 |
+| 2 | Alex | Smith | 2001 | 2 | 1 | 7 |
+| 2 | Alex | Smith | 2001 | 3 | 2 | 3 |
+| 2 | Alex | Smith | 2001 | 4 | 3 | 11 |
+| 2 | Alex | Smith | 2001 | 5 | 2 | 9 |
+| 3 | Kate | Apple | 1983 | 1 | 1 | 11 |
+| 3 | Kate | Apple | 1983 | 2 | 1 | 7 |
+| 3 | Kate | Apple | 1983 | 3 | 2 | 3 |
+| 3 | Kate | Apple | 1983 | 4 | 3 | 11 |
+| 3 | Kate | Apple | 1983 | 5 | 2 | 9 |
+
+
+
 ## Joins
 
 An inner join, or equi join:
@@ -165,7 +216,6 @@ JOIN members
 TO games
 OVER games.player = members.id
 ```
-
 
 | member.id | first | last | year | game.id | player | score |
 | -- | ----- | ---- | ---- | -- | ------ | ----- |
