@@ -142,15 +142,16 @@ Back to: [Top](#)
 
 The `product` operation combines every row of one input table with every row of another.
 
-For example, given the following 3x4 input table called `members`:
+For example, given the following 4x4 input table called `members`:
 
 | id | first | last | year |
 | -- | ----- | ---- | ---- |
 | 1 | Kate | Random | 1992 |
 | 2 | Alex | Smith | 2001 |
 | 3 | Kate | Apple | 1983 |
+| 4 | Mark | Cunus | 1978 |
 
-And a second 3x3 input table called `games`:
+And a second 5x3 input table called `games`:
 
 | id | player | score |
 | -- | ------ | ----- |
@@ -167,7 +168,8 @@ members
 PRODUCT
 games
 ```
-Results in the following 15x7 output table:
+
+Results in the following 20x7 output table:
 
 | members.id | members.first | members.last | members.year | games.id | games.player | games.score |
 | -- | ----- | ---- | ---- | -- | ----- | --- |
@@ -186,71 +188,17 @@ Results in the following 15x7 output table:
 | 3 | Kate | Apple | 1983 | 3 | 2 | 3 |
 | 3 | Kate | Apple | 1983 | 4 | 3 | 11 |
 | 3 | Kate | Apple | 1983 | 5 | 2 | 9 |
+| 4 | Mark | Cunus | 1978 | 1 | 1 | 11 |
+| 4 | Mark | Cunus | 1978 | 2 | 1 | 7 |
+| 4 | Mark | Cunus | 1978 | 3 | 2 | 3 |
+| 4 | Mark | Cunus | 1978 | 4 | 3 | 11 |
+| 4 | Mark | Cunus | 1978 | 5 | 2 | 9 |
 
 
 
-## Joins
+## Inner joins (equi joins)
 
-An inner join, or equi join:
-
-members:
-
-| id | first | last | year |
-| -- | ----- | ---- | ---- |
-| 1 | Kate | Random | 1992 |
-| 2 | Alex | Smith | 2001 |
-| 3 | Kate | Apple | 1983 |
-
-games:
-
-| id | player | score |
-| -- | ------ | ----- |
-| 1 | 1 | 11 |
-| 2 | 1 | 7 |
-| 3 | 2 | 3 |
-| 4 | 3 | 11 |
-| 5 | 2 | 9 |
-
-```
-JOIN members
-TO games
-OVER games.player = members.id
-```
-
-| member.id | first | last | year | game.id | player | score |
-| -- | ----- | ---- | ---- | -- | ------ | ----- |
-| 1 | Kate | Random | 1992 | 1 | 1 | 11 |
-| 1 | Kate | Random | 1992 | 2 | 1 | 7 |
-| 2 | Alex | Smith | 2001 | 3 | 2 | 3 |
-| 2 | Alex | Smith | 2001 | 5 | 2 | 9 |
-| 3 | Kate | Apple | 1983 | 4 | 3 | 11 |
-
-
-join = product and restrict
-
-```
-members
-PRODUCT
-games
-```
-
-| members.id | members.first | members.last | members.year | games.id | games.player | games.score |
-| -- | ----- | ---- | ---- | -- | ----- | --- |
-| 1 | Kate | Random | 1992 | 1 | 1 | 11 |
-| 1 | Kate | Random | 1992 | 2 | 1 | 7 |
-| 1 | Kate | Random | 1992 | 3 | 2 | 3 |
-| 1 | Kate | Random | 1992 | 4 | 3 | 11 |
-| 1 | Kate | Random | 1992 | 5 | 2 | 9 |
-| 2 | Alex | Smith | 2001 | 1 | 1 | 11 |
-| 2 | Alex | Smith | 2001 | 2 | 1 | 7 |
-| 2 | Alex | Smith | 2001 | 3 | 2 | 3 |
-| 2 | Alex | Smith | 2001 | 4 | 3 | 11 |
-| 2 | Alex | Smith | 2001 | 5 | 2 | 9 |
-| 3 | Kate | Apple | 1983 | 1 | 1 | 11 |
-| 3 | Kate | Apple | 1983 | 2 | 1 | 7 |
-| 3 | Kate | Apple | 1983 | 3 | 2 | 3 |
-| 3 | Kate | Apple | 1983 | 4 | 3 | 11 |
-| 3 | Kate | Apple | 1983 | 5 | 2 | 9 |
+We can follow up a product operation with a restriction to create an ‘inner join’:
 
 ```
 RESTRICT
@@ -258,21 +206,43 @@ FROM (members PRODUCT games)
 WHERE members.id = games.player
 ```
 
+This combination of operations gives the following output table:
+
 | members.id | members.first | members.last | members.year | games.id | games.player | games.score |
-| -- | ----- | ---- | ---- | -- | ----- | --- |
+| -- | ----- | ---- | ---- | -- | ------ | ----- |
 | 1 | Kate | Random | 1992 | 1 | 1 | 11 |
 | 1 | Kate | Random | 1992 | 2 | 1 | 7 |
 | 2 | Alex | Smith | 2001 | 3 | 2 | 3 |
 | 2 | Alex | Smith | 2001 | 5 | 2 | 9 |
 | 3 | Kate | Apple | 1983 | 4 | 3 | 11 |
 
-outer joins?
+### Left outer joins
 
-left?
+| members.id | members.first | members.last | members.year | games.id | games.player | games.score |
+| -- | ----- | ---- | ---- | -- | ------ | ----- |
+| 1 | Kate | Random | 1992 | 1 | 1 | 11 |
+| 1 | Kate | Random | 1992 | 2 | 1 | 7 |
+| 2 | Alex | Smith | 2001 | 3 | 2 | 3 |
+| 2 | Alex | Smith | 2001 | 5 | 2 | 9 |
+| 3 | Kate | Apple | 1983 | 4 | 3 | 11 |
+| 4 | Mark | Cunus | 1978 | null | null | null |
 
-right?
+It is possible to define left outer joins in terms of inner joins and other relational operators.
 
-full?
+
+### Right outer joins
+
+| members.id | members.first | members.last | members.year | games.id | games.player | games.score |
+| -- | ----- | ---- | ---- | -- | ------ | ----- |
+| 1 | Kate | Random | 1992 | 1 | 1 | 11 |
+| 1 | Kate | Random | 1992 | 2 | 1 | 7 |
+| 2 | Alex | Smith | 2001 | 3 | 2 | 3 |
+| 2 | Alex | Smith | 2001 | 5 | 2 | 9 |
+| 3 | Kate | Apple | 1983 | 4 | 3 | 11 |
+
+### Full outer joins
+
+
 
 
 Back to: [Top](#)
