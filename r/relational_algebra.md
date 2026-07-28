@@ -240,16 +240,77 @@ It is possible to define left outer joins in terms of inner joins and other rela
 | 2 | Alex | Smith | 2001 | 5 | 2 | 9 |
 | 3 | Kate | Apple | 1983 | 4 | 3 | 11 |
 
-### Full outer joins
-
-
-
-
 Back to: [Top](#)
 
 ## Differences
 
+Differences must be union compatible.
+
+members:
+
+| id | first | last | year |
+| -- | ----- | ---- | ---- |
+| 1 | Kate | Random | 1992 |
+| 2 | Alex | Smith | 2001 |
+| 3 | Kate | Apple | 1983 |
+| 4 | Mark | Cunus | 1978 |
+| 5 | Tom  | Young | 1992 |
+
+old members:
+
+| id | first | last | year |
+| -- | ----- | ---- | ---- |
+| 3 | Kate | Apple | 1983 |
+| 4 | Mark | Cunus | 1978 |
+
+```
+members
+MINUS
+oldMembers
+```
+
+gives
+
+| id | first | last | year |
+| -- | ----- | ---- | ---- |
+| 1 | Kate | Random | 1992 |
+| 2 | Alex | Smith | 2001 |
+| 5 | Tom  | Young | 1992 |
+
 Back to: [Top](#)
+
+## Intersect
+
+over30s
+
+| id | first | last | year |
+| -- | ----- | ---- | ---- |
+| 1 | Kate | Random | 1992 |
+| 3 | Kate | Apple | 1983 |
+| 4 | Mark | Cunus | 1978 |
+| 5 | Tom  | Young | 1992 |
+
+under40s:
+
+| id | first | last | year |
+| -- | ----- | ---- | ---- |
+| 1 | Kate | Random | 1992 |
+| 2 | Alex | Smith | 2001 |
+| 5 | Tom  | Young | 1992 |
+
+```
+over30s
+INTERSECT
+under40s
+```
+
+gives
+
+| id | first | last | year |
+| -- | ----- | ---- | ---- |
+| 1 | Kate | Random | 1992 |
+| 5 | Tom  | Young | 1992 |
+
 
 
 ----
