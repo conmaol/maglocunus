@@ -12,7 +12,7 @@ The algebra consists of the following five fundamental operations:
 Any DBMS that implements all five of these operations is *relationally complete*.
 
 Other operations can then be defined in terms of these five operations:
-- [natural joins](#natural-joins)
+- [inner joins](#inner-joins)
 - [intersections](#intersections)
 
 
@@ -243,11 +243,30 @@ Note that the two input tables need to be *union compatible* – their columns m
 
 Back to: [Top](#)
 
-## Natural joins
+## Inner joins
 
-(inner joins, equi joins, theta joins)
+The `inner join` operation ⨝ applies a restriction to the product of two tables.
 
-We can follow up a product operation with a restriction to create an ‘inner join’:
+For example, given the following 4x4 input table called `members`:
+
+| id | first | last | year |
+| -- | ----- | ---- | ---- |
+| 1 | Kate | Random | 1992 |
+| 2 | Alex | Smith | 2001 |
+| 3 | Kate | Apple | 1983 |
+| 4 | Mark | Cunus | 1978 |
+
+And a second 5x3 input table called `games`:
+
+| id | player | score |
+| -- | ------ | ----- |
+| 1 | 1 | 11 |
+| 2 | 1 | 7 |
+| 3 | 2 | 3 |
+| 4 | 3 | 11 |
+| 5 | 2 | 9 |
+
+The following complex operation:
 
 ```
 RESTRICT
@@ -255,7 +274,7 @@ FROM (members PRODUCT games)
 WHERE members.id = games.player
 ```
 
-This combination of operations gives the following output table:
+Results in the following output table:
 
 | members.id | members.first | members.last | members.year | games.id | games.player | games.score |
 | -- | ----- | ---- | ---- | -- | ------ | ----- |
@@ -265,9 +284,20 @@ This combination of operations gives the following output table:
 | 2 | Alex | Smith | 2001 | 5 | 2 | 9 |
 | 3 | Kate | Apple | 1983 | 4 | 3 | 11 |
 
+This inner join operation can also be written as follows:
+
+```
+JOIN members, games
+ON members.id = games.player
+```
+
 Back to: [Top](#)
 
 ## Intersections
+
+The `intersection` operation ∩ takes two input tables and creates a new output tables containing just those rows that are common to both.
+
+
 
 over30s
 
