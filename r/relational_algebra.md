@@ -368,12 +368,7 @@ Back to: [Top](#)
 
 ----
 
-Sources
-
-Back up to: [Maglocunus](../index.md)
-
-
-
+Sources:
 
 
 
