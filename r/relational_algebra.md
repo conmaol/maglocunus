@@ -11,6 +11,11 @@ The algebra consists of the following five fundamental operations:
 
 Any DBMS that implements all five of these operations is *relationally complete*.
 
+Other operations can be defined in terms of these five operations:
+- [natural joins](#natural-joins)
+- [intersections](#intersections)
+
+
 ## Projections
 
 The `project` operation Π copies selected columns from an existing input table into a new output table.
@@ -95,7 +100,7 @@ Back to: [Top](#)
 
 ## Unions
 
-The `union` operation takes all the rows from two existing input tables and combines them into a new output table.
+The `union` operation $\bigcup$ takes all the rows from two existing input tables and combines them into a new output table.
 
 For example, given the following input table called `members`:
 
@@ -129,13 +134,15 @@ Results in the following output table:
 | 4 | Mark | Cunus | 1978 |
 | 5 | Tom  | Young | 1992 |
 
+The above restriction is sometimes written as $\bigcup(members,newMembers)$.
+
 Note that the two input tables need to be *union compatible* – their columns must be defined over the same domains.
 
 Back to: [Top](#)
 
 ## Products
 
-The `product` operation combines every row of one input table with every row of another.
+The `product` operation × combines every row of one input table with every row of another.
 
 For example, given the following 4x4 input table called `members`:
 
@@ -189,9 +196,56 @@ Results in the following 20x7 output table:
 | 4 | Mark | Cunus | 1978 | 4 | 3 | 11 |
 | 4 | Mark | Cunus | 1978 | 5 | 2 | 9 |
 
+The above product is sometimes written as $members\times newMembers$.
 
+Back to: [Top](#)
 
-## Inner joins (equi joins)
+## Differences
+
+The `difference` operation $-$ takes two input tables and creates an output table which is the same as the first input table except that every row that is also in the second input table has been removed.
+
+For example, given the following input table called `mambers`:
+
+| id | first | last | year |
+| -- | ----- | ---- | ---- |
+| 1 | Kate | Random | 1992 |
+| 2 | Alex | Smith | 2001 |
+| 3 | Kate | Apple | 1983 |
+| 4 | Mark | Cunus | 1978 |
+| 5 | Tom  | Young | 1992 |
+
+And another input table called `over40s`:
+
+| id | first | last | year |
+| -- | ----- | ---- | ---- |
+| 3 | Kate | Apple | 1983 |
+| 4 | Mark | Cunus | 1978 |
+
+The following difference:
+
+```
+members
+MINUS
+over40s
+```
+
+Results in the following output table:
+
+| id | first | last | year |
+| -- | ----- | ---- | ---- |
+| 1 | Kate | Random | 1992 |
+| 2 | Alex | Smith | 2001 |
+| 5 | Tom  | Young | 1992 |
+
+The above restriction is sometimes written as $members-over40s$.
+
+Note that the two input tables need to be *union compatible* – their columns must be defined over the same domains.
+
+Back to: [Top](#)
+
+## Natural joins
+
+(inner joins, equi joins, theta joins)
 
 We can follow up a product operation with a restriction to create an ‘inner join’:
 
@@ -211,70 +265,9 @@ This combination of operations gives the following output table:
 | 2 | Alex | Smith | 2001 | 5 | 2 | 9 |
 | 3 | Kate | Apple | 1983 | 4 | 3 | 11 |
 
-### Left outer joins
-
-| members.id | members.first | members.last | members.year | games.id | games.player | games.score |
-| -- | ----- | ---- | ---- | -- | ------ | ----- |
-| 1 | Kate | Random | 1992 | 1 | 1 | 11 |
-| 1 | Kate | Random | 1992 | 2 | 1 | 7 |
-| 2 | Alex | Smith | 2001 | 3 | 2 | 3 |
-| 2 | Alex | Smith | 2001 | 5 | 2 | 9 |
-| 3 | Kate | Apple | 1983 | 4 | 3 | 11 |
-| 4 | Mark | Cunus | 1978 | null | null | null |
-
-It is possible to define left outer joins in terms of inner joins and other relational operators.
-
-
-### Right outer joins
-
-| members.id | members.first | members.last | members.year | games.id | games.player | games.score |
-| -- | ----- | ---- | ---- | -- | ------ | ----- |
-| 1 | Kate | Random | 1992 | 1 | 1 | 11 |
-| 1 | Kate | Random | 1992 | 2 | 1 | 7 |
-| 2 | Alex | Smith | 2001 | 3 | 2 | 3 |
-| 2 | Alex | Smith | 2001 | 5 | 2 | 9 |
-| 3 | Kate | Apple | 1983 | 4 | 3 | 11 |
-
 Back to: [Top](#)
 
-## Differences
-
-Differences must be union compatible.
-
-members:
-
-| id | first | last | year |
-| -- | ----- | ---- | ---- |
-| 1 | Kate | Random | 1992 |
-| 2 | Alex | Smith | 2001 |
-| 3 | Kate | Apple | 1983 |
-| 4 | Mark | Cunus | 1978 |
-| 5 | Tom  | Young | 1992 |
-
-old members:
-
-| id | first | last | year |
-| -- | ----- | ---- | ---- |
-| 3 | Kate | Apple | 1983 |
-| 4 | Mark | Cunus | 1978 |
-
-```
-members
-MINUS
-oldMembers
-```
-
-gives
-
-| id | first | last | year |
-| -- | ----- | ---- | ---- |
-| 1 | Kate | Random | 1992 |
-| 2 | Alex | Smith | 2001 |
-| 5 | Tom  | Young | 1992 |
-
-Back to: [Top](#)
-
-## Intersect
+## Intersections
 
 over30s
 
@@ -305,6 +298,38 @@ gives
 | -- | ----- | ---- | ---- |
 | 1 | Kate | Random | 1992 |
 | 5 | Tom  | Young | 1992 |
+
+
+Back to: [Top](#)
+
+### Left outer joins
+
+| members.id | members.first | members.last | members.year | games.id | games.player | games.score |
+| -- | ----- | ---- | ---- | -- | ------ | ----- |
+| 1 | Kate | Random | 1992 | 1 | 1 | 11 |
+| 1 | Kate | Random | 1992 | 2 | 1 | 7 |
+| 2 | Alex | Smith | 2001 | 3 | 2 | 3 |
+| 2 | Alex | Smith | 2001 | 5 | 2 | 9 |
+| 3 | Kate | Apple | 1983 | 4 | 3 | 11 |
+| 4 | Mark | Cunus | 1978 | null | null | null |
+
+It is possible to define left outer joins in terms of inner joins and other relational operators.
+
+
+### Right outer joins
+
+| members.id | members.first | members.last | members.year | games.id | games.player | games.score |
+| -- | ----- | ---- | ---- | -- | ------ | ----- |
+| 1 | Kate | Random | 1992 | 1 | 1 | 11 |
+| 1 | Kate | Random | 1992 | 2 | 1 | 7 |
+| 2 | Alex | Smith | 2001 | 3 | 2 | 3 |
+| 2 | Alex | Smith | 2001 | 5 | 2 | 9 |
+| 3 | Kate | Apple | 1983 | 4 | 3 | 11 |
+
+Back to: [Top](#)
+
+
+
 
 
 
