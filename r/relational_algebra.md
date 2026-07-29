@@ -1,23 +1,19 @@
 # Relational algebra
 
-`Relational algebra` is the mathematical foundation of SQL databases.
+`Relational algebra`, sometime called ‘relational calculus’, is the mathematical foundation of SQL databases.
 
-Relational algebra (also known as relational ‘calculus’) consists of the following five fundamental operations:
+The algebra consists of the following five fundamental operations:
 - [projections](#projections)
 - [restrictions](#restrictions)
 - [unions](#unions)
-- [joins](#joins)
+- [products](#products)
 - [differences](#differences)
 
 Any DBMS that implements all five of these operations is *relationally complete*.
 
-There are two additional operations that are useful to know about:
-- products
-- intersections
-
 ## Projections
 
-The `project` operation copies selected columns from an existing input table into a new output table.
+The `project` operation Π copies selected columns from an existing input table into a new output table.
 
 For example, given the following input table called `members`:
 
@@ -27,7 +23,6 @@ For example, given the following input table called `members`:
 | 2 | Alex | Smith | 2001 |
 | 3 | Kate | Apple | 1983 |
 | 4 | Mark | Cunus | 1978 |
-| 5 | Tom  | Young | 1992 |
 
 The following projection:
 
@@ -44,13 +39,14 @@ Results in the following output table (a ‘vertical subset’):
 | 2 | Smith |
 | 3 | Apple |
 | 4 | Cunus |
-| 5 | Young |
+
+The above projection is sometimes written as $\Pi_{id,last}(members)$.
 
 Back to: [Top](#)
 
 ## Restrictions
 
-The `restrict` operation uses a condition to filter rows from an existing input table into a new output table.
+The `restrict` operation σ uses a condition to filter rows from an existing input table into a new output table.
 
 For example, given the following input table called `members`:
 
@@ -60,7 +56,6 @@ For example, given the following input table called `members`:
 | 2 | Alex | Smith | 2001 |
 | 3 | Kate | Apple | 1983 |
 | 4 | Mark | Cunus | 1978 |
-| 5 | Tom  | Young | 1992 |
 
 The following restriction:
 
@@ -77,9 +72,9 @@ Results in the following output table (a ‘horizontal subset’):
 | 1 | Kate | Random | 1992 |
 | 3 | Kate | Apple | 1983 |
 
-It is common to use a restriction followed by a projection of the results table.  
+The above restriction is sometimes written as $\sigma_{first=Kate}(members)$.
 
-For example:
+It is common to use a restriction followed by a projection of the results table. For example:
 
 ```
 PROJECT last, year
