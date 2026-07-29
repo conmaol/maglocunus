@@ -11,7 +11,7 @@ The algebra consists of the following five fundamental operations:
 
 Any DBMS that implements all five of these operations is *relationally complete*.
 
-Other operations can be defined in terms of these five operations:
+Other operations can then be defined in terms of these five operations:
 - [natural joins](#natural-joins)
 - [intersections](#intersections)
 
