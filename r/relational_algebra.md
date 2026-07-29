@@ -1,6 +1,6 @@
 # Relational algebra
 
-`Relational algebra`, sometime called ‘relational calculus’, is the mathematical foundation of SQL databases.
+`Relational algebra`, sometimes called ‘relational calculus’, is the mathematical foundation of SQL databases.
 
 The algebra consists of the following five fundamental operations:
 - [projections](#projections)
