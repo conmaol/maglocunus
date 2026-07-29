@@ -14,7 +14,7 @@ Any DBMS that implements all five of these operations is *relationally complete*
 Other operations can then be defined in terms of these five operations:
 - [inner joins](#inner-joins)
 - [intersections](#intersections)
-
+- [outer joins](#outer-joins)
 
 ## Projections
 
@@ -297,9 +297,7 @@ Back to: [Top](#)
 
 The `intersection` operation ∩ takes two input tables and creates a new output tables containing just those rows that are common to both.
 
-
-
-over30s
+For example, given the following input table called `over30s`:
 
 | id | first | last | year |
 | -- | ----- | ---- | ---- |
@@ -308,7 +306,7 @@ over30s
 | 4 | Mark | Cunus | 1978 |
 | 5 | Tom  | Young | 1992 |
 
-under40s:
+And the following second input table called `under40s`:
 
 | id | first | last | year |
 | -- | ----- | ---- | ---- |
@@ -316,23 +314,46 @@ under40s:
 | 2 | Alex | Smith | 2001 |
 | 5 | Tom  | Young | 1992 |
 
+The following intersection operation:
+
 ```
 over30s
 INTERSECT
 under40s
 ```
-
-gives
+Results in the following output table:
 
 | id | first | last | year |
 | -- | ----- | ---- | ---- |
 | 1 | Kate | Random | 1992 |
 | 5 | Tom  | Young | 1992 |
 
-
 Back to: [Top](#)
 
-### Left outer joins
+## Outer joins
+
+Like an inner join, an outer join applies a restriction to the product of two tables, but in addition ensures that every row in the first (left) input table appears at least once in the output table, with potentially `null` values for the second lot of columns. 
+
+For example, given the following 4x4 input table called `members`:
+
+| id | first | last | year |
+| -- | ----- | ---- | ---- |
+| 1 | Kate | Random | 1992 |
+| 2 | Alex | Smith | 2001 |
+| 3 | Kate | Apple | 1983 |
+| 4 | Mark | Cunus | 1978 |
+
+And a second 5x3 input table called `games`:
+
+| id | player | score |
+| -- | ------ | ----- |
+| 1 | 1 | 11 |
+| 2 | 1 | 7 |
+| 3 | 2 | 3 |
+| 4 | 3 | 11 |
+| 5 | 2 | 9 |
+
+The (left) outer join of these two tables on the condition `members.id = games.player` is:
 
 | members.id | members.first | members.last | members.year | games.id | games.player | games.score |
 | -- | ----- | ---- | ---- | -- | ------ | ----- |
@@ -343,20 +364,13 @@ Back to: [Top](#)
 | 3 | Kate | Apple | 1983 | 4 | 3 | 11 |
 | 4 | Mark | Cunus | 1978 | null | null | null |
 
-It is possible to define left outer joins in terms of inner joins and other relational operators.
-
-
-### Right outer joins
-
-| members.id | members.first | members.last | members.year | games.id | games.player | games.score |
-| -- | ----- | ---- | ---- | -- | ------ | ----- |
-| 1 | Kate | Random | 1992 | 1 | 1 | 11 |
-| 1 | Kate | Random | 1992 | 2 | 1 | 7 |
-| 2 | Alex | Smith | 2001 | 3 | 2 | 3 |
-| 2 | Alex | Smith | 2001 | 5 | 2 | 9 |
-| 3 | Kate | Apple | 1983 | 4 | 3 | 11 |
-
 Back to: [Top](#)
+
+----
+
+Sources
+
+Back up to: [Maglocunus](../index.md)
 
 
 
