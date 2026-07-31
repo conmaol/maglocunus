@@ -9,7 +9,7 @@ Contents:
 - [Databricks](d/Databricks.md)
 - [data models](d/data_models.md)
 - [Gherkin](g/Gherkin.md)
-- [(data model) normalisation](n/normalisation.md)
+- [(data) normalisation](n/normalisation.md)
 - [Online Analytical Processing (OLAP)](o/OLAP.md)
 - [Online Transaction Processing (OLTP)](o/OLTP.md)
 - [relational algebra](r/relational_algebra.md)
