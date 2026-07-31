@@ -1,4 +1,4 @@
-# Data model normalisation
+# Data normalisation
 
 Normalisation is the process of organising tabular data so as to:
 - reduce redundancy (unnecessary duplication)
