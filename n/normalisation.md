@@ -99,13 +99,13 @@ In other words, this table contains data about two different entity types – me
 | 2 | Craiglockhart |
 | 3 | Meadowbank |
 
-| member.id | game.id | score |
+| game.id | member.id | score |
 | -- | ----- | ---- |
 | 1 | 1 | 11 |
-| 2 | 1 | 3 |
-| 1 | 2 | 11 |
-| 3 | 2 | 7 |
-| 2 | 3 | 9 |
+| 1 | 2 | 3 |
+| 2 | 1 | 11 |
+| 2 | 3 | 7 |
+| 3 | 2 | 9 |
 | 3 | 3 | 11 |
 
 Back up to: [Top](#)
