@@ -96,10 +96,7 @@ In other words, this table contains data about two different entity types – me
 | game.id | venue |
 | ---- | -- |
 | 1 | Meadowbank |
-| 1 | Meadowbank |
 | 2 | Craiglockhart |
-| 2 | Craiglockhart |
-| 3 | Meadowbank |
 | 3 | Meadowbank |
 
 | member.id | game.id | score |
