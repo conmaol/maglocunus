@@ -8,9 +8,8 @@ Normalisation was introduced by Edgar F. Codd, the inventor of the tabular data 
 
 There is a hierarchy of normal forms, from least to most strict:
 - [first normal form (1NF)](#first-normal-form)
-- second normal form (2NF)
-- third normal form (3NF)
-- mm
+- [second normal form (2NF)](#second-normal-form)
+- [third normal form (3NF)](#third-normal-form)
 
 ## First normal form
 
