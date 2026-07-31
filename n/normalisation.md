@@ -112,7 +112,15 @@ Back up to: [Top](#)
 
 ## Third normal form (3NF)
 
+A tabular data model is in third normal form (3NF) just in case:
+- It is in second normal form.
+- Every non-key attribute depends directly on the key, rather than depending on another non-key attribute.
 
+| game.id | venue | postcode |
+| ---- | -- | -- |
+| 1 | Meadowbank | EH |
+| 2 | Craiglockhart | EH | 
+| 3 | Meadowbank | EH |
 
 Back up to: [Top](#)
 
