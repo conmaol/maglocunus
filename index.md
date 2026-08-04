@@ -14,6 +14,7 @@ Contents:
 - [(data) normalisation](n/normalisation.md)
 - [Online Analytical Processing (OLAP)](o/OLAP.md)
 - [Online Transaction Processing (OLTP)](o/OLTP.md)
+- [privacy notices](p/privacy_notices.md)
 - [reference_data](r/reference_data.md)
 - [relational algebra](r/relational_algebra.md)
 - [transactional data](t/transactional_data.md)
