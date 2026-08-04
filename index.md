@@ -10,10 +10,13 @@ Contents:
 - [data models](d/data_models.md)
 - [Gherkin](g/Gherkin.md)
 - [hierarchical data models](h/hierarchical_data_models.md)
+- [master data](m/master_data.md)
 - [(data) normalisation](n/normalisation.md)
 - [Online Analytical Processing (OLAP)](o/OLAP.md)
 - [Online Transaction Processing (OLTP)](o/OLTP.md)
+- [reference_data](r/reference_data.md)
 - [relational algebra](r/relational_algebra.md)
+- [transactional data](t/transactional_data.md)
 - [(data) warehouses](w/warehouses.md)
 - [webhooks](w/webhooks.md)
 
