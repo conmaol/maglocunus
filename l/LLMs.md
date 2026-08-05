@@ -1,4 +1,8 @@
-# Large language models (LLMs)
+# Large language models
+
+A `large language model` (LLM) is a software application which accepts a sequence of tokens (token embeddings) as input and outputs a token (embedding), or alternatively a function from the vocabulary to probabilities.
+
+
 
 
 Note that the discussion below will use OpenAI's (2020) GPT-3 LLM as a working example. This is the most recent GPT model whose internal structure is properly understood. More recent LLMs differ from this basic model mainly by being much bigger, or having more sophisticated orchestrator agents.
