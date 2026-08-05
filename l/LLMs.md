@@ -40,7 +40,7 @@ The following diagram shows the architecture of a recursive LLM:
 graph LR
   user(("user"))
   subgraph "Recursive LLM"
-    looper(["orchestrator"])
+    looper(["looper"])
     LLM["LLM"]
     looper -- "prompt" --> LLM
     LLM -. "response" .-> looper
@@ -50,12 +50,12 @@ graph LR
 ```
 
 The different elements in this diagram interact as follows:
-1. The user submits an initial prompt to the LLM orchestrator.
-2. The orchestrator submits the current prompt on to the LLM.
-3. The LLM generates a response consisting of a single token, and sends this token back to the orchestrator.
-4. The orchestrator appends the newly generated token to the end of the prompt, thus creating a slightly longer prompt.
-5. The orchestrator repeats steps 2–4 until it is happy it has a complete response for the user.
-6. The orchestrator removes the original user prompt from the start of current prompt, and sends this truncated response back to the user
+1. The user submits an initial prompt to the LLM looper.
+2. The looper submits the current prompt on to the LLM.
+3. The LLM generates a response consisting of a single token, and sends this token back to the looper.
+4. The looper appends the newly generated token to the end of the prompt, thus creating a slightly longer prompt.
+5. The looper repeats steps 2–4 until it is happy it has a complete response for the user.
+6. The looper removes the original user prompt from the start of current prompt, and sends this truncated response back to the user
 
 For example, when I submitted the following prompt to a well-known (recursive) LLM:
 
@@ -91,9 +91,32 @@ This response was actually generated iteratively, token-by-token, by the neural 
 
 ### Conversational agents
 
+```mermaid
+graph LR
+  user(("user"))
+  subgraph "Conversational Agent"
+    orchestrator(["orchestrator"])
+    memory[["memory"]]
+    subgraph "Recursive LLM"
+      looper(["looper"])
+      LLM["LLM"]
+      looper -- "prompt" --> LLM
+      LLM -. "response" .-> looper
+    end
+    orchestrator -- "prompt" --> looper
+    looper -. "response" .-> orchestrator
+    orchestrator <-.-> memory
+  end
+  user -- "question" --> orchestrator
+  orchestrator -. "answer" .-> user
+```
 
-
-
+1. The user submits a prompt to the conversation orchestrator.
+2. The orchestrator appends this prompt to the conversation memory.
+3. The orchestrator retrieves the whole conversation memory, and submits it as a prompt to the LLM looper.
+4. The looper works with the LLM to recursively generate a complete response, and then sends this back to the orchestrator.
+5. The orchestrator appends this response to the conversation memory.
+6. The orchestrator then sends the looper’s response back to the user, and awaits her/his next prompt.
 
 ----
 
