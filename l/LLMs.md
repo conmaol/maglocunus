@@ -1,6 +1,23 @@
 # Large language models
 
-A `large language model` (LLM) is, in the simplest terms, a neural network-based software application which accepts a text as input (the 'prompt'), does a lot of statistical analysis (vector multiplications) and then responds with a word that constitutes a likely continuation of the prompt. 
+A `large language model` (LLM) is a neural network-based software application which:
+1. accepts a text as input – the 'prompt'
+2. performs billions of calculations behind the scenes
+3. then generates a single word in response. 
+
+The response should be a sensible, relevant and appropriate continuation of the prompt.
+
+For example, if you feed the following prompt into an LLM:
+
+> Are frozen strawberries exempt from
+
+It is highly likely that you will get a response like one of the following:
+
+> tax, VAT, tariffs
+
+But highly unlikely that the response will be something like:
+
+> giraffes, happiness, Tuesday
 
 
 which accepts a sequence of text tokens (token embeddings) as input and outputs a text token (embedding), or alternatively a function from the vocabulary to probabilities.
@@ -9,6 +26,9 @@ which accepts a sequence of text tokens (token embeddings) as input and outputs 
 
 
 Note that the discussion below will use OpenAI's (2020) GPT-3 LLM as a working example. This is the most recent GPT model whose internal structure is properly understood. More recent LLMs differ from this basic model mainly by being much bigger, or having more sophisticated orchestrator agents.
+
+Embedded in a loop?
+
 
 ### Input
 
