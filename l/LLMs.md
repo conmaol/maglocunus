@@ -14,8 +14,7 @@ graph LR
     tokeniser --> dictionary
     orchestrator --> neural-network
     end
-  user --> orchestrator
-  orchestrator -.-> user
+  user <-- "prompt>" --> orchestrator
  
 
 ```
