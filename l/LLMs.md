@@ -29,6 +29,54 @@ Next, each of these 2,048 vectors is modified slightly to encode its position in
 
 Now, the whole matrix, 2,048 columns by 12,288 rows, is ready to be fed into the LLM's neural network, all at once.
 
+### The output
+
+If the input to GPT-3's neural network is a 2,048-column by 12,288-row matrix of decimal numbers, then what is its output?
+
+The answer is the same - the output of this LLM's neural network is also a matrix of decimal numbers, 2,048 columns by 12,288 rows. However, the numbers in the output matrix should be different from the ones that went in, obviously!
+
+This 'black box' view of the GPT-3 neural network is summarised here:
+
+> mmm
+
+We'll come back to what happens inside the neural network later, but first let's consider what happens once it has produced its output matrix:
+
+We know that the output of the LLM's neural network is a matrix of 2,048 by 12,288 decimal numbers.
+But we saw previously that the job of the neural network is to predict the next token in the input sequence.
+How do we make these two conceptions of the output fit together?
+
+### Back to the orchestrator
+
+Once the neural network has produced its 2048 x 12288 output matrix, this is sent back to the LLM's orchestrator agent:
+
+The orchestrator takes the final, rightmost column (or vector) in the output matrix and uses this specifically as the output embedding which encodes the next token. It does this by doing a reverse look-up of the LLM's internal dictionary.
+
+So, given the following output matrix from the neural network:
+
+![input matrix](images/inputvectors.png)
+
+The output embedding is derived by discarding everything but the rightmost column in the matrix:
+
+[ +4.0, +11.1, +0.3, ... , +0.8 ]
+
+This embedding vector is then 'unembedded' by computing its (cosine) similarity to all the token embeddings stored in the dictionary. The generated next token (eg. "Yes") is selected from among those with the highest similarity to the output embedding.
+
+Once the LLM has generated this next token, it then keeps getting the neural network to generate new tokens until it is satisfied that it has a complete response to the original prompt.
+
+### The takeaway
+
+So:
+
+The job of the neural network inside the GPT-3 LLM is to predict the next token given the preceding 2048 tokens.
+
+Or rather, to predict the next token embedding, given the preceding 2048 token embeddings.
+
+The neural network inputs and outputs matrices of 2048 x 12288 decimal numbers.
+
+The rightmost column in the output matrix is its prediction of the next token embedding.
+
+This is then 'unembedded' by the orchestrator to identify the actual next token.
+
 
 
 ## What is a Large Language Model?
