@@ -1,6 +1,6 @@
 # Large language models
 
-A `large language model` (LLM) is a neural network-based software application which:
+A `large language model` (LLM) is, strictly speaking, a neural network-based software application which:
 1. accepts a text as input – the 'prompt'
 2. performs billions of calculations behind the scenes
 3. then generates a single token (word) in response. 
@@ -15,7 +15,6 @@ Here is a diagram showing how a user interacts with an LLM:
     LLM["LLM"]
     user -- prompt --> LLM
     LLM -. response .-> user
-
 ```
 
 For example, if you feed the following prompt into an LLM:
