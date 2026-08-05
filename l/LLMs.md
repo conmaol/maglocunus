@@ -7,6 +7,17 @@ A `large language model` (LLM) is a neural network-based software application wh
 
 The response should be a sensible, relevant and appropriate continuation of the prompt.
 
+Here is a diagram showing how a user interacts with and LLM:
+
+```mermaid
+  graph LR
+    user(("user"))
+    LLM["LLM"]
+    user -- prompt --> LLM
+    LLM -. response .-> user
+
+```
+
 For example, if you feed the following prompt into an LLM:
 
 > Are frozen strawberries exempt from
