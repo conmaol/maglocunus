@@ -29,9 +29,13 @@ But highly unlikely that the response token will be something like:
 
 > giraffes, happiness, Tuesday
 
+----
+
 Contents:
 - [Recursive LLMs](#recursive-llms)
 - [Conversational LLMs](#conversational-llms)
+
+----
 
 ## Recursive LLMs
 
