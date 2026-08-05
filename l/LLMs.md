@@ -30,6 +30,11 @@ But highly unlikely that the response will be something like:
 
 > giraffes, happiness, Tuesday
 
+The token generation loop??
+
+
+
+
 
 which accepts a sequence of text tokens (token embeddings) as input and outputs a text token (embedding), or alternatively a function from the vocabulary to probabilities.
 
@@ -38,7 +43,6 @@ which accepts a sequence of text tokens (token embeddings) as input and outputs 
 
 Note that the discussion below will use OpenAI's (2020) GPT-3 LLM as a working example. This is the most recent GPT model whose internal structure is properly understood. More recent LLMs differ from this basic model mainly by being much bigger, or having more sophisticated orchestrator agents.
 
-Embedded in a loop?
 
 
 ### Input
