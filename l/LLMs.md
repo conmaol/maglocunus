@@ -9,7 +9,7 @@ The input to GPT-3's neural network is a sequence of 2,048 token embeddings, eac
 
 Here is an example input matrix:
 
-> mm
+![input matrix](images/input-1.png)
 
 Recall what happens when you enter the following prompt into the LLM:
 
@@ -17,11 +17,11 @@ Recall what happens when you enter the following prompt into the LLM:
 
 First of all, this prompt is tokenised into a sequence of seven tokens:
 
-> mm
+![tokens](images/strawberries-tokens.jpg)
 
 Then each of these tokens is replaced by its token embedding - a 12,288-dimensional vector representing its meaning:
 
-> mm
+![input matrix](images/inputvectors.png)
 
 Since the input for the neural network needs to contain exactly 2,048 vectors, an appropriate number (2,041) of dummy 'padding' vectors are added to the start.
 
