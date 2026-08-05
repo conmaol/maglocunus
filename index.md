@@ -9,6 +9,7 @@ Contents:
 - [Databricks](d/Databricks.md)
 - [data models](d/data_models.md)
 - [ERwin Data Modeler](e/ERwin.md)
+- [FastAPI](f/FastAPI.md) ???
 - [Gherkin](g/Gherkin.md)
 - [hierarchical data models](h/hierarchical_data_models.md)
 - [master data](m/master_data.md)
@@ -16,11 +17,14 @@ Contents:
 - [Online Analytical Processing (OLAP)](o/OLAP.md)
 - [Online Transaction Processing (OLTP)](o/OLTP.md)
 - [privacy notices](p/privacy_notices.md)
+- [Pydantic](p/Pydantic.md) – data models??
 - [reference_data](r/reference_data.md)
 - [relational algebra](r/relational_algebra.md)
 - [transactional data](t/transactional_data.md)
 - [(data) warehouses](w/warehouses.md)
 - [webhooks](w/webhooks.md)
+
+data transfer objects (DTOs)?
 
 
 
