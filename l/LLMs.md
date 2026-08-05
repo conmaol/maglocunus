@@ -1,5 +1,37 @@
 # Large language models (LLMs)
 
+## What is a Large Language Model?
+
+A Large Language Model (LLM) is a machine which:
+
+1. Accepts a prompt (text) as input
+2. Does some statistical reasoning behind the scenes
+3. Generates a response (text) as output.
+
+Ideally, the response will be relevant, accurate and appropriate!
+
+Here is a diagram showing this simple view of an LLM:
+
+```mermaid
+graph LR
+  user <--> llm
+```
+
+## An example
+
+The Microsoft 365 Copilot Chat tool provides a user-friendly interface to OpenAI's GPT LLMs. For example, I typed in the following prompt:
+
+> Are frozen strawberries exempt from VAT?
+
+The LLM then converted this prompt into numbers, performed trillions of multiplications, and generated this response:
+
+> Yes, frozen strawberries are zero-rated for VAT in the UK—provided they are sold as food for human consumption and not as part of a catering supply.
+
+
+
+
+## LLM architecture
+
 What goes on inside a Large Language Model (LLM) after you submit a prompt? How does an LLM analyse your input and generate its response?
 
 This diagram shows the high-level internal architecture of a standard LLM, such as those belonging to OpenAI's GPT series:
