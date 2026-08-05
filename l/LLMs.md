@@ -2,7 +2,7 @@
 
 ## What is a Large Language Model?
 
-A Large Language Model (LLM) is a machine which:
+A Large Language Model (LLM) is a software application which:
 
 1. Accepts a prompt (text) as input
 2. Does some statistical reasoning behind the scenes
