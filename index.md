@@ -12,6 +12,7 @@ Contents:
 - [FastAPI](f/FastAPI.md) ???
 - [Gherkin](g/Gherkin.md)
 - [hierarchical data models](h/hierarchical_data_models.md)
+- [large language models (LLMs)](l/LLMs.md)
 - [master data](m/master_data.md)
 - [(data) normalisation](n/normalisation.md)
 - [Online Analytical Processing (OLAP)](o/OLAP.md)
