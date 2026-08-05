@@ -1,6 +1,6 @@
 # Large language models
 
-A `large language model` (LLM) is a software application which accepts a sequence of tokens (token embeddings) as input and outputs a token (embedding), or alternatively a function from the vocabulary to probabilities.
+A `large language model` (LLM) is a software application which accepts a sequence of text tokens (token embeddings) as input and outputs a text token (embedding), or alternatively a function from the vocabulary to probabilities.
 
 
 
