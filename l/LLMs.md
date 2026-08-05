@@ -30,7 +30,11 @@ But highly unlikely that the response token will be something like:
 
 > giraffes, happiness, Tuesday
 
-### Recursive LLMs
+Contents:
+- [Recursive LLMs](#recursive-llms)
+- [Conversational LLMs](#conversational-llms)
+
+## Recursive LLMs
 
 An LLM neural network on its own will generate just one output token for any given prompt. However, these basic LLMs are almost always embedded within a loop application which recursively generate longer response texts consisting of multiple tokens. 
 
@@ -89,7 +93,11 @@ This response was actually generated iteratively, token-by-token, by the neural 
 >
 > Are frozen strawberries exempt from VAT? Yes, frozen strawberries are zero-rated for VAT in the UK—provided they are sold as food for human consumption and not as part of a catering supply.
 
-### Conversational agents
+Back up to: [Top](#)
+
+## Conversational LLMs
+
+Chatbots
 
 ```mermaid
 graph LR
@@ -117,6 +125,8 @@ graph LR
 4. The looper works with the LLM to recursively generate a complete response, and then sends this back to the orchestrator.
 5. The orchestrator appends this response to the conversation memory.
 6. The orchestrator then sends the looper’s response back to the user, and awaits her/his next prompt.
+
+Back up to: [Top](#)
 
 ----
 
