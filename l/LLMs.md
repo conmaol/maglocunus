@@ -1,6 +1,6 @@
 # Large language models
 
-A `large language model` (LLM) is, in the simplest terms, a neural network-based software application which accepts a sequence of words as input (the 'prompt'), does a lot of statistical analysis (vector multiplications) and then outputs a word that constitutes a likely continuation of the input sequence. 
+A `large language model` (LLM) is, in the simplest terms, a neural network-based software application which accepts a text as input (the 'prompt'), does a lot of statistical analysis (vector multiplications) and then responds with a word that constitutes a likely continuation of the prompt. 
 
 
 which accepts a sequence of text tokens (token embeddings) as input and outputs a text token (embedding), or alternatively a function from the vocabulary to probabilities.
