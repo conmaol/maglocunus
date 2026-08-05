@@ -30,7 +30,7 @@ But highly unlikely that the response token will be something like:
 
 > giraffes, happiness, Tuesday
 
-## Recursive LLMs
+### Recursive LLMs
 
 An LLM neural network on its own will generate just one output token for any given prompt. However, these basic LLMs are almost always embedded within a loop application which recursively generate longer response texts consisting of multiple tokens. 
 
@@ -40,7 +40,7 @@ The following diagram shows the architecture of a recursive LLM:
 graph LR
   user(("user"))
   subgraph "Recursive LLM"
-    looper(["looper"])
+    looper(["orchestrator"])
     LLM["LLM"]
     looper -- "prompt" --> LLM
     LLM -. "response" .-> looper
@@ -50,22 +50,52 @@ graph LR
 ```
 
 The different elements in this diagram interact as follows:
-1. The user submits an initial prompt to the looper agent.
-2. The looper agent passes the prompt on to the LLM.
-3. The LLM generates a response consisting of a single token.
-4. The LLM responds to the looper with this token.
-5. The looper appends this newly generated token to the end of the current prompt.
-6. The looper repeats steps 2–5 until it is happy it has a complete response.
-7. The looper removes the original prompt from the start of current prompt.
-8. The looper responds to the user with this truncated response.
+1. The user submits an initial prompt to the LLM orchestrator.
+2. The orchestrator submits the current prompt on to the LLM.
+3. The LLM generates a response consisting of a single token, and sends this token back to the orchestrator.
+4. The orchestrator appends the newly generated token to the end of the prompt, thus creating a slightly longer prompt.
+5. The orchestrator repeats steps 2–4 until it is happy it has a complete response for the user.
+6. The orchestrator removes the original user prompt from the start of current prompt, and sends this truncated response back to the user
+
+For example, when I submitted the following prompt to a well-known (recursive) LLM:
+
+> Are frozen strawberries exempt from VAT?
+
+I got back the following response:
+
+> Yes, frozen strawberries are zero-rated for VAT in the UK—provided they are sold as food for human consumption and not as part of a catering supply.
+
+This response was actually generated iteratively, token-by-token, by the neural network, as follows:
+
+> Are frozen strawberries exempt from VAT?
+>
+> Are frozen strawberries exempt from VAT? Yes
+>
+> Are frozen strawberries exempt from VAT? Yes,
+>
+> Are frozen strawberries exempt from VAT? Yes, frozen
+>
+> Are frozen strawberries exempt from VAT? Yes, frozen strawberries
+>
+> Are frozen strawberries exempt from VAT? Yes, frozen strawberries are
+>
+> Are frozen strawberries exempt from VAT? Yes, frozen strawberries are zero
+>
+> Are frozen strawberries exempt from VAT? Yes, frozen strawberries are zero-
+>
+> Are frozen strawberries exempt from VAT? Yes, frozen strawberries are zero-rated
+>
+> ...
+>
+> Are frozen strawberries exempt from VAT? Yes, frozen strawberries are zero-rated for VAT in the UK—provided they are sold as food for human consumption and not as part of a catering supply.
+
+### Conversational agents
 
 
 
-The token generation loop??
 
 
-
-
+----
 
 which accepts a sequence of text tokens (token embeddings) as input and outputs a text token (embedding), or alternatively a function from the vocabulary to probabilities.
 
@@ -152,32 +182,9 @@ This is then 'unembedded' by the orchestrator to identify the actual next token.
 
 
 
-## What is a Large Language Model?
 
-A Large Language Model (LLM) is a software application which:
 
-1. Accepts a prompt (text) as input
-2. Does some statistical reasoning behind the scenes
-3. Generates a response (text) as output.
 
-Ideally, the response will be relevant, accurate and appropriate!
-
-Here is a diagram showing this simple view of an LLM:
-
-```mermaid
-graph LR
-  user <--> llm
-```
-
-## An example
-
-The Microsoft 365 Copilot Chat tool provides a user-friendly interface to OpenAI's GPT LLMs. For example, I typed in the following prompt:
-
-> Are frozen strawberries exempt from VAT?
-
-The LLM then converted this prompt into numbers, performed trillions of multiplications, and generated this response:
-
-> Yes, frozen strawberries are zero-rated for VAT in the UK—provided they are sold as food for human consumption and not as part of a catering supply.
 
 
 
@@ -291,28 +298,6 @@ Are _frozen _strawberries _exempt _from _VAT ? Yes
 
 ## The token generation loop
 
-Once the neural network has suggested the next token, control passes back to the LLM's orchestrator agent.
-
-So far, the LLM has just generated a single token for the response. In order to generate a complete response, the orchestrator repeats the last few steps until it is happy it has generated enough:
-
-1. Embed the new token sequence.
-2. Get the neural network to predict the next token from these token embeddings.
-3. Add this token to the end of the token sequence.
-4. In this way, the response is generated incrementally, one token at a time, by repeatedly asking the neural network to predict the next token from the context:
-
-Are _frozen _strawberries _exempt _from _VAT ? Yes ,
-
-Are _frozen _strawberries _exempt _from _VAT ? Yes , _frozen
-
-Are _frozen _strawberries _exempt _from _VAT ? Yes , _frozen _strawberries
-
-Are _frozen _strawberries _exempt _from _VAT ? Yes , _frozen _strawberries _are
-
-Are _frozen _strawberries _exempt _from _VAT ? Yes , _frozen _strawberries _are _zero
-
-Are _frozen _strawberries _exempt _from _VAT ? Yes , _frozen _strawberries _are _zero -rated
-
-...
 
 Once the orchestrator is satisfied that the response is complete, it sends it back to the user (or more precisely to whichever software agent it received the prompt from in the first place).
 
