@@ -1,5 +1,36 @@
 # Large language models (LLMs)
 
+
+Note that the discussion below will use OpenAI's (2020) GPT-3 LLM as a working example. This is the most recent GPT model whose internal structure is properly understood. More recent LLMs differ from this basic model mainly by being much bigger, or having more sophisticated orchestrator agents.
+
+### Input
+
+The input to GPT-3's neural network is a sequence of 2,048 token embeddings, each of which is a vector containing 12,288 decimal numbers.
+
+Here is an example input matrix:
+
+> mm
+
+Recall what happens when you enter the following prompt into the LLM:
+
+> Are frozen strawberries exempt from VAT?
+
+First of all, this prompt is tokenised into a sequence of seven tokens:
+
+> mm
+
+Then each of these tokens is replaced by its token embedding - a 12,288-dimensional vector representing its meaning:
+
+> mm
+
+Since the input for the neural network needs to contain exactly 2,048 vectors, an appropriate number (2,041) of dummy 'padding' vectors are added to the start.
+
+Next, each of these 2,048 vectors is modified slightly to encode its position in the sequence. This is done by adding or subtracting a specific number to or from each position in the matrix.
+
+Now, the whole matrix, 2,048 columns by 12,288 rows, is ready to be fed into the LLM's neural network, all at once.
+
+
+
 ## What is a Large Language Model?
 
 A Large Language Model (LLM) is a software application which:
