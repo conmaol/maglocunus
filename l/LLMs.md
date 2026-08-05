@@ -3,9 +3,9 @@
 A `large language model` (LLM) is a neural network-based software application which:
 1. accepts a text as input – the 'prompt'
 2. performs billions of calculations behind the scenes
-3. then generates a single word in response. 
+3. then generates a single token (word) in response. 
 
-The response should be a sensible, relevant and appropriate continuation of the prompt.
+The response token should constitute a sensible, relevant and appropriate continuation of the prompt.
 
 Here is a diagram showing how a user interacts with an LLM:
 
@@ -22,13 +22,44 @@ For example, if you feed the following prompt into an LLM:
 
 > Are frozen strawberries exempt from
 
-It is highly likely that you will get a response like one of the following:
+It is highly likely that you will get a response token like one of the following:
 
 > tax, VAT, tariffs
 
-But highly unlikely that the response will be something like:
+But highly unlikely that the response token will be something like:
 
 > giraffes, happiness, Tuesday
+
+## Recursive LLMs
+
+An LLM neural network on its own will generate just one output token for any given prompt. However, these basic LLMs are almost always embedded within a loop application which recursively generate longer response texts consisting of multiple tokens. 
+
+The following diagram shows the architecture of a recursive LLM:
+
+```mermaid
+graph LR
+  user(("user"))
+  subgraph "Recursive LLM"
+    looper(["looper"])
+    LLM["LLM"]
+    looper -- "prompt" --> LLM
+    LLM -. "response" .-> looper
+    end
+  user -- "prompt" --> looper
+  looper -. response .-> user
+```
+
+The different elements in this diagram interact as follows:
+1. The user submits an initial prompt to the looper agent.
+2. The looper agent passes the prompt on to the LLM.
+3. The LLM generates a response consisting of a single token.
+4. The LLM responds to the looper with this token.
+5. The looper appends this newly generated token to the end of the current prompt.
+6. The looper repeats steps 2–5 until it is happy it has a complete response.
+7. The looper removes the original prompt from the start of current prompt.
+8. The looper responds to the user with this truncated response.
+
+
 
 The token generation loop??
 
