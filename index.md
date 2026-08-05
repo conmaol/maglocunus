@@ -8,6 +8,7 @@ Contents:
 - [data](d/data.md)
 - [Databricks](d/Databricks.md)
 - [data models](d/data_models.md)
+- [ERwin Data Modeller](e/ERwin.md)
 - [Gherkin](g/Gherkin.md)
 - [hierarchical data models](h/hierarchical_data_models.md)
 - [master data](m/master_data.md)
