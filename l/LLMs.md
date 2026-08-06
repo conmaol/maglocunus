@@ -212,7 +212,7 @@ For example, I typed the following 40-character prompt into the same well-known 
 
 > Are frozen strawberries exempt from VAT?
 
-Firstly, the LLM’s tokeniser returned a sequence of seven tokens:
+**Firstly**, the LLM’s tokeniser returned a sequence of seven tokens:
 
 ![tokens](images/strawberries-tokens.jpg)
 
@@ -228,27 +228,17 @@ These tokens are all drawn from the LLM’s internal dictionary:
 | 56356	| ` VAT` | the string *VAT*, all in capitals, preceded by a space | `[-1.2, -1.5, +8.6, ... , -1.9]` |
 | 30 | `?` | the question mark | `[+0.2, -0.2, +0.6, ... , +3.4]` |
 
-Secondly, this list of tokens was translated into a list of numerical vectors, again by looking each one up in the dictionary:
+**Secondly**, this list of tokens was translated into a list of numerical vectors, again by looking each one up in the dictionary:
 
 ![input matrix](images/inputvectors.png)
 
+In an LLM, these meaning vectors are known as *token embeddings*. Meanings are represented, not as natural language definitions as in a human-readable dictionary, but rather as very long lists of decimal numbers. For example, OpenAI’s 2023 GPT-4 LLM used token embeddings with 12,288 distinct dimensions – its ‘meanings’ are lists of 12,288 decimal numbers, each of which represents a value on a different axis of meaning.
+
+Token embeddings are important because they allow the LLM to generalise more effectively across distinct but related tokens like `big`, `large`, `huge`, `sizeable`, etc. These words look different on the surface, but the numbers in their meaning lists will be very closely related.
+
+**Thirdly**, ...
 
 
-
-
-In an LLM, these meanings are known as 'token embeddings'. Meanings are represented, not as natural language definitions as in a human-readable dictionary, but rather as very long lists of decimal (floating point) numbers. For example, GPT-4 uses token embeddings with 12,288 distinct dimensions - its 'meanings' are lists of 12,288 decimal numbers, each of which represents a value on a different axis of meaning.
-
-So, the meaning of the first token in our example prompt "Are" might be something like:
-
-[+1.6, -0.4, -3.9, +95.0, +7.3, ... , +34.5]
-
-Token embeddings are important because they allow the LLM to generalise more effectively across distinct but related tokens like "big", "large", "sizable", "huge", etc. These words look different on the surface, but the numbers in their meaning lists will be very closely related.
-
-Once every token in our prompt has been 'embedded', the orchestrator will end up with a sequence of seven token embeddings, one for each of the tokens in the prompt:
-
-
-
-We are now ready to feed the embedded prompt into the neural network itself.
 
 
 Back up to: [Top](#)
