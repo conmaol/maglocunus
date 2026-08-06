@@ -191,10 +191,20 @@ graph LR
 ```
 
 In addition to the LLM neural network (which predicts the next token for the response), a recursive LLM has two more essential sub-components:
-- a `tokeniser`, which splits up the input prompt into tokens (ie. words and bits of words)
-- a `dictionary`, which stores all the tokens the LLM knows, each with a numerical representation of its ‘meaning’.
+- a `tokeniser` – an application which splits up the input prompt into tokens (ie. words and bits of words)
+- a `dictionary` – a datastore containing all the tokens that the LLM knows, each with a numerical representation of its ‘meaning’.
 
-Process?
+These subcomponents interact as follows:
+1. The user submits an initial prompt to the LLM looper.
+2. The looper sends this prompt to the tokeniser, which then sends it back to the looper as a list of tokens.
+3. The looper then sends each of these tokens to the LLM dictionary, which sends back the numerical vector representing its meaning.
+4. The looper submits the current prompt on to the LLM, as a list of vectors.
+5. 
+6. The LLM generates a response consisting of a single token, and sends this token back to the looper.
+7. The looper appends the newly generated token to the end of the prompt, thus creating a slightly longer prompt.
+8. The looper repeats steps 2–4 until it is happy it has a complete response for the user.
+9. The looper removes the original user prompt from the start of current prompt, and sends this truncated response back to the user.
+
 
 
 
