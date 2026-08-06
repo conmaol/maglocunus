@@ -241,8 +241,26 @@ In an LLM, these meaning vectors are known as *token embeddings*. Meanings are r
 
 Token embeddings are important because they allow the LLM to generalise more effectively across distinct but related tokens like `big`, `large`, `huge`, `sizeable`, etc. These words look different on the surface, but the numbers in their meaning lists will be very closely related.
 
-**Thirdly**, ...
+**Thirdly**, this sequence of seven semantic vectors (token embeddings) is almost ready to be fed into the LLM proper (ie. the neural network), to generate the first token in the response.
 
+Before doing this, the looper will need to pad out these vectors with dummy vectors at the start, to ensure that the neural network has enough input vectors in its context window to do its job properly. For example, OpenAI’s GPT-3 LLM has a context window of 2,048, so an additional 2,041 dummy vectors would need to be added.
+
+Next, each of these 2,048 input vectors is modified slightly to encode its position in the sequence. This is done by adding or subtracting a specific amount to or from each position in the matrix.
+
+Then, the entire matrix, 2,048 vectors of 12,288 decimal numbers, is fed into the neural network, all at once.
+
+After the neural network has performed billions of simple calculations on the numbers in the input vector matrix, through dozens of processing layers, it produces an output in the same format — a matrix of 2,048 token embeddings (each of which is a vector of 12,288 decimal numbers). Something like this:
+
+![input matrix](images/output-matrix.png)
+
+It is only the *rightmost* vector in this matrix that is sent back to the looper to represent the predicted next token in the sequence:
+
+> `[+4.0, +11.1, +0.3, ... , +0.8]`
+
+
+
+
+**Fourthly**, 
 
 
 
@@ -250,70 +268,16 @@ Back up to: [Top](#)
 
 ----
 
-which accepts a sequence of text tokens (token embeddings) as input and outputs a text token (embedding), or alternatively a function from the vocabulary to probabilities.
 
 
 
 
-Note that the discussion below will use OpenAI's (2020) GPT-3 LLM as a working example. This is the most recent GPT model whose internal structure is properly understood. More recent LLMs differ from this basic model mainly by being much bigger, or having more sophisticated orchestrator agents.
 
 
 
-### Input
 
-The input to GPT-3's neural network is a sequence of 2,048 token embeddings, each of which is a vector containing 12,288 decimal numbers.
-
-Here is an example input matrix:
-
-![input matrix](images/input-1.png)
-
-Recall what happens when you enter the following prompt into the LLM:
-
-> Are frozen strawberries exempt from VAT?
-
-First of all, this prompt is tokenised into a sequence of seven tokens:
-
-
-
-Then each of these tokens is replaced by its token embedding - a 12,288-dimensional vector representing its meaning:
-
-![input matrix](images/inputvectors.png)
-
-Since the input for the neural network needs to contain exactly 2,048 vectors, an appropriate number (2,041) of dummy 'padding' vectors are added to the start.
-
-Next, each of these 2,048 vectors is modified slightly to encode its position in the sequence. This is done by adding or subtracting a specific number to or from each position in the matrix.
-
-Now, the whole matrix, 2,048 columns by 12,288 rows, is ready to be fed into the LLM's neural network, all at once.
-
-### The output
-
-If the input to GPT-3's neural network is a 2,048-column by 12,288-row matrix of decimal numbers, then what is its output?
-
-The answer is the same - the output of this LLM's neural network is also a matrix of decimal numbers, 2,048 columns by 12,288 rows. However, the numbers in the output matrix should be different from the ones that went in, obviously!
-
-This 'black box' view of the GPT-3 neural network is summarised here:
-
-> mmm
-
-We'll come back to what happens inside the neural network later, but first let's consider what happens once it has produced its output matrix:
-
-We know that the output of the LLM's neural network is a matrix of 2,048 by 12,288 decimal numbers.
-But we saw previously that the job of the neural network is to predict the next token in the input sequence.
-How do we make these two conceptions of the output fit together?
-
-### Back to the orchestrator
-
-Once the neural network has produced its 2048 x 12288 output matrix, this is sent back to the LLM's orchestrator agent:
 
 The orchestrator takes the final, rightmost column (or vector) in the output matrix and uses this specifically as the output embedding which encodes the next token. It does this by doing a reverse look-up of the LLM's internal dictionary.
-
-So, given the following output matrix from the neural network:
-
-![input matrix](images/inputvectors.png)
-
-The output embedding is derived by discarding everything but the rightmost column in the matrix:
-
-[ +4.0, +11.1, +0.3, ... , +0.8 ]
 
 This embedding vector is then 'unembedded' by computing its (cosine) similarity to all the token embeddings stored in the dictionary. The generated next token (eg. "Yes") is selected from among those with the highest similarity to the output embedding.
 
