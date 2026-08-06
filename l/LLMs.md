@@ -34,6 +34,7 @@ But highly unlikely that the response token will be something like:
 Contents:
 - [Recursive LLMs](#recursive-llms)
 - [Conversational LLMs](#conversational-llms)
+- [LLM architecture](#llm-architecture)
 
 ----
 
@@ -148,7 +149,54 @@ When generating a response to the second user prompt here (`What about raspberri
 
 > Are frozen raspberries exempt from VAT?
 
-Note that an LLM neural network can only accept input prompts up to a specific finite length, known as the LLM’s ‘context window’. If the conversation gets too long, there is the chance that it might overshoot this context window and need to be truncated by the looper.
+Note that an LLM neural network can only accept input prompts up to a specific finite length, known as the LLM’s ‘context window’. For a typical 2022 LLM like OpenAIs GPT-3, the context window was fixed at 2048 tokens, though nowadays context windows are much much longer. If the conversation gets too long, there is the chance that it might overshoot this context window and need to be truncated by the looper.
+
+Back up to: [Top](#)
+
+## LLM architecture
+
+Let’s go back to the architecture of a recursive LLM, which was previously represented in the following simple diagram:
+
+```mermaid
+graph LR
+  user(("user"))
+  subgraph "Recursive LLM"
+    looper(["looper"])
+    LLM["LLM"]
+    looper -- "prompt" --> LLM
+    LLM -. "response" .-> looper
+    end
+  user -- "prompt" --> looper
+  looper -. response .-> user
+```
+
+We will now add some extra detail to this diagram:
+
+```mermaid
+graph LR
+  user(["user"])
+  subgraph "Recursive LLM"
+    looper(["looper"])
+    llm["LLM"]
+    looper -- "prompt" --> llm
+    llm -. "response" .-> looper
+    tokeniser["tokeniser"]
+    looper <--> tokeniser
+    dictionary[["dictionary"]]
+    looper <-.-> dictionary
+    end
+  user -- "prompt" --> looper
+  looper -. "response" .-> user
+
+```
+
+In addition to the LLM neural network (which predicts the next token for the response), a recursive LLM has two more essential sub-components:
+- a `tokeniser`, which splits up the input prompt into tokens (ie. words and bits of words)
+- a `dictionary`, which stores all the tokens the LLM knows, each with a numerical representation of its ‘meaning’.
+
+Process?
+
+
 
 Back up to: [Top](#)
 
@@ -246,34 +294,9 @@ This is then 'unembedded' by the orchestrator to identify the actual next token.
 
 
 
-## LLM architecture
-
-What goes on inside a Large Language Model (LLM) after you submit a prompt? How does an LLM analyse your input and generate its response?
-
-This diagram shows the high-level internal architecture of a standard LLM, such as those belonging to OpenAI's GPT series:
-
-```mermaid
-graph LR
-  user(["user"])
-  subgraph "LLM"
-    orchestrator(["orchestrator"])
-    orchestrator --> tokeniser
-    orchestrator --> dictionary
-    tokeniser --> dictionary
-    orchestrator --> neural-network
-    end
-  user <-- "prompt>" --> orchestrator
- 
-
-```
 
 
-An LLM consists of four sub-components:
 
-- a dictionary, which stores linguistic 'tokens' (ie. words and bits of words), along with their meanings
-- a tokeniser, which splits up an input prompt into these tokens
-- a neural network, which predicts the next token for the response
-- an orchestrator, which controls interactions with the other components.
 
 I will now run through the whole LLM workflow, from beginning to end, and show briefly how each of these sub-components makes its contribution.
 
