@@ -257,88 +257,13 @@ It is only the *rightmost* vector in this matrix that is sent back to the looper
 
 > `[+4.0, +11.1, +0.3, ... , +0.8]`
 
+**Fourthly**, the looper appends this new vector to the end of the original sequence of seven input vectors, and then feeds this new, eight-vector matrix back into the neural network to generate another, ninth token for the sequence. This generative loop continues until the looper decides that it has a complete response sequence to send back to the user (usually because the LLM itself has just generated a special `<STOP>` token).
 
+**Fifthly**, the looper takes the whole sequence of newly generated vectors and sends each of these to the dictionary to be *unembedded* – translated back from a list of numbers into an appropriate token. This reverse dictionary look-up is performed by computing the (cosine) similarity of the vector to all of the token embeddings stored in the dictionary, and choosing an appropriate token to continue the sequence.
 
-
-**Fourthly**, 
-
-
+**Finally**, the full, unembedded response sequence is sent back to the user. 
 
 Back up to: [Top](#)
-
-----
-
-
-
-
-
-
-
-
-
-
-The orchestrator takes the final, rightmost column (or vector) in the output matrix and uses this specifically as the output embedding which encodes the next token. It does this by doing a reverse look-up of the LLM's internal dictionary.
-
-This embedding vector is then 'unembedded' by computing its (cosine) similarity to all the token embeddings stored in the dictionary. The generated next token (eg. "Yes") is selected from among those with the highest similarity to the output embedding.
-
-Once the LLM has generated this next token, it then keeps getting the neural network to generate new tokens until it is satisfied that it has a complete response to the original prompt.
-
-### The takeaway
-
-So:
-
-The job of the neural network inside the GPT-3 LLM is to predict the next token given the preceding 2048 tokens.
-
-Or rather, to predict the next token embedding, given the preceding 2048 token embeddings.
-
-The neural network inputs and outputs matrices of 2048 x 12288 decimal numbers.
-
-The rightmost column in the output matrix is its prediction of the next token embedding.
-
-This is then 'unembedded' by the orchestrator to identify the actual next token.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Token embeddings
-
-
-
-## The neural network
-
-Next, the orchestrator feeds the sequence of token embeddings into its neural network, and then waits for the network to run the statistics and generate an output.
-
-Simplifying slightly, the output of the neural network is a prediction of the most likely next token to continue the sequence.
-
-In this particular case, when the neural network is given the input prompt "Are _frozen _strawberries _exempt _from _VAT ?" (as token embeddings), it runs through its calculations and then predicts that the next token is most likely to be "Yes".
-
-Are _frozen _strawberries _exempt _from _VAT ? Yes
-
-## The token generation loop
-
-
-Once the orchestrator is satisfied that the response is complete, it sends it back to the user (or more precisely to whichever software agent it received the prompt from in the first place).
-
-## Summing up
-
-You have now had a whistlestop tour of how an LLM generates a response from a prompt. You know that a few different specialised sub-components are involved and that each performs a different part of the overall task.
-
-You are well on the way to understanding how LLMs operate internally, by predicting the next word from the preceding words, without having any obvious way of knowing whether what they are saying is true or not.
-
-If you still want to dive deeper into how the different LLM sub-agents work, check out the next steps below.
 
 ----
 
