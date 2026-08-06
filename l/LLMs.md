@@ -1,6 +1,6 @@
 # Large language models
 
-A `large language model` (LLM) is a neural network-based, generative AI, software application which (strictly speaking):
+A `large language model` (LLM) is a neural network-based, generative AI, software application which (in the strictest sense):
 1. accepts a text as input – the 'prompt'
 2. performs billions of calculations behind the scenes
 3. then generates a single token (word) in response. 
