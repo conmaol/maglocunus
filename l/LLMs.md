@@ -110,7 +110,7 @@ The following diagram shows the architecture of a simple conversational LLM:
 ```mermaid
 graph LR
   user(("user"))
-  subgraph "Conversational Agent"
+  subgraph "Conversational LLM"
     orchestrator(["orchestrator"])
     memory[["memory"]]
     orchestrator <-.-> memory
@@ -183,7 +183,8 @@ graph LR
     tokeniser["tokeniser"]
     looper <--> tokeniser
     dictionary[["dictionary"]]
-    looper <-.-> dictionary
+    looper <-. "look-up" .-> dictionary
+    tokeniser <-. "look-up" .-> dictionary
     end
   user -- "prompt" --> looper
   looper -. "response" .-> user
@@ -196,16 +197,58 @@ In addition to the LLM neural network (which predicts the next token for the res
 
 These subcomponents interact as follows:
 1. The user submits an initial prompt to the LLM looper.
-2. The looper sends this prompt to the tokeniser, which then sends it back to the looper as a list of tokens.
+2. The looper sends this prompt to the tokeniser, which then sends it back to the looper as a list of tokens (each of which is contained in the dictionary).
 3. The looper then sends each of these tokens to the LLM dictionary, which sends back the numerical vector representing its meaning.
 4. The looper submits the current prompt on to the LLM, as a list of vectors.
-5. 
-6. The LLM generates a response consisting of a single token, and sends this token back to the looper.
-7. The looper appends the newly generated token to the end of the prompt, thus creating a slightly longer prompt.
-8. The looper repeats steps 2–4 until it is happy it has a complete response for the user.
-9. The looper removes the original user prompt from the start of current prompt, and sends this truncated response back to the user.
+5. The LLM generates a response consisting of a single vector, and sends this vector back to the looper.
+6. The looper appends the newly generated vector to the end of the current prompt, thus creating a slightly longer list of vectors.
+7. The looper repeats steps 4–6 until it is happy it has a complete response for the user.
+8. The looper then sends each vector in the finalised vector list to the dictionary.
+9. For each vector, the dictionary sends back a sample of tokens with relevant meanings.
+10. The looper chooses one of these new tokens at random, and uses it to assemble a response for the user.
+11. The looper sends the response back to the user.
+
+For example, I typed the following 40-character prompt into the same well-known LLM:
+
+> Are frozen strawberries exempt from VAT?
+
+Firstly, the LLM’s tokeniser returned a sequence of seven tokens:
+
+![tokens](images/strawberries-tokens.jpg)
+
+These tokens are all drawn from the LLM’s internal dictionary:
+
+| token ID | token | description | meaning |
+| -- | -- | -- | -- |
+| 13938	| `Are`	| the string *Are*, starting with a capital *A* | `[+3.2, -0.5, -4.6, ... , +6.1]` |
+| 32638 | ` frozen`	| the string *frozen* preceded by a space | `[+7.5, +3.0, -9.3, ... , -2.0]` |
+| 106502 | ` strawberries` | the string *strawberries* preceded by a space | `[-4.6, -5.9, +1.8, ... , +1.3]` |
+| 72064	| ` exempt`	| the string *exempt* preceded by a space | `[+7.3, -0.7, -1.6, ... , +2.2]` |
+| 591	| ` from`	| the string *from* preceded by a space | `[+2.3, -2.4, +6.0, ... , -0.1]` |
+| 56356	| ` VAT` | the string *VAT*, all in capitals, preceded by a space | `[-1.2, -1.5, +8.6, ... , -1.9]` |
+| 30 | `?` | the question mark | `[+0.2, -0.2, +0.6, ... , +3.4]` |
+
+Secondly, this list of tokens was translated into a list of numerical vectors, again by looking each one up in the dictionary:
+
+![input matrix](images/inputvectors.png)
 
 
+
+
+
+In an LLM, these meanings are known as 'token embeddings'. Meanings are represented, not as natural language definitions as in a human-readable dictionary, but rather as very long lists of decimal (floating point) numbers. For example, GPT-4 uses token embeddings with 12,288 distinct dimensions - its 'meanings' are lists of 12,288 decimal numbers, each of which represents a value on a different axis of meaning.
+
+So, the meaning of the first token in our example prompt "Are" might be something like:
+
+[+1.6, -0.4, -3.9, +95.0, +7.3, ... , +34.5]
+
+Token embeddings are important because they allow the LLM to generalise more effectively across distinct but related tokens like "big", "large", "sizable", "huge", etc. These words look different on the surface, but the numbers in their meaning lists will be very closely related.
+
+Once every token in our prompt has been 'embedded', the orchestrator will end up with a sequence of seven token embeddings, one for each of the tokens in the prompt:
+
+
+
+We are now ready to feed the embedded prompt into the neural network itself.
 
 
 Back up to: [Top](#)
@@ -235,7 +278,7 @@ Recall what happens when you enter the following prompt into the LLM:
 
 First of all, this prompt is tokenised into a sequence of seven tokens:
 
-![tokens](images/strawberries-tokens.jpg)
+
 
 Then each of these tokens is replaced by its token embedding - a 12,288-dimensional vector representing its meaning:
 
@@ -308,73 +351,12 @@ This is then 'unembedded' by the orchestrator to identify the actual next token.
 
 
 
-I will now run through the whole LLM workflow, from beginning to end, and show briefly how each of these sub-components makes its contribution.
 
-## Tokenisation
 
-When a prompt is submitted to an LLM, the orchestrator immediately sends it on to the tokeniser to be split up into words and bits of words.
-
-What the tokeniser does is:
-
-1. Takes the sequence of characters that make up the prompt text.
-2. Consults the dictionary to see what tokens are recognised by the LLM.
-3. Tries to guess where are the significant token boundaries between the characters in the prompt.
-4. Sends this proposed sequence of tokens back to the orchestrator.
-
-For example, I typed the following 40-character prompt into OpenAI's GPT-4 tokeniser:
-
-> Are frozen strawberries exempt from VAT?
-
-The tokeniser then returned a sequence of seven tokens:
-
-- "Are", " frozen", " strawberries", " exempt", " from", "VAT", "?"
-
-These tokens are all drawn from GPT-4's internal dictionary:
-
-ID	token	description
-- 13938	"Are"	the string "Are", starting with a capital A
-- 32638	" frozen"	the string "frozen" preceded by a space
-- 106502	" strawberries"	the string "strawberries" preceded by a space
-- 72064	" exempt"	the string "exempt" preceded by a space
-- 591	" from"	the string "from" preceded by a space
-- 56356	" VAT"	the string "VAT", all in capitals, preceded by a space
-- 30	"?"	the question mark
-
-Every LLM has its own internal dictionary of tokens that it has learned to recognise. GPT-4 recognises around 200,000 distinct words and bits of words. In comparison, the 2019 GPT-2 LLM only recognised around 50,000 distinct tokens. LLM dictionaries are getting bigger as the LLMs themselves get bigger (and better).
-
-Tokenisation is important. Much of the unexpected behaviour you will come across when using an LLM-based tool ultimately comes down to the way tokenisation works (or occasionally doesn't work).
 
 ## Token embeddings
 
-The next thing the orchestrator does is look up the 'meaning' of each identified token in the LLM's internal dictionary.
 
-In an LLM, these meanings are known as 'token embeddings'. Meanings are represented, not as natural language definitions as in a human-readable dictionary, but rather as very long lists of decimal (floating point) numbers. For example, GPT-4 uses token embeddings with 12,288 distinct dimensions - its 'meanings' are lists of 12,288 decimal numbers, each of which represents a value on a different axis of meaning.
-
-So, the meaning of the first token in our example prompt "Are" might be something like:
-
-[+1.6, -0.4, -3.9, +95.0, +7.3, ... , +34.5]
-
-Token embeddings are important because they allow the LLM to generalise more effectively across distinct but related tokens like "big", "large", "sizable", "huge", etc. These words look different on the surface, but the numbers in their meaning lists will be very closely related.
-
-Once every token in our prompt has been 'embedded', the orchestrator will end up with a sequence of seven token embeddings, one for each of the tokens in the prompt:
-
-[+1.6, -0.4, -3.9, ... , +34.5] = Are
-
-[-9.5, +14.2, +0.3, ... , -3.2] = _frozen
-
-[-23.1, -0,7, +14.8, ... , +55.9] = _strawberries
-
-[+16.0, +99.5, +63.1, ... , -0.1] = _exempt
-
-[+3.8, -16.3, -10.0, ... , +8.9] = _from
-
-[-7.9, -33.8, -13.3, ... , -2.2] = _VAT
-
-[0.0, +0.1, -0.3, ... , -45,7] = ?
-
-Note here that I am representing spaces at the start of tokens with the underscore _ to make them easier to see.
-
-We are now ready to feed the embedded prompt into the neural network itself.
 
 ## The neural network
 
