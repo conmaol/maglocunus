@@ -35,6 +35,7 @@ Contents:
 - [Recursive LLMs](#recursive-llms)
 - [Conversational LLMs](#conversational-llms)
 - [LLM architecture](#llm-architecture)
+- [An example](#an-example)
 
 ----
 
@@ -207,6 +208,10 @@ These subcomponents interact as follows:
 9. For each vector, the dictionary sends back a sample of tokens with relevant meanings.
 10. The looper chooses one of these new tokens at random, and uses it to assemble a response for the user.
 11. The looper sends the response back to the user.
+
+Back up to: [Top](#)
+
+## An example
 
 For example, I typed the following 40-character prompt into the same well-known LLM:
 
