@@ -4,6 +4,7 @@ Libraries:
 - [NumPy](../n/NumPy.md)
 - [Pandas](Pandas.md)
 - [Matplotlib](../m/Matplotlib.md)
+- [SciPy](../s/SciPy.md)
 
 ----
 
