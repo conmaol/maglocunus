@@ -18,8 +18,10 @@ Contents:
 - [NumPy](n/NumPy.md)
 - [Online Analytical Processing (OLAP)](o/OLAP.md)
 - [Online Transaction Processing (OLTP)](o/OLTP.md)
+- [Pandas](p/pandas.md)
 - [privacy notices](p/privacy_notices.md)
 - [Pydantic](p/Pydantic.md) – data models??
+- [Python](p/Python.md)
 - [reference_data](r/reference_data.md)
 - [relational algebra](r/relational_algebra.md)
 - [transactional data](t/transactional_data.md)
