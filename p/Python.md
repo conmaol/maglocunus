@@ -3,9 +3,7 @@
 Libraries:
 - [NumPy](../n/NumPy.md)
 - [Pandas](Pandas.md)
-- matplotlib
-
-
+- [Matplotlib](../m/Matplotlib.md)
 
 ----
 
