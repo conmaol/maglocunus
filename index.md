@@ -15,6 +15,7 @@ Contents:
 - [large language models (LLMs)](l/LLMs.md)
 - [master data](m/master_data.md)
 - [(data) normalisation](n/normalisation.md)
+- [NumPy](n/NumPy.md)
 - [Online Analytical Processing (OLAP)](o/OLAP.md)
 - [Online Transaction Processing (OLTP)](o/OLTP.md)
 - [privacy notices](p/privacy_notices.md)
