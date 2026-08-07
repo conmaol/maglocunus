@@ -25,6 +25,7 @@ Contents:
 - [Python](p/Python.md)
 - [reference_data](r/reference_data.md)
 - [relational algebra](r/relational_algebra.md)
+- [SciPy](s/SciPy.md)
 - [transactional data](t/transactional_data.md)
 - [(data) warehouses](w/warehouses.md)
 - [webhooks](w/webhooks.md)
