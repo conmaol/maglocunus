@@ -32,6 +32,11 @@ This code outputs:
 2  Charlie   35
 ```
 
+Note that:
+- `df["Name"]` returns the same as `pd.Series(["Alice", "Bob", "Charlie"])`
+
+
+
 You can read in a CSV file and save it as a DataFrame:
 
 ```
