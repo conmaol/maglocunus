@@ -14,6 +14,7 @@ Contents:
 - [hierarchical data models](h/hierarchical_data_models.md)
 - [large language models (LLMs)](l/LLMs.md)
 - [master data](m/master_data.md)
+- [Matplotlib](m/Matplotlib.md)
 - [(data) normalisation](n/normalisation.md)
 - [NumPy](n/NumPy.md)
 - [Online Analytical Processing (OLAP)](o/OLAP.md)
