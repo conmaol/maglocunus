@@ -20,7 +20,7 @@ Actions:
 - `S` – you activate the suction, which removes all the dirt from where you are
 
 ```mermaid
-graph LR
+graph TD
   state1(["ĎD"])
   state2(["DĎ"])
   state3(["ĎC"])
@@ -51,7 +51,7 @@ Actions:
 - `S` – you activate the suction, which either removes all the dirt from where you are, or deposits more dirt where you are, randomly
 
 ```mermaid
-graph LR
+graph TD
   state1(["ĎD"])
   state2(["DĎ"])
   state3(["ĎC"])
@@ -78,11 +78,29 @@ graph LR
   state8 -. S .-> state6
 ```
 
-No sensors
+### No sensors
 
-Local dirt sensor – you know if there is dirt where you are
+```mermaid
+graph LR
+  kstate1(["ĎD, DĎ, ĎC, DČ, ČD, CĎ, ČC, CČ"])
+  kstate2(["ĎD, ĎC, ČD, ČC"])
+  kstate3(["DĎ, DČ, CĎ, CČ"])
+  kstate4(["DČ, ČD, ČC, CČ"])
+  kstate1 -- L --> kstate2
+  kstate1 -- R --> kstate3
+  kstate1 -- S --> kstate4
 
-Next door dirt sensor – you know if there is dirt next door
+```
+
+ĎD, DĎ, ĎC, DČ, ČD, CĎ, ČC, CČ
+
+
+### Local dirt sensor – you know if there is dirt where you are
+
+
+
+
+### Next door dirt sensor – you know if there is dirt next door
 
 
 
