@@ -26,15 +26,7 @@ The following three facts all hold:
 
 The agent knows these three facts.
 
-
-
-
-### Deterministic
-
-Actions:
-- `L` – you move to the left
-- `R` – you move to the right
-- `S` – you activate the suction, which removes all the dirt from where you are
+These world states and actions are thus linked as follows:
 
 ```mermaid
 graph TD
@@ -59,6 +51,93 @@ graph TD
   state7 -- R --> state8
   state8 -- L --> state7
 ```
+
+### No sensors
+
+Let’s start by assuming that the agent completely lacks sensors. It thus has no way of knowing:
+- which location it is in
+- whether its location is clean or dirty
+- whether the other location is clean or dirty.
+
+All the agent knows is what it can do, what will happen if it does something, and what its goal is.
+
+Before the agent does anything, it is in the following knowledge state:
+
+```mermaid
+graph TD
+  kstate1(["ĎD, DĎ, ĎC, DČ, ČD, CĎ, ČC, CČ"])
+```
+In other words, the agent knows that it is either on the left or on the right, that the left is either dirty or clean, and that the right is either dirty or clean.
+
+The agent also knows what knowledge state it will enter into if it does something:
+
+```mermaid
+graph TD
+  kstate1(["ĎD, DĎ, ĎC, DČ, ČD, CĎ, ČC, CČ"])
+  kstate2(["ĎD, ĎC, ČD, ČC"])
+  kstate3(["DĎ, DČ, CĎ, CČ"])
+  kstate4(["DČ, ČD, ČC, CČ"])
+  kstate1 -- L --> kstate2
+  kstate1 -- R --> kstate3
+  kstate1 -- S --> kstate4
+```
+
+In other words:
+- If the agent moves left, then it knows it will be on the left.
+- If the agent moves right, then it knows that it will be on the right.
+- If the agent activates the vacuum’s suction, then it knows that it will be in a clean location.
+
+In total, there will be ten such knowledge states, related via actions as follows:
+
+```mermaid
+graph TD
+  kstate1(["ĎD, DĎ, ĎC, DČ, ČD, CĎ, ČC, CČ"])
+  kstate2(["ĎD, ĎC, ČD, ČC"])
+  kstate3(["DĎ, DČ, CĎ, CČ"])
+  kstate4(["DČ, ČD, ČC, CČ"])
+  kstate5(["ČD, ČC"])
+  kstate6(["DČ, CČ"])
+  kstate7(["CĎ, CČ"])
+  kstate8(["ĎC, ČC"])
+  kstate9(["CČ"])
+  kstate10(["ČC"])
+  kstate1 -- L --> kstate2
+  kstate1 -- R --> kstate3
+  kstate1 -- S --> kstate4
+  kstate2 -- R --> kstate3
+  kstate2 -- S --> kstate5
+  kstate3 -- L --> kstate2
+  kstate3 -- S --> kstate6
+  kstate4 -- L --> kstate5
+  kstate4 -- R --> kstate6
+  kstate5 -- R --> kstate7
+  kstate6 -- L --> kstate8
+  kstate7 -- L --> kstate5
+  kstate7 -- S --> kstate9
+  kstate8 -- R --> kstate6
+  kstate8 -- S --> kstate10
+  kstate9 -- L --> kstate10
+  kstate10 -- R --> kstate9
+```
+
+Even without sensors, the agent can figure out a plan that is guaranteed to reach its goal, for example:
+- Move to the left.
+- Suck.
+- Move to the right.
+- Suck.
+
+
+### Location sensor – you know where you are 
+
+
+### Local dirt sensor – you know if there is dirt where you are
+
+
+
+
+### Next door dirt sensor – you know if there is dirt next door
+
+
 
 ### Non-deterministic
 
@@ -94,50 +173,6 @@ graph TD
   state8 -- L --> state7
   state8 -. S .-> state6
 ```
-
-### No sensors
-
-```mermaid
-graph TD
-  kstate1(["ĎD, DĎ, ĎC, DČ, ČD, CĎ, ČC, CČ"])
-  kstate2(["ĎD, ĎC, ČD, ČC"])
-  kstate3(["DĎ, DČ, CĎ, CČ"])
-  kstate4(["DČ, ČD, ČC, CČ"])
-  kstate5(["ČD, ČC"])
-  kstate6(["DČ, CČ"])
-  kstate7(["CĎ, CČ"])
-  kstate8(["ĎC, ČC"])
-  kstate9(["CČ"])
-  kstate10(["ČC"])
-  kstate1 -- L --> kstate2
-  kstate1 -- R --> kstate3
-  kstate1 -- S --> kstate4
-  kstate2 -- R --> kstate3
-  kstate2 -- S --> kstate5
-  kstate3 -- L --> kstate2
-  kstate3 -- S --> kstate6
-  kstate4 -- L --> kstate5
-  kstate4 -- R --> kstate6
-  kstate5 -- R --> kstate7
-  kstate6 -- L --> kstate8
-  kstate7 -- L --> kstate5
-  kstate7 -- S --> kstate9
-  kstate8 -- R --> kstate6
-  kstate8 -- S --> kstate10
-  kstate9 -- L --> kstate10
-  kstate10 -- R --> kstate9
-```
-
-
-### Local dirt sensor – you know if there is dirt where you are
-
-
-
-
-### Next door dirt sensor – you know if there is dirt next door
-
-
-
 
 
 
