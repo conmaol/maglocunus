@@ -81,18 +81,35 @@ graph TD
 ### No sensors
 
 ```mermaid
-graph LR
+graph TD
   kstate1(["ĎD, DĎ, ĎC, DČ, ČD, CĎ, ČC, CČ"])
   kstate2(["ĎD, ĎC, ČD, ČC"])
   kstate3(["DĎ, DČ, CĎ, CČ"])
   kstate4(["DČ, ČD, ČC, CČ"])
+  kstate5(["ČD, ČC"])
+  kstate6(["DČ, CČ"])
+  kstate7(["CĎ, CČ"])
+  kstate8(["ĎC, ČC"])
+  kstate9(["CČ"])
+  kstate10(["ČC"])
   kstate1 -- L --> kstate2
   kstate1 -- R --> kstate3
   kstate1 -- S --> kstate4
-
+  kstate2 -- R --> kstate3
+  kstate2 -- S --> kstate5
+  kstate3 -- L --> kstate2
+  kstate3 -- S --> kstate6
+  kstate4 -- L --> kstate5
+  kstate4 -- R --> kstate6
+  kstate5 -- R --> kstate7
+  kstate6 -- L --> kstate8
+  kstate7 -- L --> kstate5
+  kstate7 -- S --> kstate9
+  kstate8 -- R --> kstate6
+  kstate8 -- S --> kstate10
+  kstate9 -- L --> kstate10
+  kstate10 -- R --> kstate9
 ```
-
-ĎD, DĎ, ĎC, DČ, ČD, CĎ, ČC, CČ
 
 
 ### Local dirt sensor – you know if there is dirt where you are
