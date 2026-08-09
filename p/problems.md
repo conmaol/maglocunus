@@ -126,9 +126,35 @@ Even without sensors, the agent can figure out a plan that is guaranteed to reac
 - Move to the right.
 - Suck.
 
-
 ### Location sensor – you know where you are 
 
+```mermaid
+graph TD
+  kstate1(["ĎD, ĎC, ČD, ČC"])
+  kstate2(["DĎ, DČ, CĎ, CČ"])
+  kstate3(["ČD, ČC"])
+  kstate4(["DČ, CČ"])
+  kstate5(["CĎ, CČ"])
+  kstate6(["ĎC, ČC"])
+  kstate7(["CČ"])
+  kstate8(["ČC"])
+  kstate1 -- R --> kstate2
+  kstate2 -- L --> kstate1
+  kstate1 -- S --> kstate3
+  kstate2 -- S --> kstate4
+  kstate3 -- R --> kstate5
+  kstate5 -- L --> kstate3
+  kstate4 -- L --> kstate6
+  kstate6 -- R --> kstate4
+  kstate5 -- S --> kstate7
+  kstate6 -- S --> kstate8
+  kstate7 -- L --> kstate8
+  kstate8 -- R --> kstate7
+```
+
+Plans:
+- agent is on the left: suck, move right, suck
+- agent is on the right: suck, move left, suck
 
 ### Local dirt sensor – you know if there is dirt where you are
 
