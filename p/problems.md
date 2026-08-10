@@ -171,6 +171,12 @@ graph TD
   kstate2 -- L --> kstate5
   kstate6(["6. CĎ, CČ, DČ"])
   kstate2 -- R --> kstate6
+  kstate7(["ČD, ČC"])
+  kstate4 -- S --> kstate7
+  kstate5 -- S --> kstate7
+  kstate8(["DČ, CČ"])
+  kstate3 -- S --> kstate8
+  kstate6 -- S --> kstate8
 ```
 
 
