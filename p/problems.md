@@ -1,5 +1,33 @@
 # Problems
 
+A problem-solving agent:
+- formulates a `goal` (based on the current situation)
+- considers sequences of actions that might achieve that goal ie. makes a `plan`
+- maximises its performance measure.
+
+A `problem` consists of:
+- a goal
+- a set of means for achieving that goal.
+
+`Search` involves exploring what the means can do, systematically considering the consequences of different courses of action.
+
+The problem type depends on the knowledge available to an agent:
+- Does it know the current state?
+- Does it understand the consequences of its actions?
+
+A goal is a set of world-states (just those states in which the goal is satisfied).
+
+Actions cause transitions between world states.
+
+Problem formulation — deciding on the most appropriate world-states and actions/transitions.
+
+Does the agent have a map of the problem space/world in its memory?
+
+If so it can start by making a plan, searching for a solution, before setting out (on the execution phase).
+
+`Search algorithm` – takes in a problem as input and returns a solution (sequence of actions).
+
+
 ## The vacuum world
 
 The vacuum world consists of two locations – left and right. Each location is either dirty or clean. The agent is either on the left or on the right.
