@@ -27,12 +27,37 @@ If so it can start by making a plan, searching for a solution, before setting ou
 
 `Search algorithm` – takes in a problem as input and returns a solution (sequence of actions).
 
+Problem types:
+
+Single-state problem:
+- The agent always knows exactly which world-state it is in (because it has all the necessary sensors).
+- The agent always knows what each of its actions will do, ie. exactly what world-state it will enter when it does each of them.
+
+Multiple-state problem:
+- The agent doesn’t always know exactly which world-state it is in (lacking enough sensors).
+- Or the agent doesn’t always know what each of its actions will do, ie. exactly what world-state it will enter when it does something (non-deterministic).
+
+Contingency problem:
+- Requires sensing during the execution phase.
+- No guaranteed solution from just planning alone.
+- Planning results in a tree, not just a sequence.
+- require more complex search algorithms – conditional/contingency planning – interleaving of planning/search and execution.
+
+Exploration problem:
+- An agent has no information about the effects of its actions, ie. no map.
+- The agent must experiment, searching in the real world, rather than a model.
+- The agent builds the map.
+
+
 
 ## The vacuum world
 
-The vacuum world consists of two locations – left and right. Each location is either dirty or clean. The agent is either on the left or on the right.
+Features of this world:
+- There are two locations – left and right.
+- Each location is either dirty or clean.
+- The agent is either on the left or on the right.
 
-There are this eight distinct objective states that the vacuum world can be in:
+There are thus eight distinct states that the vacuum world can be in:
 1. `ĎD` – The agent is on the left, and both the left and right are dirty.
 2. `DĎ` – The agent is on the right, and both the left and right are dirty.
 3. `ĎC` – The agent is on the left, the left is dirty but the right is clean.
@@ -51,6 +76,13 @@ The following three facts all hold:
 1. If the agent moves to the left, then it will be on the left.
 2. If the agent moves to the right, then it will be on the right.
 3. If the agent activates the vacuum’s suction, then its current location will be clean.
+
+The agent’s goal is for both locations to be clean, ie.
+- {ČC, CČ}
+
+---
+
+
 
 The agent knows these three facts.
 
