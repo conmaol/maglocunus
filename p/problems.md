@@ -158,6 +158,21 @@ Plans:
 
 ### Local dirt sensor – you know if there is dirt where you are
 
+```mermaid
+graph TD
+  kstate1(["1. ĎD, ĎC, DĎ, CĎ"])
+  kstate2(["2. ČD, CČ, DČ, CČ"])
+  kstate1 -- S --> kstate2
+  kstate3(["3. DĎ, DČ, CĎ"])
+  kstate1 -- R --> kstate3
+  kstate4(["4. ĎD, ĎC, ČD"])
+  kstate1 -- L --> kstate4
+  kstate5(["5. ČD, ČC, ĎC"])
+  kstate2 -- L --> kstate5
+  kstate6(["6. CĎ, CČ, DČ"])
+  kstate2 -- R --> kstate6
+```
+
 
 
 
