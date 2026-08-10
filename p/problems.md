@@ -48,6 +48,22 @@ Exploration problem:
 - The agent must experiment, searching in the real world, rather than a model.
 - The agent builds the map.
 
+A `problem` is a collection of information that an agent uses to decide what to do.
+
+For a single-state problem:
+- the initial state that the agent knows itself to be in
+- the set of actions available to the agent, as well as a specification of what states will be reached from any given state by each action
+  - these two things constitute the state space of the problem.
+- a goal test, which the agent can use to determine if if it is a goal state.
+- a path cost function, that assigns a cost to each sequence of actions.
+
+Thus, a single-state problem can be represented by a single graph.
+
+These graphs are the input to a (problem-solving) search algorithm. The output of the search algorithm is a solution. (Maybe a set of solutions ranked by cost?)
+
+Multiple-state problems:
+- similar but we use **state sets** rather than states as the nodes in the graph.
+- ie. a state set space.
 
 
 ## The vacuum world
