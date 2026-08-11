@@ -21,6 +21,7 @@ Contents:
 - [Online Transaction Processing (OLTP)](o/OLTP.md)
 - [Pandas](p/Pandas.md)
 - [privacy notices](p/privacy_notices.md)
+- [publish/subscribe (pub/sub)](p/publish-subscribe.md)
 - [Pydantic](p/Pydantic.md) – data models??
 - [Python](p/Python.md)
 - [reference_data](r/reference_data.md)
