@@ -2,20 +2,15 @@
 
 `Pandas` is a [Python](Python.md) library for working with tabular data, such as spreadsheets, CSV files, and database query results.
 
-### Series and DataFrames
-
-The main data structures provides by Pandas are:
-- `Series` – a one-dimensional labelled array
-- `DataFrame` – a table with rows and columns
-
-For example, the following code:
+One important data structure provided by Pandas is the `Series` – a one-dimensional labelled array:
 
 ```
 import pandas as pd
 s = pd.Series([10, 20, 30])
 print(s)
 ```
-Will output:
+
+This code will output:
 
 ```
 0   10
@@ -23,7 +18,9 @@ Will output:
 2   30
 ```
 
-Similarly, the following code:
+A Pandas series is very closely related to a [NumPy](../n/NumPy.md) ndarray.
+
+The other important data structure provided by Pandas is the `DataFrame` – a table with rows and columns:
 
 ```
 df = pd.DataFrame({
@@ -33,7 +30,7 @@ df = pd.DataFrame({
 print(df)
 ```
 
-Will output:
+This code will output:
 
 ```
       Name  Age
@@ -42,11 +39,13 @@ Will output:
 2  Charlie   35
 ```
 
-You can extract a column from a DataFrame as follows:
+You can extract a column from a DataFrame (as a Series):
 
 ```
-names = df["Name"]  # this is a Series, equivalent to pd.Series(["Alice", "Bob", "Charlie"])
+names = df["Name"]  # this is equivalent to pd.Series(["Alice", "Bob", "Charlie"])
 ```
+
+
 ### `read_csv()`
 
 You can read in a CSV file and save it as a DataFrame:
