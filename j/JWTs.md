@@ -38,7 +38,7 @@ The JWT **payload** contains a number of ‘claims’, like:
 
 The signature prevents tampering. It is calculated by running a hash function over the header and payload. If someone changes the payload, the signature no longer matches, and the server rejects the token.
 
-Note that JWTs are usually Base64URL-encoded during transit. For example:
+Note that JWTs are usually [Base64](../b/Base64.md)URL-encoded during transit. For example:
 
 ```
 {"alg": "HS256","typ": "JWT"}
