@@ -6,7 +6,7 @@ NumPy provides a high-performance data structure called an `ndarray` (n-dimensio
 
 ```
 import numpy as np
-numbers = np.array([1,2,3,4,5]). # numbers is an ndarray
+numbers = np.array([1,2,3,4,5]) # numbers is an ndarray
 print(numbers*2)
 ```
 
