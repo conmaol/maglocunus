@@ -2,6 +2,7 @@
 
 Contents:
 - [acceptance criteria](a/acceptance_criteria.md)
+- [Base64](b/Base64.md)
 - [Behaviour-Driven Development (BDD)](b/bdd.md)
 - Celery
 - [Continuous Integration / Continuous Delivery](c/ci-cd.md) (CI/CD)
