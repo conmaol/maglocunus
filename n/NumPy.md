@@ -10,18 +10,13 @@ numbers = np.array([1,2,3,4,5]). # numbers is an ndarray
 print(numbers*2)
 ```
 
-You can calculate the average of an array of numbers:
+You can use NumPy functions to calculate the average, median and variance of an array of numbers:
 
 ```
 print(np.average(numbers))
-```
-
-Similarly for the median:
-
-```
 print(np.median(numbers))
+variance = np.var(numbers)
 ```
-
 
 ----
 
