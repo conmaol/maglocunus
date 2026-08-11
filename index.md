@@ -12,6 +12,7 @@ Contents:
 - [FastAPI](f/FastAPI.md) ???
 - [Gherkin](g/Gherkin.md)
 - [hierarchical data models](h/hierarchical_data_models.md)
+- [JSON web tokens](j/JWTs.md) (JWTs)
 - [large language models (LLMs)](l/LLMs.md)
 - [master data](m/master_data.md)
 - [Matplotlib](m/Matplotlib.md)
