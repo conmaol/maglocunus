@@ -18,6 +18,8 @@ print(np.median(numbers))
 variance = np.var(numbers)
 ```
 
+See also: [Pandas](../p/Pandas.md)
+
 ----
 
 Back up to: [Maglocunus](../index.md)
