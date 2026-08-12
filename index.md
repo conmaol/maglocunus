@@ -26,6 +26,7 @@ Contents:
 - [publish/subscribe (pub/sub)](p/publish-subscribe.md)
 - [Pydantic](p/Pydantic.md) – data models??
 - [Python](p/Python.md)
+- [read replicas](r/read_replicas.md)
 - [reference_data](r/reference_data.md)
 - [relational algebra](r/relational_algebra.md)
 - [SciPy](s/SciPy.md)
