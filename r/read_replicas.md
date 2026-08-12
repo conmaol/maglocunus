@@ -24,30 +24,11 @@ flowchart TD
   primary -- "syncs to" --> replica1
   primary -- "syncs to" --> replica2
   primary -- "syncs to" --> replica3
-  user(["user"])
+  user(["application"])
   user -- "writes to" --> primary
   user -- "reads from" --> replica1
   user -- "reads from" --> replica2
   user -- "reads from" --> replica3
-```
-
-
-```text
-                Write (INSERT/UPDATE/DELETE)
-                        |
-                 +---------------+
-                 | Primary DB    |
-                 +---------------+
-                   |     |     |
-     Replication   |     |     |
-        -----------+-----+-----+
-                   |     |     |
-             +---------+ +---------+ +---------+
-             | Replica | | Replica | | Replica |
-             | Read #1 | | Read #2 | | Read #3 |
-             +---------+ +---------+ +---------+
-                  |           |            |
-               Reads       Reads        Reads
 ```
 
 This kind of distributed database works as follows:
