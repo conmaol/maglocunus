@@ -1,6 +1,6 @@
 # Read replicas
 
-`Read replicas` are synchronised copies of a primary/leader database that are only used only for **read** operations (ie. `SELECT` queries). 
+`Read replicas` are synchronised copies (aka. ‘followers’, ‘slaves’) of a primary/leader/master database that are only used only for **read** operations (ie. `SELECT` queries). 
 
 Having read replicas allows you to scale read-heavy workloads without overloading the primary database, with the trade-off that they may briefly return ‘stale’ data due to *replication lag*.
 
