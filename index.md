@@ -1,26 +1,6 @@
 # Maglocunus
 
-```mermaid
 
-flowchart TD
-  start(("start"))
-  subgraph USER
-    a1["user uploads company energy bill to BICS"]
-    a6["user consents to consumption checks on MPANs"]
-  end
-  subgraph BICS
-    a2["BICS forwards bill to ElectraLink API"]
-    a5["BICS verifies MPANs with user"]
-    a7["BICS sends MPAN to ElectraLink API"]
-    a10["BICS uses consumption data to inform eligibility"]
-  end
-  subgraph ElectraLink
-    a3["ElectraLink API scans bill, extracts MPANs and return them to BICS"]
-    a8["ElectraLink retrieves address, consumption etc and returns data to BICS"]
-  end
-  stop(("end"))
-  start --> a1 --> a2 --> a3 --> a5 --> a6 --> a7 --> a8 --> a10 --> stop
-```
 
 
 Contents:
@@ -63,6 +43,29 @@ service level agreements (SLAs)?
 
 
 ----
+
+```mermaid
+
+flowchart TD
+  start(("start"))
+  subgraph USER
+    a1["user uploads company energy bill to BICS"]
+    a6["user consents to consumption checks on MPANs"]
+  end
+  subgraph BICS
+    a2["BICS forwards bill to ElectraLink API"]
+    a5["BICS verifies MPANs with user"]
+    a7["BICS sends MPAN to ElectraLink API"]
+    a10["BICS uses consumption data to inform eligibility"]
+  end
+  subgraph ElectraLink
+    a3["ElectraLink API scans bill, extracts MPANs and return them to BICS"]
+    a8["ElectraLink retrieves address, consumption etc and returns data to BICS"]
+  end
+  stop(("end"))
+  start --> a1 --> a2 --> a3 --> a5 --> a6 --> a7 --> a8 --> a10 --> stop
+```
+
 
 ## Storage and retrieval
 
