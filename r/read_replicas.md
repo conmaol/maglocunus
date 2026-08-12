@@ -13,10 +13,24 @@ You should consider using read replicas if:
 
 You should avoid querying read replicas whenever you need the most up-to-date data. 
 
-
-
-
 Here's a simple diagram:
+
+```mermaid
+flowchart TD
+  primary[[primary DB]]
+  replica1[[replica DB 1]]
+  replica2[[replica DB 2]]
+  replica3[[replica DB 3]]
+  primary -- "syncs to" --> replica1
+  primary -- "syncs to" --> replica2
+  primary -- "syncs to" --> replica3
+  user(["user"])
+  user -- "writes to" --> primary
+  user -- "reads from" --> replica1
+  user -- "reads from" --> replica2
+  user -- "reads from" --> replica3
+```
+
 
 ```text
                 Write (INSERT/UPDATE/DELETE)
