@@ -122,6 +122,11 @@ Many databases support read replicas, including:
 
 In short, **read replicas let you scale read-heavy workloads by maintaining synchronized copies of your primary database**, with the trade-off that they may briefly return stale data due to replication lag.
 
+
+Sources:
+- Chapter 3 ‘Architecting read-side data’ of *Data Architecture* by Pramos Sadalage & Premanand Chandrasekaran (O’Reilly 2026)
+
+
 ----
 
 Back up to: [Maglocunus](../index.md)
