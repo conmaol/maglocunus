@@ -1,4 +1,4 @@
-# Materialised views
+# Materialised database views
 
 A `materialised view` is a database object that stores the results of a query as actual data, rather than running the query every time it is requested – a precomputed table that is automatically or manually refreshed.
 
