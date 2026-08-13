@@ -2,7 +2,7 @@
 
 `Read replicas` are synchronised, live ‘follower’ copies of a primary ‘leader’ database that are only used only for **read** operations (ie. `select` queries). 
 
-Read replication, a data-architectural pattern, allows you to *scale read-heavy workloads* (and *optimise read performance*) in predominantly transactional systems, without overloading the primary database. The trade-off is that read replicas may briefly return ‘stale’ data due to *replication lag*.
+Read replication is a data-architectural pattern that allows you to scale *read-heavy workloads* (and to optimise read performance) in predominantly transactional systems, without overloading the primary database. The trade-off is that read replicas may briefly return ‘stale’ data due to *replication lag*.
 
 A typical problem is where a business has expanded it activities to such an extent that its original monolithic transaction database is struggling with too many read queries – from customers browsing the website, or internal operational analytical dashboards. Query performance optimisations (eg. indexing) alone are not enough to scale read operations without compromising core transactions (ie. writes).
 
@@ -82,7 +82,7 @@ Some mitigation strategies for the risks of read replication are:
 Many relational database systems support read replicas, including MySQL, PostgreSQL, MariaDB, SQL Server, Oracle Database, and managed cloud services like Amazon RDS, Google Cloud SQL, and Azure Database services.
 
 Other data-architectural patterns that attempt to solve the problem of scaling read-heavy workloads:
-- [materialised views](../m/materialised_views.md)
+- [materialised database views](../m/materialised_views.md)
 - Command Query Responsibility Segregation (CQRS)
 - Change Data Capture (CDC)
 - event sourcing
