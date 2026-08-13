@@ -39,39 +39,57 @@ flowchart TD
 ```
 
 This kind of distributed database works as follows:
-1. Your application sends all **writes** (inserts, updates, deletes) to the primary database.
-2. The primary records those changes.
-3. The changes are replicated to one or more read replicas.
-4. Applications can send read queries to any replica.
+1. The customer-facing application sends all **writes** (inserts, updates, deletes) to the primary database.
+2. The primary database records those changes.
+3. The changes are replicated to the replicas.
+4. All **read** queries are then sent directly to one of the replicas, thus freeing up the primary database.
 
+Relational database systems typically offer two different approaches to replication:
+- *statement-based* replication – the primary database logs incoming SQL write statements and then replays them on the replicas
+- *row-based* replication – the primary database actually replicates actual row changes.
+
+In addition, there are two different replication *modes*:
+- *synchronous* replication – the primary database waits for the replicas to confirm the changes before acknowledging a write (trading write latency for read consistency)
+- *asynchronous* replication – the primary database immediately acknowledges writes (trading read consistency for write latency).
+
+Hybrid replication strategies are also available, for example using synchronous replication within a region (datacentre), but asynchronous replication across regions.
+
+There are different replication *topologies*:
+- single-primary with multiple replicas (possibly in different geo-locations)
+- primary replica cascading – one replica acts an an intermediary between the primary database and the other replicas
+
+Read replicas are distinct from *failover replicas*:
+- A failover replica is designed for *high availability* – it can take over as the primary during an outage.
+- A read replica is designed for scaling reads.
 
 You should consider using read replicas if:
 - your application has many more reads than writes
 - you need to improve read response times (perhaps in different geographical regions)
-- you have heavy analytics workflows that would otherwise slow down production writes
+- you have heavy analytics workflows that would otherwise slow down production writes.
 
 You should avoid querying read replicas whenever you need the most up-to-date data. 
 
+In addition, read replicas may struggle with certain compute-intensive queries, particularly those involving:
+- aggregations
+- pre-computed summaries
+- complex joins across multiple datasets.
 
-Read replicas are distinct from failover replicas:
-- A failover replica is designed for *high availability* – it can take over as the primary during an outage.
-- A read replica is designed for scaling reads.
+Some mitigation strategies for the risks of read replication are:
+- replica lag monitoring to detect when replicas fall behind
+- clear query routing strategies to dynamically direct queries to fresher replicas (database-aware load balancers)
+- auto-scaling to dynamically adjust the number of replicas based on load.
 
 Many relational database systems support read replicas, including MySQL, PostgreSQL, MariaDB, SQL Server, Oracle Database, and managed cloud services like Amazon RDS, Google Cloud SQL, and Azure Database services.
 
 Other data-architectural patterns that attempt to solve the problem of scaling read-heavy workloads:
-- materialised views
+- [materialised views](../m/materialised_views.md)
 - Command Query Responsibility Segregation (CQRS)
 - Change Data Capture (CDC)
 - event sourcing
 - domain-based decomposition, polyglot persistence 
 
-
-
-
 Sources:
-- Chapter 3 ‘Architecting read-side data’ of *Data Architecture* by Pramos Sadalage & Premanand Chandrasekaran (O’Reilly 2026)
-
+- Chapter 3 ‘Architecting read-side data’ of *Data Architecture* by [Pramod Sadalage](https://sadalage.com) & Premanand Chandrasekaran (O’Reilly 2026).
 
 ----
 
