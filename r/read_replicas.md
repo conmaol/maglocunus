@@ -15,7 +15,6 @@ flowchart TD
   primary[[database]]
   customers -- "write to" --> primary
   customers -- "read from" --> primary
-  analysts -- "write to" --> primary
   analysts -- "read from" --> primary
 ```
 
