@@ -5,6 +5,7 @@ Contents:
 - [Base64](b/Base64.md)
 - [Behaviour-Driven Development (BDD)](b/bdd.md)
 - Celery
+- [Command Query Responsibility Segregation](../c/CQRS.md) (CQRS)
 - [Continuous Integration / Continuous Delivery](c/ci-cd.md) (CI/CD)
 - [data](d/data.md)
 - [Databricks](d/Databricks.md)
