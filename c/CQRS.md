@@ -16,21 +16,21 @@ flowchart TD
   customers([customers])
   analysts([analysts])
   command(["command handler"])
+  commandDB[[command DB]]
+  model(["model updater"])
   customerQ([customer query handler])
   analystsQ([analytical query handler])
-  commandDB[[command DB]]
   customerDB[[customer read DB]]
   analystDB[[analytical read DB]]
   customers -- "write to" --> command
-  customers -- "read from" --> customerQ
-  analysts -- "read from" --> analystsQ
   command -- "writes to" --> commandDB
-  customerQ -- "reads from" --> customerDB
-  analystsQ -- "reads from" --> analystDB
-  model(["model updater"])
-  model -- "reads from" --> commandDB
+  commandDB -- "writes to" --> model
   model -- "writes to" --> customerDB
   model -- "writes to" --> analystDB
+  customers -- "read from" --> customerQ
+  customerQ -- "reads from" --> customerDB
+  analysts -- "read from" --> analystsQ
+  analystsQ -- "reads from" --> analystDB  
 ```
 
 The command handler and database deal with the transactional side of the system – focusing on data integrity and consistence, business rules, validation logic and domain invariants.
