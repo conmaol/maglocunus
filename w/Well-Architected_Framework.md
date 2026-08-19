@@ -3,57 +3,57 @@
 The AWS `Well-Architected Framework` is a collection of design principles for building secure, resilient and high-performing solutions in the [AWS](../a/AWS.md) cloud.
 
 The framework has six pillars:
-- **operational excellence**
-  - perform operations as code, so as to:
-    - leverage automation and speeds up deployment
+1. **operational excellence**
+  - perform operations as <mark>code</mark>, so as to:
+    - leverage automation and speed up deployment
     - limit the chances of human error
     - create consistent output each time
   - anticipate failure
-    - conduct tests
+    - conduct <mark>tests</mark>
     - evaluate the effectiveness of response procedures
-  - use managed services
+  - use <mark>managed services</mark>
     - allows administrators to focus on managing their application instead of the infrastructure
-- **security**
-  - implement a string identity foundation
+2. **security**
+  - implement a strong <mark>identity</mark> foundation
     - apply the principle of least privilege
     - enforce separation of duties
     - use a centralised identity management solution
   - protect data at rest and in transit
     - configure the appropriate encryption and access control mechanisms
   - ensure traceability
-    - logging systems should monitor and capture all actions
+    - logging systems should <mark>monitor</mark> and capture all actions
   - apply security at *all* layers
     - infrastructure
     - application
     - network
     - data
-  - be prepared for security incidents
+  - be prepared for security <mark>incidents</mark>
     - have well-defined incident response procedures
     - run simulations
-- **reliability**
+3. **reliability**
   - design to automatically recover from failure
     - continuously monitor key metrics (CloudWatch)
     - use automation to recover from failure (EventBridge)
   - test recovery procedures
-  - scale horizontally
+  - <mark>scale horizontally</mark>
     - replace a large resource (eg. one 8xlarge EC2) with multiple smaller resources (ie. four 2xlarge EC2s) to eliminate a SPOF
-- **performance efficiency**
-  - use serverless architectures
+4. **performance efficiency**
+  - use <mark>serverless</mark> architectures
     - no server needed for running code or hosting static websites
     - reduces operational burden
     - results in cost savings
   - deploy globally, in multiple regions
     - lower latency
     - improved customer experience
-- **cost optimisation**
-  - adopt a consumption model
+5. **cost optimisation**
+  - adopt a <mark>consumption model</mark>
     - pay only for the resources you consume
     - stop resources when not needed
-    - use auto-scaling services
+    - use <mark>auto-scaling</mark> services
   - analyse expenditure
-    - identify areas for optimisation
+    - identify areas for <mark>optimisation</mark>
     - measure your ROI
-- **sustainability**
+6. **sustainability**
   - maximise utilisation
     - appropriately size your workloads
   - use managed services (like AWS Lambda)
