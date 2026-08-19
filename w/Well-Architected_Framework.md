@@ -1,6 +1,6 @@
 # AWS Well-Architected Framework
 
-The AWS `Well-Architected Framework` is a collection of design principles for building secure, resilient and high-performing solutions in the AWS cloud.
+The AWS `Well-Architected Framework` is a collection of design principles for building secure, resilient and high-performing solutions in the [AWS](../a/AWS.md) cloud.
 
 The framework has six pillars:
 - **operational excellence**
