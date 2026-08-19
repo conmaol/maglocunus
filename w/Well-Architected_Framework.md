@@ -35,7 +35,13 @@ The framework has six pillars:
   - configure the appropriate authentication, encryption, access control, and reporting mechanisms
   - use secure protocols like HTTPS when transferring data
 - <mark>implement traceability</mark>
-  - logging systems should <mark>monitor</mark> and capture all actions
+  - logging tools should be used to track, monitor and capture all actions in your AWS environment, in real time
+    - use AWS CloudTrail to maintain an audit trail of your users actions
+    - use AWS Config to record configurations of your AWS resources
+    - use AWS X-Ray to get an end-to-end view of requests, to help you identify the root cause of issues and errors
+    - use VPC Flow logs to capture IP traffic to and from your VPC
+    - tag resources to assign ownership
+    - store logs in an S3 bucket or CloudWatch log group for further analysis
 - <mark>secure every layer</mark> (using AWS tools)
   - infrastructure
   - applications
@@ -44,10 +50,10 @@ The framework has six pillars:
   - data
   - instances (EC2, databases, etc.)
   - operating system
-- be prepared for security <mark>incidents</mark>
-    - have well-defined incident response procedures
+- <mark>prepare for security incidents</mark>
+    - create (and regularly update) an incident response plan specific to your AWS environment
+      - How should your team respond to an incident, restore operations, and perform forensic analysis?
     - run simulations
-
 
 ### 3. Reliability
 
