@@ -3,7 +3,9 @@
 The AWS `Well-Architected Framework` is a collection of design principles for building secure, resilient and high-performing solutions in the [AWS](../a/AWS.md) cloud.
 
 The framework has six pillars:
-1. **operational excellence**
+
+### 1. Operational excellence
+
   - perform operations as <mark>code</mark>, so as to:
     - leverage automation and speed up deployment
     - limit the chances of human error
@@ -13,24 +15,42 @@ The framework has six pillars:
     - evaluate the effectiveness of response procedures
   - use <mark>managed services</mark>
     - allows administrators to focus on managing their application instead of the infrastructure
-2. **security**
-  - implement a strong <mark>identity</mark> foundation
-    - apply the principle of least privilege
-    - enforce separation of duties
-    - use a centralised identity management solution
-  - protect data at rest and in transit
-    - configure the appropriate encryption and access control mechanisms
-  - ensure traceability
-    - logging systems should <mark>monitor</mark> and capture all actions
-  - apply security at *all* layers
-    - infrastructure
-    - application
-    - network
-    - data
-  - be prepared for security <mark>incidents</mark>
+
+### 2. Security
+
+- <mark>implement strong identity and access management</mark>
+  - use a centralised identity management solution
+      - either manage identities within AWS
+      - or use an external identity provider
+  - consider granting secure access to external users of your resources and applications
+      - implement the principle of least privilege
+  - enforce separation of duties
+    - use identity-based policies to define permissions for users and groups
+    - use resource-based policies to control access to resources
+    - use service control policies (SCPs) to define maximum permissions for member accounts in an AWS organisation
+- <mark>protect data – at rest and in transit</mark>
+  - identify and classify your data
+    - Does it contain PII, IP (patents, secrets), protected health (medical records) or financial information (credit card details)?
+    - Where is the data stored, who owns it, who can access or modify it, what is the business impact of a leak?
+  - configure the appropriate authentication, encryption, access control, and reporting mechanisms
+  - use secure protocols like HTTPS when transferring data
+- <mark>implement traceability</mark>
+  - logging systems should <mark>monitor</mark> and capture all actions
+- <mark>secure every layer</mark> (using AWS tools)
+  - infrastructure
+  - applications
+  - network
+  - code
+  - data
+  - instances (EC2, databases, etc.)
+  - operating system
+- be prepared for security <mark>incidents</mark>
     - have well-defined incident response procedures
     - run simulations
-3. **reliability**
+
+
+### 3. Reliability
+
   - design to automatically recover from failure
     - continuously monitor key metrics (CloudWatch)
     - use automation to recover from failure (EventBridge)
