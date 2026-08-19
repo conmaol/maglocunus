@@ -33,6 +33,7 @@ Contents:
 - [reference_data](r/reference_data.md)
 - [relational algebra](r/relational_algebra.md)
 - [SciPy](s/SciPy.md)
+- (AWS) [Shared Responsibility Model](s/Shared_Responsibility_Model.md)
 - [transactional data](t/transactional_data.md)
 - [(data) warehouses](w/warehouses.md)
 - [webhooks](w/webhooks.md)
