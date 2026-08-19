@@ -32,17 +32,32 @@ The framework has six pillars:
     - run simulations
 - **reliability**
   - design to automatically recover from failure
+    - continuously monitor key metrics (CloudWatch)
+    - use automation to recover from failure (EventBridge)
   - test recovery procedures
   - scale horizontally
-- performance efficiency
+    - replace a large resource (eg. one 8xlarge EC2) with multiple smaller resources (ie. four 2xlarge EC2s) to eliminate a SPOF
+- **performance efficiency**
   - use serverless architectures
-  - deploy globally (in multiple regions)
-- cost optimisation
+    - no server needed for running code or hosting static websites
+    - reduces operational burden
+    - results in cost savings
+  - deploy globally, in multiple regions
+    - lower latency
+    - improved customer experience
+- **cost optimisation**
   - adopt a consumption model
+    - pay only for the resources you consume
+    - stop resources when not needed
+    - use auto-scaling services
   - analyse expenditure
-- sustainability
+    - identify areas for optimisation
+    - measure your ROI
+- **sustainability**
   - maximise utilisation
-  - use managed services
+    - appropriately size your workloads
+  - use managed services (like AWS Lambda)
+    - impact of power and networking is shared across customers
 
 Further reading:
 - [AWS guidance](https://aws.amazon.com/architecture/well-architected/)
