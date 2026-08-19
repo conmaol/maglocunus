@@ -1,52 +1,33 @@
 # AWS Shared Responsibility Model
 
-outlines who is responsible for which element of the AWS cloud.
-outlines the shared responsibility of security and compliance between AWS and the customer.
+The `Shared Responsibility Model` outlines who is responsible for managing which layers of the [AWS](../a/AWS.md) cloud, to ensure security and compliance of a cloud solution. Is it AWS, or is it *you* as the customer?
 
+For example:
 - Who will manage the hardware powering the virtual services?
 - Who is responsible for the software components?
 - Who is responsible for operating system configuration?
 - Who will configure the network and firewall?
 - Who is responsible for encryption and access control?
 
-How is AWS architected?
+The basic rules are as follows:
+- The <mark>physical hardware</mark> is always fully managed by AWS, and is invisible to the customers.
+- The <mark>virtualisation (hypervisor)</mark> software layer sits on top of the physical hardware. Again, this layer is always fully managed by AWS and is invisible to customers.
+- Intermediate layers can be managed by either AWS or by the customers, depending on the kind of service being used.
+- <mark>Data</mark> is always fully managed by the customer (including client-side encryption), regardless of service type.
+- <mark>Identities and access</mark> are always fully managed by the customer, regardless of service type.
 
-physical servers
-hypervisor
-virtual services
+In a nutshell:
+- AWS is responsible for security OF the cloud.
+- The customer is responsible for security IN the cloud.
 
-The physical servers and virtualisation layer (hypervisor) are invisible to the customer, and always fully managed by AWS.
+The `EC2` service is an example of <mark>Infrastructure-as-a-Service</mark> (IaaS), where customers can launch virtual machines:
+- The customer is also fully responsible for managing the virtual machines – operating system, network and firewall configuration, server-side encryption, applications, etc.
 
-Customer responsibility os determined by the type of service used:
-- Infrastructure as a Service (IaaS)
-- Platform as a Service (PaaS)
+The `Relational Database Service` (RDS) is an example of <mark>Platform-as-a-Service</mark> (PaaS), where customers can host their own databases:
+- AWS also manages the virtual machines – operating system, network and firewall configuration for the platform, server-side encryption, database management application, etc.
 
-eg. EC2 service allows customers to launch virtual machines – IaaS
-- AWS is responsible for the physical hardware across regions, availability zones and edge locations
-- AWS is also responsible for the software used to manage the hardware - the hypervisor
-- ie. AWS is responsible for security OF the cloud
-- The customer is responsible for security IN the cloud
-  - server and client-side encryption, and network traffic protection (protecting data at rest and in transit)
-  - VM operating system, network and firewall configuration
-  - managing the platform and applications running on instances, and identity and access management
-
-Managing data is always the customers responsibility, regardless of service type.
-
-eg. RDS (Relational database Service) - PaaS
-- AWS also manages the OS, network and firewall configuration of the platform on which the database is hosted
-- AWS manages the platform and the application
-- The customer is responsible for client-side encryption, IAM, and network traffic protection and firewall configuration
-
-eg. S3 (Simple Storage Service) – more abstracted service
-- interface for customers to upload objects
-- customer is only responsible for client-side encryption, IAM, and the data
-
-AWS is always responsible for physical infrastructure and the hypervisor
-
-Customer is always responsible for managing data
-
-Customer is always responsible for managing identities and access
-
+The `Simple Storage Service` (S3) is a more abstracted service, with a web interface for customers to upload objects:
+- The customer is only responsible for client-side encryption, IAM, and the data.
 
 ----
 
