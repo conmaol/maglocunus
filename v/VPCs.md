@@ -1,6 +1,6 @@
 # Virtual Private Clouds
 
-A `Virtual Private Cloud` is a ... [Amazon Web Services](../a/AWS.md) ...
+A `Virtual Private Cloud` (VPC) is a ... [Amazon Web Services](../a/AWS.md) ...
 
 subnets (public or private)
 
