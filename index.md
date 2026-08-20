@@ -36,7 +36,7 @@ Contents:
 - [SciPy](s/SciPy.md)
 - (AWS) [Shared Responsibility Model](s/Shared_Responsibility_Model.md)
 - [transactional data](t/transactional_data.md)
-- (AWS) [Virtual Private Clouds](v/VPCs) (VPCs)
+- (AWS) [Virtual Private Clouds](v/VPCs.md) (VPCs)
 - [(data) warehouses](w/warehouses.md)
 - [webhooks](w/webhooks.md)
 - (AWS) [Well-Architected Framework](w/Well-Architected_Framework.md)
