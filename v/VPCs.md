@@ -1,31 +1,96 @@
 # Virtual Private Clouds
 
-A `Virtual Private Cloud` (VPC) is a logically isolated virtual network on [Amazon Web Services](../a/AWS.md) (AWS), resembling a traditional network in an on-premises data centre.
+A `Virtual Private Cloud` (VPC) is a logically isolated virtual network on [Amazon Web Services](../a/AWS.md) (AWS).
 
-A VPC resides in a single AWS region.
+A VPC:
+- resembles a traditional network in an on-premises data centre
+- resides in a single AWS region
+- contains subnets
+- are isolated by default – resources in different VPCs do not talk to each other, even if they are in the same AWS region.
 
-A VPC contains subnets, each of which consists of a range of IP addresses, and resides in a single availability zone.
+A subnet: 
+- consists of a range of IP addresses
+- resides in a single availability zone
+- is where resources are launched (EC2 instances, EBS volumes, etc)
+- can be configured as *public* or *private*:
+  - public: has a route to an internet gateway, allowing both outgoing and incoming access to the internet, and typically hosts web servers.
+  - private: has a route to a network access translation (NAT) device, allowing outgoing access to the internet (but not incoming), and typically hosts database servers.
 
-For example:
-- ‘Production VPC’ is a VPC in region `us-east-1`, including IP addresses `10.0.0.0/16`.
-- It contains two subnets:
-  - ‘Subnet A’ is in the `us-east-1a` availability zone, and consists of IP addresses `10.0.1.0/24`.
-  - ‘Subnet B’ is in the `us-east-1b` availability zone, and consists of IP addresses `10.0.2.0/24`.
 
-You launch resources within the subnets, such as EC2 instances or EBS volumes.
+Here is an example:
 
-VPCs are **isolated** by default, for security reasons:
-- Resources in different VPCs do not talk to each other, even if they are in the same AWS region.
+```mermaid
+flowchart TD
+  VPC["`**VPC**
+name: Production VPC
+region: us-east-1
+IPs: 10.0.0.0/16`"]
+  SN1["`**subnet**
+name: Subnet A
+AZ: us-east-1a
+IPs: 10.0.1.0/24
+type: public`"]
+  SN2["`**subnet**
+name: Subnet B
+AZ: us-east-1b
+IPs: 10.0.2.0/24
+type: private`"]
+  EC2(["`**resource**
+type: EC2 instance`"])
+  EBS(["`**resource**
+type: EBS volume`"])
+  VPC -- contains --> SN1
+  VPC -- contains --> SN2
+  SN1 -- hosts --> EC2
+  SN2 -- hosts --> EBS
+```
+
+Or in more traditional notation:
+
+```mermaid
+flowchart LR
+  subgraph "[VPC] Production VPC — us-east-1 10.0.0.0/16"
+    subgraph "[public subnet] Subnet A – us-east-1a 10.0.1.0/24"
+      EC2["`[resource] EC2`"]
+    end
+    subgraph "[private subnet] Subnet B  – us-east-1b 10.0.2.0/24"
+      EBS["`[resource] EBS`"]
+    end
+  end
+```
+
+Here is an ER diagram:
+
+```mermaid
+erDiagram
+    VPC ||--|{ SUBNET : contains
+    VPC {
+      String name
+      String region
+      String IPs
+    }
+    SUBNET {
+      String name
+      String availabilityZone
+      String IPs
+      String type
+    }
+    SUBNET ||--|{ RESOURCE : hosts
+    RESOURCE {
+      String type
+    }
+```
+
+
+
+
+ 
+
+
 
 You should be sure to choose a CIDR block (IP address range) that is large enough to accommodate your current resources and allows for scalability in future.
 
 Two VPC can be ‘peered’ (ie. connected) just in case their IP ranges do not overlap.
-
-Subnet can be configured a public or private.
-
-Public subnets have a route to an internet gateway, allowing access to the internet, as well as incoming connections from the internet. Typically used by web servers.
-
-Private subnets have a route to a network access translation (NAT) device, allowing access to the internet. NAT devices do not allow connections originating from the internet. Typically used by your database servers.
 
 Use security groups and network access control lists (NACLs) to filter inbound and outbound traffic.
 
@@ -54,20 +119,6 @@ Subnets can be shared with other accounts in the same AWS organisation.
 
 
   
-
-
-
-subnets (public or private)
-
-IP ranges
-
-regions
-
-availability zones
-
-EC2s
-
-databases
 
 ----
 
