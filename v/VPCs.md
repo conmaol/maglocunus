@@ -2,6 +2,12 @@
 
 A `Virtual Private Cloud` (VPC) is a logically isolated virtual network within a single [Amazon Web Services](../a/AWS.md) (AWS) account.
 
+Contents:
+- [VPCs and subnets](#vpcs-and-subnets)
+- [VPC peering](#vpc-peering)
+
+## VPCs and subnets
+
 A VPC:
 - resembles a traditional network in an on-premises data centre
 - resides in a single AWS region
@@ -13,8 +19,12 @@ A subnet:
 - resides in a single availability zone
 - is where resources are launched (EC2 instances, EBS volumes, etc)
 - can be configured as *public* or *private*:
-  - public: has a route to an internet gateway, allowing both outgoing and incoming access to the internet, and typically hosts web servers.
-  - private: has a route to a network access translation (NAT) device, allowing outgoing access to the internet (but not incoming), and typically hosts database servers.
+  - public: has a route to an internet gateway, allowing both outgoing and incoming access to the internet, and typically hosts web servers
+  - private: has a route to a network access translation (NAT) device, allowing outgoing access to the internet (but not incoming), and typically hosts database servers
+- can be protected by *network access control lists* (NACLs), which filter inbound and outbound traffic
+  - specific resources/instances in a subnet can be protected by *security groups*.
+
+If you spread resources across multiple subnets, they will be more available and fault tolerant, especially if you use services like Elastic Load Balancing and Auto Scaling.
 
 Here is an example:
 
@@ -85,6 +95,8 @@ erDiagram
     RESOURCE {
       String type
     }
+    SUBNET ||--o| NACL : protected-by
+    RESOURCE ||--o| SECURITY-GROUP : protected-by
 ```
 
 Note that:
@@ -100,7 +112,9 @@ Use security groups and network access control lists (NACLs) to filter inbound a
 
 Security groups are applied to instances; NACLs are applied to subnets.
 
-### VPC peering
+Back up to: [Top](#)
+
+## VPC peering
 
 Two VPCs can be ‘peered’ (ie. connected) as long as their IP ranges do not overlap.
 - VPC peering allows instances in either VPC to communicate with each other as if they were in the same network.
@@ -131,7 +145,6 @@ id: 123456789012`"]
   VPC1 <-- peers --> VPC2
 ```
 
-
 Here is an example of cross-account peering:
 
 ```mermaid
@@ -147,15 +160,18 @@ id: 210987654321`"]
   VPC1 <-- peers --> VPC2
 ```
 
-
-### mmm
-
-Use AWS VPN or AWS Direct Connect to connect your VPC with an on-premises environment.
+Use `AWS VPN` or `AWS Direct Connect` to connect your VPC with your on-premises environment:
 - AWS VPN allows you to create an IPsec site-to-site VPN with your on-premises network.
 - AWS Direct Connect establishes a dedicated private connection from your on-premises network to your VPC.
 
-If you spread resources across multiple subnets, they will be highly available and fault tolerant.
-- Especially if you se services like Elastic Load Balancing and Auto Scaling.
+Back up to: [Top](#)
+
+
+### mmm
+
+
+
+
 
 Compliance and data residency.
 
