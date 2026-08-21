@@ -5,6 +5,7 @@ A `Virtual Private Cloud` (VPC) is a logically isolated virtual network within a
 Contents:
 - [VPCs and subnets](#vpcs-and-subnets)
 - [VPC peering](#vpc-peering)
+- [VPN and Direct Connect](#vpn-and-direct-connect)
 
 ## VPCs and subnets
 
@@ -166,29 +167,24 @@ id: 210987654321`"]
   VPC1 <-- peers --> VPC2
 ```
 
-Use `AWS VPN` or `AWS Direct Connect` to connect your VPC with your on-premises environment:
-- AWS VPN allows you to create an IPsec site-to-site VPN with your on-premises network.
-- AWS Direct Connect establishes a dedicated private connection from your on-premises network to your VPC.
+## VPN and Direct Connect
+
+There are two ways to securely connect your on-premises environment with your AWS VPC, so as to shares resources:
+- AWS site-to-site VPN
+- AWS Direct Connect.
+
+A site-to-site VPN is a secure connection between your on-premises equipment and your VPCs, over the public internet. 
+This connection requires two termination points:
+- a virtual private gateway (or a transit gateway) attached to your AWS VPC
+- a (hardware or software) customer gateway device on your side of the site-to-site VPN connection.
+Using the IPsec protocol allows for a secure connection.
+ 
+AWS Direct Connect establishes an even more secure, dedicated private connection from your on-premises network to your VPC
+- bypassing the public internet
+- more bandwidth and lower latency
+- ideal for large-scale, secure data migration.
 
 Back up to: [Top](#)
-
-
-### mmm
-
-
-
-
-
-Compliance and data residency.
-
-
-
-
-
-- 
-
-
-
   
 
 ----
