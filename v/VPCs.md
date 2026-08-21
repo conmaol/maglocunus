@@ -167,6 +167,8 @@ id: 210987654321`"]
   VPC1 <-- peers --> VPC2
 ```
 
+Back up to: [Top](#)
+
 ## VPN and Direct Connect
 
 There are two ways to securely connect your on-premises environment with your AWS VPC, so as to shares resources:
