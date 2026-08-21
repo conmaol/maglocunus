@@ -26,7 +26,15 @@ A subnet:
   - public: has a route to an internet gateway, allowing both outgoing and incoming access to the internet, and typically hosts web servers
   - private: has a route to a network access translation (NAT) device, allowing outgoing access to the internet (but not incoming), and typically hosts database servers
 - can be protected by *network access control lists* (NACLs), which filter inbound and outbound traffic
-  - specific resources/instances in a subnet can be protected by *security groups*
+  - all VPCs have a default NACL that can be overridden at subnet level
+  - one NACL can apply to multiple subnets, but each subnet has at most one NACL
+  - contain both allow and deny rules, ranked for precedence
+  - are stateful – even if an outbound request is allowed, the corresponding incoming response might not be
+  - a NACL applies to all resources within the subnet
+- specific resources/instances in a subnet can be protected by *security groups* (ie. virtual firewalls)
+  - only contain allow rules; anything not explicitly allowed is denied
+  - one security group can be used by multiple resources; multiple resources can be associated with one security group
+  - are stateful – if an outbound request is allowed, so is the corresponding incoming response
 - can be shared with other accounts in the same AWS organisation
   - users of the other account can launch resources on the shared subnet (managed by the AWS `Resource Account Manager` service)
   - keeping VPCs to a minimum, while keeping separate accounts for billing.
@@ -102,8 +110,8 @@ erDiagram
     RESOURCE {
       String type
     }
-    SUBNET ||--o| NACL : protected-by
-    RESOURCE ||--o| SECURITY-GROUP : protected-by
+    SUBNET }|--o| NACL : protected-by
+    RESOURCE }o--o{ SECURITY-GROUP : protected-by
 ```
 
 Note that:
@@ -187,7 +195,11 @@ AWS Direct Connect establishes an even more secure, dedicated private connection
 - ideal for large-scale, secure data migration.
 
 Back up to: [Top](#)
-  
+
+
+
+
+
 
 ----
 
