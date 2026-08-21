@@ -1,6 +1,6 @@
 # Virtual Private Clouds
 
-A `Virtual Private Cloud` (VPC) is a logically isolated virtual network on [Amazon Web Services](../a/AWS.md) (AWS).
+A `Virtual Private Cloud` (VPC) is a logically isolated virtual network within a single [Amazon Web Services](../a/AWS.md) (AWS) account.
 
 A VPC:
 - resembles a traditional network in an on-premises data centre
@@ -20,6 +20,8 @@ Here is an example:
 
 ```mermaid
 flowchart TD
+  account["`**account**
+id: 123456789012`"]
   VPC["`**VPC**
 name: Production VPC
 region: us-east-1
@@ -38,6 +40,7 @@ type: private`"]
 type: EC2 instance`"])
   EBS(["`**resource**
 type: EBS volume`"])
+  account -- owns --> VPC
   VPC -- contains --> SN1
   VPC -- contains --> SN2
   SN1 -- hosts --> EC2
@@ -48,12 +51,14 @@ Or in more traditional notation:
 
 ```mermaid
 flowchart LR
-  subgraph "[VPC] Production VPC — us-east-1 10.0.0.0/16"
-    subgraph "[public subnet] Subnet A – us-east-1a 10.0.1.0/24"
-      EC2["`[resource] EC2`"]
-    end
-    subgraph "[private subnet] Subnet B  – us-east-1b 10.0.2.0/24"
-      EBS["`[resource] EBS`"]
+  subgraph "[account] 123456789012"
+    subgraph "[VPC] Production VPC — us-east-1 10.0.0.0/16"
+      subgraph "[public subnet] Subnet A – us-east-1a 10.0.1.0/24"
+        EC2["`[resource] EC2`"]
+      end
+      subgraph "[private subnet] Subnet B  – us-east-1b 10.0.2.0/24"
+        EBS["`[resource] EBS`"]
+      end
     end
   end
 ```
@@ -62,7 +67,9 @@ Here is an ER diagram:
 
 ```mermaid
 erDiagram
+    ACCOUNT ||--|{ VPC : owns
     VPC ||--|{ SUBNET : contains
+    ACCOUNT { String id}
     VPC {
       String name
       String region
@@ -89,17 +96,59 @@ Note that:
 > When configuring a VPC, be sure to choose a CIDR block large enough to accommodate your current resources and allows for scalability in future.
 
 
-
-
-Two VPC can be ‘peered’ (ie. connected) just in case their IP ranges do not overlap.
-
 Use security groups and network access control lists (NACLs) to filter inbound and outbound traffic.
 
 Security groups are applied to instances; NACLs are applied to subnets.
 
-VPC peering allows direct connectivity between VPCs – instances in either VPC can communicate with each other as if they were in the same network.
+### VPC peering
 
-Peering VPCs can belong to the same or different AWS accounts.
+Two VPCs can be ‘peered’ (ie. connected) as long as their IP ranges do not overlap.
+- VPC peering allows instances in either VPC to communicate with each other as if they were in the same network.
+- Peering VPCs can belong to the same or different AWS accounts.
+
+In other words:
+
+```mermaid
+erDiagram
+    VPC {
+      String name
+      String region
+      String IPs
+    }
+    VPC }o--o{ VPC : peers
+```
+
+Here is an example of same-account peering:
+
+```mermaid
+flowchart TD
+  account["`**account**
+id: 123456789012`"]
+  VPC1["`**VPC**`"]
+  VPC2["`**VPC**`"]
+  account -- owns --> VPC1
+  account -- owns --> VPC2
+  VPC1 <-- peers --> VPC2
+```
+
+
+Here is an example of cross-account peering:
+
+```mermaid
+flowchart TD
+  account1["`**account**
+id: 123456789012`"]
+account2["`**account**
+id: 210987654321`"]
+  VPC1["`**VPC**`"]
+  VPC2["`**VPC**`"]
+  account1 -- owns --> VPC1
+  account2 -- owns --> VPC2
+  VPC1 <-- peers --> VPC2
+```
+
+
+### mmm
 
 Use AWS VPN or AWS Direct Connect to connect your VPC with an on-premises environment.
 - AWS VPN allows you to create an IPsec site-to-site VPN with your on-premises network.
