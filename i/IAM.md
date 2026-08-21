@@ -48,6 +48,22 @@ You can attach an IAM role to a Lambda function to allow it to publish notificat
 
 You can use IAM roles to grant other AWS accounts access to permission to perform actions (eg. upload objects to an S3 bucket) in your account
 
+```mermaid
+erDiagram
+    ACCOUNT ||--|| IAM-CONFIGURATION : has
+    IAM-CONFIGURATION ||--|{ IDENTITY : contains
+    IDENTITY ||--|{ USER : subsumes
+    IDENTITY ||--|{ GROUP : subsumes
+    IDENTITY ||--|{ ROLE : subsumes
+    IAM-CONFIGURATION ||--|{ POLICY : contains
+    POLICY }o--o{ IDENTITY : assigned-to
+    ACCOUNT { String id}
+    USER }|--o{ GROUP : is-in
+    ROLE }o--|{ USER : attached-to
+```
+
+
+
 
 ----
 
