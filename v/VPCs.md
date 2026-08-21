@@ -9,10 +9,13 @@ Contents:
 ## VPCs and subnets
 
 A VPC:
-- resembles a traditional network in an on-premises data centre
+- architecturally resembles a traditional network in an on-premises data centre
 - resides in a single AWS region
+  - allowing for easier compliance with regulatory requirements, such as data residency
 - contains subnets
-- are isolated by default – resources in different VPCs do not talk to each other, even if they are in the same AWS region.
+- are isolated by default – resources in different VPCs do not talk to each other, even if they are in the same AWS region
+- support both IPv4 and IPv6 addresses
+- can be created and managed using the AWS `VPC` service.
 
 A subnet: 
 - consists of a range of IP addresses
@@ -22,7 +25,10 @@ A subnet:
   - public: has a route to an internet gateway, allowing both outgoing and incoming access to the internet, and typically hosts web servers
   - private: has a route to a network access translation (NAT) device, allowing outgoing access to the internet (but not incoming), and typically hosts database servers
 - can be protected by *network access control lists* (NACLs), which filter inbound and outbound traffic
-  - specific resources/instances in a subnet can be protected by *security groups*.
+  - specific resources/instances in a subnet can be protected by *security groups*
+- can be shared with other accounts in the same AWS organisation
+  - users of the other account can launch resources on the shared subnet (managed by the AWS `Resource Account Manager` service)
+  - keeping VPCs to a minimum, while keeping separate accounts for billing.
 
 If you spread resources across multiple subnets, they will be more available and fault tolerant, especially if you use services like Elastic Load Balancing and Auto Scaling.
 
@@ -175,10 +181,9 @@ Back up to: [Top](#)
 
 Compliance and data residency.
 
-VPCs support both IPv4 and IPv6.
 
-Subnets can be shared with other accounts in the same AWS organisation.
-- You can keep VPCs to a minimum, while keeping separate accounts for billing.
+
+
 
 - 
 
