@@ -16,7 +16,6 @@ A subnet:
   - public: has a route to an internet gateway, allowing both outgoing and incoming access to the internet, and typically hosts web servers.
   - private: has a route to a network access translation (NAT) device, allowing outgoing access to the internet (but not incoming), and typically hosts database servers.
 
-
 Here is an example:
 
 ```mermaid
@@ -81,14 +80,16 @@ erDiagram
     }
 ```
 
+Note that:
+
+>  `10.0.0.0/16` means all IPv4 addresses from `10.0.0.0` to `10.0.255.255`, a CIDR (Classless Inter-Domain Routing) block containing 65,536 IP addresses.
+>
+> `10.0.1.0/24` is a subnet of this containing `10.0.1.0` to `10.0.1.255` ie. 256 IP addresses.
+>
+> When configuring a VPC, be sure to choose a CIDR block large enough to accommodate your current resources and allows for scalability in future.
 
 
 
- 
-
-
-
-You should be sure to choose a CIDR block (IP address range) that is large enough to accommodate your current resources and allows for scalability in future.
 
 Two VPC can be ‘peered’ (ie. connected) just in case their IP ranges do not overlap.
 
